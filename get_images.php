@@ -1,7 +1,7 @@
 <?php
 $output = [];
 $output['success'] = false;
-$data = glob("images/*.jpg");
+$data = glob("app_pics/*.png");
 $output['files'] = $data;
 $output['success'] = true;
 

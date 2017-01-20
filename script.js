@@ -12,6 +12,7 @@ function load_files() {
         dataType: 'json',
         success: function (response) {
             if(response.success){
+                console.log(response);
                 //create container to place images and buttons in
                 var $container = $('<div>').attr('id','image_container');
                 //add container to body
@@ -23,6 +24,7 @@ function load_files() {
                     image_array.push($('<img>').attr('src', files[i]));
                     $('#image_container').append(image_array[i]);
                 }
+                // console.log();
                 //initialize pictures
                 initialize();
                 //create next and previous buttons and attach the appropriate handler
