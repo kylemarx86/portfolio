@@ -28,16 +28,16 @@ function load_files() {
                 //initialize pictures
                 initialize();
                 //create next and previous buttons and attach the appropriate handler
-                var $prev_button = $('<button>').attr('id','prev_button').text('<');
-                var $next_button = $('<button>').attr('id','next_button').text('>');
+                var $prev_button = $('<button>').attr('id','prev_button').addClass('skewed').text('<');
+                var $next_button = $('<button>').attr('id','next_button').addClass('skewed').text('>');
                 //add buttons to container
                 $container.append($prev_button);
                 $container.append($next_button);
                 //add event handlers to buttons
                 apply_event_handlers();
 
-                var dot = $('<div>').addClass('dot');
-                $('#image_container').append(dot);
+                // var dot = $('<div>').addClass('dot');
+                // $('#image_container').append(dot);
 //                        console.log(files.length);
 //                        createNavigationDots(files.length);
             }

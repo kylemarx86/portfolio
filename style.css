@@ -29,7 +29,7 @@
     font-size: 0;
     height: 100px;
 }
-.skewed{
+.skewedSm{
     position: relative;
     margin: 0;
     height: 100%;
@@ -38,10 +38,10 @@
     background-color: red;
     z-index: 2;
 }
-.skewed.left{
+.skewedSm.left{
     transform: skewX(-10deg) translate(50%, 0);
 }
-.skewed.right{
+.skewedSm.right{
     transform: skewX(-10deg) translate(-50%, 0);
 }
 
@@ -66,7 +66,16 @@
 
 
 
-
+.skewed{
+    /*position: relative;     !*absolute*!*/
+    position: absolute;
+    margin: 0;
+    height: 100%;
+    width: 15%;
+    display: inline-block;
+    background-color: red;
+    z-index: 2;
+}
 #image_container{
     position: absolute;
     /*position: relative;*/
@@ -88,14 +97,14 @@
 }
 /*styling of buttons*/
 button{
-    /*position: absolute;     !*original*!*/
-    position: relative;
-    width: 10%;
+    position: absolute;     /*original*/
+    /*position: relative;*/
+    width: 20%;
     height: 100%;
     background-color: rgba(0,0,255,0.1);
     border-color: black;
     border: hidden;
-    font-size: 3em;
+    font-size: 2em;
     transition-duration: 750ms;
 }
 button:hover{
@@ -103,13 +112,14 @@ button:hover{
     background-color: rgba(0,0,255,0.9);
     transition-duration: 500ms;
 }
-#prev_button{
+#prev_button.skewed{
     /*left: 0;*/
-    transform: skewX(-10deg) translate(50%, 0)
+    /*transform: skewX(-10deg) translate(50%, 0)*/ /*old*/
+    transform: skewX(-10deg) translate(-50%);
 }
-#next_button{
-    /*right: 0;*/
-    transform: skewX(-10deg) translate(-50%, 0);
+#next_button.skewed{
+    right: 0;
+    transform: skewX(-10deg) translate(50%, 0);
 }
 /*animations*/
 /* Chrome, Safari, Opera */
