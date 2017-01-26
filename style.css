@@ -37,7 +37,6 @@
     display: inline-block;
     background-color: red;
     z-index: 2;
-    /*opacity*/
 }
 .skewed.left{
     transform: skewX(-10deg) translate(50%, 0);
@@ -64,8 +63,6 @@
     z-index: -1;
     vertical-align: top;
 }
-
-
 
 
 
@@ -106,11 +103,11 @@ button:hover{
     background-color: rgba(0,0,255,0.9);
     transition-duration: 500ms;
 }
-#prevButton{
+#prev_button{
     /*left: 0;*/
     transform: skewX(-10deg) translate(50%, 0)
 }
-#nextButton{
+#next_button{
     /*right: 0;*/
     transform: skewX(-10deg) translate(-50%, 0);
 }

@@ -28,13 +28,13 @@ function load_files() {
                 //initialize pictures
                 initialize();
                 //create next and previous buttons and attach the appropriate handler
-                var $prevButton = $('<button>').attr('id','prevButton').text('<');
-                var $nextButton = $('<button>').attr('id','nextButton').text('>');
+                var $prev_button = $('<button>').attr('id','prev_button').text('<');
+                var $next_button = $('<button>').attr('id','next_button').text('>');
                 //add buttons to container
-                $container.append($prevButton);
-                $container.append($nextButton);
+                $container.append($prev_button);
+                $container.append($next_button);
                 //add event handlers to buttons
-                applyEventHandlers();
+                apply_event_handlers();
 
                 var dot = $('<div>').addClass('dot');
                 $('#image_container').append(dot);
@@ -60,14 +60,14 @@ function initialize() {
 }
 
 function next_image(){
-    removeEventHandlers();      //disable event handlers for both buttons while picture updates
-    setTimeout(applyEventHandlers, 3000);
+    remove_event_handlers();      //disable event handlers for both buttons while picture updates
+    setTimeout(apply_event_handlers, 3000);
     update_image(1);        //while waiting for event handlers to be reapplied
 }
 
 function prev_image() {
-    removeEventHandlers();      //disable event handlers for both buttons while picture updates
-    setTimeout(applyEventHandlers, 3000);
+    remove_event_handlers();      //disable event handlers for both buttons while picture updates
+    setTimeout(apply_event_handlers, 3000);
     update_image(-1);        //while waiting for event handlers to be reapplied
 }
 
@@ -102,22 +102,22 @@ function update_image(direction) {
     current_image_index = new_image_index;
 }
 //function to enable click handlers on buttons
-function applyEventHandlers() {
-    $('#prevButton').click(prev_image);
-    $('#nextButton').click(next_image);
+function apply_event_handlers() {
+    $('#prev_button').click(prev_image);
+    $('#next_button').click(next_image);
 }
 //function to disable event handlers while picture is updating
-function removeEventHandlers(){
-    $('#prevButton').off('click');
-    $('#nextButton').off('click');
+function remove_event_handlers(){
+    $('#prev_button').off('click');
+    $('#next_button').off('click');
 }
 //function to add navigation dots to the carousel
 function createNavigationDots(numberOfImages){
-    var imageContainer = $('#image_container');
+    var image_container = $('#image_container');
     var dotContainer = $('<div>').addClass('dot_container');
     for(var i = 0; i < numberOfImages; i++){
         var dot = $('<div>').addClass('dot');
         dotContainer.append(dot);
     }
-    dotContainer.append(imageContainer);
+    dotContainer.append(image_container);
 }
