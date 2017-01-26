@@ -62,6 +62,7 @@
     height: 100%;
     width: auto;
     z-index: -1;
+    vertical-align: top;
 }
 
 
