@@ -31,13 +31,29 @@ function load_files() {
                 //initialize pictures
                 initialize();
                 //create next and previous buttons and attach the appropriate handler
+
+                //original working
                 var $prev_button = $('<button>').addClass('prev_button skewed').text('<');
                 var $next_button = $('<button>').addClass('next_button skewed').text('>');
                 var $circle = $('<button>').addClass('next_button circle');
+
+                // //attempted to put both circle and next together in one container
+                // var $prev_button = $('<button>').addClass('prev_button skewed').text('<');
+                // var $slant = $('<div>').addClass('skewed').text('>');
+                // var $circle = $('<div>').addClass('circle');
+                // var $next_button = $('<button>').addClass('next_button');
+                // $next_button.append($slant);
+                // $next_button.append($circle);
+
+
+
+
+
                 //add buttons to container
                 $carousel_container.append($prev_button);
                 $carousel_container.append($next_button);
                 $carousel_container.append($circle);
+
                 //add event handlers to buttons
                 apply_event_handlers();
 
