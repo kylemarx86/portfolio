@@ -16,7 +16,7 @@ function load_files() {
                 //create container to place images and buttons in
                 var $container = $('<div>').attr('id','image_container');
                 //add container to body
-                $('body').append($container);
+                $('.apps_carousel').append($container);
                 //gather all images
                 var files = response.files;
                 //set up the gathered images
