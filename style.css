@@ -45,7 +45,7 @@
     transform: skewX(-10deg) translate(-50%, 0);
 }
 
-.circle{
+.circleSm{
     position: relative;
     display: inline-block;
     height: 20px;
@@ -128,6 +128,20 @@ button:hover{
 .next_button.skewed{
     right: 0;
     transform: skewX(-10deg) translate(50%, 0);
+}
+.circle{
+    position: absolute;
+    vertical-align: middle;
+    right: 0;
+    top: Calc(50% - 25px);
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 100%;
+    /*translate up halfway up the skewed div*/
+    /*transform: translate(-200%, -100px); !*will need to change when it is used on the main image carousel*!*/
+    z-index: 2;
 }
 /*animations*/
 /* Chrome, Safari, Opera */

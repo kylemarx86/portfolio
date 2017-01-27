@@ -12,7 +12,8 @@ function load_files() {
         dataType: 'json',
         success: function (response) {
             if(response.success){
-                console.log(response);
+                // console.log(response);
+                console.log(response.files.length);
                 //identify carousel container
                 var $carousel_container = $('.apps_carousel');
                 //create container to place images and buttons in
@@ -32,11 +33,15 @@ function load_files() {
                 //create next and previous buttons and attach the appropriate handler
                 var $prev_button = $('<button>').addClass('prev_button skewed').text('<');
                 var $next_button = $('<button>').addClass('next_button skewed').text('>');
+                var $circle = $('<button>').addClass('next_button circle');
                 //add buttons to container
                 $carousel_container.append($prev_button);
                 $carousel_container.append($next_button);
+                $carousel_container.append($circle);
                 //add event handlers to buttons
                 apply_event_handlers();
+
+                //create numbered areas to jump to specific
 
                 // var dot = $('<div>').addClass('dot');
                 // $('#image_container').append(dot);
