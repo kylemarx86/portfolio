@@ -13,10 +13,12 @@ function load_files() {
         success: function (response) {
             if(response.success){
                 console.log(response);
+                //identify carousel container
+                var $carousel_container = $('.apps_carousel');
                 //create container to place images and buttons in
                 var $container = $('<div>').attr('id','image_container');
                 //add container to body
-                $('.apps_carousel').append($container);
+                $carousel_container.append($container);
                 //gather all images
                 var files = response.files;
                 //set up the gathered images
@@ -28,11 +30,11 @@ function load_files() {
                 //initialize pictures
                 initialize();
                 //create next and previous buttons and attach the appropriate handler
-                var $prev_button = $('<button>').attr('id','prev_button').addClass('skewed').text('<');
-                var $next_button = $('<button>').attr('id','next_button').addClass('skewed').text('>');
+                var $prev_button = $('<button>').addClass('prev_button skewed').text('<');
+                var $next_button = $('<button>').addClass('next_button skewed').text('>');
                 //add buttons to container
-                $container.append($prev_button);
-                $container.append($next_button);
+                $carousel_container.append($prev_button);
+                $carousel_container.append($next_button);
                 //add event handlers to buttons
                 apply_event_handlers();
 
@@ -103,13 +105,13 @@ function update_image(direction) {
 }
 //function to enable click handlers on buttons
 function apply_event_handlers() {
-    $('#prev_button').click(prev_image);
-    $('#next_button').click(next_image);
+    $('.prev_button').click(prev_image);
+    $('.next_button').click(next_image);
 }
 //function to disable event handlers while picture is updating
 function remove_event_handlers(){
-    $('#prev_button').off('click');
-    $('#next_button').off('click');
+    $('.prev_button').off('click');
+    $('.next_button').off('click');
 }
 //function to add navigation dots to the carousel
 function createNavigationDots(numberOfImages){
