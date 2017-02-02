@@ -75,8 +75,8 @@ function set_up_carousel_buttons() {
     //create next and previous buttons and attach the appropriate handler
     var $prev_button = $('<button>').addClass('prev_button skewed');
     var $next_button = $('<button>').addClass('next_button');
-    var $skewed = $('<div>').addClass('skewed');
-    var $circle = $('<div>').addClass('circle');
+    var $skewed = $('<div>').addClass('skewed next_btn_part');
+    var $circle = $('<div>').addClass('circle next_btn_part');
 
     //add parts to the next button
     $next_button.append($skewed);
@@ -133,6 +133,11 @@ function update_image(direction) {
 function apply_event_handlers() {
     $('.prev_button').click(get_prev_image);
     $('.next_button').click(get_next_image);
+    //events always on
+    //keeps all parts of next button highlighted together
+    $('.next_btn_part').hover(function () {
+        $('.next_button').find('.next_btn_part').toggleClass('highlighted_button');
+    });
 }
 //function to disable event handlers while picture is updating
 function remove_event_handlers(){
