@@ -38,8 +38,7 @@
 }
 /*styling of buttons*/
 button{
-    position: absolute;     /*original*/
-    /*position: relative;*/
+    position: absolute;
     width: 15%;
     height: 100%;
     background-color: rgba(0,0,255,0.1);
@@ -51,7 +50,6 @@ button{
 
 .prev_button.skewed{
     left: 0;
-    /*transform: skewX(-10deg) translate(50%, 0)*/ /*old*/
     transform: skewX(-10deg) translate(-50%);
 }
 .next_button{
@@ -62,7 +60,6 @@ button{
     height: 100%;
     top: 0;
     right: 0;
-    /*transform: skewX(-10deg) translate(50%);*/
     transform: skewX(-10deg) ;
 }
 .circle{
@@ -76,22 +73,13 @@ button{
     background-color: red;
     border-radius: 100%;
     transform: translate(-55%, -50%);
-    /*translate up halfway up the skewed div*/
-    /*transform: translate(-200%, -100px); !*will need to change when it is used on the main image carousel*!*/
     z-index: 2;
 }
 
 .prev_button:hover, .next_button:hover > .circle, .next_button:hover > .skewed{
-    /*border: 1px solid;*/
     background-color: rgba(0,0,255,0.9);
     transition-duration: 500ms;
 }
-/*.next_button:hover > .circle, .next_button:hover > .skewed{*/
-    /*border: 1px solid;*/
-    /*background-color: rgba(0,0,255,0.9);*/
-    /*transition-duration: 500ms;*/
-/*}*/
-
 
 /*animations*/
 /* Chrome, Safari, Opera */

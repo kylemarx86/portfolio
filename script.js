@@ -27,34 +27,22 @@ function load_files() {
                     image_array.push($('<img>').attr('src', files[i]));
                     $('#image_container').append(image_array[i]);
                 }
-                // console.log();
                 //initialize pictures
                 initialize();
-                //create next and previous buttons and attach the appropriate handler
 
-                //original working
+                //create next and previous buttons and attach the appropriate handler
                 var $prev_button = $('<button>').addClass('prev_button skewed').text('<');
                 var $next_button = $('<button>').addClass('next_button').text('>');
                 var $skewed = $('<div>').addClass('skewed');
                 var $circle = $('<div>').addClass('circle');
 
-
-
-                // //attempted to put both circle and next together in one container
-                // var $prev_button = $('<button>').addClass('prev_button skewed').text('<');
-                // var $slant = $('<div>').addClass('skewed').text('>');
-                // var $circle = $('<div>').addClass('circle');
-                // var $next_button = $('<button>').addClass('next_button');
-                // $next_button.append($slant);
-                // $next_button.append($circle);
-
+                //add parts to the next button
                 $next_button.append($skewed);
                 $next_button.append($circle);
 
                 //add buttons to container
                 $carousel_container.append($prev_button);
                 $carousel_container.append($next_button);
-                // $carousel_container.append($circle);
 
                 //add event handlers to buttons
                 apply_event_handlers();
