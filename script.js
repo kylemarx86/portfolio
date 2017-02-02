@@ -29,10 +29,16 @@ function load_files() {
                     $('#image_container').append(image_array[i]);
                 }
                 //initialize pictures
-                initializePictures();
+                initialize_pictures();
 
                 //set up carousel buttons
-                setUpCarouselButtons();
+                set_up_carousel_buttons();
+
+                //add bar to the bottom of the carousel
+                var $number_bar = $('<div>').addClass('number_bar');
+                $carousel_container.append($number_bar);
+                //add numbers to the bottom of the carousel
+
 
                 //add event handlers to buttons
                 apply_event_handlers();
@@ -52,7 +58,7 @@ function load_files() {
 }
 
 //sets up pictures for display
-function initializePictures() {
+function initialize_pictures() {
     //create an image and set the source
     current_image_index = 0;
 
@@ -63,7 +69,7 @@ function initializePictures() {
 }
 
 //sets up the buttons in the carousel for images of apps
-function setUpCarouselButtons() {
+function set_up_carousel_buttons() {
     //identify carousel container
     var $carousel_container = $('.apps_carousel');
     //create next and previous buttons and attach the appropriate handler
@@ -81,13 +87,13 @@ function setUpCarouselButtons() {
     $carousel_container.append($next_button);
 }
 
-function next_image(){
+function get_next_image(){
     remove_event_handlers();      //disable event handlers for both buttons while picture updates
     setTimeout(apply_event_handlers, 3000);
     update_image(1);        //while waiting for event handlers to be reapplied
 }
 
-function prev_image() {
+function get_prev_image() {
     remove_event_handlers();      //disable event handlers for both buttons while picture updates
     setTimeout(apply_event_handlers, 3000);
     update_image(-1);        //while waiting for event handlers to be reapplied
@@ -125,8 +131,8 @@ function update_image(direction) {
 }
 //function to enable click handlers on buttons
 function apply_event_handlers() {
-    $('.prev_button').click(prev_image);
-    $('.next_button').click(next_image);
+    $('.prev_button').click(get_prev_image);
+    $('.next_button').click(get_next_image);
 }
 //function to disable event handlers while picture is updating
 function remove_event_handlers(){
