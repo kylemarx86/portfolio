@@ -47,9 +47,10 @@ button{
     transition-duration: 750ms;
 }
 
-.prev_button.skewed{
+.prev_button{
     left: 0;
     transform: skewX(-10deg) translate(-50%);
+    border: 1px solid black;
 }
 .next_button{
     right: 0;
@@ -59,9 +60,10 @@ button{
     height: 100%;
     top: 0;
     right: 0;
-    transform: skewX(-10deg) ;
+    transform: skewX(-10deg);
+    border: 1px solid black;
 }
-.circle{
+.next_button > .circle{
     position: absolute;
     vertical-align: middle;
     text-align: center;
@@ -72,8 +74,11 @@ button{
     width: 50px;
     background-color: red;
     border-radius: 100%;
-    transform: translate(-55%, -50%);
+    transform: rotate(10deg) translate(-70%, -50%);
     z-index: 2;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 0 1px;
 }
 
 .prev_button:hover, .next_button:hover > .circle, .next_button:hover > .skewed{
