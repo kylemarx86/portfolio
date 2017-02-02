@@ -14,6 +14,7 @@ function load_files() {
             if(response.success){
                 // console.log(response);
                 console.log(response.files.length);
+                var image_count = response.files.length;
 
                 //identify carousel container
                 var $carousel_container = $('.apps_carousel');
@@ -38,7 +39,10 @@ function load_files() {
                 var $number_bar = $('<div>').addClass('number_bar');
                 $carousel_container.append($number_bar);
                 //add numbers to the bottom of the carousel
-
+                for(var i = 0; i < image_count; i++){
+                    var $nav_number = $('<div>').addClass('nav_number').text(i+1);
+                    $($number_bar).append($nav_number);
+                }
 
                 //add event handlers to buttons
                 apply_event_handlers();

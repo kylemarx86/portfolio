@@ -106,7 +106,21 @@ button{
     background-color: black;
     z-index: 3;
 }
-
+.nav_number{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 5%;
+    margin: 5px;
+    transform: skewX(-10deg);
+    color: black;
+    background-color: white;
+}
+/*only for color change*/
+.active_nav_number{
+    color: white;
+    background-color: red;
+}
 
 /*animations*/
 /* Chrome, Safari, Opera */
