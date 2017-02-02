@@ -1,23 +1,171 @@
-.carouselBackground{
-    background-color: blue;
-    height: 200px;
-    width: 100%;
+.apps_carousel{
+    overflow: visible;
 }
-.carouselForegroundLeft{
-    display: inline-block;
-    background-color: green;
+.skewed{
+    position: absolute;
+    margin: 0;
     height: 100%;
-    width: 25%;
-}
-.carouselDivider{
+    width: 15%;
     display: inline-block;
     background-color: red;
-    height: 100%;
-    width: 5%;
+    z-index: 2;
 }
-.carouselForegroundRight{
+.apps_carousel{
+    position: absolute;
+    /*position: relative;*/
+    width: 400px;
+    height: 300px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    overflow: visible;
+}
+#image_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*each image should be
+    -100% of the width of the container
+    -positioned absolutely
+    -left and top at 0*/
+#image_container img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+/*styling of buttons*/
+button{
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    background-color: rgba(255,255,255,0);
+    border-color: black;
+    border: hidden;
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    transition-duration: 750ms;
+}
+
+.prev_button{
+    left: 0;
+    transform: skewX(-10deg) translate(-50%);
+    border: 1px solid black;
+    z-index: 4;
+}
+.next_button{
+    right: 0;
+    z-index: 4;
+    transform: translate(50%);
+}
+.next_button .skewed{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    transform: skewX(-10deg);
+    border: 1px solid black;
+}
+/*for highlighting purposes the color is separated out. possibly all could be moved out*/
+.circle{
+    background-color: red;
+}
+.next_button .circle{
+    position: absolute;
+    vertical-align: middle;
+    text-align: center;
+    right: 0;
+    top: 50%;
     display: inline-block;
-    background-color: yellow;
-    height: 100%;
-    width: 25%;
+    height: 50px;
+    width: 50px;
+    /*background-color: red;*/
+    border-radius: 100%;
+    transform: rotate(10deg) translate(-70%, -50%);
+    z-index: 2;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 0 1px;
 }
+.prev_button:hover{
+    background-color: #BB0000;
+    transition-duration: 500ms;
+}
+.highlighted_button{
+    background-color: #BB0000;
+    transition-duration: 500ms;
+}
+.number_bar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background-color: black;
+    z-index: 3;
+}
+
+
+/*animations*/
+/* Chrome, Safari, Opera */
+@-webkit-keyframes prev_image_in {
+    0%   {left: -100%}
+    25%  {left: -75%}
+    50%  {left: -50%}
+    75%  {left: -25%}
+    100% {left: 0}
+}
+/* Standard syntax */
+@keyframes prev_image_in {
+    0%   {left: -100%}
+    25%  {left: -75%}
+    50%  {left: -50%}
+    75%  {left: -25%}
+    100% {left: 0}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes prev_image_out {
+    0%   {left: 0}
+    25%  {left: 25%}
+    50%  {left: 50%}
+    75%  {left: 75%}
+    100% {left: 100%}
+}
+/* Standard syntax */
+@keyframes prev_image_out {
+    0%   {left: 0}
+    25%  {left: 25%}
+    50%  {left: 50%}
+    75%  {left: 75%}
+    100% {left: 100%}
+}
+
+
+
+/*classes involving navigation dots*/
+.dot_container{
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    display: inline-block;
+}
+.dot{
+    display: inline-block;
+    /*position: absolute;*/
+    right: 50%;  /*for testing only*/
+    height: 20px;
+    width: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    /*background-color: yellow;*/
+    background-color: transparent;
+}
+.inactive_dot{
+    background-color: transparent;
+}
+.active_dot{
+    background-color: white;
+}
+
