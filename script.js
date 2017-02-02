@@ -14,6 +14,7 @@ function load_files() {
             if(response.success){
                 // console.log(response);
                 console.log(response.files.length);
+
                 //identify carousel container
                 var $carousel_container = $('.apps_carousel');
                 //create container to place images and buttons in
@@ -28,21 +29,10 @@ function load_files() {
                     $('#image_container').append(image_array[i]);
                 }
                 //initialize pictures
-                initialize();
+                initializePictures();
 
-                //create next and previous buttons and attach the appropriate handler
-                var $prev_button = $('<button>').addClass('prev_button skewed').text('<');
-                var $next_button = $('<button>').addClass('next_button').text('>');
-                var $skewed = $('<div>').addClass('skewed');
-                var $circle = $('<div>').addClass('circle');
-
-                //add parts to the next button
-                $next_button.append($skewed);
-                $next_button.append($circle);
-
-                //add buttons to container
-                $carousel_container.append($prev_button);
-                $carousel_container.append($next_button);
+                //set up carousel buttons
+                setUpCarouselButtons();
 
                 //add event handlers to buttons
                 apply_event_handlers();
@@ -62,7 +52,7 @@ function load_files() {
 }
 
 //sets up pictures for display
-function initialize() {
+function initializePictures() {
     //create an image and set the source
     current_image_index = 0;
 
@@ -70,6 +60,25 @@ function initialize() {
         image_array[i].css('left','100%');
     }
     image_array[0].css('left','0%');
+}
+
+//sets up the buttons in the carousel for images of apps
+function setUpCarouselButtons() {
+    //identify carousel container
+    var $carousel_container = $('.apps_carousel');
+    //create next and previous buttons and attach the appropriate handler
+    var $prev_button = $('<button>').addClass('prev_button skewed');
+    var $next_button = $('<button>').addClass('next_button');
+    var $skewed = $('<div>').addClass('skewed');
+    var $circle = $('<div>').addClass('circle');
+
+    //add parts to the next button
+    $next_button.append($skewed);
+    $next_button.append($circle);
+
+    //add buttons to container
+    $carousel_container.append($prev_button);
+    $carousel_container.append($next_button);
 }
 
 function next_image(){
