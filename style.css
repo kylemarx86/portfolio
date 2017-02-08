@@ -1,7 +1,12 @@
 button:focus {
     outline:0;
 }
-.apps_carousel_row{
+.apps_carousel_top{
+    width: 100%;
+    height: 50px;
+    background-color: #202020;
+}
+.apps_carousel_main{
     background-color: #353535;
     width: 100%;
     height: 300px;
@@ -36,17 +41,20 @@ button:focus {
     z-index: 2;
 }
 /*styling of buttons*/
-button{
+button.prev_button, button.next_button{
     position: absolute;
     width: 15%;
     height: 100%;
-    background-color: rgba(255,255,255,0);
-    border-color: black;
-    border: hidden;
+    /*border-color: #740000;*/
+    border: 1px solid #740000;
     margin: 0;
     padding: 0;
     font-size: 2em;
     transition-duration: 750ms;
+}
+button.next_button{
+    background-color: rgba(255,255,255,0);
+    border: hidden;
 }
 .skewed{
     position: absolute;
@@ -55,12 +63,12 @@ button{
     width: 15%;
     display: inline-block;
     background-color: red;
-    z-index: 2;
+    box-sizing: border-box;
 }
 .prev_button{
     left: 0;
     transform: skewX(-10deg) translate(-50%);
-    border: 1px solid black;
+    /*border: 1px solid;*/
     z-index: 4;
 }
 .next_button{
@@ -74,11 +82,13 @@ button{
     top: 0;
     right: 0;
     transform: skewX(-10deg);
-    border: 1px solid black;
+    border: 1px solid #740000;
+    /*border-color: #740000;*/
 }
 /*for highlighting purposes the color is separated out. possibly all could be moved out*/
 .circle{
     background-color: red;
+    box-sizing: border-box;
 }
 .next_button .circle{
     position: absolute;
@@ -94,22 +104,24 @@ button{
     transform: rotate(10deg) translate(-70%, -50%);
     z-index: 2;
     border-style: solid;
-    border-color: black;
+    /*border-color: black;*/
+    border-color: #740000;
     border-width: 0 0 0 1px;
 }
-.prev_button:hover{
+.prev_button:hover, .highlighted_button{
     background-color: #BB0000;
     transition-duration: 500ms;
 }
-.highlighted_button{
+/*.highlighted_button{
     background-color: #BB0000;
     transition-duration: 500ms;
-}
+}*/
 .number_bar{
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 10%;
+    padding-left: 15px;
     background-color: black;
     z-index: 3;
 }
