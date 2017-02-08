@@ -1,17 +1,13 @@
 button:focus {
     outline:0;
 }
+.apps_carousel_row{
+    background-color: #101010;
+    width: 100%;
+    height: 300px;
+}
 .apps_carousel{
     overflow: visible;
-}
-.skewed{
-    position: absolute;
-    margin: 0;
-    height: 100%;
-    width: 15%;
-    display: inline-block;
-    background-color: red;
-    z-index: 2;
 }
 .apps_carousel{
     position: absolute;
@@ -52,7 +48,15 @@ button{
     font-size: 2em;
     transition-duration: 750ms;
 }
-
+.skewed{
+    position: absolute;
+    margin: 0;
+    height: 100%;
+    width: 15%;
+    display: inline-block;
+    background-color: red;
+    z-index: 2;
+}
 .prev_button{
     left: 0;
     transform: skewX(-10deg) translate(-50%);
