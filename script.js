@@ -18,10 +18,13 @@ function load_files() {
 
                 //identify carousel container
                 var $carousel_container = $('.apps_carousel');
-                //create container to place images and buttons in
-                var $container = $('<div>').attr('id','image_container');
-                //add container to body
-                $carousel_container.append($container);
+                
+                // //create container to place images and buttons in
+                // var $container = $('<div>').attr('id','image_container');
+                
+                // //add container to body
+                // $carousel_container.append($container);
+                
                 //gather all images
                 var files = response.files;
                 //set up the gathered images
@@ -32,12 +35,17 @@ function load_files() {
                 //initialize pictures
                 initialize_pictures();
 
-                //set up carousel buttons
-                set_up_carousel_buttons();
+                // //set up carousel buttons
+                // set_up_carousel_buttons();
 
-                //add bar to the bottom of the carousel
-                var $number_bar = $('<div>').addClass('number_bar');
-                $carousel_container.append($number_bar);
+                // //add bar to the bottom of the carousel
+                // var $number_bar = $('<div>').addClass('number_bar');
+
+                //identify number bar
+                var $number_bar = $('.number_bar');
+
+                // $carousel_container.append($number_bar);
+                
                 //add numbers to the bottom of the carousel
                 for(var i = 0; i < image_count; i++){
                     var $nav_number = $('<div>').addClass('nav_number').text(i+1);
