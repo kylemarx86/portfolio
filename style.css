@@ -8,6 +8,7 @@ button:focus {
 }
 .apps_carousel_main{
     background-color: #353535;
+    background-color: white;  /*temp*/
     width: 100%;
     height: 300px;
 }
@@ -64,6 +65,7 @@ button.next_button{
     display: inline-block;
     background-color: red;
     box-sizing: border-box;
+    box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;
 }
 .prev_button{
     left: 0;
@@ -76,6 +78,9 @@ button.next_button{
     z-index: 4;
     transform: translate(50%);
 }
+.next_btn_part{
+    height: 100%;
+}
 .next_button .skewed{
     width: 100%;
     height: 100%;
@@ -83,7 +88,6 @@ button.next_button{
     right: 0;
     transform: skewX(-10deg);
     border: 1px solid #740000;
-    /*border-color: #740000;*/
 }
 /*for highlighting purposes the color is separated out. possibly all could be moved out*/
 .circle{
@@ -107,10 +111,46 @@ button.next_button{
     /*border-color: black;*/
     border-color: #740000;
     border-width: 0 0 0 1px;
+    box-shadow: 0 0 3px 3px #A00000 inset;
+    /*box-shadow: 0 5px 5px 5px gray;*/
+    /*box-shadow: 0 8px 6px -6px black;*/
 }
+/*.semicircle{
+    background-color: red;
+    box-sizing: border-box;
+}*/
+.semicircle{
+    background-color: red;
+    box-sizing: border-box;
+
+    position: absolute;
+    vertical-align: middle;
+    text-align: center;
+    right: 0;
+    top: 50%;
+    display: inline-block;
+    height: 50px;
+    width: 25px;
+    border-radius: 50px 0 0 50px;
+    transform: rotate(10deg) translate(-62px, -50%);
+    z-index: 2;
+    border-style: solid;
+    /*border-color: black;*/
+    border-color: #740000;
+    border-width: 1px 0 1px 1px;
+    box-shadow: -3px 0 3px -4px black;
+}
+
 .prev_button:hover, .highlighted_button{
     background-color: #BB0000;
     transition-duration: 500ms;
+    
+}
+.prev_button:hover, .highlighted_button.skewed{
+    box-shadow: -3px -3px 2px 1px #800000 inset
+}
+.highlighted_button.semicircle{
+    box-shadow: none;
 }
 /*.highlighted_button{
     background-color: #BB0000;
