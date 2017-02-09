@@ -7,16 +7,26 @@ button:focus {
     height: 50px;
     background-color: #202020;
 }
+.link_btn_container{
+    position: absolute;
+    display: block;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    /*top: 0;*/
+    /*transform: translate(50%, 50%);*/
+}
 .link_btn{
     margin: 0 10px;
     font-weight: bold;
     transform: skewX(-10deg);
-    /*box-shadow: */
-    /*box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;*/
     box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;
 }
+.link_btn:hover{
+    box-shadow: -3px -3px 2px 1px #800000 inset;
+    color: darkgray;
+}
 .description{
-    /*background-color: darkred;*/
     background-color: #D00000;
 }
 .github{

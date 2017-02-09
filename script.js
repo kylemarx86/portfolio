@@ -35,17 +35,9 @@ function load_files() {
                 //initialize pictures
                 initialize_pictures();
 
-                // //set up carousel buttons
-                // set_up_carousel_buttons();
-
-                // //add bar to the bottom of the carousel
-                // var $number_bar = $('<div>').addClass('number_bar');
-
                 //identify number bar
                 var $number_bar = $('.number_bar');
 
-                // $carousel_container.append($number_bar);
-                
                 //add numbers to the bottom of the carousel
                 for(var i = 0; i < image_count; i++){
                     var $nav_number = $('<div>').addClass('nav_number').text(i+1);
