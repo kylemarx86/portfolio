@@ -12,19 +12,10 @@ function load_files() {
         dataType: 'json',
         success: function (response) {
             if(response.success){
-                // console.log(response);
-                console.log(response.files.length);
+                // console.log(response.files.length);
                 var image_count = response.files.length;
-
                 //identify carousel container
-                var $carousel_container = $('.apps_carousel');
-                
-                // //create container to place images and buttons in
-                // var $container = $('<div>').attr('id','image_container');
-                
-                // //add container to body
-                // $carousel_container.append($container);
-                
+                var $carousel_container = $('.apps_carousel');                
                 //gather all images
                 var files = response.files;
                 //set up the gathered images
@@ -34,33 +25,15 @@ function load_files() {
                 }
                 //initialize pictures
                 initialize_pictures();
-
-                // //set up carousel buttons
-                // set_up_carousel_buttons();
-
-                // //add bar to the bottom of the carousel
-                // var $number_bar = $('<div>').addClass('number_bar');
-
                 //identify number bar
                 var $number_bar = $('.number_bar');
-
-                // $carousel_container.append($number_bar);
-                
                 //add numbers to the bottom of the carousel
                 for(var i = 0; i < image_count; i++){
                     var $nav_number = $('<div>').addClass('nav_number').text(i+1);
                     $($number_bar).append($nav_number);
                 }
-
                 //add event handlers to buttons
                 apply_event_handlers();
-
-                //create numbered areas to jump to specific
-
-                // var dot = $('<div>').addClass('dot');
-                // $('#image_container').append(dot);
-//                        console.log(files.length);
-//                        createNavigationDots(files.length);
             }
         },
         error: function (response) {
