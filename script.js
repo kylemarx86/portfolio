@@ -1,7 +1,9 @@
 var image_array = [];
 var current_image_index = null;
+var apps_array = [];
 
 $(document).ready(function () {
+    apps_array = [];
     load_files();
 });
 
@@ -139,3 +141,42 @@ function createNavigationDots(numberOfImages){
     }
     dotContainer.append(image_container);
 }
+//function to update the links 
+function updateLinks(){
+    // $('');
+}
+
+//an array of objects composed of information about the selected apps
+//needs real info 
+var apps_info = [
+        {
+            name: 'iBet', 
+            description: {
+                title: 'iBet', 
+                tech_used: ['jQuery', 'PHP', 'MySQL'],
+                lines: ['lorem ipsem for now', 'lorem ipsem iBet']
+            }, 
+            live_address: 'http://dev.danlee.site/c10_sports/', 
+            github_address: 'https://github.com/xuesongc4/c10_sports'
+        },
+        {
+            name: 'Memory Match', 
+            description: {
+                title: 'Memory Match', 
+                tech_used: ['JS','jQuery'],
+                lines: ['lorem ipsem part 2', 'lorem ipsem Memory Match']
+            }, 
+            live_address: 'http://kylemarx86.com/memory_match/', 
+            github_address: 'https://github.com/kylemarx86/memory_match'
+        },
+        {
+            name: 'Student Grade Table', 
+            description: {
+                title: 'Student Grade Table', 
+                tech_used: ['jQuery', 'PHP'],
+                lines: ['lorem ipsem part 3', 'lorem ipsem Student Grade Table']       //need to change
+            }, 
+            live_address: 'http://localhost:8888/lfz/SGT/', 
+            github_address: 'https://github.com/kylemarx86/SGT' //temporarily local
+        }
+    ];  //end of apps array
