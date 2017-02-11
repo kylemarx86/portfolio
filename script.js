@@ -131,16 +131,7 @@ function remove_event_handlers(){
     $('.prev_button').off('click');
     $('.next_button').off('click');
 }
-//function to add navigation dots to the carousel
-function createNavigationDots(numberOfImages){
-    var image_container = $('#image_container');
-    var dotContainer = $('<div>').addClass('dot_container');
-    for(var i = 0; i < numberOfImages; i++){
-        var dot = $('<div>').addClass('dot');
-        dotContainer.append(dot);
-    }
-    dotContainer.append(image_container);
-}
+
 //function to update the links 
 function updateLinks(){
     // $('');
