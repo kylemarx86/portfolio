@@ -1,18 +1,48 @@
+button:focus {
+    outline:0;
+}
+/*area above the app carousel*/
+.apps_carousel_top{
+    width: 100%;
+    height: 50px;
+    background-color: #202020;
+}
+.link_btn_container{
+    position: absolute;
+    display: block;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+.link_btn{
+    margin: 0 10px;
+    font-weight: bold;
+    transform: skewX(-10deg);
+    box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;
+}
+.link_btn:hover{
+    box-shadow: -3px -3px 2px 1px #800000 inset;
+    color: darkgray;
+}
+.description{
+    background-color: #D00000;
+}
+.github{
+    background-color: red;
+}
+.live{
+    background-color: orangered;
+}
+/*the main area of the app carousel*/
+.apps_carousel_main{
+    background-color: #353535;
+    width: 100%;
+    height: 300px;
+}
 .apps_carousel{
     overflow: visible;
 }
-.skewed{
-    position: absolute;
-    margin: 0;
-    height: 100%;
-    width: 15%;
-    display: inline-block;
-    background-color: red;
-    z-index: 2;
-}
 .apps_carousel{
     position: absolute;
-    /*position: relative;*/
     width: 400px;
     height: 300px;
     left: 50%;
@@ -37,23 +67,33 @@
     z-index: 2;
 }
 /*styling of buttons*/
-button{
+button.prev_button, button.next_button{
     position: absolute;
     width: 15%;
     height: 100%;
-    background-color: rgba(255,255,255,0);
-    border-color: black;
-    border: hidden;
+    border: 1px solid #740000;
     margin: 0;
     padding: 0;
     font-size: 2em;
     transition-duration: 750ms;
 }
-
+button.next_button{
+    background-color: rgba(255,255,255,0);
+    border: hidden;
+}
+.skewed{
+    position: absolute;
+    margin: 0;
+    height: 100%;
+    width: 15%;
+    display: inline-block;
+    background-color: red;
+    box-sizing: border-box;
+    box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;
+}
 .prev_button{
     left: 0;
     transform: skewX(-10deg) translate(-50%);
-    border: 1px solid black;
     z-index: 4;
 }
 .next_button{
@@ -61,19 +101,20 @@ button{
     z-index: 4;
     transform: translate(50%);
 }
+.next_btn_part{
+    height: 100%;
+}
 .next_button .skewed{
     width: 100%;
     height: 100%;
     top: 0;
     right: 0;
     transform: skewX(-10deg);
-    border: 1px solid black;
+    border: 1px solid #740000;
 }
-/*for highlighting purposes the color is separated out. possibly all could be moved out*/
-.circle{
+.semicircle{
     background-color: red;
-}
-.next_button .circle{
+    box-sizing: border-box;
     position: absolute;
     vertical-align: middle;
     text-align: center;
@@ -81,32 +122,51 @@ button{
     top: 50%;
     display: inline-block;
     height: 50px;
-    width: 50px;
-    /*background-color: red;*/
-    border-radius: 100%;
-    transform: rotate(10deg) translate(-70%, -50%);
+    width: 25px;
+    border-radius: 50px 0 0 50px;
+    transform: rotate(10deg) translate(-62px, -50%);
     z-index: 2;
     border-style: solid;
-    border-color: black;
-    border-width: 0 0 0 1px;
+    border-color: #740000;
+    border-width: 1px 0 1px 1px;
+    box-shadow: -3px 0 3px -4px black;
 }
-.prev_button:hover{
+
+.prev_button:hover, .highlighted_button{
     background-color: #BB0000;
     transition-duration: 500ms;
+    
 }
-.highlighted_button{
-    background-color: #BB0000;
-    transition-duration: 500ms;
+.prev_button:hover, .highlighted_button.skewed{
+    box-shadow: -3px -3px 2px 1px #800000 inset
+}
+.highlighted_button.semicircle{
+    box-shadow: none;
 }
 .number_bar{
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 10%;
+    padding-left: 15px;
     background-color: black;
     z-index: 3;
 }
-
+.nav_number{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 5%;
+    margin: 5px;
+    transform: skewX(-10deg);
+    color: black;
+    background-color: white;
+}
+/*only for color change*/
+.active_nav_number{
+    color: white;
+    background-color: red;
+}
 
 /*animations*/
 /* Chrome, Safari, Opera */

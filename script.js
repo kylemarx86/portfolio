@@ -1,7 +1,9 @@
 var image_array = [];
 var current_image_index = null;
+var apps_array = [];
 
 $(document).ready(function () {
+    apps_array = [];
     load_files();
 });
 
@@ -12,15 +14,10 @@ function load_files() {
         dataType: 'json',
         success: function (response) {
             if(response.success){
-                // console.log(response);
-                console.log(response.files.length);
-
+                // console.log(response.files.length);
+                var image_count = response.files.length;
                 //identify carousel container
-                var $carousel_container = $('.apps_carousel');
-                //create container to place images and buttons in
-                var $container = $('<div>').attr('id','image_container');
-                //add container to body
-                $carousel_container.append($container);
+                var $carousel_container = $('.apps_carousel');                
                 //gather all images
                 var files = response.files;
                 //set up the gathered images
@@ -30,25 +27,15 @@ function load_files() {
                 }
                 //initialize pictures
                 initialize_pictures();
-
-                //set up carousel buttons
-                set_up_carousel_buttons();
-
-                //add bar to the bottom of the carousel
-                var $number_bar = $('<div>').addClass('number_bar');
-                $carousel_container.append($number_bar);
+                //identify number bar
+                var $number_bar = $('.number_bar');
                 //add numbers to the bottom of the carousel
-
-
+                for(var i = 0; i < image_count; i++){
+                    var $nav_number = $('<div>').addClass('nav_number').text(i+1);
+                    $($number_bar).append($nav_number);
+                }
                 //add event handlers to buttons
                 apply_event_handlers();
-
-                //create numbered areas to jump to specific
-
-                // var dot = $('<div>').addClass('dot');
-                // $('#image_container').append(dot);
-//                        console.log(files.length);
-//                        createNavigationDots(files.length);
             }
         },
         error: function (response) {
@@ -154,3 +141,42 @@ function createNavigationDots(numberOfImages){
     }
     dotContainer.append(image_container);
 }
+//function to update the links 
+function updateLinks(){
+    // $('');
+}
+
+//an array of objects composed of information about the selected apps
+//needs real info 
+var apps_info = [
+        {
+            name: 'iBet', 
+            description: {
+                title: 'iBet', 
+                tech_used: ['jQuery', 'PHP', 'MySQL'],
+                lines: ['lorem ipsem for now', 'lorem ipsem iBet']
+            }, 
+            live_address: 'http://dev.danlee.site/c10_sports/', 
+            github_address: 'https://github.com/xuesongc4/c10_sports'
+        },
+        {
+            name: 'Memory Match', 
+            description: {
+                title: 'Memory Match', 
+                tech_used: ['JS','jQuery'],
+                lines: ['lorem ipsem part 2', 'lorem ipsem Memory Match']
+            }, 
+            live_address: 'http://kylemarx86.com/memory_match/', 
+            github_address: 'https://github.com/kylemarx86/memory_match'
+        },
+        {
+            name: 'Student Grade Table', 
+            description: {
+                title: 'Student Grade Table', 
+                tech_used: ['jQuery', 'PHP'],
+                lines: ['lorem ipsem part 3', 'lorem ipsem Student Grade Table']       //need to change
+            }, 
+            live_address: 'http://localhost:8888/lfz/SGT/', 
+            github_address: 'https://github.com/kylemarx86/SGT' //temporarily local
+        }
+    ];  //end of apps array
