@@ -27,6 +27,8 @@ function load_files() {
                 }
                 //initialize pictures
                 initialize_pictures();
+                //initialize the link buttons
+                updateLinks();
                 //identify number bar
                 var $number_bar = $('.number_bar');
                 //add numbers to the bottom of the carousel
@@ -134,7 +136,22 @@ function remove_event_handlers(){
 
 //function to update the links 
 function updateLinks(){
-    // $('');
+    var index = 0;  //temp hard coded
+    var github_address = apps_info[index].github_address;
+    var live_address = apps_info[index].live_address;
+
+
+    // $('.link_btn.description');
+    // $('.link_btn.github a').attr('href', apps_info[0].github_address);
+    // $('.link_btn.github').click();
+    // $('.link_btn.github').attr('onclick' href', apps_info[0].github_address);
+    // $('.link_btn.live').attr(onclick, location.href=live_address);
+    $('.link_btn.github').click(function(){
+        window.location = github_address;
+    });
+    $('.link_btn.live').click(function() {
+        window.location = live_address;
+    });
 }
 
 //an array of objects composed of information about the selected apps
