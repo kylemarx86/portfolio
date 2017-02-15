@@ -159,6 +159,7 @@ function updateLinks(){
 var apps_info = [
         {
             name: 'iBet', 
+            image: '01-iBet',
             description: {
                 title: 'iBet', 
                 tech_used: ['jQuery', 'PHP', 'MySQL'],
@@ -169,6 +170,7 @@ var apps_info = [
         },
         {
             name: 'Memory Match', 
+            image: '02-memory_match',
             description: {
                 title: 'Memory Match', 
                 tech_used: ['JS','jQuery'],
@@ -179,6 +181,7 @@ var apps_info = [
         },
         {
             name: 'Student Grade Table', 
+            image: '03-SGT',
             description: {
                 title: 'Student Grade Table', 
                 tech_used: ['jQuery', 'PHP'],
