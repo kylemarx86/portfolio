@@ -14,10 +14,15 @@ if($pages){
     $info = [];
     // $output['data'] = $pages[0];
 
-    echo $pages[0].'<br>';
+    // echo $pages[0].'<br>';
 
+    //need to look up how to use file_get_contents without using the long form
+    $prefix = 'http://localhost:8888/lfz/portfolio/';
     foreach($pages as $page){
-        $info[] = file_get_contents('http://localhost:8888/lfz/portfolio/'.$page);
+        // $info[] = file_get_contents('http://localhost:8888/lfz/portfolio/'.$page);
+        $info[] = json_decode(file_get_contents('http://localhost:8888/lfz/portfolio/'.$page), true);
+        // $temp = json_decode($page, true);
+        // $info[] = $temp;
     }
 
     $output['success'] = true;

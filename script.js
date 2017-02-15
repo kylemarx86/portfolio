@@ -1,6 +1,7 @@
+var apps_array = [];
 var image_array = [];
 var current_image_index = null;
-var apps_array = [];
+
 
 $(document).ready(function () {
     apps_array = [];
@@ -10,21 +11,22 @@ $(document).ready(function () {
 //make ajax call to get_images.php and saves those images to image_array
 function load_files() {
     $.ajax({
-        url: 'get_images.php',
+        url: 'get_images.php',      //will need to change
         dataType: 'json',
         success: function (response) {
             if(response.success){
-                // console.log(response.files.length);
-                var image_count = response.files.length;
+                // console.log(response);
+                apps_array = response.pages;
+                
                 //identify carousel container
                 var $carousel_container = $('.apps_carousel');                
-                //gather all images
-                var files = response.files;
+
                 //set up the gathered images
-                for(var i = 0; i < files.length; i++){
-                    image_array.push($('<img>').attr('src', files[i]));
+                for(var i = 0; i < apps_array.length; i++){
+                    image_array.push($('<img>').attr('src', apps_array[i].picture_source));
                     $('#image_container').append(image_array[i]);
                 }
+
                 //initialize pictures
                 initialize_pictures();
                 //initialize the link buttons
@@ -32,7 +34,7 @@ function load_files() {
                 //identify number bar
                 var $number_bar = $('.number_bar');
                 //add numbers to the bottom of the carousel
-                for(var i = 0; i < image_count; i++){
+                for(var i = 0; i < apps_array.length; i++){
                     var $nav_number = $('<div>').addClass('nav_number').text(i+1);
                     $($number_bar).append($nav_number);
                 }
