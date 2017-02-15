@@ -1,6 +1,7 @@
-var image_array = [];
-var current_image_index = null;
 var apps_array = [];
+var image_array = [];
+var current_app_index = null;
+
 
 $(document).ready(function () {
     apps_array = [];
@@ -10,27 +11,30 @@ $(document).ready(function () {
 //make ajax call to get_images.php and saves those images to image_array
 function load_files() {
     $.ajax({
-        url: 'get_images.php',
+        url: 'get_images.php',      //will need to change name when i change page for repurposing
         dataType: 'json',
         success: function (response) {
             if(response.success){
-                // console.log(response.files.length);
-                var image_count = response.files.length;
+                // console.log(response);
+                apps_array = response.pages;
+                
                 //identify carousel container
                 var $carousel_container = $('.apps_carousel');                
-                //gather all images
-                var files = response.files;
+
                 //set up the gathered images
-                for(var i = 0; i < files.length; i++){
-                    image_array.push($('<img>').attr('src', files[i]));
+                for(var i = 0; i < apps_array.length; i++){
+                    image_array.push($('<img>').attr('src', apps_array[i].picture_source));
                     $('#image_container').append(image_array[i]);
                 }
+
                 //initialize pictures
                 initialize_pictures();
+                //initialize the link buttons
+                update_links();
                 //identify number bar
                 var $number_bar = $('.number_bar');
                 //add numbers to the bottom of the carousel
-                for(var i = 0; i < image_count; i++){
+                for(var i = 0; i < apps_array.length; i++){
                     var $nav_number = $('<div>').addClass('nav_number').text(i+1);
                     $($number_bar).append($nav_number);
                 }
@@ -45,34 +49,38 @@ function load_files() {
 }
 
 //sets up pictures for display
+    //change to be about initializing both pics and info
 function initialize_pictures() {
     //create an image and set the source
-    current_image_index = 0;
+    current_app_index = 0;
 
     for(var i = 1; i < image_array.length; i++){
         image_array[i].css('left','100%');
     }
     image_array[0].css('left','0%');
+
+    // $('.link_btn.github');
+    // $('.link_btn.live');
 }
 
-//sets up the buttons in the carousel for images of apps
-function set_up_carousel_buttons() {
-    //identify carousel container
-    var $carousel_container = $('.apps_carousel');
-    //create next and previous buttons and attach the appropriate handler
-    var $prev_button = $('<button>').addClass('prev_button skewed');
-    var $next_button = $('<button>').addClass('next_button');
-    var $skewed = $('<div>').addClass('skewed next_btn_part');
-    var $circle = $('<div>').addClass('circle next_btn_part');
+// //sets up the buttons in the carousel for images of apps
+// function set_up_carousel_buttons() {
+//     //identify carousel container
+//     var $carousel_container = $('.apps_carousel');
+//     //create next and previous buttons and attach the appropriate handler
+//     var $prev_button = $('<button>').addClass('prev_button skewed');
+//     var $next_button = $('<button>').addClass('next_button');
+//     var $skewed = $('<div>').addClass('skewed next_btn_part');
+//     var $circle = $('<div>').addClass('circle next_btn_part');
 
-    //add parts to the next button
-    $next_button.append($skewed);
-    $next_button.append($circle);
+//     //add parts to the next button
+//     $next_button.append($skewed);
+//     $next_button.append($circle);
 
-    //add buttons to container
-    $carousel_container.append($prev_button);
-    $carousel_container.append($next_button);
-}
+//     //add buttons to container
+//     $carousel_container.append($prev_button);
+//     $carousel_container.append($next_button);
+// }
 
 function get_next_image(){
     remove_event_handlers();      //disable event handlers for both buttons while picture updates
@@ -91,30 +99,32 @@ function get_prev_image() {
 //if direction = -1, then we will move backward through the image array (i.e. decrease index)
 function update_image(direction) {
     //declare new image
-    var new_image_index = null;
+    var new_app_index = null;
     //declare animation time duration in ms
     var time_duration = 3000;
     if(direction === 1){
-        if (current_image_index < image_array.length - 1) {
-            new_image_index = current_image_index + 1;
+        if (current_app_index < image_array.length - 1) {
+            new_app_index = current_app_index + 1;
         } else {
-            new_image_index = 0;
+            new_app_index = 0;
         }
     }else{
-        if(current_image_index > 0){
-            new_image_index = current_image_index - 1;
+        if(current_app_index > 0){
+            new_app_index = current_app_index - 1;
         }else{
-            new_image_index = image_array.length - 1;
+            new_app_index = image_array.length - 1;
         }
     }
     //prepare new image for move in
-    $(image_array[new_image_index]).css('left', direction*100+'%');
+    $(image_array[new_app_index]).css('left', direction*100+'%');
     //slide previous image out
-    $(image_array[current_image_index]).animate({left: -100*direction+'%'},time_duration);
+    $(image_array[current_app_index]).animate({left: -100*direction+'%'},time_duration);
     //slide new image in
-    $(image_array[new_image_index]).animate({left: '0'},time_duration);
-    //update current_image_index
-    current_image_index = new_image_index;
+    $(image_array[new_app_index]).animate({left: '0'},time_duration);
+    //update current_app_index
+    current_app_index = new_app_index;
+
+    update_links();
 }
 //function to enable click handlers on buttons
 function apply_event_handlers() {
@@ -133,8 +143,29 @@ function remove_event_handlers(){
 }
 
 //function to update the links 
-function updateLinks(){
-    // $('');
+function update_links(){
+    var index = 0;  //temp hard coded
+    // current_app_index
+
+    // var github_address = apps_info[index].github_address;
+    // var live_address = apps_info[index].live_address;
+
+    var github_address = apps_array[current_app_index].github_address;
+    var live_address = apps_array[current_app_index].live_address;
+
+    // $('.link_btn.description');
+    // $('.link_btn.github a').attr('href', apps_info[0].github_address);
+    // $('.link_btn.github').click();
+    // $('.link_btn.github').attr('onclick' href', apps_info[0].github_address);
+    // $('.link_btn.live').attr(onclick, location.href=live_address);
+    // $('.link_btn.github').off();
+    // $('.link_btn.live').off();
+    $('.link_btn.github').click(function(){
+        window.location = github_address;
+    });
+    $('.link_btn.live').click(function() {
+        window.location = live_address;
+    });
 }
 
 //an array of objects composed of information about the selected apps
@@ -142,6 +173,7 @@ function updateLinks(){
 var apps_info = [
         {
             name: 'iBet', 
+            image: '01-iBet',
             description: {
                 title: 'iBet', 
                 tech_used: ['jQuery', 'PHP', 'MySQL'],
@@ -152,6 +184,7 @@ var apps_info = [
         },
         {
             name: 'Memory Match', 
+            image: '02-memory_match',
             description: {
                 title: 'Memory Match', 
                 tech_used: ['JS','jQuery'],
@@ -162,6 +195,7 @@ var apps_info = [
         },
         {
             name: 'Student Grade Table', 
+            image: '03-SGT',
             description: {
                 title: 'Student Grade Table', 
                 tech_used: ['jQuery', 'PHP'],
