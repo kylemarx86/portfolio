@@ -154,12 +154,29 @@ function update_links(){
     var live_address = apps_array[current_app_index].live_address;
 
     // $('.link_btn.description');
-    // $('.link_btn.github a').attr('href', apps_info[0].github_address);
-    // $('.link_btn.github').click();
-    // $('.link_btn.github').attr('onclick' href', apps_info[0].github_address);
-    // $('.link_btn.live').attr(onclick, location.href=live_address);
-    // $('.link_btn.github').off();
-    // $('.link_btn.live').off();
+    //dont need a click handler for description. just need to update the fields.
+    // the fields are 
+    // will prob need to clear out old fields 
+    //title
+    $('.modal-body .title').text(apps_array[current_app_index].name);
+
+    //tech used
+    var tech_used = '';
+    for(var i = 0; i < apps_array[current_app_index].description.tech_used.length - 1; i++){
+        // add all but the last of the tech used to a string separated by commas
+        tech_used += apps_array[current_app_index].description.tech_used[i] + ", ";
+    }
+    tech_used += apps_array[current_app_index].description.tech_used[apps_array[current_app_index].description.tech_used.length - 1];
+    //replace the text with the new tech_used
+    $('.modal-body .tech_used').text(tech_used);
+
+    //descriptive lines
+    $('.modal-body .desc').empty();
+    for(var i = 0; i < apps_array[current_app_index].description.lines.length; i++){
+        $('.modal-body .desc').append('<p>' + apps_array[current_app_index].description.lines[i] + '</p>');
+    }
+
+    //update links for github and live site
     $('.link_btn.github').click(function(){
         window.location = github_address;
     });
