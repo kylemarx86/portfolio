@@ -1,29 +1,49 @@
 <!doctype html>
 <html>
 <head>
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="script.js"></script>
 </head>
 <body>
-    <div class='apps_carousel_top'>
-        <div class='link_btn_container'>
-            <button class='link_btn description'>Description</button>
-            <button class='link_btn github'>GitHub</button>
-            <button class='link_btn live'>Live Link</button>
-        </div>
+<div class='apps_carousel_top'>
+    <div class='link_btn_container'>
+        <button class='link_btn description' data-toggle="modal" data-target="#description_modal">Description</button>
+        <button class='link_btn github'>GitHub</button>
+        <button class='link_btn live'>Live Link</button>
     </div>
-    <div class='apps_carousel_main'>
-        <div class="apps_carousel">
-            <div id='image_container'></div>
-            <button class='prev_button skewed'></button>
-            <button class='next_button'>
-                <div class='skewed next_btn_part'></div>
-                <div class='semicircle next_btn_part'></div>
-            </button>
-            <div class='number_bar'></div>
+</div>
+<div class='apps_carousel_main'>
+    <div class="apps_carousel">
+        <div id='image_container'></div>
+        <button class='prev_button skewed'></button>
+        <button class='next_button'>
+            <div class='skewed next_btn_part'></div>
+            <div class='semicircle next_btn_part'></div>
+        </button>
+        <div class='number_bar'></div>
+    </div>
+</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="description_modal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!--put info here about the given app-->
+                    <h1 class="title"></h1>
+                    <h3>Technologies used</h3>
+                    <div class="tech_used"></div>
+                    <h3>Description</h3>
+                    <div class="desc"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="" data-dismiss="modal">Close</button>  <!--extra class on this line. not sure if i need to give it one-->
+                </div>
+            </div>
         </div>
     </div>
 </body>
