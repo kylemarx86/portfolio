@@ -56,25 +56,25 @@ function initialize_pictures() {
 function get_next_app(){
     remove_event_handlers();      //disable event handlers for both buttons while picture updates
     setTimeout(apply_event_handlers, 3000);
-    update_image(1);        //while waiting for event handlers to be reapplied
+    update_app(1);        //while waiting for event handlers to be reapplied
 }
 
 function get_prev_app() {
     remove_event_handlers();      //disable event handlers for both buttons while picture updates
     setTimeout(apply_event_handlers, 3000);
-    update_image(-1);        //while waiting for event handlers to be reapplied
+    update_app(-1);        //while waiting for event handlers to be reapplied
 }
 
 //takes param direction,
 //if direction = 1, then we will move forward through the image array (i.e. increase index)
 //if direction = -1, then we will move backward through the image array (i.e. decrease index)
-function update_image(direction) {
+function update_app(direction) {
     //declare new image
     var new_app_index = null;
     //declare animation time duration in ms
     var time_duration = 3000;
     if(direction === 1){
-        if (current_app_index < image_array.length - 1) {
+        if (current_app_index < apps_array.length - 1) {
             new_app_index = current_app_index + 1;
         } else {
             new_app_index = 0;
@@ -83,7 +83,7 @@ function update_image(direction) {
         if(current_app_index > 0){
             new_app_index = current_app_index - 1;
         }else{
-            new_app_index = image_array.length - 1;
+            new_app_index = apps_array.length - 1;
         }
     }
     //prepare new image for move in
@@ -147,9 +147,18 @@ function update_links(){
 function create_number_links(){
     //identify number bar
     var $number_bar = $('.number_bar');
-    //add numbers to the bottom of the carousel
+
     for(var i = 0; i < apps_array.length; i++){
         var $nav_number = $('<div>').addClass('nav_number').text(i+1);
         $($number_bar).append($nav_number);
+
+        //closure to lock which element is clicked in place
+            //the inner portion is just insuring the element number was caught
+        $nav_number.click((function(num){
+                return function(){
+                    console.log(num + ' was pressed');
+                };
+            })(i)
+        );
     }
 }
