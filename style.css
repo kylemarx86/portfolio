@@ -155,7 +155,8 @@ button.next_button{
 .nav_number{
     position: relative;
     display: inline-block;
-    height: 100%;
+    /*height: 100%;*/
+    height: calc(100% -5px);
     width: 5%;
     margin: 5px;
     transform: skewX(-10deg);

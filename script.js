@@ -17,27 +17,19 @@ function load_files() {
             if(response.success){
                 // console.log(response);
                 apps_array = response.pages;
-                
                 //identify carousel container
                 var $carousel_container = $('.apps_carousel');                
-
                 //set up the gathered images
                 for(var i = 0; i < apps_array.length; i++){
                     image_array.push($('<img>').attr('src', apps_array[i].picture_source));
                     $('#image_container').append(image_array[i]);
                 }
-
                 //initialize pictures
                 initialize_pictures();
                 //initialize the link buttons
                 update_links();
-                //identify number bar
-                var $number_bar = $('.number_bar');
-                //add numbers to the bottom of the carousel
-                for(var i = 0; i < apps_array.length; i++){
-                    var $nav_number = $('<div>').addClass('nav_number').text(i+1);
-                    $($number_bar).append($nav_number);
-                }
+                //add the number links to the number bar
+                create_number_links();
                 //add event handlers to buttons
                 apply_event_handlers();
             }
@@ -47,6 +39,7 @@ function load_files() {
         }
     });
 }
+
 
 //sets up pictures for display
     //change to be about initializing both pics and info
@@ -58,37 +51,15 @@ function initialize_pictures() {
         image_array[i].css('left','100%');
     }
     image_array[0].css('left','0%');
-
-    // $('.link_btn.github');
-    // $('.link_btn.live');
 }
 
-// //sets up the buttons in the carousel for images of apps
-// function set_up_carousel_buttons() {
-//     //identify carousel container
-//     var $carousel_container = $('.apps_carousel');
-//     //create next and previous buttons and attach the appropriate handler
-//     var $prev_button = $('<button>').addClass('prev_button skewed');
-//     var $next_button = $('<button>').addClass('next_button');
-//     var $skewed = $('<div>').addClass('skewed next_btn_part');
-//     var $circle = $('<div>').addClass('circle next_btn_part');
-
-//     //add parts to the next button
-//     $next_button.append($skewed);
-//     $next_button.append($circle);
-
-//     //add buttons to container
-//     $carousel_container.append($prev_button);
-//     $carousel_container.append($next_button);
-// }
-
-function get_next_image(){
+function get_next_app(){
     remove_event_handlers();      //disable event handlers for both buttons while picture updates
     setTimeout(apply_event_handlers, 3000);
     update_image(1);        //while waiting for event handlers to be reapplied
 }
 
-function get_prev_image() {
+function get_prev_app() {
     remove_event_handlers();      //disable event handlers for both buttons while picture updates
     setTimeout(apply_event_handlers, 3000);
     update_image(-1);        //while waiting for event handlers to be reapplied
@@ -128,8 +99,8 @@ function update_image(direction) {
 }
 //function to enable click handlers on buttons
 function apply_event_handlers() {
-    $('.prev_button').click(get_prev_image);
-    $('.next_button').click(get_next_image);
+    $('.prev_button').click(get_prev_app);
+    $('.next_button').click(get_next_app);
     //events always on
     //keeps all parts of next button highlighted together
     $('.next_btn_part').hover(function () {
@@ -172,40 +143,13 @@ function update_links(){
     });
 }
 
-//an array of objects composed of information about the selected apps
-//needs real info 
-var apps_info = [
-        {
-            name: 'iBet', 
-            image: '01-iBet',
-            description: {
-                title: 'iBet', 
-                tech_used: ['jQuery', 'PHP', 'MySQL'],
-                lines: ['lorem ipsem for now', 'lorem ipsem iBet']
-            }, 
-            live_address: 'http://dev.danlee.site/c10_sports/', 
-            github_address: 'https://github.com/xuesongc4/c10_sports'
-        },
-        {
-            name: 'Memory Match', 
-            image: '02-memory_match',
-            description: {
-                title: 'Memory Match', 
-                tech_used: ['JS','jQuery'],
-                lines: ['lorem ipsem part 2', 'lorem ipsem Memory Match']
-            }, 
-            live_address: 'http://kylemarx86.com/memory_match/', 
-            github_address: 'https://github.com/kylemarx86/memory_match'
-        },
-        {
-            name: 'Student Grade Table', 
-            image: '03-SGT',
-            description: {
-                title: 'Student Grade Table', 
-                tech_used: ['jQuery', 'PHP'],
-                lines: ['lorem ipsem part 3', 'lorem ipsem Student Grade Table']       //need to change
-            }, 
-            live_address: 'http://localhost:8888/lfz/SGT/', 
-            github_address: 'https://github.com/kylemarx86/SGT' //temporarily local
-        }
-    ];  //end of apps array
+//add the number links to the number bar
+function create_number_links(){
+    //identify number bar
+    var $number_bar = $('.number_bar');
+    //add numbers to the bottom of the carousel
+    for(var i = 0; i < apps_array.length; i++){
+        var $nav_number = $('<div>').addClass('nav_number').text(i+1);
+        $($number_bar).append($nav_number);
+    }
+}
