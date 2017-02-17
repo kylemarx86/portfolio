@@ -154,11 +154,28 @@ function create_number_links(){
 
         //closure to lock which element is clicked in place
             //the inner portion is just insuring the element number was caught
-        $nav_number.click((function(num){
+        $nav_number.click((function(index){
                 return function(){
-                    console.log(num + ' was pressed');
+                    jump_to_app(index);
+                    // console.log(index + ' was pressed');
                 };
             })(i)
         );
     }
+}
+
+//pretty much a duplicate of update app. I should work on reworking that to fall allow functionality with this method
+function jump_to_app(app_index){
+    var time_duration = 3000;
+    var direction = 1;
+     //prepare new image for move in
+    $(image_array[app_index]).css('left', direction*100+'%');
+    //slide previous image out
+    $(image_array[current_app_index]).animate({left: -100*direction+'%'},time_duration);
+    //slide new image in
+    $(image_array[app_index]).animate({left: '0'},time_duration);
+    //update current_app_index
+    current_app_index = app_index;
+
+    update_links();
 }
