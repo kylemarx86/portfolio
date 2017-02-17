@@ -167,13 +167,14 @@ function create_number_links(){
 //pretty much a duplicate of update app. I should work on reworking that to fall allow functionality with this method
 function jump_to_app(app_index){
     var time_duration = 3000;
-    var direction = 1;
+    var direction = -1;
      //prepare new image for move in
-    $(image_array[app_index]).css('left', direction*100+'%');
+    // $(image_array[app_index]).css('left', direction*100+'%');
+    $(image_array[app_index]).css({'top': direction*100+'%','left': '0'});
     //slide previous image out
-    $(image_array[current_app_index]).animate({left: -100*direction+'%'},time_duration);
+    $(image_array[current_app_index]).animate({top: -100*direction+'%'},time_duration);
     //slide new image in
-    $(image_array[app_index]).animate({left: '0'},time_duration);
+    $(image_array[app_index]).animate({top: '0'},time_duration);
     //update current_app_index
     current_app_index = app_index;
 
