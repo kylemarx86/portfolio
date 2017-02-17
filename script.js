@@ -26,10 +26,10 @@ function load_files() {
                 }
                 //initialize pictures
                 initialize_pictures();
-                //initialize the link buttons
-                update_links();
                 //add the number links to the number bar
                 create_number_links();
+                //initialize the link buttons
+                update_links();
                 //add event handlers to buttons
                 apply_event_handlers();
             }
