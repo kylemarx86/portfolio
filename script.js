@@ -87,7 +87,7 @@ function update_app(direction) {
         }
     }
     //prepare new image for move in
-    $(image_array[new_app_index]).css('left', direction*100+'%');
+    $(image_array[new_app_index]).css({'left': direction*100+'%', 'top': '0'});
     //slide previous image out
     $(image_array[current_app_index]).animate({left: -100*direction+'%'},time_duration);
     //slide new image in
@@ -174,7 +174,6 @@ function jump_to_app(new_app_index){
         var time_duration = 3000;
         var direction = -1;
         //prepare new image for move in
-        // $(image_array[new_app_index]).css('left', direction*100+'%');
         $(image_array[new_app_index]).css({'top': direction*100+'%','left': '0'});
         //slide previous image out
         $(image_array[current_app_index]).animate({top: -100*direction+'%'},time_duration);
