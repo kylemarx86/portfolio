@@ -156,17 +156,23 @@ button.next_button{
     position: relative;
     display: inline-block;
     /*height: 100%;*/
-    height: calc(100% -5px);
+    height: calc(100% - 5px);
     width: 5%;
-    margin: 5px;
+    margin: 5px 5px 0 5px;
     transform: skewX(-10deg);
     color: black;
     background-color: white;
+    /*box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;*/
+    box-shadow: -3px -3px 2px 1px #A0A0A0 inset;
+    text-align: center;
 }
 /*only for color change*/
 .active_nav_number{
     color: white;
     background-color: red;
+    /*box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;*/
+    box-shadow: -3px -3px 2px 1px #A00000 inset;
+    font-weight: bold;
 }
 
 /*animations*/
@@ -202,7 +208,6 @@ button.next_button{
     75%  {left: 75%}
     100% {left: 100%}
 }
-
 
 
 /*classes involving navigation dots*/
