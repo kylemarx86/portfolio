@@ -92,8 +92,10 @@ function update_app(direction) {
     $(image_array[current_app_index]).animate({left: -100*direction+'%'},time_duration);
     //slide new image in
     $(image_array[new_app_index]).animate({left: '0'},time_duration);
+    //change active app css
+    $('.nav_number:nth-of-type(' + (current_app_index + 1) + '), .nav_number:nth-of-type(' + (new_app_index + 1) + ')').toggleClass('active_nav_number');
     //update current_app_index
-    current_app_index = new_app_index;
+    current_app_index = new_app_index;    
 
     update_links();
 }
@@ -162,21 +164,29 @@ function create_number_links(){
             })(i)
         );
     }
+    //give the first app the active nav_number css
+    $('.nav_number:nth-of-type(1)').addClass('active_nav_number');
 }
 
 //pretty much a duplicate of update app. I should work on reworking that to fall allow functionality with this method
-function jump_to_app(app_index){
-    var time_duration = 3000;
-    var direction = -1;
-     //prepare new image for move in
-    // $(image_array[app_index]).css('left', direction*100+'%');
-    $(image_array[app_index]).css({'top': direction*100+'%','left': '0'});
-    //slide previous image out
-    $(image_array[current_app_index]).animate({top: -100*direction+'%'},time_duration);
-    //slide new image in
-    $(image_array[app_index]).animate({top: '0'},time_duration);
-    //update current_app_index
-    current_app_index = app_index;
+function jump_to_app(new_app_index){
+    if(new_app_index !== current_app_index){
+        var time_duration = 3000;
+        var direction = -1;
+        //prepare new image for move in
+        // $(image_array[new_app_index]).css('left', direction*100+'%');
+        $(image_array[new_app_index]).css({'top': direction*100+'%','left': '0'});
+        //slide previous image out
+        $(image_array[current_app_index]).animate({top: -100*direction+'%'},time_duration);
+        //slide new image in
+        $(image_array[new_app_index]).animate({top: '0'},time_duration);
 
-    update_links();
+        //change active app css
+        $('.nav_number:nth-of-type(' + (current_app_index + 1) + '), .nav_number:nth-of-type(' + (new_app_index + 1) + ')').toggleClass('active_nav_number');
+        //update current_app_index
+        current_app_index = new_app_index;
+
+        update_links();
+    }
+    
 }
