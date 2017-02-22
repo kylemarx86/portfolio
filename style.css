@@ -179,6 +179,37 @@ button.next_button{
     font-weight: bold;
 }
 
+/*technologies area*/
+.technologies{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.tech{
+    display: inline-block;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: white;
+    box-shadow: 1px 1px 3px 1px #000000;
+}
+.tech_pic{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tech .name{
+    /*font-family:*/ /*pick an interesting one*/
+    font-size: 1.5em;
+
+}
+
 /*animations*/
 /* Chrome, Safari, Opera */
 @-webkit-keyframes prev_image_in {
@@ -214,6 +245,7 @@ button.next_button{
 }
 
 
+/*remove this */
 /*classes involving navigation dots*/
 .dot_container{
     position: absolute;
@@ -238,4 +270,3 @@ button.next_button{
 .active_dot{
     background-color: white;
 }
-
