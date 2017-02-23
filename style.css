@@ -1,10 +1,26 @@
 body{
     height: 100%;
-    background-color: darkgray;
+    background-color: gray;
 }
 button:focus {
     outline:0;
 }
+
+/*are for section title*/
+.title span{
+    background-color: black;
+    transform: skewX(-10deg) translateX(-5px);
+    display: inline-block;
+    width: 10%;
+    height: 2em;
+    margin: 0;
+    vertical-align: text-bottom;
+}
+.title h2{
+    padding: 0;
+    display: inline-block;
+}
+
 /*area above the app carousel*/
 .apps_carousel_top{
     width: 100%;
@@ -179,6 +195,38 @@ button.next_button{
     font-weight: bold;
 }
 
+/*technologies area*/
+.technologies{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.tech{
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: white;
+    box-shadow: 1px 1px 3px 1px #000000;
+}
+.tech_pic{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tech .name{
+    /*font-family:*/ /*pick an interesting one*/
+    font-size: 1.5em;
+
+}
+
 /*animations*/
 /* Chrome, Safari, Opera */
 @-webkit-keyframes prev_image_in {
@@ -214,6 +262,7 @@ button.next_button{
 }
 
 
+/*remove this */
 /*classes involving navigation dots*/
 .dot_container{
     position: absolute;
@@ -238,4 +287,3 @@ button.next_button{
 .active_dot{
     background-color: white;
 }
-
