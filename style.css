@@ -1,10 +1,33 @@
 body{
     height: 100%;
-    background-color: darkgray;
+    background-color: gray;
 }
 button:focus {
     outline:0;
 }
+
+.title{
+    /*background-color: black;*/
+}
+.title span{
+    background-color: black;
+    transform: skewX(-10deg) translateX(-5px);
+    display: inline-block;
+    width: 10%;
+    height: 2em;
+    /*font-size: 1.5em;*/
+    margin: 0;
+    vertical-align: text-bottom;
+}
+.title h2{
+    /*margin: 0;*/
+    padding: 0;
+    display: inline-block;
+    /*background-color: darkgray;*/
+    
+}
+
+
 /*area above the app carousel*/
 .apps_carousel_top{
     width: 100%;
