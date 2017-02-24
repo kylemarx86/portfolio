@@ -5,6 +5,24 @@ body{
 button:focus {
     outline:0;
 }
+/*area for name written in triangles*/
+line{
+    stroke: #000000;
+    stroke-width: 1;
+}
+pattern polygon{
+    stroke: black;
+    fill: #202020;
+}
+#inner_triangles{
+    width: 50px; 
+    height: 86px;
+}
+.name{
+    fill: red;
+    stroke: black;
+}
+
 
 /*are for section title*/
 .title span{
