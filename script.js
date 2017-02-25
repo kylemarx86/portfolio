@@ -106,9 +106,14 @@ function apply_event_handlers() {
     $('.next_button').click(get_next_app);
     //events always on
     //keeps all parts of next button highlighted together
-    $('.next_btn_part').hover(function () {
-        $('.next_button').find('.next_btn_part').toggleClass('highlighted_button');
-    });
+    $('.next_btn_part').hover(
+        function () {
+            $('.next_button').find('.next_btn_part').addClass('highlighted_button');
+        },
+        function () {
+            $('.next_button').find('.next_btn_part').removeClass('highlighted_button');
+        }
+    );
 }
 //function to disable event handlers while picture is updating
 function remove_event_handlers(){
