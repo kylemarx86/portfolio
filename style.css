@@ -252,6 +252,16 @@ button.next_button{
 
 }
 
+.footer{
+    height: 5%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.8;
+
+}
+
 /*animations*/
 /* Chrome, Safari, Opera */
 @-webkit-keyframes prev_image_in {
