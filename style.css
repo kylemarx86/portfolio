@@ -202,6 +202,7 @@ button.next_button{
     /*box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;*/
     box-shadow: -3px -3px 2px 1px #A0A0A0 inset;
     text-align: center;
+    cursor: pointer;
 }
 /*only for color change*/
 .active_nav_number{
