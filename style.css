@@ -138,9 +138,11 @@ button.next_button{
     right: 0;
     z-index: 4;
     transform: translate(50%);
+    cursor: auto;
 }
 .next_btn_part{
     height: 100%;
+    cursor: pointer;
 }
 .next_button .skewed{
     width: 100%;
@@ -173,7 +175,6 @@ button.next_button{
 .prev_button:hover, .highlighted_button{
     background-color: #BB0000;
     transition-duration: 500ms;
-    
 }
 .prev_button:hover, .highlighted_button.skewed{
     box-shadow: -3px -3px 2px 1px #800000 inset
