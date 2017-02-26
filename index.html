@@ -116,8 +116,19 @@
         <span></span>
         <h2>Contact Me</h2>
     </div>
+    <div class='contact'>
+        <form method='POST' action='mailer/mail_handler.php'>
+            <input name="name" placeholder="name"><br>
+            <input name="email" placeholder="email address"><br>
+            <input name="subject" placeholder="subject"><br>
+            <textarea name="body" placeholder="message"></textarea><br>
+            <button type="submit" name="submit" value="submit">Send Mail</button>
+        </form>
+    </div>
+
     <div class='footer'>
     </div>
+    
     <!-- Modal -->
     <div class="modal fade" id="description_modal" role="dialog">
         <div class="modal-dialog">
