@@ -31,6 +31,8 @@ $mail->addAddress(EMAIL_USER, 'Kyle Marx');     // Add a recipient
 $mail->addAddress($_POST['email'], $_POST['name']);     // Add a recipient
 
 // $mail->addReplyTo(/*email address of the person sending the message, so you can reply*/);
+// not sure if this is working, I don't have anything to tell me that it is.
+$mail->addReplyTo($_POST['email'], $_POST['name']);
 
 //$mail->addCC('cc@example.com');
 //$mail->addBCC('bcc@example.com');
