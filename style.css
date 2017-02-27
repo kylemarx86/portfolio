@@ -251,6 +251,21 @@ button.next_button{
     font-size: 1.5em;
 }
 
+/*styling for contact form*/
+.contact{
+    margin-bottom: 7.5%;
+}
+.contact input, .contact textarea{
+    margin: 5px;
+    border-radius: 5%;
+    box-shadow: 1px 1px 3px 1px #000000;
+}
+.contact button{
+    background-color: red;
+}
+
+
+
 .footer{
     height: 5%;
     width: 100%;
@@ -258,7 +273,6 @@ button.next_button{
     bottom: 0;
     background-color: black;
     opacity: 0.8;
-
 }
 
 /*animations*/
