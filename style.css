@@ -249,7 +249,6 @@ button.next_button{
 .tech .name{
     /*font-family:*/ /*pick an interesting one*/
     font-size: 1.5em;
-
 }
 
 .footer{
@@ -294,31 +293,4 @@ button.next_button{
     50%  {left: 50%}
     75%  {left: 75%}
     100% {left: 100%}
-}
-
-
-/*remove this */
-/*classes involving navigation dots*/
-.dot_container{
-    position: absolute;
-    bottom: 0;
-    margin: 0 auto;
-    display: inline-block;
-}
-.dot{
-    display: inline-block;
-    /*position: absolute;*/
-    right: 50%;  /*for testing only*/
-    height: 20px;
-    width: 20px;
-    border: 1px solid white;
-    border-radius: 10px;
-    /*background-color: yellow;*/
-    background-color: transparent;
-}
-.inactive_dot{
-    background-color: transparent;
-}
-.active_dot{
-    background-color: white;
 }
