@@ -23,19 +23,13 @@ $options = array(
     )
 );
 $mail->smtpConnect($options);
-// $mail->From = 'example@gmail.com';//your email sending account
-// $mail->FromName = 'example name';//your email sending account name
-
 $mail->From = EMAIL_USER; //your email sending account
 $mail->FromName = 'Kyle Marx';//your email sending account name
 
+// $mail->addAddress(your email address, or the email the sender if you are sending confirmation, email address user name);     // Add a recipient   // Name is optional
 $mail->addAddress(EMAIL_USER, 'Kyle Marx');     // Add a recipient
-$mail->addAddress($_POST['email'], $_POST['name']);     // Add a recipient          //prob want to comment out in testing
-// $mail->addAddress(/*your email address, or the email the sender if you are sending confirmation*/      /*,*/      /*email address user name*/);     // Add a recipient
+$mail->addAddress($_POST['email'], $_POST['name']);     // Add a recipient
 
-//$mail->addAddress('ellen@example.com');               // Name is optional
-
-// $mail->addReplyTo(/*email address of the person sending the message, so you can reply*/);
 // $mail->addReplyTo(/*email address of the person sending the message, so you can reply*/);
 
 //$mail->addCC('cc@example.com');
@@ -45,12 +39,8 @@ $mail->addAddress($_POST['email'], $_POST['name']);     // Add a recipient      
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-// $mail->Subject = 'Here is the subject';         //accept a post variable
 $mail->Subject = $_POST['subject'];         //accept a post variable
-// echo $_POST['body'];
-// print_r $_POST;
 $mail->Body = $_POST['body'];         //accept a post variable
-// $mail->Body = 'This is the HTML message body <b>in bold!</b>';   //accept a post variable 
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->send()) {
