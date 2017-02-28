@@ -288,6 +288,18 @@ textarea:focus, input:focus {
     opacity: 0.8;
 }
 
+/*modal styling*/
+.modal-content{
+    background-color: darkgray;
+}
+
+.close_modal{
+    background-color: #FFBB00;
+}
+.close_modal:hover{
+    color: dimgray;
+}
+
 /*animations*/
 /* Chrome, Safari, Opera */
 @-webkit-keyframes prev_image_in {
