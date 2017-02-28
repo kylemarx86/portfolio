@@ -3,7 +3,7 @@ body{
     background-color: gray;
 }
 button:focus {
-    outline:0;
+    outline: 0;
 }
 /*area for name written in triangles*/
 line{
@@ -38,7 +38,10 @@ pattern polygon{
     padding: 0;
     display: inline-block;
 }
-
+/*styling for about*/
+.about {
+    margin: 10px;
+}
 /*area above the app carousel*/
 .apps_carousel_top{
     width: 100%;
@@ -59,7 +62,7 @@ pattern polygon{
     box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;
 }
 .link_btn:hover{
-    box-shadow: -3px -3px 2px 1px #800000 inset;
+    box-shadow: -3px -3px 2px 1px #800000 inset, 1px 1px 1px 1px #000000;
     color: darkgray;
 }
 .description{
@@ -249,7 +252,31 @@ button.next_button{
 .tech .name{
     /*font-family:*/ /*pick an interesting one*/
     font-size: 1.5em;
+}
 
+/*styling for contact form*/
+.contact{
+    margin-bottom: 7.5%;
+}
+.contact input, .contact textarea{
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px #000000;
+    width: 100%;
+}
+.contact button{
+    background-color: red;
+}
+.contact table{
+    width: 50%;
+}
+.contact textarea{
+    resize: vertical;
+}
+textarea:focus, input:focus {
+    outline-width: 1px;
+    outline-color: red;
+    /*i could create this effect with box-shadowing as well*/
 }
 
 .footer{
@@ -259,7 +286,6 @@ button.next_button{
     bottom: 0;
     background-color: black;
     opacity: 0.8;
-
 }
 
 /*animations*/
@@ -294,31 +320,4 @@ button.next_button{
     50%  {left: 50%}
     75%  {left: 75%}
     100% {left: 100%}
-}
-
-
-/*remove this */
-/*classes involving navigation dots*/
-.dot_container{
-    position: absolute;
-    bottom: 0;
-    margin: 0 auto;
-    display: inline-block;
-}
-.dot{
-    display: inline-block;
-    /*position: absolute;*/
-    right: 50%;  /*for testing only*/
-    height: 20px;
-    width: 20px;
-    border: 1px solid white;
-    border-radius: 10px;
-    /*background-color: yellow;*/
-    background-color: transparent;
-}
-.inactive_dot{
-    background-color: transparent;
-}
-.active_dot{
-    background-color: white;
 }

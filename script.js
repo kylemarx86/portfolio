@@ -7,7 +7,41 @@ $(document).ready(function () {
     apps_array = [];
     drawTriangles();
     load_files();
+    apply_standard_event_handlers();
 });
+
+function apply_standard_event_handlers(){
+    $('button[name="submit"]').click(send_form);
+}
+
+//method to make ajax call to send email form.
+function send_form(){
+    $.ajax({
+        dataType:'json',
+        url: 'mailer/mail_handler.php',
+        method: 'post',
+        data: {
+            email: $('input[name="email"]').val(),
+            name: $('input[name="name"]').val(),
+            subject: $('input[name="subject"]').val(),
+            body: $('textarea[name="body"]').val()
+        },
+        success: function(response){
+            if(response.success){
+                $('.mail_response').text(response.message);
+            }else{
+                $('.mail_response').text('Message could not be sent.');
+                // var temp_str = "";
+                // for(var i = 0; i < response.message.length; i++){
+                //     $('.mail_response').append("<p>"  + response.message[i] + "</p>")
+                // }
+            }
+        },
+        error: function(response){
+            $('.mail_response').text('Message could not be sent due to server error');
+        }
+    });
+}
 
 //make ajax call to get_images.php and saves those images to image_array
 function load_files() {
@@ -31,7 +65,9 @@ function load_files() {
                 create_number_links();
                 //initialize the link buttons
                 update_links();
-                //add event handlers to buttons
+                //add event handlers to buttons     //question: do i really only want to
+                                                        //add event handlers if there is success of loading apps
+                                                        //maybe rename this method to reflect it adds event handlers to the app switcher
                 apply_event_handlers();
             }
         },
