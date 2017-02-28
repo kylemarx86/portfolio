@@ -4,8 +4,8 @@ require_once('email_config.php');
 require('phpmailer/PHPMailer/PHPMailerAutoload.php');
 
 $mail = new PHPMailer;
-$mail->SMTPDebug = 3;                               // Enable verbose debug output
-// $mail->SMTPDebug = 0;                               // Enable for production
+// $mail->SMTPDebug = 3;                               // Enable verbose debug output
+$mail->SMTPDebug = 0;                               // Enable for production
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
@@ -44,7 +44,7 @@ $mail->isHTML(true);                                  // Set email format to HTM
 
 $mail->Subject = $_POST['subject'];         //accept a post variable
 $mail->Body = $_POST['body'];         //accept a post variable
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';        //i should change this
 
 $output = [];
 if(!$mail->send()) {
