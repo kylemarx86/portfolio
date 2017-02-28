@@ -31,14 +31,14 @@ function send_form(){
                 $('.mail_response').text(response.message);
             }else{
                 $('.mail_response').text('Message could not be sent.');
-                // var temp_str = "";
-                // for(var i = 0; i < response.message.length; i++){
-                //     $('.mail_response').append("<p>"  + response.message[i] + "</p>")
-                // }
+                var temp_str = "";
+                for(var i = 0; i < response.message.length; i++){
+                    $('.mail_response').append("<p>"  + response.message[i] + "</p>")
+                }
             }
         },
         error: function(response){
-            $('.mail_response').text('Message could not be sent.');
+            $('.mail_response').text('Message could not be sent due to server error');
         }
     });
 }

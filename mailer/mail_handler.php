@@ -4,8 +4,8 @@ require_once('email_config.php');
 require('phpmailer/PHPMailer/PHPMailerAutoload.php');
 
 $mail = new PHPMailer;
-// $mail->SMTPDebug = 3;                               // Enable verbose debug output
-$mail->SMTPDebug = 0;                               // Enable for production
+$mail->SMTPDebug = 3;                               // Enable verbose debug output
+// $mail->SMTPDebug = 0;                               // Enable for production
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
