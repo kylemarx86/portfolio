@@ -3,11 +3,10 @@ $data = [];
 $data['name'] = 'Student Grade Table';
 
 $data['description'] = [];
-$data['description']['tech_used'] = ['jQuery', 'PHP', 'MySQL', 'Bootstrap'];
+$data['description']['tech_used'] = ['HTML', 'JavaScript', 'jQuery', 'PHP', 'MySQL', 'Bootstrap'];
 $data['description']['lines'] = [];
-$data['description']['lines'][] = 'lorem ipsem for now';
-$data['description']['lines'][] = 'lorem ipsem student grade table';
-$data['description']['lines'][] = 'lorem ipsem Bootstrap';
+$data['description']['lines'][] = 'Uses PHP and MySQL for create, read, update, and delete operations on the database';
+$data['description']['lines'][] = 'Uses Bootstrap to format the HTML body and make the display responsive';
 
 // $data['picture_source'] = 'app_pics/SGT-big.png';
 $data['picture_source'] = 'app_pics/SGT.png';
