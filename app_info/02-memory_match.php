@@ -6,6 +6,7 @@ $data['description'] = [];
 $data['description']['tech_used'] = ['HTML', 'JavaScript', 'jQuery', 'Google Maps API', 'CSS',];
 $data['description']['details'] = [];
 $data['description']['details'][] = 'Uses JavaScript to control game logic, manage game statistics, and monitor win conditions';
+$data['description']['details'][] = 'jQuery was used to dynamically generate the game board of DOM elements';
 $data['description']['details'][] = 'Utilizes Google Maps API to place markers on a map representing locations of matched National Parks';
 $data['description']['details'][] = 'Employs CSS to style the page, animate actions, and make the display responsive';
 
