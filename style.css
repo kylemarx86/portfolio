@@ -39,7 +39,7 @@ pattern polygon{
     display: inline-block;
 }
 /*styling for about*/
-.about {
+.about p{
     margin: 10px;
 }
 /*area above the app carousel*/
