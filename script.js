@@ -38,6 +38,7 @@ function send_form(){
             }
         },
         error: function(response){
+            console.log(response);
             $('.mail_response').text('Message could not be sent due to server error');
         }
     });
