@@ -12,6 +12,15 @@ $(document).ready(function () {
 
 function apply_standard_event_handlers(){
     $('button[name="submit"]').click(send_form);
+    $('button[name="github_main"]').click(function(){
+        window.location = "https://github.com/kylemarx86";
+    });
+    $('button[name="linked_in"]').click(function(){
+        window.location = "https://www.linkedin.com/in/kyle-marx-a9063b12a/";
+    });
+    $('button[name="top"]').click(function(){
+        window.location = "#canvas";
+    });
 }
 
 //method to make ajax call to send email form.
