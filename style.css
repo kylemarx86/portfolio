@@ -270,7 +270,9 @@ button.next_button{
 .contact table{
     width: 50%;
 }
-
+.contact textarea{
+    resize: vertical;
+}
 textarea:focus, input:focus {
     outline-width: 1px;
     outline-color: red;
