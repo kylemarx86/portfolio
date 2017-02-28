@@ -4,9 +4,9 @@ $data['name'] = 'Student Grade Table';
 
 $data['description'] = [];
 $data['description']['tech_used'] = ['HTML', 'JavaScript', 'jQuery', 'PHP', 'MySQL', 'Bootstrap'];
-$data['description']['lines'] = [];
-$data['description']['lines'][] = 'Uses PHP and MySQL for create, read, update, and delete operations on the database';
-$data['description']['lines'][] = 'Uses Bootstrap to format the HTML body and make the display responsive';
+$data['description']['details'] = [];
+$data['description']['details'][] = 'Uses PHP and MySQL for create, read, update, and delete operations on the database';
+$data['description']['details'][] = 'Uses Bootstrap to format the HTML body and make the display responsive';
 
 // $data['picture_source'] = 'app_pics/SGT-big.png';
 $data['picture_source'] = 'app_pics/SGT.png';

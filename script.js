@@ -182,10 +182,10 @@ function update_links(){
     tech_used += apps_array[current_app_index].description.tech_used[apps_array[current_app_index].description.tech_used.length - 1];
     //replace the text with the new tech_used
     $('.modal-body .tech_used').text(tech_used);
-    //update descriptive lines
+    //update descriptive detail lines of the apps
     $('.modal-body .desc').empty();
-    for(var i = 0; i < apps_array[current_app_index].description.lines.length; i++){
-        $('.modal-body .desc').append('<p>' + apps_array[current_app_index].description.lines[i] + '</p>');
+    for(var i = 0; i < apps_array[current_app_index].description.details.length; i++){
+        $('.modal-body .desc').append('<p>' + apps_array[current_app_index].description.details[i] + '</p>');
     }
     //update links for github and live site
     $('.link_btn.github').click(function(){
