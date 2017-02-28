@@ -22,16 +22,23 @@ function send_form(){
         method: 'post',
         data: {
             email: $('input[name="email"]').val(),
-            // email: "patches1162@yahoo.com",      //for quick testing
             name: $('input[name="name"]').val(),
             subject: $('input[name="subject"]').val(),
             body: $('textarea[name="body"]').val()
         },
         success: function(response){
-            console.log(response);
+            if(response.success){
+                $('.mail_response').text(response.message);
+            }else{
+                $('.mail_response').text('Message could not be sent.');
+                // var temp_str = "";
+                // for(var i = 0; i < response.message.length; i++){
+                //     $('.mail_response').append("<p>"  + response.message[i] + "</p>")
+                // }
+            }
         },
         error: function(response){
-            console.log(response);
+            $('.mail_response').text('Message could not be sent.');
         }
     });
 }
