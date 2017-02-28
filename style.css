@@ -38,7 +38,10 @@ pattern polygon{
     padding: 0;
     display: inline-block;
 }
-
+/*styling for about*/
+.about {
+    margin: 10px;
+}
 /*area above the app carousel*/
 .apps_carousel_top{
     width: 100%;
@@ -263,8 +266,6 @@ button.next_button{
 .contact button{
     background-color: red;
 }
-
-
 
 .footer{
     height: 5%;
