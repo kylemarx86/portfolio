@@ -20,7 +20,7 @@
     <script src="script.js"></script>
 </head>
 <body>
-      <svg id='canvas'>
+    <svg id='canvas'>
         <defs>
             <pattern id='inner_triangles' width='50px' height='86px' patternUnits='userSpaceOnUse'>
                 <rect  width='50px' height='86px' fill='#202020'/> -->
@@ -35,93 +35,98 @@
           <rect width='1800px' height='473px' fill='url(#inner_triangles)'/>
         </g>
     </svg>
-    <div class='title'>
-        <span></span>
-        <h2>About Me</h2>
-        <p class='about'>My name is Kyle Marx, and I am a web developer. I am a graduate from Cal State Fullerton with a degree in Mathematics. I have been in the education business for years, and I am now switching over to this new field. My interests include music, reading, board games, sports (especially baseball and soccer), and trivia. This is a portfolio dedicated to highlighting some of my applications and technological skills.</p>
+    <div class='about'>
+        <div class='title'>
+            <span></span>
+            <h2>About Me</h2>
+        </div>
+        <p>My name is Kyle Marx, and I am a web developer. I am a graduate from Cal State Fullerton with a degree in Mathematics. I have been in the education business for years, and I am now switching over to this new field. My interests include music, reading, board games, sports (especially baseball and soccer), and trivia. This is a portfolio dedicated to highlighting some of my applications and technological skills.</p>
     </div>
-    <div class='title'>
-        <span></span>
-        <h2>Selected Applications</h2>
+    <div class='apps'>
+        <div class='title'>
+            <span></span>
+            <h2>Selected Applications</h2>
+        </div>
+        <div class='apps_carousel_top'>
+            <div class='link_btn_container'>
+                <button class='link_btn description' data-toggle="modal" data-target="#description_modal">Description</button>
+                <button class='link_btn github'>GitHub</button>
+                <button class='link_btn live'>Live Site</button>
+            </div>
+        </div>
+        <div class='apps_carousel_main'>
+            <div class="apps_carousel">
+                <div id='image_container'></div>
+                <button class='prev_button skewed'></button>
+                <button class='next_button'>
+                    <div class='skewed next_btn_part'></div>
+                    <div class='semicircle next_btn_part'></div>
+                </button>
+                <div class='number_bar'></div>
+            </div>
+        </div>
     </div>
-    <div class='apps_carousel_top'>
-        <div class='link_btn_container'>
-            <button class='link_btn description' data-toggle="modal" data-target="#description_modal">Description</button>
-            <button class='link_btn github'>GitHub</button>
-            <button class='link_btn live'>Live Site</button>
+    <div class='technologies_used'>
+        <div class='title'>
+            <span></span>
+            <h2>Technologies Used</h2>
         </div>
-    </div>
-    <div class='apps_carousel_main'>
-        <div class="apps_carousel">
-            <div id='image_container'></div>
-            <button class='prev_button skewed'></button>
-            <button class='next_button'>
-                <div class='skewed next_btn_part'></div>
-                <div class='semicircle next_btn_part'></div>
-            </button>
-            <div class='number_bar'></div>
-        </div>
-    </div>
-    <div class='title'>
-        <span></span>
-        <h2>Technologies Used</h2>
-    </div>
-    <div class='technologies'>
-        <!--organize these technologies-->
-        <div class='tech'>
-            <div class='tech_pic'>
-                <img src='tech_skills/php.png'>
+        <div class='Technologies'>
+            <div class='tech'>
+                <div class='tech_pic'>
+                    <img src='tech_skills/php.png'>
+                </div>
+                <span class='name'>PHP</span>
             </div>
-            <span class='name'>PHP</span>
-        </div>
-        <div class='tech'>
-            <div class='tech_pic'>
-                <img src='tech_skills/bootstrap.png'>
-            </div>       
-            <span class='name'>Bootstrap</span>
-        </div>
-        <div class='tech'>
-            <div class='tech_pic'>
-                <img src='tech_skills/c_sharp.png'>
+            <div class='tech'>
+                <div class='tech_pic'>
+                    <img src='tech_skills/mysql.png'>
+                </div>
+                <span class='name'>MySQL</span>
+            </div>  
+            <div class='tech'>
+                <div class='tech_pic'>
+                    <img src='tech_skills/js.png'>
+                </div>
+                <span class='name'>JavaScript</span>
             </div>
-            <span class='name'>C#</span>
-        </div>
-        <div class='tech'>
-            <div class='tech_pic'>
-                <img src='tech_skills/css3.png'>
+            <div class='tech'>
+                <div class='tech_pic'>
+                    <img src='tech_skills/jquery.png'>
+                </div>
+                <span class='name'>jQuery</span>
             </div>
-            <span class='name'>CSS3</span>
-        </div>
-        <div class='tech'>
-            <div class='tech_pic'>
-                <img src='tech_skills/html5.png'>
+            <div class='tech'>
+                <div class='tech_pic'>
+                    <img src='tech_skills/html5.png'>
+                </div>
+                <span class='name'>HTML5</span>
             </div>
-            <span class='name'>HTML5</span>
-        </div>
-        <div class='tech'>
-            <div class='tech_pic'>
-                <img src='tech_skills/jquery.png'>
+            <div class='tech'>
+                <div class='tech_pic'>
+                    <img src='tech_skills/css3.png'>
+                </div>
+                <span class='name'>CSS3</span>
             </div>
-            <span class='name'>jQuery</span>
-        </div>
-        <div class='tech'>
-            <div class='tech_pic'>
-                <img src='tech_skills/js.png'>
+            <div class='tech'>
+                <div class='tech_pic'>
+                    <img src='tech_skills/c_sharp.png'>
+                </div>
+                <span class='name'>C#</span>
             </div>
-            <span class='name'>JavaScript</span>
+            <div class='tech'>
+                <div class='tech_pic'>
+                    <img src='tech_skills/bootstrap.png'>
+                </div>       
+                <span class='name'>Bootstrap</span>
+            </div>  
         </div>
-        <div class='tech'>
-            <div class='tech_pic'>
-                <img src='tech_skills/mysql.png'>
-            </div>
-            <span class='name'>MySQL</span>
-        </div>    
-    </div>
-    <div class='title'>
-        <span></span>
-        <h2>Contact Me</h2>
     </div>
     <div class='contact'>
+        <div class='title'>
+            <span></span>
+            <h2>Contact Me</h2>
+        </div>    
         <form>
             <table>
                 <tr>
@@ -146,8 +151,14 @@
         </form>
         <div class='mail_response'></div>
     </div>
-
     <div class='footer'>
+        <div class='link_btn_container'>
+            <button class='link_btn github_main' name='github_main'>GitHub</button>
+            <button class='link_btn linked_in' name='linked_in'>Linked In</button>
+            <button class="link_btn top" name='top'>
+                <span class="glyphicon glyphicon-arrow-up"></span>Top
+            </button>
+        </div>
     </div>
     
     <!-- Modal -->
@@ -164,7 +175,9 @@
                     <div class="desc"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="" data-dismiss="modal">Close</button>  <!--extra class on this line. not sure if i need to give it one-->
+                    <button class='link_btn github'>GitHub</button>
+                    <button class='link_btn live'>Live Site</button>
+                    <button class="link_btn close_modal" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

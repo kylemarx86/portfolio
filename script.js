@@ -12,6 +12,15 @@ $(document).ready(function () {
 
 function apply_standard_event_handlers(){
     $('button[name="submit"]').click(send_form);
+    $('button[name="github_main"]').click(function(){
+        window.location = "https://github.com/kylemarx86";
+    });
+    $('button[name="linked_in"]').click(function(){
+        window.location = "https://www.linkedin.com/in/kyle-marx-a9063b12a/";
+    });
+    $('button[name="top"]').click(function(){
+        window.location = "#canvas";
+    });
 }
 
 //method to make ajax call to send email form.
@@ -173,10 +182,10 @@ function update_links(){
     tech_used += apps_array[current_app_index].description.tech_used[apps_array[current_app_index].description.tech_used.length - 1];
     //replace the text with the new tech_used
     $('.modal-body .tech_used').text(tech_used);
-    //update descriptive lines
+    //update descriptive detail lines of the apps
     $('.modal-body .desc').empty();
-    for(var i = 0; i < apps_array[current_app_index].description.lines.length; i++){
-        $('.modal-body .desc').append('<p>' + apps_array[current_app_index].description.lines[i] + '</p>');
+    for(var i = 0; i < apps_array[current_app_index].description.details.length; i++){
+        $('.modal-body .desc').append('<p>' + apps_array[current_app_index].description.details[i] + '</p>');
     }
     //update links for github and live site
     $('.link_btn.github').click(function(){
