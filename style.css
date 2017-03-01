@@ -5,7 +5,28 @@ body{
 button:focus {
     outline: 0;
 }
+/*header*/
+#header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #202020;
+    z-index: 6;
+}
 /*area for name written in triangles*/
+#canvas{
+    height: 60px;
+}
+#main{
+    border: 1px solid black;
+}
+#main rect{
+    stroke: black;
+}
+#inner_triangles rect{
+    fill: #202020;
+}
 line{
     stroke: #000000;
     stroke-width: 1;
@@ -38,7 +59,14 @@ pattern polygon{
     padding: 0;
     display: inline-block;
 }
+#top{
+    position: absolute;
+    top: 0;
+}
 /*styling for about*/
+.about{
+    margin-top: 60px;
+}
 .about p{
     margin: 10px;
 }

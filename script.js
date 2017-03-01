@@ -19,7 +19,7 @@ function apply_standard_event_handlers(){
         window.location = "https://www.linkedin.com/in/kyle-marx-a9063b12a/";
     });
     $('button[name="top"]').click(function(){
-        window.location = "#canvas";
+        window.location = "#top";
     });
 }
 
