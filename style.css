@@ -13,6 +13,7 @@ button:focus {
     height: 60px;
     background-color: #202020;
     z-index: 6;
+    box-shadow: 1px 1px 2px 1px black;
 }
 /*area for name written in triangles*/
 #canvas{
@@ -43,7 +44,42 @@ pattern polygon{
     fill: red;
     stroke: black;
 }
+/*dropdown menu*/
+.dropdown{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+}
+.dropdown .link_btn{
+    background-color: #EE0000;
+    box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;
+}
+.dropdown .link_btn:hover{
+    background-color: #CC0000;
+}
+.dropdown-menu{
+    position: absolute;
+    left: auto;
+    right: 0;
+    background-color: lightgray;
+    border-radius: 0;
+}
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
 
+/*.dropdown-toggle{
+    right: 0;
+    background-color: lightgray;
+}*/
+/*#menu{
+    
+}*/
 
 /*are for section title*/
 .title span{
