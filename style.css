@@ -5,6 +5,9 @@ body{
 button:focus {
     outline: 0;
 }
+.link_btn_container form{
+    display: inline-block;
+}
 /*header*/
 #header{
     position: fixed;
@@ -83,9 +86,9 @@ pattern polygon{
     left: 50%;
     transform: translate(-50%, 50%);
 }
-.apps_carousel_top form{
+/*.apps_carousel_top form{
     display: inline-block;
-}
+}*/
 button.link_btn, .link_btn > input{
     color: #101010;
     margin: 0 10px;
@@ -345,18 +348,18 @@ textarea:focus, input:focus {
 .footer .link_btn_container{
     transform: translateY(50%);   
 }
-.github_main{
+.github_main input{
     background-color: #44a340;
     box-shadow: -3px -3px 2px 1px #1e6823 inset, 1px 1px 3px 1px #000000;
 }
-.github_main:hover{
+.github_main input:hover{
     box-shadow: -3px -3px 2px 1px #0a540f inset, 1px 1px 1px 1px #000000;
 }
-.linked_in{
+.linked_in input{
     background-color: #0077b5;
     box-shadow: -3px -3px 2px 1px #001e8c inset, 1px 1px 3px 1px #000000;
 }
-.linked_in:hover{
+.linked_in input:hover{
     box-shadow: -3px -3px 2px 1px #000a78 inset, 1px 1px 1px 1px #000000;
 }
 .top{
