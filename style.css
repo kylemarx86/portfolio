@@ -83,25 +83,42 @@ pattern polygon{
     left: 50%;
     transform: translate(-50%, 50%);
 }
-.link_btn{
+.apps_carousel_top form{
+    display: inline-block;
+}
+button.link_btn, .link_btn > input{
     color: #101010;
     margin: 0 10px;
     font-weight: bold;
     transform: skewX(-10deg);
-    box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;
+    /*box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;*/
 }
-.link_btn:hover{
-    box-shadow: -3px -3px 2px 1px #800000 inset, 1px 1px 1px 1px #000000;
+button.link_btn:hover, .link_btn > input:hover{
+    /*box-shadow: -3px -3px 2px 1px #800000 inset, 1px 1px 1px 1px #000000;*/
     color: darkgray;
 }
 .description{
     background-color: #D00000;
+    box-shadow: -3px -3px 2px 1px #9e0000 inset, 1px 1px 1px 1px #000000;
 }
-.github{
+.description:hover{
+    box-shadow: -3px -3px 2px 1px #6c0000 inset, 1px 1px 1px 1px #000000;
+}
+
+.github > input, .send, .top{
     background-color: red;
+    box-shadow: -3px -3px 2px 1px #cd0000 inset, 1px 1px 1px 1px #000000;
 }
-.live{
+.github > input:hover, .send:hover, .top:hover{
+    box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
+}
+
+.live > input{
     background-color: orangered;
+    box-shadow: -3px -3px 2px 1px #cd1300 inset, 1px 1px 1px 1px #000000;
+}
+.live > input:hover{
+    box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
 }
 /*the main area of the app carousel*/
 .apps_carousel_main{
@@ -345,22 +362,26 @@ textarea:focus, input:focus {
 .top{
     position: absolute;
     right: 0;
-    background-color: red;
+    /*background-color: red;*/
 }
 .top:hover{
-    background-color: #EB0000;
+    /*background-color: #EB0000;*/
 }
 
 /*modal styling*/
 .modal-content{
     background-color: darkgray;
 }
-
+.modal form{
+    display: inline-block;
+}
 .close_modal{
     background-color: #FFBB00;
+    box-shadow: -3px -3px 2px 1px #e19d00 inset, 1px 1px 1px 1px #000000;
 }
 .close_modal:hover{
     color: dimgray;
+        box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000;
 }
 
 /*animations*/

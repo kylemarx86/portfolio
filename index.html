@@ -53,8 +53,14 @@
         <div class='apps_carousel_top'>
             <div class='link_btn_container'>
                 <button class='link_btn description' data-toggle="modal" data-target="#description_modal">Description</button>
-                <button class='link_btn github'>GitHub</button>
-                <button class='link_btn live'>Live Site</button>
+                <!--<button class='link_btn github'>GitHub</button>
+                <button class='link_btn live'>Live Site</button>-->
+                <form class='link_btn github' >
+                    <input type='submit' value='GitHub'>
+                </form>
+                <form class='link_btn live'>
+                    <input type='submit' value='Live Site'>
+                </form>
             </div>
         </div>
         <div class='apps_carousel_main'>
@@ -149,7 +155,7 @@
                     <td><textarea name="body" placeholder="message" maxlength="750"></textarea></td>
                 </tr>
             </table>
-            <button type="button" name="submit" value="submit" class='link_btn'>Send Mail</button>
+            <button type="button" name="submit" value="submit" class='link_btn send'>Send Mail</button>
 
         </form>
         <div class='mail_response'></div>
@@ -178,8 +184,14 @@
                     <div class="desc"></div>
                 </div>
                 <div class="modal-footer">
-                    <button class='link_btn github'>GitHub</button>
-                    <button class='link_btn live'>Live Site</button>
+                    <form class='link_btn github' >
+                        <input type='submit' value='GitHub'>
+                    </form>
+                    <form class='link_btn live'>
+                        <input type='submit' value='Live Site'>
+                    </form>
+                    <!--<button class='link_btn github'>GitHub</button>
+                    <button class='link_btn live'>Live Site</button>-->
                     <button class="link_btn close_modal" data-dismiss="modal">Close</button>
                 </div>
             </div>

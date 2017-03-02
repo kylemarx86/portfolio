@@ -12,12 +12,12 @@ $(document).ready(function () {
 
 function apply_standard_event_handlers(){
     $('button[name="submit"]').click(send_form);
-    $('button[name="github_main"]').click(function(){
-        window.location = "https://github.com/kylemarx86";
-    });
-    $('button[name="linked_in"]').click(function(){
-        window.location = "https://www.linkedin.com/in/kyle-marx-a9063b12a/";
-    });
+    // $('button[name="github_main"]').click(function(){
+    //     window.location = "https://github.com/kylemarx86";
+    // });
+    // $('button[name="linked_in"]').click(function(){
+    //     window.location = "https://www.linkedin.com/in/kyle-marx-a9063b12a/";
+    // });
     $('button[name="top"]').click(function(){
         window.location = "#top";
     });
@@ -188,12 +188,8 @@ function update_links(){
         $('.modal-body .desc').append('<p>' + apps_array[current_app_index].description.details[i] + '</p>');
     }
     //update links for github and live site
-    $('.link_btn.github').click(function(){
-        window.location = github_address;
-    });
-    $('.link_btn.live').click(function() {
-        window.location = live_address;
-    });
+    $('form.github').attr('action',github_address);
+    $('form.live').attr('action',live_address);
 }
 
 //add the number links to the number bar
