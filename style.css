@@ -326,7 +326,7 @@ textarea:focus, input:focus {
 }
 /*footer styling*/
 .footer{
-    height: 5%;
+    height: 5vh;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -338,6 +338,9 @@ textarea:focus, input:focus {
 }
 .footer .link_btn_container{
     transform: translateY(50%);   
+}
+.footer link_btn, .footer input{
+    height: 50%;
 }
 .github_main input{
     background-color: #44a340;
