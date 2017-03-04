@@ -21,6 +21,11 @@ function apply_standard_event_handlers(){
 
 //method to make ajax call to send email form.
 function send_form(){
+    //change text of send button
+    $('.send').text('Sending...');
+    //disable send button until a response is received
+    $('.send').off('click');
+
     $.ajax({
         dataType:'json',
         url: 'mailer/mail_handler.php',
@@ -32,18 +37,26 @@ function send_form(){
             body: $('textarea[name="body"]').val()
         },
         success: function(response){
+            //change text of send button
+            $('button[name="submit"]').text('Send Mail');
+            //enable send button again
+            $('button[name="submit"]').click(send_form);
             if(response.success){
-                $('.mail_response').text(response.message);
+                $('.mail_response p').text(response.message);
             }else{
-                $('.mail_response').text('Message could not be sent.');
+                $('.mail_response p').text('Message could not be sent.');
                 // var temp_str = "";
                 // for(var i = 0; i < response.message.length; i++){
                 //     $('.mail_response').append("<p>"  + response.message[i] + "</p>")
-                // }
+                // }   
             }
         },
         error: function(response){
-            $('.mail_response').text('Message could not be sent due to server error');
+            $('.mail_response p').text('Message could not be sent due to server error');
+            //change text of send button
+            $('button[name="submit"]').text('Send Mail');
+            //enable send button again
+            $('button[name="submit"]').click(send_form);
         }
     });
 }
