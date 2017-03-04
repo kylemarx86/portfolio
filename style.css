@@ -368,7 +368,8 @@ textarea:focus, input:focus {
     opacity: 0.8;
 }
 .footer:hover{
-    opacity: 1;
+    opacity: 1.0;
+    background-color: rgba(0,0,0,0.9);
 }
 .footer .link_btn_container{
     transform: translateY(50%);   
@@ -396,6 +397,9 @@ textarea:focus, input:focus {
 }
 
 /*modal styling*/
+.modal-open {
+    overflow: scroll;
+}
 .modal-content{
     background-color: darkgray;
 }
