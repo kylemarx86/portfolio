@@ -1,50 +1,142 @@
+body{
+    height: 100%;
+    background-color: gray;
+}
 button:focus {
-    outline:0;
+    outline: 0;
+}
+.link_btn_container form{
+    display: inline-block;
+}
+/*header*/
+#header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /*height: 60px;*/
+    height: 7vh;
+    background-color: #202020;
+    z-index: 6;
+    box-shadow: 1px 1px 2px 1px black;
+}
+/*area for name written in triangles*/
+svg{
+    /*height: 5vh;*/
+}
+#canvas{
+    /*height: 60px;*/
+    /*height: 100%;*/
+    height: 6vh;
+}
+#main{
+    border: 1px solid black;
+}
+#main rect{
+    stroke: black;
+}
+#inner_triangles rect{
+    fill: #202020;
+}
+line{
+    stroke: #000000;
+    stroke-width: 1;
+}
+pattern polygon{
+    stroke: black;
+    fill: #202020;
+}
+#inner_triangles{
+    width: 50px; 
+    height: 86px;
+}
+.name{
+    fill: red;
+    stroke: black;
+}
+
+/*are for section title*/
+.title span{
+    background-color: black;
+    transform: skewX(-10deg) translateX(-5px);
+    display: inline-block;
+    width: 10%;
+    height: 2em;
+    margin: 0;
+    vertical-align: text-bottom;
+}
+.title h2{
+    padding: 0;
+    display: inline-block;
+}
+#top{
+    position: absolute;
+    top: 0;
+}
+/*styling for about*/
+.about{
+    /*margin-top: 60px;*/
+    margin-top: 7vh;
+}
+.about p{
+    margin: 10px;
 }
 /*area above the app carousel*/
 .apps_carousel_top{
     width: 100%;
     height: 50px;
     background-color: #202020;
+    box-shadow: 1px 1px 3px 1px #000000;
 }
-.link_btn_container{
+.apps .link_btn_container{
     position: absolute;
     display: block;
     left: 50%;
     transform: translate(-50%, 50%);
 }
-.link_btn{
+button.link_btn, .link_btn > input{
+    color: #101010;
     margin: 0 10px;
     font-weight: bold;
     transform: skewX(-10deg);
-    box-shadow: -3px -3px 2px 1px #A00000 inset, 1px 1px 3px 1px #000000;
+    -webkit-border-radius:0; 
+    border-radius:0;
 }
-.link_btn:hover{
-    box-shadow: -3px -3px 2px 1px #800000 inset;
+button.link_btn:hover, .link_btn > input:hover{
     color: darkgray;
 }
 .description{
     background-color: #D00000;
+    box-shadow: -3px -3px 2px 1px #9e0000 inset, 1px 1px 1px 1px #000000;
 }
-.github{
+.description:hover{
+    box-shadow: -3px -3px 2px 1px #6c0000 inset, 1px 1px 1px 1px #000000;
+}
+.github > input, .send, .top{
     background-color: red;
+    box-shadow: -3px -3px 2px 1px #cd0000 inset, 1px 1px 1px 1px #000000;
 }
-.live{
+.github > input:hover, .send:hover, .top:hover{
+    box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
+}
+.live > input{
     background-color: orangered;
+    box-shadow: -3px -3px 2px 1px #cd1300 inset, 1px 1px 1px 1px #000000;
+}
+.live > input:hover{
+    box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
 }
 /*the main area of the app carousel*/
 .apps_carousel_main{
     background-color: #353535;
     width: 100%;
-    height: 300px;
-}
-.apps_carousel{
-    overflow: visible;
+    height: 465px;      /*determines height of dark background*/
+    box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
 }
 .apps_carousel{
     position: absolute;
-    width: 400px;
-    height: 300px;
+    /*the following are based on the images real dimensions*/
+    width: 479px;       /*determines width of images in carousel*/
+    height: 465px;      /*determines height of images in carousel*/
     left: 50%;
     transform: translate(-50%, 0);
     overflow: visible;
@@ -62,14 +154,15 @@ button:focus {
     -left and top at 0*/
 #image_container img{
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     z-index: 2;
 }
-/*styling of buttons*/
+/*styling of carousel buttons*/
 button.prev_button, button.next_button{
     position: absolute;
-    width: 15%;
+    width: 17%;
     height: 100%;
     border: 1px solid #740000;
     margin: 0;
@@ -81,6 +174,7 @@ button.next_button{
     background-color: rgba(255,255,255,0);
     border: hidden;
 }
+/*for all buttons*/
 .skewed{
     position: absolute;
     margin: 0;
@@ -100,9 +194,11 @@ button.next_button{
     right: 0;
     z-index: 4;
     transform: translate(50%);
+    cursor: auto;
 }
 .next_btn_part{
     height: 100%;
+    cursor: pointer;
 }
 .next_button .skewed{
     width: 100%;
@@ -124,7 +220,7 @@ button.next_button{
     height: 50px;
     width: 25px;
     border-radius: 50px 0 0 50px;
-    transform: rotate(10deg) translate(-62px, -50%);
+    transform: rotate(10deg) translate(-83px, -50%);
     z-index: 2;
     border-style: solid;
     border-color: #740000;
@@ -135,7 +231,6 @@ button.next_button{
 .prev_button:hover, .highlighted_button{
     background-color: #BB0000;
     transition-duration: 500ms;
-    
 }
 .prev_button:hover, .highlighted_button.skewed{
     box-shadow: -3px -3px 2px 1px #800000 inset
@@ -155,17 +250,169 @@ button.next_button{
 .nav_number{
     position: relative;
     display: inline-block;
-    height: 100%;
-    width: 5%;
-    margin: 5px;
+    height: 75%;
+    width: 7.5%;
+    margin: 0 5px;
+    top: 25%;
     transform: skewX(-10deg);
     color: black;
     background-color: white;
+    box-shadow: -3px -3px 2px 1px #A0A0A0 inset;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.75em;
 }
 /*only for color change*/
 .active_nav_number{
     color: white;
     background-color: red;
+    box-shadow: -3px -3px 2px 1px #A00000 inset;
+    font-weight: bold;
+}
+
+/*technologies area*/
+.technologies{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.tech{
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: white;
+    box-shadow: 1px 1px 3px 1px #000000;
+}
+.tech_pic{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tech:hover img{
+    transform: scale(1.1);
+}
+.tech:hover .name{
+    font-weight: bold;
+}
+.tech .name{
+    /*font-family:*/ /*pick an interesting one*/
+    font-size: 1.5em;
+}
+
+/*styling for contact form*/
+.contact{
+    /*margin-bottom: 7.5%;*/
+    margin-bottom: 6vh;
+}
+.contact form{
+    display: inline-block;
+    width: 50%;
+}
+.contact input, .contact textarea{
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px #000000;
+    width: 100%;
+}
+.contact button{
+    background-color: red;
+}
+.contact table{
+    width: 100%;
+}
+.contact textarea{
+    resize: vertical;
+}
+.mail_response_container{
+    /*margin: 0 auto;*/
+    vertical-align: top;
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    padding: 0 10px;
+    background-color: black;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 3px 1px #000000;
+    transform: translateX(50%) skewX(-10deg);
+}
+.mail_response{
+    color: black;
+    width: 100%;
+    height: 100%;
+    background-color: #404040;
+    padding: 0 5px;
+}
+.mail_response p{
+    transform: skewX(10deg);
+}
+textarea:focus, input:focus {
+    outline-width: 1px;
+    outline-color: red;
+    /*i could create this effect with box-shadowing as well*/
+}
+/*footer styling*/
+.footer{
+    height: 5vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.8;
+}
+.footer:hover{
+    opacity: 1.0;
+    background-color: rgba(0,0,0,0.9);
+}
+.footer .link_btn_container{
+    transform: translateY(50%);   
+}
+.footer link_btn, .footer input{
+    height: 50%;
+}
+.github_main input{
+    background-color: #44a340;
+    box-shadow: -3px -3px 2px 1px #1e6823 inset, 1px 1px 3px 1px #000000;
+}
+.github_main input:hover{
+    box-shadow: -3px -3px 2px 1px #0a540f inset, 1px 1px 1px 1px #000000;
+}
+.linked_in input{
+    background-color: #0077b5;
+    box-shadow: -3px -3px 2px 1px #001e8c inset, 1px 1px 3px 1px #000000;
+}
+.linked_in input:hover{
+    box-shadow: -3px -3px 2px 1px #000a78 inset, 1px 1px 1px 1px #000000;
+}
+.top{
+    position: absolute;
+    right: 0;
+}
+
+/*modal styling*/
+.modal-open {
+    overflow: scroll;
+}
+.modal-content{
+    background-color: darkgray;
+}
+.modal form{
+    display: inline-block;
+}
+.close_modal{
+    background-color: #FFBB00;
+    box-shadow: -3px -3px 2px 1px #e19d00 inset, 1px 1px 1px 1px #000000;
+}
+.close_modal:hover{
+    color: dimgray;
+        box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000;
 }
 
 /*animations*/
@@ -201,31 +448,3 @@ button.next_button{
     75%  {left: 75%}
     100% {left: 100%}
 }
-
-
-
-/*classes involving navigation dots*/
-.dot_container{
-    position: absolute;
-    bottom: 0;
-    margin: 0 auto;
-    display: inline-block;
-}
-.dot{
-    display: inline-block;
-    /*position: absolute;*/
-    right: 50%;  /*for testing only*/
-    height: 20px;
-    width: 20px;
-    border: 1px solid white;
-    border-radius: 10px;
-    /*background-color: yellow;*/
-    background-color: transparent;
-}
-.inactive_dot{
-    background-color: transparent;
-}
-.active_dot{
-    background-color: white;
-}
-
