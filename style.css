@@ -13,21 +13,12 @@ button:focus {
     position: fixed;
     top: 0;
     width: 100%;
-    /*height: 60px;*/
-    height: 7vh;
+    height: 60px;
     background-color: #202020;
     z-index: 6;
     box-shadow: 1px 1px 2px 1px black;
 }
 /*area for name written in triangles*/
-svg{
-    /*height: 5vh;*/
-}
-#canvas{
-    /*height: 60px;*/
-    /*height: 100%;*/
-    height: 6vh;
-}
 #main{
     border: 1px solid black;
 }
