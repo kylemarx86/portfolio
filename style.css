@@ -1,6 +1,7 @@
 body{
     height: 100%;
-    background-color: gray;
+    /*background-color: #FAFAFA;*/
+    background-color: white;
 }
 button:focus {
     outline: 0;
@@ -19,6 +20,7 @@ button:focus {
     box-shadow: 1px 1px 2px 1px black;
 }
 /*area for name written in triangles*/
+/*#canvas{}*/
 #main{
     border: 1px solid black;
 }
@@ -47,13 +49,15 @@ pattern polygon{
 
 /*are for section title*/
 .title span{
-    background-color: black;
+    background-color: red;
     transform: skewX(-10deg) translateX(-5px);
     display: inline-block;
     width: 10%;
     height: 2em;
     margin: 0;
     vertical-align: text-bottom;
+    box-shadow: 1px 1px 3px 1px #000000;
+    
 }
 .title h2{
     padding: 0;
@@ -62,6 +66,10 @@ pattern polygon{
 #top{
     position: absolute;
     top: 0;
+}
+/*paragraphs*/
+p{
+    color: black;
 }
 /*styling for about*/
 .about{
@@ -79,10 +87,15 @@ pattern polygon{
     box-shadow: 1px 1px 3px 1px #000000;
 }
 .apps .link_btn_container{
-    position: absolute;
-    display: block;
+    /*position: absolute;*/
+    
+    position: relative;
+    /*display: block;*/
+    display: inline-block;
     left: 50%;
-    transform: translate(-50%, 50%);
+    top: 50%;
+    /*transform: translate(-50%, 50%);*/
+    transform: translate(-50%, -50%);
 }
 button.link_btn, .link_btn > input{
     color: #101010;
@@ -90,6 +103,7 @@ button.link_btn, .link_btn > input{
     font-weight: bold;
     transform: skewX(-10deg);
     -webkit-border-radius:0; 
+    border: none;
     border-radius:0;
 }
 button.link_btn:hover, .link_btn > input:hover{
@@ -102,6 +116,7 @@ button.link_btn:hover, .link_btn > input:hover{
 .description:hover{
     box-shadow: -3px -3px 2px 1px #6c0000 inset, 1px 1px 1px 1px #000000;
 }
+/*location of top button stuff*/
 .github > input, .send, .top{
     background-color: red;
     box-shadow: -3px -3px 2px 1px #cd0000 inset, 1px 1px 1px 1px #000000;
@@ -165,7 +180,6 @@ button.next_button{
     background-color: rgba(255,255,255,0);
     border: hidden;
 }
-/*for all buttons*/
 .skewed{
     position: absolute;
     margin: 0;
@@ -211,14 +225,21 @@ button.next_button{
     height: 50px;
     width: 25px;
     border-radius: 50px 0 0 50px;
-    transform: rotate(10deg) translate(-83px, -50%);
+    /*transform: rotate(10deg) translate(-83px, -50%);*/
+    transform: rotate(10deg) translate(-83px, -30%);
     z-index: 2;
     border-style: solid;
     border-color: #740000;
     border-width: 1px 0 1px 1px;
     box-shadow: -3px 0 3px -4px black;
 }
-
+.skewed > .glyphicon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*hover transitions*/
 .prev_button:hover, .highlighted_button{
     background-color: #BB0000;
     transition-duration: 500ms;
@@ -229,6 +250,7 @@ button.next_button{
 .highlighted_button.semicircle{
     box-shadow: none;
 }
+/*number bar*/
 .number_bar{
     position: absolute;
     bottom: 0;
@@ -253,7 +275,6 @@ button.next_button{
     cursor: pointer;
     font-size: 1.75em;
 }
-/*only for color change*/
 .active_nav_number{
     color: white;
     background-color: red;
@@ -328,21 +349,27 @@ button.next_button{
     display: inline-block;
     width: 30%;
     height: 100%;
-    padding: 0 10px;
+    padding: 0 15px;
     background-color: black;
+    /*background-color: red;*/
     box-sizing: border-box;
     box-shadow: 1px 1px 3px 1px #000000;
     transform: translateX(50%) skewX(-10deg);
 }
 .mail_response{
-    color: black;
+    /*color: black;*/
+    color: white;
     width: 100%;
     height: 100%;
-    background-color: #404040;
+    /*background-color: #404040;*/
+    background-color: silver;
+    /*background-color: black;*/
     padding: 0 5px;
 }
 .mail_response p{
     transform: skewX(10deg);
+    color: black;
+    padding: 0 5px;
 }
 textarea:focus, input:focus {
     outline-width: 1px;
@@ -368,6 +395,13 @@ textarea:focus, input:focus {
 .footer link_btn, .footer input{
     height: 50%;
 }
+.footer input{
+    font-size: 1em;
+}
+.footer .top{
+    position: absolute;
+    right: 0;
+}
 .github_main input{
     background-color: #44a340;
     box-shadow: -3px -3px 2px 1px #1e6823 inset, 1px 1px 3px 1px #000000;
@@ -382,10 +416,19 @@ textarea:focus, input:focus {
 .linked_in input:hover{
     box-shadow: -3px -3px 2px 1px #000a78 inset, 1px 1px 1px 1px #000000;
 }
-.top{
+/*new*/
+/*.top input{
+    background-color: #0077b5;
+    box-shadow: -3px -3px 2px 1px #001e8c inset, 1px 1px 3px 1px #000000;
+}
+.top input:hover{
+    box-shadow: -3px -3px 2px 1px #000a78 inset, 1px 1px 1px 1px #000000;
+}*/
+/*old*/
+/*.top{
     position: absolute;
     right: 0;
-}
+}*/
 
 /*modal styling*/
 .modal-open {
