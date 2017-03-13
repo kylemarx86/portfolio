@@ -142,8 +142,16 @@ button.link_btn:hover, .link_btn > input:hover{
 .apps_carousel{
     position: absolute;
     /*the following are based on the images real dimensions*/
-    width: 479px;       /*determines width of images in carousel*/
-    height: 465px;      /*determines height of images in carousel*/
+    /*old*/
+    /*determines width of images in carousel*/
+    /*width: 479px;*/
+    /*determines height of images in carousel*/
+    /*height: 465px;*/
+    /*new wide images are 960px x 475px*/
+    /*determines width of images in carousel*/
+    width: 960px;
+    /*determines height of images in carousel*/
+    height: 475px;
     left: 50%;
     transform: translate(-50%, 0);
     overflow: visible;
@@ -169,7 +177,7 @@ button.link_btn:hover, .link_btn > input:hover{
 /*styling of carousel buttons*/
 button.prev_button, button.next_button{
     position: absolute;
-    width: 17%;
+    width: 9%;
     height: 100%;
     border: 1px solid #740000;
     margin: 0;
