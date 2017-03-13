@@ -299,7 +299,7 @@ function update_app(direction) {
         //declare new image
         var new_app_index = null;
         //declare animation time duration in ms
-        var time_duration = 3000;
+        var time_duration = 2000;
 
         click_event_happening = true;
 
@@ -397,7 +397,7 @@ function jump_to_app(new_app_index){
     if(!click_event_happening){
         if(new_app_index !== current_app_index){
             click_event_happening = true;
-            var time_duration = 3000;
+            var time_duration = 2000;
             var direction = -1;
             //prepare new image for move in
             $(image_array[new_app_index]).css({'top': direction*100+'%','left': '0'});

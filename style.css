@@ -13,21 +13,12 @@ button:focus {
     position: fixed;
     top: 0;
     width: 100%;
-    /*height: 60px;*/
-    height: 7vh;
+    height: 60px;
     background-color: #202020;
     z-index: 6;
     box-shadow: 1px 1px 2px 1px black;
 }
 /*area for name written in triangles*/
-svg{
-    /*height: 5vh;*/
-}
-#canvas{
-    /*height: 60px;*/
-    /*height: 100%;*/
-    height: 6vh;
-}
 #main{
     border: 1px solid black;
 }
@@ -303,13 +294,12 @@ button.next_button{
     font-weight: bold;
 }
 .tech .name{
-    /*font-family:*/ /*pick an interesting one*/
+    font-family: Calibri;
     font-size: 1.5em;
 }
 
 /*styling for contact form*/
 .contact{
-    /*margin-bottom: 7.5%;*/
     margin-bottom: 6vh;
 }
 .contact form{
@@ -318,6 +308,7 @@ button.next_button{
 }
 .contact input, .contact textarea{
     margin: 5px;
+    padding: 1px;
     border-radius: 5px;
     box-shadow: 1px 1px 3px 1px #000000;
     width: 100%;
