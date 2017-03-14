@@ -109,14 +109,6 @@ button.link_btn, .link_btn > input{
 button.link_btn:hover, .link_btn > input:hover{
     color: darkgray;
 }
-/*old*/
-/*.description{
-    background-color: #D00000;
-    box-shadow: -3px -3px 2px 1px #9e0000 inset, 1px 1px 1px 1px #000000;
-}
-.description:hover{
-    box-shadow: -3px -3px 2px 1px #6c0000 inset, 1px 1px 1px 1px #000000;
-}*/
 /*location of top button stuff*/
 .github > input, .send, .top{
     background-color: red;
@@ -142,15 +134,11 @@ button.link_btn:hover, .link_btn > input:hover{
 .apps_carousel{
     position: absolute;
     /*the following are based on the images real dimensions*/
-    /*old*/
-    /*determines width of images in carousel*/
-    /*width: 479px;*/
-    /*determines height of images in carousel*/
-    /*height: 465px;*/
     /*new wide images are 960px x 475px*/
     /*determines width of images in carousel*/
     width: 960px;
     /*determines height of images in carousel*/
+    /*want to take on height of surrounding container: apps_carousel_main*/
     height: 475px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -496,20 +484,47 @@ textarea:focus, input:focus {
 }
 
 @media (max-width: 1215px){
-    .apps_carousel{
-        width: 768px;
+    .apps_carousel_main{
         height: 380px;
+    }
+    .apps_carousel{
+        height: 380px;
+        width: 768px;
+    }
+    .semicircle{
+        height: 40px;
+        width: 20px;
+    }
+    .skewed > .glyphicon{
+        font-size: 0.75em;
     }
 }
 @media (max-width: 950px){
-    .apps_carousel{
-        width: 576px;
+    .apps_carousel_main{
         height: 285px;
+    }
+    .apps_carousel{
+        height: 285px;
+        width: 576px;
+    }
+    .semicircle{
+        height: 30px;
+        width: 15px;
+    }
+    .skewed > .glyphicon{
+        font-size: 0.5em;
     }
 }
 @media (max-width: 740px){
-    .apps_carousel{
-        width: 384px;
+    .apps_carousel_main{
         height: 190px;
+    }
+    .apps_carousel{
+        height: 190px;
+        width: 384px;
+    }
+    .semicircle{
+        height: 20px;
+        width: 10px;
     }
 }
