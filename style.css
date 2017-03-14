@@ -544,6 +544,16 @@ textarea:focus, input:focus {
     }
 }
 
-ul{
+
+.nav_links{
     float: right;
+    color: white;
+    font-size: 1.25em;
+}
+.nav_links > a{
+    color: white;
+    text-decoration: none;
+}
+.nav_links > a:hover{
+    color: red;
 }
