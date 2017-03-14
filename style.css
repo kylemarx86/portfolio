@@ -495,3 +495,21 @@ textarea:focus, input:focus {
     100% {left: 100%}
 }
 
+@media (max-width: 1215px){
+    .apps_carousel{
+        width: 768px;
+        height: 380px;
+    }
+}
+@media (max-width: 950px){
+    .apps_carousel{
+        width: 576px;
+        height: 285px;
+    }
+}
+@media (max-width: 740px){
+    .apps_carousel{
+        width: 384px;
+        height: 190px;
+    }
+}
