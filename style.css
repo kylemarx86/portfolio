@@ -73,8 +73,8 @@ p{
 }
 /*styling for about*/
 .about{
-    /*margin-top: 60px;*/
-    margin-top: 7vh;
+    margin-top: 60px;
+    /*margin-top: 7vh;*/
 }
 .about p{
     margin: 10px;
@@ -536,4 +536,14 @@ textarea:focus, input:focus {
     .nav_number{
         font-size: .75em;
     }
+}
+
+ul{
+    float: right;
+}
+.anchor{
+    display: block;
+    height: 60px; /*same height as header*/
+    margin-top: -60px; /*same height as header*/
+    visibility: hidden;
 }
