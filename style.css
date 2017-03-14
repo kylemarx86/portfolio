@@ -546,6 +546,7 @@ textarea:focus, input:focus {
 
 
 .nav_links{
+    margin-right: 5px;
     float: right;
     color: white;
     font-size: 1.25em;
