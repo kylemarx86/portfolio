@@ -46,7 +46,13 @@ pattern polygon{
     fill: red;
     stroke: black;
 }
-
+/*allows for gap between header and title*/
+.anchor{
+    display: block;
+    height: 60px; /*same height as header*/
+    margin-top: -60px; /*same height as header*/
+    visibility: hidden;
+}
 /*are for section title*/
 .title span{
     background-color: red;
@@ -540,10 +546,4 @@ textarea:focus, input:focus {
 
 ul{
     float: right;
-}
-.anchor{
-    display: block;
-    height: 60px; /*same height as header*/
-    margin-top: -60px; /*same height as header*/
-    visibility: hidden;
 }
