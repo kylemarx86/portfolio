@@ -280,42 +280,44 @@ function initialize_pictures() {
 }
 
 function get_next_app(){
-    remove_event_handlers();      //disable event handlers for both buttons while picture updates
-    setTimeout(apply_next_and_prev_click_handlers, 3000);
-    update_app(1);        //while waiting for event handlers to be reapplied
+    // remove_event_handlers();      //disable event handlers for both buttons while picture updates
+    // setTimeout(apply_next_and_prev_click_handlers, 2000);
+    var new_app_index = null;
+    if (current_app_index < apps_array.length - 1) {
+        new_app_index = current_app_index + 1;
+    } else {
+        new_app_index = 0;
+    }
+   
+    update_app(new_app_index, 1);        //while waiting for event handlers to be reapplied
 }
 
 function get_prev_app() {
-    remove_event_handlers();      //disable event handlers for both buttons while picture updates
-    setTimeout(apply_next_and_prev_click_handlers, 3000);
-    update_app(-1);        //while waiting for event handlers to be reapplied
+    // remove_event_handlers();      //disable event handlers for both buttons while picture updates
+    // setTimeout(apply_next_and_prev_click_handlers, 2000);
+    var new_app_index = null;
+    if(current_app_index > 0){
+        new_app_index = current_app_index - 1;
+    }else{
+        new_app_index = apps_array.length - 1;
+    }
+    update_app(new_app_index, -1);        //while waiting for event handlers to be reapplied
 }
 
 //takes param direction,
 //if direction = 1, then we will move forward through the image array (i.e. increase index)
 //if direction = -1, then we will move backward through the image array (i.e. decrease index)
-function update_app(direction) {
+function update_app(new_app_index, direction, time_duration = 2000) {
     if(!click_event_happening){
-        //declare new image
-        var new_app_index = null;
-        //declare animation time duration in ms
-        var time_duration = 2000;
-
+        // //declare animation time duration in ms
+        // var time_duration = 2000;
+ 
+        //prevent further clicks
         click_event_happening = true;
+        //declare new image
+        // var new_app_index = null;    
 
-        if(direction === 1){
-            if (current_app_index < apps_array.length - 1) {
-                new_app_index = current_app_index + 1;
-            } else {
-                new_app_index = 0;
-            }
-        }else{
-            if(current_app_index > 0){
-                new_app_index = current_app_index - 1;
-            }else{
-                new_app_index = apps_array.length - 1;
-            }
-        }
+        setTimeout(function(){ click_event_happening=false; }, time_duration);
         //prepare new image for move in
         $(image_array[new_app_index]).css({'left': direction*100+'%', 'top': '0'});
         //slide previous image out
@@ -324,8 +326,7 @@ function update_app(direction) {
         $(image_array[new_app_index]).animate({left: '0'},time_duration);
         //change active app css
         $('.nav_number:nth-of-type(' + (current_app_index + 1) + '), .nav_number:nth-of-type(' + (new_app_index + 1) + ')').toggleClass('active_nav_number');
-        //prevent further clicks
-        setTimeout(function(){ click_event_happening=false; }, time_duration);
+        
         //update current_app_index
         current_app_index = new_app_index;    
         //update the button links in the main page and modal
@@ -337,11 +338,11 @@ function apply_next_and_prev_click_handlers() {
     $('.prev_button').click(get_prev_app);
     $('.next_button').click(get_next_app);
 }
-//function to disable event handlers while picture is updating
-function remove_event_handlers(){
-    $('.prev_button').off('click');
-    $('.next_button').off('click');
-}
+// //function to disable event handlers while picture is updating
+// function remove_event_handlers(){
+//     $('.prev_button').off('click');
+//     $('.next_button').off('click');
+// }
 
 //function to update the links 
 function update_links(){
@@ -395,26 +396,37 @@ function create_number_links(){
 //pretty much a duplicate of update app. I should work on reworking that to fall allow functionality with this method
 function jump_to_app(new_app_index){
     if(!click_event_happening){
-        if(new_app_index !== current_app_index){
-            click_event_happening = true;
-            var time_duration = 2000;
-            var direction = -1;
-            //prepare new image for move in
-            $(image_array[new_app_index]).css({'top': direction*100+'%','left': '0'});
-            //slide previous image out
-            $(image_array[current_app_index]).animate({top: -100*direction+'%'},time_duration);
-            //slide new image in
-            $(image_array[new_app_index]).animate({top: '0'},time_duration);
-            
-            //prevent further clicks
-            setTimeout(function(){ click_event_happening=false; }, time_duration);
-            
-            //change active app css
-            $('.nav_number:nth-of-type(' + (current_app_index + 1) + '), .nav_number:nth-of-type(' + (new_app_index + 1) + ')').toggleClass('active_nav_number');
-            //update current_app_index
-            current_app_index = new_app_index;
-
-            update_links();
-        }   
+        if(current_app_index < new_app_index){
+            // direction = 1;
+            update_app(new_app_index, 1, 1500);
+        }else if(current_app_index > new_app_index){
+            // direction = -1;
+            update_app(new_app_index, -1, 1500);
+        }
     }
+
+
+    // if(!click_event_happening){
+    //     if(new_app_index !== current_app_index){
+    //         click_event_happening = true;
+    //         var time_duration = 2000;
+    //         var direction = -1;
+    //         //prepare new image for move in
+    //         $(image_array[new_app_index]).css({'top': direction*100+'%','left': '0'});
+    //         //slide previous image out
+    //         $(image_array[current_app_index]).animate({top: -100*direction+'%'},time_duration);
+    //         //slide new image in
+    //         $(image_array[new_app_index]).animate({top: '0'},time_duration);
+            
+    //         //prevent further clicks
+    //         setTimeout(function(){ click_event_happening=false; }, time_duration);
+            
+    //         //change active app css
+    //         $('.nav_number:nth-of-type(' + (current_app_index + 1) + '), .nav_number:nth-of-type(' + (new_app_index + 1) + ')').toggleClass('active_nav_number');
+    //         //update current_app_index
+    //         current_app_index = new_app_index;
+
+    //         update_links();
+    //     }   
+    // }
 }
