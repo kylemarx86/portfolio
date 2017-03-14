@@ -380,7 +380,7 @@ textarea:focus, input:focus {
 }
 /*footer styling*/
 .footer{
-    height: 5vh;
+    height: 45px;
     width: 100%;
     position: fixed;
     bottom: 0;
