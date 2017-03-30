@@ -20,7 +20,10 @@ button:focus {
     box-shadow: 1px 1px 2px 1px black;
 }
 /*area for name written in triangles*/
-/*#canvas{}*/
+#canvas{
+    height: 60px;
+    width: 225px;
+}
 #main{
     border: 1px solid black;
 }
@@ -545,7 +548,50 @@ textarea:focus, input:focus {
 }
 
 
-.nav_links{
+#header ul {
+    position: absolute;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #202020;
+    /*background-color: rgba(53,53,53,0);*/
+    /*add opacity*/
+    /*opacity: 0;*/
+    /*position: fixed;*/
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 65%;
+}
+
+#header li {
+    float: right;
+    height: 100%;
+}
+
+#header li a {
+    display: block;
+    color: white;
+    text-align: center;
+    /*padding: 14px auto;*/
+    padding: 14px 16px;
+    /*position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+    text-decoration: none;
+    /*text-align: center;*/
+    height: 100%;
+}
+
+#header li a:hover{
+    background-color: #353535;         /*change*/
+}
+
+
+/*.nav_links{
     margin-right: 5px;
     float: right;
     color: white;
@@ -557,4 +603,4 @@ textarea:focus, input:focus {
 }
 .nav_links > a:hover{
     color: red;
-}
+}*/
