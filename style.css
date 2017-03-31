@@ -586,7 +586,13 @@ textarea:focus, input:focus {
         font-size: .75em;
     }
 }
+@media (max-width: 640px){
+    #header ul{
+        width: 50%;
+        font-size: .75em;
+    }
 
+}
 
 
 
