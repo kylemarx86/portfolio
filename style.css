@@ -49,6 +49,46 @@ pattern polygon{
     fill: red;
     stroke: black;
 }
+/*navigation bar*/
+#header ul {
+    position: absolute;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #202020;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 65%;
+}
+#header li {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 25%;
+    margin: 0;
+}
+#header li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    line-height: 100%;
+}
+#header li a:hover{
+    background-color: #353535;
+}
+#header li a span{
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 /*allows for gap between header and title*/
 .anchor{
     display: block;
@@ -548,47 +588,7 @@ textarea:focus, input:focus {
 }
 
 
-#header ul {
-    position: absolute;
-    display: inline-block;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #202020;
-    /*background-color: rgba(53,53,53,0);*/
-    /*add opacity*/
-    /*opacity: 0;*/
-    /*position: fixed;*/
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 65%;
-}
 
-#header li {
-    float: right;
-    height: 100%;
-}
-
-#header li a {
-    display: block;
-    color: white;
-    text-align: center;
-    /*padding: 14px auto;*/
-    padding: 14px 16px;
-    /*position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
-    text-decoration: none;
-    /*text-align: center;*/
-    height: 100%;
-}
-
-#header li a:hover{
-    background-color: #353535;         /*change*/
-}
 
 
 /*.nav_links{
