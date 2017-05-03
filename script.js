@@ -185,14 +185,14 @@ function apply_event_handlers(){
     $('button[name="top"]').click(function(){
         window.location = "#top";
     });
-    $('.next_btn_part').hover(
-        function () {
-            $('.next_button').find('.next_btn_part').addClass('highlighted_button');
-        },
-        function () {
-            $('.next_button').find('.next_btn_part').removeClass('highlighted_button');
-        }
-    );
+    // $('.next_btn_part').hover(
+    //     function () {
+    //         $('.next_button').find('.next_btn_part').addClass('highlighted_button');
+    //     },
+    //     function () {
+    //         $('.next_button').find('.next_btn_part').removeClass('highlighted_button');
+    //     }
+    // );
 }
 
 //method to make ajax call to send email form.
