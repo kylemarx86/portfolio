@@ -1,10 +1,11 @@
-$btn_size: 100px;
+$btn_size_lg: 100px;
+
 
 footer{
   position: fixed;
   display: block;
   width: 100%;
-  height: $btn_size * 1.25;
+  height: $btn_size_lg * 1.25;
   bottom: 0;
   left: 0;
   background-color: brown;
@@ -26,8 +27,8 @@ footer{
         .arcade_btn {
             position: relative;
             display: inline-block;
-            width: $btn_size;
-            height: $btn_size;
+            width: $btn_size_lg;
+            height: $btn_size_lg;
             border: 0;
             margin: 1em;
             outline: none;
@@ -39,45 +40,45 @@ footer{
                 $base-color: #0000ff;
                 background-color: $base-color;
                 box-shadow: 
-                inset 0 $btn_size/32 0 lighten($base-color, 5%),
-                inset 0 (-$btn_size/32) 0 darken($base-color, 5%),
-                inset 0 0 0 $btn_size/32 darken($base-color, 3%),
-                inset 0 0 0 $btn_size/12 $base-color,
-                inset 0 0 0 $btn_size/10 darken($base-color, 20%),
-                inset 0 0 0 $btn_size/9.2 darken($base-color, 50%),
-                inset 0 0 0 $btn_size/7.5 transparentize(lighten($base-color, 30%), .3),
-                inset 0 0 0 $btn_size/5.5 $base-color,
-                inset 0 $btn_size/2.5 $btn_size/7.5 darken($base-color, 5%),
-                inset 0 0 $btn_size/10 $btn_size/6 darken($base-color, 10%),
-                0 $btn_size/20 0 rgba(0, 0, 0, .3);
+                inset 0 $btn_size_lg/32 0 lighten($base-color, 5%),
+                inset 0 (-$btn_size_lg/32) 0 darken($base-color, 5%),
+                inset 0 0 0 $btn_size_lg/32 darken($base-color, 3%),
+                inset 0 0 0 $btn_size_lg/12 $base-color,
+                inset 0 0 0 $btn_size_lg/10 darken($base-color, 20%),
+                inset 0 0 0 $btn_size_lg/9.2 darken($base-color, 50%),
+                inset 0 0 0 $btn_size_lg/7.5 transparentize(lighten($base-color, 30%), .3),
+                inset 0 0 0 $btn_size_lg/5.5 $base-color,
+                inset 0 $btn_size_lg/2.5 $btn_size_lg/7.5 darken($base-color, 5%),
+                inset 0 0 $btn_size_lg/10 $btn_size_lg/6 darken($base-color, 10%),
+                0 $btn_size_lg/20 0 rgba(0, 0, 0, .3);
             }
             &.red{
                 $base-color: #ff0000;
                 background-color: $base-color;
                 box-shadow: 
-                inset 0 $btn_size/32 0 lighten($base-color, 5%),
-                inset 0 (-$btn_size/32) 0 darken($base-color, 5%),
-                inset 0 0 0 $btn_size/32 darken($base-color, 3%),
-                inset 0 0 0 $btn_size/12 $base-color,
-                inset 0 0 0 $btn_size/10 darken($base-color, 20%),
-                inset 0 0 0 $btn_size/9.2 darken($base-color, 50%),
-                inset 0 0 0 $btn_size/7.5 transparentize(lighten($base-color, 30%), .3),
-                inset 0 0 0 $btn_size/5.5 $base-color,
-                inset 0 $btn_size/2.5 $btn_size/7.5 darken($base-color, 5%),
-                inset 0 0 $btn_size/10 $btn_size/6 darken($base-color, 10%),
-                0 $btn_size/20 0 rgba(0, 0, 0, .3);
+                inset 0 $btn_size_lg/32 0 lighten($base-color, 5%),
+                inset 0 (-$btn_size_lg/32) 0 darken($base-color, 5%),
+                inset 0 0 0 $btn_size_lg/32 darken($base-color, 3%),
+                inset 0 0 0 $btn_size_lg/12 $base-color,
+                inset 0 0 0 $btn_size_lg/10 darken($base-color, 20%),
+                inset 0 0 0 $btn_size_lg/9.2 darken($base-color, 50%),
+                inset 0 0 0 $btn_size_lg/7.5 transparentize(lighten($base-color, 30%), .3),
+                inset 0 0 0 $btn_size_lg/5.5 $base-color,
+                inset 0 $btn_size_lg/2.5 $btn_size_lg/7.5 darken($base-color, 5%),
+                inset 0 0 $btn_size_lg/10 $btn_size_lg/6 darken($base-color, 10%),
+                0 $btn_size_lg/20 0 rgba(0, 0, 0, .3);
             }
 
           &:after {
             content: '';
             position: absolute;
-            bottom: $btn_size/20;
-            left: $btn_size/10;
+            bottom: $btn_size_lg/20;
+            left: $btn_size_lg/10;
             display: block;
-            width: $btn_size/1.25;
-            height: $btn_size/1.25;
-            border: $btn_size/15 solid rgba(0, 0, 0, .3);
-            border-width: 0 0 $btn_size/15;
+            width: $btn_size_lg/1.25;
+            height: $btn_size_lg/1.25;
+            border: $btn_size_lg/15 solid rgba(0, 0, 0, .3);
+            border-width: 0 0 $btn_size_lg/15;
             border-radius: 50%;
             transition-duration: 200ms;
           }
@@ -88,38 +89,38 @@ footer{
             &.red{
                 $base-color: #ff0000;
                 box-shadow: 
-              inset 0 $btn_size/32 0 lighten($base-color, 5%),
-              inset 0 (-$btn_size/32) 0 darken($base-color, 5%),
-              inset 0 0 0 $btn_size/32 darken($base-color, 3%),
-              inset 0 0 0 $btn_size/12 $base-color,
-              inset 0 0 0 $btn_size/10 darken($base-color, 20%),
-              inset 0 0 0 $btn_size/8.5 darken($base-color, 40%),
-              inset 0 0 0 $btn_size/7.5 transparentize(lighten($base-color, 30%), .8),
-              inset 0 0 0 $btn_size/5.5 darken($base-color, 3%),
-              inset 0 $btn_size/2.5 $btn_size/7.5 darken($base-color, 8%),
-              inset 0 0 $btn_size/10 $btn_size/6 darken($base-color, 15%),
-              0 $btn_size/20 0 rgba(0, 0, 0, .3);
+              inset 0 $btn_size_lg/32 0 lighten($base-color, 5%),
+              inset 0 (-$btn_size_lg/32) 0 darken($base-color, 5%),
+              inset 0 0 0 $btn_size_lg/32 darken($base-color, 3%),
+              inset 0 0 0 $btn_size_lg/12 $base-color,
+              inset 0 0 0 $btn_size_lg/10 darken($base-color, 20%),
+              inset 0 0 0 $btn_size_lg/8.5 darken($base-color, 40%),
+              inset 0 0 0 $btn_size_lg/7.5 transparentize(lighten($base-color, 30%), .8),
+              inset 0 0 0 $btn_size_lg/5.5 darken($base-color, 3%),
+              inset 0 $btn_size_lg/2.5 $btn_size_lg/7.5 darken($base-color, 8%),
+              inset 0 0 $btn_size_lg/10 $btn_size_lg/6 darken($base-color, 15%),
+              0 $btn_size_lg/20 0 rgba(0, 0, 0, .3);
             background-color: darken($base-color, 2%);
             } 
             &.blue{
                 $base-color: #0000ff;
                 box-shadow: 
-              inset 0 $btn_size/32 0 lighten($base-color, 5%),
-              inset 0 (-$btn_size/32) 0 darken($base-color, 5%),
-              inset 0 0 0 $btn_size/32 darken($base-color, 3%),
-              inset 0 0 0 $btn_size/12 $base-color,
-              inset 0 0 0 $btn_size/10 darken($base-color, 20%),
-              inset 0 0 0 $btn_size/8.5 darken($base-color, 40%),
-              inset 0 0 0 $btn_size/7.5 transparentize(lighten($base-color, 30%), .8),
-              inset 0 0 0 $btn_size/5.5 darken($base-color, 3%),
-              inset 0 $btn_size/2.5 $btn_size/7.5 darken($base-color, 8%),
-              inset 0 0 $btn_size/10 $btn_size/6 darken($base-color, 15%),
-              0 $btn_size/20 0 rgba(0, 0, 0, .3);
+              inset 0 $btn_size_lg/32 0 lighten($base-color, 5%),
+              inset 0 (-$btn_size_lg/32) 0 darken($base-color, 5%),
+              inset 0 0 0 $btn_size_lg/32 darken($base-color, 3%),
+              inset 0 0 0 $btn_size_lg/12 $base-color,
+              inset 0 0 0 $btn_size_lg/10 darken($base-color, 20%),
+              inset 0 0 0 $btn_size_lg/8.5 darken($base-color, 40%),
+              inset 0 0 0 $btn_size_lg/7.5 transparentize(lighten($base-color, 30%), .8),
+              inset 0 0 0 $btn_size_lg/5.5 darken($base-color, 3%),
+              inset 0 $btn_size_lg/2.5 $btn_size_lg/7.5 darken($base-color, 8%),
+              inset 0 0 $btn_size_lg/10 $btn_size_lg/6 darken($base-color, 15%),
+              0 $btn_size_lg/20 0 rgba(0, 0, 0, .3);
             background-color: darken($base-color, 2%);
             }
             
             &:after {
-              bottom: $btn_size/20 + $btn_size/15;
+              bottom: $btn_size_lg/20 + $btn_size_lg/15;
               border-width: 0;
             }
           }

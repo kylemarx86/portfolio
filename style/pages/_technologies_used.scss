@@ -1,0 +1,36 @@
+/*technologies area*/
+.technologies{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.tech{
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: white;
+    box-shadow: 1px 1px 3px 1px #000000;
+}
+.tech_pic{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tech:hover img{
+    transform: scale(1.1);
+}
+.tech:hover .name{
+    font-weight: bold;
+}
+.tech .name{
+    font-family: Calibri;
+    font-size: 1.5em;
+}
