@@ -190,8 +190,8 @@ function apply_event_handlers(){
         window.location = "#top";
     });
 
-    $('#prev').click(get_prev);
-    $('#next').click(get_next);
+    $('#prev').click(get_prev_screen);
+    $('#next').click(get_next_screen);
     // $('.next_btn_part').hover(
     //     function () {
     //         $('.next_button').find('.next_btn_part').addClass('highlighted_button');
@@ -401,16 +401,16 @@ function button_disable_and_reenable(){
   $('#prev').off();
   $('#next').off();
   setTimeout(function(){
-    $('#prev').click(get_prev);
-    $('#next').click(get_next);
+    $('#prev').click(get_prev_screen);
+    $('#next').click(get_next_screen);
   }, 1000);
 }
-function get_prev(){
+function get_prev_screen(){
   button_disable_and_reenable();
   new_page = (curr_page + page_arr.length - 1) % page_arr.length;
   update_page(new_page);
 }
-function get_next(){
+function get_next_screen(){
   button_disable_and_reenable();
   new_page = (curr_page + 1) % page_arr.length;
   update_page(new_page);
