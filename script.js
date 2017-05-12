@@ -1,9 +1,13 @@
+var page_arr = ['.about', '.apps', '.technologies_used', '.contact'];
+var curr_page = null;
+var new_page = null;
 var apps_array = [];
 var image_array = [];
 var current_app_index = null;
 var click_event_happening = null;
 
 $(document).ready(function () {
+    curr_page = 0;
     apps_array = [];
     draw_triangles();
     apply_event_handlers();
@@ -185,6 +189,9 @@ function apply_event_handlers(){
     $('button[name="top"]').click(function(){
         window.location = "#top";
     });
+
+    $('#prev').click(get_prev);
+    $('#next').click(get_next);
     // $('.next_btn_part').hover(
     //     function () {
     //         $('.next_button').find('.next_btn_part').addClass('highlighted_button');
@@ -387,4 +394,38 @@ function create_number_links(){
     }
     //give the first app the active nav_number css
     $('.nav_number:nth-of-type(1)').addClass('active_nav_number');
+}
+
+//for footer control panel
+function button_disable_and_reenable(){
+  $('#prev').off();
+  $('#next').off();
+  setTimeout(function(){
+    $('#prev').click(get_prev);
+    $('#next').click(get_next);
+  }, 1000);
+}
+function get_prev(){
+  button_disable_and_reenable();
+  new_page = (curr_page + page_arr.length - 1) % page_arr.length;
+  update_page(new_page);
+}
+function get_next(){
+  button_disable_and_reenable();
+  new_page = (curr_page + 1) % page_arr.length;
+  update_page(new_page);
+}
+function update_page(new_page){
+  $(page_arr[curr_page]).toggleClass('shrunk grown');
+  $(page_arr[new_page]).toggleClass('shrunk grown');
+  toggle_hidden(curr_page, new_page);
+  curr_page = new_page;
+  new_page = null;
+}
+
+function toggle_hidden(curr_page, new_page){
+    setTimeout(function(){
+        $(page_arr[curr_page]).toggleClass('hidden');
+        $(page_arr[new_page]).toggleClass('hidden');
+    }, 480);
 }

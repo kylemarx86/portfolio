@@ -1,0 +1,661 @@
+@import 'footer';
+
+$bg: #333;
+
+body{
+    height: 100%;
+    /*background-color: #FAFAFA;*/
+    background-color: white;
+}
+button:focus {
+    outline: 0;
+}
+.link_btn_container form{
+    display: inline-block;
+}
+/*header*/
+#header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #202020;
+    z-index: 6;
+    box-shadow: 1px 1px 2px 1px black;
+}
+/*area for name written in triangles*/
+#canvas{
+    height: 60px;
+    width: 225px;
+}
+#main{
+    border: 1px solid black;
+}
+#main rect{
+    stroke: black;
+}
+#inner_triangles rect{
+    fill: #202020;
+}
+line{
+    stroke: #000000;
+    stroke-width: 1;
+}
+pattern polygon{
+    stroke: black;
+    fill: #202020;
+}
+#inner_triangles{
+    width: 50px; 
+    height: 86px;
+}
+.name{
+    fill: red;
+    stroke: black;
+}
+/*navigation bar*/
+#header ul {
+    position: absolute;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #202020;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 65%;
+}
+#header li {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 25%;
+    margin: 0;
+}
+#header li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    line-height: 100%;
+}
+#header li a:hover{
+    background-color: #353535;
+}
+#header li a span{
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*allows for gap between header and title*/
+.anchor{
+    display: block;
+    height: 60px; /*same height as header*/
+    margin-top: -60px; /*same height as header*/
+    visibility: hidden;
+}
+/*are for section title*/
+.title span{
+    background-color: red;
+    transform: skewX(-10deg) translateX(-5px);
+    display: inline-block;
+    width: 10%;
+    height: 2em;
+    margin: 0;
+    vertical-align: text-bottom;
+    box-shadow: 1px 1px 3px 1px #000000;
+
+}
+.title h2{
+    padding: 0;
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+}
+#top{
+    position: absolute;
+    top: 0;
+}
+/*paragraphs*/
+p{
+    color: black;
+}
+/*styling for about*/
+.about{
+    margin-top: 60px;
+    /*margin-top: 7vh;*/
+}
+.about p{
+    margin: 10px;
+}
+/*area above the app carousel*/
+.apps_carousel_top{
+    width: 100%;
+    height: 50px;
+    background-color: #202020;
+    box-shadow: 1px 1px 3px 1px #000000;
+}
+.apps .link_btn_container{
+    /*position: absolute;*/
+    
+    position: relative;
+    /*display: block;*/
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    /*transform: translate(-50%, 50%);*/
+    transform: translate(-50%, -50%);
+}
+button.link_btn, .link_btn > input{
+    color: #101010;
+    margin: 0 10px;
+    font-weight: bold;
+    transform: skewX(-10deg);
+    -webkit-border-radius:0; 
+    border: none;
+    border-radius:0;
+}
+button.link_btn:hover, .link_btn > input:hover{
+    color: darkgray;
+}
+/*location of top button stuff*/
+.github > input, .send, .top{
+    background-color: red;
+    box-shadow: -3px -3px 2px 1px #cd0000 inset, 1px 1px 1px 1px #000000;
+}
+.github > input:hover, .send:hover, .top:hover{
+    box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
+}
+.live > input{
+    background-color: orangered;
+    box-shadow: -3px -3px 2px 1px #cd1300 inset, 1px 1px 1px 1px #000000;
+}
+.live > input:hover{
+    box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
+}
+/*the main area of the app carousel*/
+.apps_carousel_main{
+    background-color: #353535;
+    width: 100%;
+    height: 475px;      /*determines height of dark background, should be same height as images will be*/
+    box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
+}
+.apps_carousel{
+    position: absolute;
+    /*the following are based on the images real dimensions*/
+    /*new wide images are 960px x 475px*/
+    /*determines width of images in carousel*/
+    width: 960px;
+    /*determines height of images in carousel*/
+    /*want to take on height of surrounding container: apps_carousel_main*/
+    height: 475px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    overflow: visible;
+}
+#image_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*each image should be
+    -100% of the width of the container
+    -positioned absolutely
+    -left and top at 0*/
+#image_container img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+/*styling of carousel buttons*/
+.skewed{
+    position: absolute;
+    width: 9%;
+    height: 100%;
+    border: 1px solid #740000;
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    display: inline-block;
+    background-color: red;
+    box-sizing: border-box;
+    box-shadow: 2px 1px 1px 0 #000000;
+    transition-duration: 750ms;
+    cursor: pointer;
+}
+.prev_button{
+    left: 0;
+    transform: skewX(-10deg) translate(-50%);
+    z-index: 4;
+}
+.next_button{
+    right: 0;
+    z-index: 4;
+    transform: skewX(-10deg) translate(50%);
+}
+.skewed > .glyphicon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*hover transitions*/
+.skewed:hover{
+    background-color: #BB0000;
+    transition-duration: 500ms;
+    box-shadow: none;
+}
+
+/*number bar*/
+.number_bar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    padding-left: 15px;
+    background-color: black;
+    z-index: 3;
+}
+.nav_number{
+    position: relative;
+    display: inline-block;
+    height: 75%;
+    width: 5%;
+    margin: 0 5px;
+    top: 25%;
+    transform: skewX(-10deg);
+    color: black;
+    background-color: white;
+    box-shadow: -3px -3px 2px 1px #A0A0A0 inset;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.75em;
+}
+.active_nav_number{
+    color: white;
+    background-color: red;
+    box-shadow: -3px -3px 2px 1px #A00000 inset;
+    font-weight: bold;
+}
+
+/*technologies area*/
+.technologies{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.tech{
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: white;
+    box-shadow: 1px 1px 3px 1px #000000;
+}
+.tech_pic{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tech:hover img{
+    transform: scale(1.1);
+}
+.tech:hover .name{
+    font-weight: bold;
+}
+.tech .name{
+    font-family: Calibri;
+    font-size: 1.5em;
+}
+
+/*styling for contact form*/
+.contact{
+    margin-bottom: 6vh;
+}
+.contact form{
+    display: inline-block;
+    width: 50%;
+}
+.contact input, .contact textarea{
+    margin: 5px;
+    padding: 1px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px #000000;
+    width: 100%;
+}
+.contact button{
+    background-color: red;
+}
+.contact table{
+    width: 100%;
+}
+.contact textarea{
+    resize: vertical;
+}
+.mail_response_container{
+    /*margin: 0 auto;*/
+    vertical-align: top;
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    padding: 0 15px;
+    background-color: black;
+    /*background-color: red;*/
+    box-sizing: border-box;
+    box-shadow: 1px 1px 3px 1px #000000;
+    transform: translateX(50%) skewX(-10deg);
+}
+.mail_response{
+    /*color: black;*/
+    color: white;
+    width: 100%;
+    height: 100%;
+    /*background-color: #404040;*/
+    background-color: silver;
+    /*background-color: black;*/
+    padding: 0 5px;
+}
+.mail_response p{
+    transform: skewX(10deg);
+    color: black;
+    padding: 0 5px;
+}
+textarea:focus, input:focus {
+    outline-width: 1px;
+    outline-color: red;
+    /*i could create this effect with box-shadowing as well*/
+}
+/*footer styling*/
+.footer{
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.8;
+}
+.footer:hover{
+    opacity: 1.0;
+    background-color: rgba(0,0,0,0.9);
+}
+.footer .link_btn_container{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+.footer link_btn, .footer input{
+    height: 50%;
+}
+.footer input{
+    font-size: 1em;
+}
+.footer .top{
+    position: absolute;
+    right: 0;
+}
+.github_main input{
+    background-color: #44a340;
+    box-shadow: -3px -3px 2px 1px #1e6823 inset, 1px 1px 3px 1px #000000;
+}
+.github_main input:hover{
+    box-shadow: -3px -3px 2px 1px #0a540f inset, 1px 1px 1px 1px #000000;
+}
+.linked_in input{
+    background-color: #0077b5;
+    box-shadow: -3px -3px 2px 1px #001e8c inset, 1px 1px 3px 1px #000000;
+}
+.linked_in input:hover{
+    box-shadow: -3px -3px 2px 1px #000a78 inset, 1px 1px 1px 1px #000000;
+}
+/*new*/
+/*.top input{
+    background-color: #0077b5;
+    box-shadow: -3px -3px 2px 1px #001e8c inset, 1px 1px 3px 1px #000000;
+}
+.top input:hover{
+    box-shadow: -3px -3px 2px 1px #000a78 inset, 1px 1px 1px 1px #000000;
+}*/
+/*old*/
+/*.top{
+    position: absolute;
+    right: 0;
+}*/
+
+/*modal styling*/
+.modal-open {
+    overflow: scroll;
+}
+.modal-content{
+    /*background-color: darkgray;*/
+    background-color: #EEEEEE;
+}
+.modal form{
+    display: inline-block;
+}
+.close_modal, .description{
+    background-color: #FFBB00;
+    box-shadow: -3px -3px 2px 1px #e19d00 inset, 1px 1px 1px 1px #000000;
+}
+.close_modal:hover, .description:hover{
+    color: dimgray;
+        box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000;
+}
+
+/*animations*/
+/* Chrome, Safari, Opera */
+@-webkit-keyframes prev_image_in {
+    0%   {left: -100%}
+    25%  {left: -75%}
+    50%  {left: -50%}
+    75%  {left: -25%}
+    100% {left: 0}
+}
+/* Standard syntax */
+@keyframes prev_image_in {
+    0%   {left: -100%}
+    25%  {left: -75%}
+    50%  {left: -50%}
+    75%  {left: -25%}
+    100% {left: 0}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes prev_image_out {
+    0%   {left: 0}
+    25%  {left: 25%}
+    50%  {left: 50%}
+    75%  {left: 75%}
+    100% {left: 100%}
+}
+/* Standard syntax */
+@keyframes prev_image_out {
+    0%   {left: 0}
+    25%  {left: 25%}
+    50%  {left: 50%}
+    75%  {left: 75%}
+    100% {left: 100%}
+}
+
+@media (max-width: 1215px){
+    .apps_carousel_main{
+        height: 380px;
+    }
+    .apps_carousel{
+        height: 380px;
+        width: 768px;
+    }
+    .semicircle{
+        height: 40px;
+        width: 20px;
+    }
+    .skewed > .glyphicon{
+        font-size: 0.75em;
+    }
+    .nav_number{
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 950px){
+    .apps_carousel_main{
+        height: 285px;
+    }
+    .apps_carousel{
+        height: 285px;
+        width: 576px;
+    }
+    .semicircle{
+        height: 30px;
+        width: 15px;
+    }
+    .skewed > .glyphicon{
+        font-size: 0.5em;
+    }
+    .nav_number{
+        font-size: 1em;
+    }
+}
+@media (max-width: 740px){
+    .apps_carousel_main{
+        height: 190px;
+    }
+    .apps_carousel{
+        height: 190px;
+        width: 384px;
+    }
+    .semicircle{
+        height: 20px;
+        width: 10px;
+    }
+    .nav_number{
+        font-size: .75em;
+    }
+}
+@media (max-width: 640px){
+    #header ul{
+        width: 50%;
+        font-size: .75em;
+    }
+
+}
+
+
+
+
+/*.nav_links{
+    margin-right: 5px;
+    float: right;
+    color: white;
+    font-size: 1.25em;
+}
+.nav_links > a{
+    color: white;
+    text-decoration: none;
+}
+.nav_links > a:hover{
+    color: red;
+}*/
+
+
+html, body{
+  height: 100%;
+}
+body{
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+  background-color: $bg;
+}
+.main_screen{
+  display: inline-block;
+  width: 100%;
+  height: 60%;
+  position: relative;
+  top: 20%;
+
+  .screen{
+    width: 90%;
+    height: 100%;
+    background: #101010;
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+.first{
+  background-color: green;
+}
+.second{
+  background-color: red;
+}
+.third{
+  background-color: orange;
+}
+.screen .hidden{
+  display: none;
+}
+.screen .shrunk{
+  animation-name: shrink;
+  animation-duration: 0.5s;
+}
+.screen .grown{
+  animation-name: grow;
+  animation-duration: 0.5s;
+}
+
+@keyframes shrink{
+  0%{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    display: inline-block;
+  }
+  99%{
+    -webkit-transform: scale(0.0001);
+    transform: scale(0.0001);
+  }
+  100%{
+    display: none;
+    -webkit-transform: scale(0.0001);
+    transform: scale(0.0001);
+  }
+}
+@keyframes grow{
+  0%{
+    display: none;
+    -webkit-transform: scale(0.0001);
+    transform: scale(0.0001);
+  }
+  1%{
+    display: inline-block;
+    -webkit-transform: scale(0.0001);
+    transform: scale(0.0001);
+  }
+  100%{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    display: inline-block;
+  }
+}
