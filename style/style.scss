@@ -20,6 +20,7 @@ button:focus {
 }
 .page{
     position: absolute;
+    display: inline-block;
     // top: 0;
     // left: 0;
     width: 100%;
@@ -34,14 +35,19 @@ button:focus {
     visibility: hidden;
 }
 /*are for section title*/
+.title{
+    position: relative;
+    top: 0;
+}
 .title span{
     background-color: red;
     transform: skewX(-10deg) translateX(-5px);
     display: inline-block;
+    position: relative;
     width: 10%;
     height: 2.5em;
-    margin: 0;
-    vertical-align: text-bottom;
+    // margin: 0;
+    vertical-align: 7px;
     box-shadow: 1px 1px 3px 1px #000000;
 
 }
@@ -55,6 +61,12 @@ button:focus {
     position: absolute;
     top: 0;
 }
+
+.content{
+    position: relative;
+}
+
+
 /*paragraphs*/
 p{
     color: black;
