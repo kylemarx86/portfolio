@@ -190,18 +190,28 @@ footer{
             &.small{
                 $base-color: white;
                 background-color: $base-color;
+                background-size: 40px 40px;
+                background-repeat: no-repeat;
+                background-position: center;
                 box-shadow: 
-                inset 0 $btn_size_sm/32 0 lighten($base-color, 5%),
-                inset 0 (-$btn_size_sm/32) 0 darken($base-color, 5%),
-                inset 0 0 0 $btn_size_sm/32 darken($base-color, 3%),
-                inset 0 0 0 $btn_size_sm/12 $base-color,
-                inset 0 0 0 $btn_size_sm/10 darken($base-color, 20%),
-                inset 0 0 0 $btn_size_sm/9.2 darken($base-color, 50%),
-                inset 0 0 0 $btn_size_sm/7.5 transparentize(lighten($base-color, 30%), .3),
-                inset 0 0 0 $btn_size_sm/5.5 $base-color,
-                inset 0 $btn_size_sm/2.5 $btn_size_sm/7.5 darken($base-color, 5%),
-                inset 0 0 $btn_size_sm/10 $btn_size_sm/6 darken($base-color, 10%),
-                0 $btn_size_sm/20 0 rgba(0, 0, 0, .3);
+                  inset 0 $btn_size_sm/32 0 lighten($base-color, 5%),
+                  inset 0 (-$btn_size_sm/32) 0 darken($base-color, 5%),
+                  inset 0 0 0 $btn_size_sm/32 darken($base-color, 3%),
+                  inset 0 0 0 $btn_size_sm/12 $base-color,
+                  inset 0 0 0 $btn_size_sm/10 darken($base-color, 20%),
+                  inset 0 0 0 $btn_size_sm/9.2 darken($base-color, 50%),
+                  inset 0 0 0 $btn_size_sm/7.5 transparentize(lighten($base-color, 30%), .3),
+                  inset 0 0 0 $btn_size_sm/5.5 $base-color,
+                  // inset 0 $btn_size_sm/2.5 $btn_size_sm/7.5 darken($base-color, 5%),
+                  inset 0 0 $btn_size_sm/10 $btn_size_sm/6 darken($base-color, 10%),
+                  0 $btn_size_sm/20 0 rgba(0, 0, 0, .3);
+                          
+                &.github{
+                  background-image: url('resources/github.png');
+                }
+                &.linkedin{
+                  background-image: url('resources/linkedin.png');
+                }
             }
 
             &:after {
@@ -216,6 +226,7 @@ footer{
               border-width: 0 0 $btn_size_sm/15;
               border-radius: 50%;
               transition-duration: 200ms;
+        
             }
 
             &:active,
@@ -224,18 +235,19 @@ footer{
               &.small{
                   $base-color: white;
                   box-shadow: 
-                inset 0 $btn_size_sm/32 0 lighten($base-color, 5%),
-                inset 0 (-$btn_size_sm/32) 0 darken($base-color, 5%),
-                inset 0 0 0 $btn_size_sm/32 darken($base-color, 3%),
-                inset 0 0 0 $btn_size_sm/12 $base-color,
-                inset 0 0 0 $btn_size_sm/10 darken($base-color, 20%),
-                inset 0 0 0 $btn_size_sm/8.5 darken($base-color, 40%),
-                inset 0 0 0 $btn_size_sm/7.5 transparentize(lighten($base-color, 30%), .8),
-                inset 0 0 0 $btn_size_sm/5.5 darken($base-color, 3%),
-                inset 0 $btn_size_sm/2.5 $btn_size_sm/7.5 darken($base-color, 8%),
-                inset 0 0 $btn_size_sm/10 $btn_size_sm/6 darken($base-color, 15%),
-                0 $btn_size_sm/20 0 rgba(0, 0, 0, .3);
-              background-color: darken($base-color, 2%);
+                    inset 0 $btn_size_sm/32 0 lighten($base-color, 5%),
+                    inset 0 (-$btn_size_sm/32) 0 darken($base-color, 5%),
+                    inset 0 0 0 $btn_size_sm/32 darken($base-color, 3%),
+                    inset 0 0 0 $btn_size_sm/12 $base-color,
+                    inset 0 0 0 $btn_size_sm/10 darken($base-color, 20%),
+                    inset 0 0 0 $btn_size_sm/8.5 darken($base-color, 40%),
+                    inset 0 0 0 $btn_size_sm/7.5 transparentize(lighten($base-color, 30%), .8),
+                    inset 0 0 0 $btn_size_sm/5.5 darken($base-color, 3%),
+                    // inset 0 $btn_size_sm/2.5 $btn_size_sm/7.5 darken($base-color, 8%),
+                    inset 0 0 $btn_size_sm/10 $btn_size_sm/6 darken($base-color, 15%),
+                    0 $btn_size_sm/20 0 rgba(0, 0, 0, .3);
+                  background-color: darken($base-color, 2%);
+                  
               } 
 
             
