@@ -192,14 +192,6 @@ function apply_event_handlers(){
 
     $('#prev').click(get_prev_screen);
     $('#next').click(get_next_screen);
-    // $('.next_btn_part').hover(
-    //     function () {
-    //         $('.next_button').find('.next_btn_part').addClass('highlighted_button');
-    //     },
-    //     function () {
-    //         $('.next_button').find('.next_btn_part').removeClass('highlighted_button');
-    //     }
-    // );
 }
 
 //method to make ajax call to send email form.
@@ -430,9 +422,9 @@ function update_page(new_page){
 }
 function toggle_hidden(curr_page, new_page){
     setTimeout(function(){
+      // page
       $(`${page_arr[curr_page]}.page`).toggleClass('hidden');
       $(`${page_arr[new_page]}.page`).toggleClass('hidden');
-      //title
 
       //content
       $(`${page_arr[curr_page]} .content`).toggleClass('hidden');
