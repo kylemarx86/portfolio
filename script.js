@@ -311,10 +311,10 @@ function jump_to_app(new_app_index){
     if(!click_event_happening){
         if(current_app_index < new_app_index){
             // new app is moving in the forward direction
-            update_app(new_app_index, 1, 1500);
+            update_app(new_app_index, 1, 750);
         }else if(current_app_index > new_app_index){
             // new app is moving in the backward direction
-            update_app(new_app_index, -1, 1500);
+            update_app(new_app_index, -1, 750);
         }
     }
 }
@@ -322,19 +322,19 @@ function jump_to_app(new_app_index){
 //if direction = 1, then we will move forward through the image array (i.e. increase index)
 //if direction = -1, then we will move backward through the image array (i.e. decrease index)
 //time_duration is the time in ms for the app to finish animation
-function update_app(new_app_index, direction, time_duration = 2000) {
+function update_app(new_app_index, direction, time_duration = 1000) {
     if(!click_event_happening){
         //prevent further clicks
         click_event_happening = true;   
         setTimeout(function(){ click_event_happening=false; }, time_duration);
         //prepare new image for move in
-        $(image_array[new_app_index]).css({'left': direction*100+'%', 'top': '0'});
+        $(image_array[new_app_index]).css({'left': `${direction*100}%`, 'top': '0'});
         //slide previous image out
-        $(image_array[current_app_index]).animate({left: -100*direction+'%'},time_duration);
+        $(image_array[current_app_index]).animate({left: `${direction*-100}%`},time_duration);
         //slide new image in
         $(image_array[new_app_index]).animate({left: '0'},time_duration);
         //change active app css
-        $('.nav_number:nth-of-type(' + (current_app_index + 1) + '), .nav_number:nth-of-type(' + (new_app_index + 1) + ')').toggleClass('active_nav_number');
+        $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
         
         //update current_app_index
         current_app_index = new_app_index;    
@@ -367,7 +367,8 @@ function update_links(){
     //update descriptive detail lines of the apps
     $('.modal-body .desc').empty();
     for(var i = 0; i < apps_array[current_app_index].description.details.length; i++){
-        $('.modal-body .desc').append('<p>' + apps_array[current_app_index].description.details[i] + '</p>');
+        // $('.modal-body .desc').append('<p>' + apps_array[current_app_index].description.details[i] + '</p>');
+        $('.modal-body .desc').append(`<p>${apps_array[current_app_index].description.details[i]}</p>`);
     }
     //update links for github and live site
     $('form.github').attr('action',github_address);
