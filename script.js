@@ -416,16 +416,25 @@ function get_next_screen(){
   update_page(new_page);
 }
 function update_page(new_page){
-  $(page_arr[curr_page]).toggleClass('shrunk grown');
-  $(page_arr[new_page]).toggleClass('shrunk grown');
+  // title
+  $(`${page_arr[curr_page]} .title`).toggleClass('slide');
+  $(`${page_arr[new_page]} .title`).toggleClass('slide');
+  // content
+  $(`${page_arr[curr_page]} .content`).toggleClass('shrunk grown');
+  $(`${page_arr[new_page]} .content`).toggleClass('shrunk grown');
+
   toggle_hidden(curr_page, new_page);
   curr_page = new_page;
   new_page = null;
 }
-
 function toggle_hidden(curr_page, new_page){
     setTimeout(function(){
-        $(page_arr[curr_page]).toggleClass('hidden');
-        $(page_arr[new_page]).toggleClass('hidden');
+      $(`${page_arr[curr_page]}.page`).toggleClass('hidden');
+      $(`${page_arr[new_page]}.page`).toggleClass('hidden');
+      //title
+
+      //content
+      $(`${page_arr[curr_page]} .content`).toggleClass('hidden');
+      $(`${page_arr[new_page]} .content`).toggleClass('hidden');
     }, 480);
 }

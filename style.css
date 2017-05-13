@@ -478,7 +478,7 @@ button:focus {
   transform: skewX(-10deg) translateX(-5px);
   display: inline-block;
   width: 10%;
-  height: 2em;
+  height: 2.5em;
   margin: 0;
   vertical-align: text-bottom;
   box-shadow: 1px 1px 3px 1px #000000; }
@@ -486,7 +486,8 @@ button:focus {
 .title h2 {
   padding: 0;
   display: inline-block;
-  font-family: 'Press Start 2P', cursive; }
+  font-family: 'Press Start 2P', cursive;
+  vertical-align: bottom; }
 
 #top {
   position: absolute;
@@ -720,6 +721,10 @@ body {
   animation-name: grow;
   animation-duration: 0.5s; }
 
+.slide {
+  animation: slide-in;
+  animation-duration: 0.5s; }
+
 @keyframes shrink {
   0% {
     -webkit-transform: scale(1);
@@ -745,5 +750,13 @@ body {
     -webkit-transform: scale(1);
     transform: scale(1);
     display: inline-block; } }
+@keyframes slide-in {
+  0% {
+    visibility: hidden;
+    transform: translateX(-100%); }
+  1% {
+    visibility: visible; }
+  100% {
+    transform: translateX(0); } }
 
 /*# sourceMappingURL=style.css.map */
