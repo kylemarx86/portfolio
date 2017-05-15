@@ -167,50 +167,52 @@ footer {
     display: inline-block;
     top: 0;
     right: 0; }
-    footer .links .btn_container {
-      display: inline-block;
-      position: relative;
-      top: 0;
-      height: 100%; }
-      footer .links .btn_container .arcade_btn {
-        position: relative;
+    footer .links form {
+      display: inline-block; }
+      footer .links form .btn_container {
         display: inline-block;
-        width: 50px;
-        height: 50px;
-        border: 0;
-        margin: 1em;
-        outline: none;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: box-shadow 200ms; }
-        footer .links .btn_container .arcade_btn.small {
-          background-color: white;
-          background-size: 40px 40px;
-          background-repeat: no-repeat;
-          background-position: center;
-          box-shadow: inset 0 1.5625px 0 white, inset 0 -1.5625px 0 #f2f2f2, inset 0 0 0 1.5625px #f7f7f7, inset 0 0 0 4.16667px white, inset 0 0 0 5px #cccccc, inset 0 0 0 5.43478px gray, inset 0 0 0 6.66667px rgba(255, 255, 255, 0.7), inset 0 0 0 9.09091px white, inset 0 0 5px 8.33333px #e6e6e6, 0 2.5px 0 rgba(0, 0, 0, 0.3); }
-          footer .links .btn_container .arcade_btn.small.github {
-            background-image: url("resources/github.png"); }
-          footer .links .btn_container .arcade_btn.small.linkedin {
-            background-image: url("resources/linkedin.png"); }
-        footer .links .btn_container .arcade_btn:after {
-          content: '';
-          position: absolute;
-          bottom: 2.5px;
-          left: 5px;
-          display: block;
-          width: 40px;
-          height: 40px;
-          border: 3.33333px solid rgba(0, 0, 0, 0.3);
-          border-width: 0 0 3.33333px;
+        position: relative;
+        top: 0;
+        height: 100%; }
+        footer .links form .btn_container .arcade_btn {
+          position: relative;
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          border: 0;
+          margin: 1em;
+          outline: none;
           border-radius: 50%;
-          transition-duration: 200ms; }
-        footer .links .btn_container .arcade_btn:active.small, footer .links .btn_container .arcade_btn.is-pushed.small {
-          box-shadow: inset 0 1.5625px 0 white, inset 0 -1.5625px 0 #f2f2f2, inset 0 0 0 1.5625px #f7f7f7, inset 0 0 0 4.16667px white, inset 0 0 0 5px #cccccc, inset 0 0 0 5.88235px #999999, inset 0 0 0 6.66667px rgba(255, 255, 255, 0.2), inset 0 0 0 9.09091px #f7f7f7, inset 0 0 5px 8.33333px #d9d9d9, 0 2.5px 0 rgba(0, 0, 0, 0.3);
-          background-color: #fafafa; }
-        footer .links .btn_container .arcade_btn:active:after, footer .links .btn_container .arcade_btn.is-pushed:after {
-          bottom: 5.83333px;
-          border-width: 0; }
+          cursor: pointer;
+          transition: box-shadow 200ms; }
+          footer .links form .btn_container .arcade_btn.small {
+            background-color: white;
+            background-size: 40px 40px;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: inset 0 1.5625px 0 white, inset 0 -1.5625px 0 #f2f2f2, inset 0 0 0 1.5625px #f7f7f7, inset 0 0 0 4.16667px white, inset 0 0 0 5px #cccccc, inset 0 0 0 5.43478px gray, inset 0 0 0 6.66667px rgba(255, 255, 255, 0.7), inset 0 0 0 9.09091px white, inset 0 0 5px 8.33333px #e6e6e6, 0 2.5px 0 rgba(0, 0, 0, 0.3); }
+            footer .links form .btn_container .arcade_btn.small.github {
+              background-image: url("resources/github.png"); }
+            footer .links form .btn_container .arcade_btn.small.linkedin {
+              background-image: url("resources/linkedin.png"); }
+          footer .links form .btn_container .arcade_btn:after {
+            content: '';
+            position: absolute;
+            bottom: 2.5px;
+            left: 5px;
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 3.33333px solid rgba(0, 0, 0, 0.3);
+            border-width: 0 0 3.33333px;
+            border-radius: 50%;
+            transition-duration: 200ms; }
+          footer .links form .btn_container .arcade_btn:active.small, footer .links form .btn_container .arcade_btn.is-pushed.small {
+            box-shadow: inset 0 1.5625px 0 white, inset 0 -1.5625px 0 #f2f2f2, inset 0 0 0 1.5625px #f7f7f7, inset 0 0 0 4.16667px white, inset 0 0 0 5px #cccccc, inset 0 0 0 5.88235px #999999, inset 0 0 0 6.66667px rgba(255, 255, 255, 0.2), inset 0 0 0 9.09091px #f7f7f7, inset 0 0 5px 8.33333px #d9d9d9, 0 2.5px 0 rgba(0, 0, 0, 0.3);
+            background-color: #fafafa; }
+          footer .links form .btn_container .arcade_btn:active:after, footer .links form .btn_container .arcade_btn.is-pushed:after {
+            bottom: 5.83333px;
+            border-width: 0; }
 
 /*styling for about*/
 .about p {
