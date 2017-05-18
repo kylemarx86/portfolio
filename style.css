@@ -445,12 +445,10 @@ button.link_btn:hover, .link_btn > input:hover {
   font-size: 1.5em; }
 
 /*styling for contact form*/
-.contact {
-  margin-bottom: 6vh; }
-
 .contact form {
   display: inline-block;
-  width: 50%; }
+  width: 50%;
+  margin-left: 5px; }
 
 .contact input, .contact textarea {
   margin: 5px;
