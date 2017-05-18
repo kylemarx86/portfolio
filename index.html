@@ -3,7 +3,9 @@
 <head>
     <title>Kyle Marx - Portfolio</title>
     <!--font resources-->
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    
 
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -48,19 +50,7 @@
         </ul>
     </div>
     
-    <!--<div class='footer'>
-        <div class='link_btn_container'>
-            <form class='link_btn github_main' action="https://github.com/kylemarx86">
-                <input type='submit' value='GitHub'>
-            </form>
-            <form class='link_btn linked_in' action='https://www.linkedin.com/in/kyle-marx-a9063b12a/' >
-                <input type='submit' value='LinkedIn'>
-            </form>
-            <button class="link_btn top" name='top'>
-                <span class="glyphicon glyphicon-arrow-up"></span><span>Top</span>
-            </button>
-        </div>
-    </div>-->
+
 
     <div class='main_screen background'>
         <div class='screen'>
@@ -194,8 +184,9 @@
                         <button type="button" name="submit" value="submit" class='link_btn send'>Send Mail</button>
                     </form>
                     <div class='mail_response_container'>
-                        <div class='mail_response'><p>I am local to the Orange County area of California. Feel free to contatct me about my applications or skills.
-                            </p></div>
+                        <div class='mail_response'>
+                            <p>I am local to the Orange County area of California. Feel free to contatct me about my applications or skills.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -222,15 +213,31 @@
             </div>
         </div>
         <div class='links'>
-            <div class='btn_container'>
-                <div class='arcade_btn small github'></div>
-            </div>
-            <div class='btn_container'>
-                <div class='arcade_btn small linkedin'></div>
-            </div>
+            <form action='https://github.com/kylemarx86' target='_blank'>
+                <div class='label'>
+                    <span>GitHub</span>
+                </div>
+                <br>
+                <div class='btn_area'>
+                    <div class='btn_container'>
+                        <input class='arcade_btn small github' type='submit' value="">
+                    </div>
+                </div>
+            </form>
+            <form action='https://www.linkedin.com/in/kyle-marx-a9063b12a/' target='_blank'>
+                <div class='label'>
+                    <span>LinkedIn</span>
+                </div>
+                <br>
+                <div class='btn_area'>
+                    <div class='btn_container'>
+                        <input class='arcade_btn small linkedin' type='submit' value="">
+                    </div>
+                </div>
+            </form>
         </div>
     </footer>
-    
+
     <!-- Modal -->
     <div class="modal fade" id="description_modal" role="dialog">
         <div class="modal-dialog">
