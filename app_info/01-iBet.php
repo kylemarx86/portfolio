@@ -11,7 +11,7 @@ $data['description']['details'][] = 'Utilizes PHP to control logic of win condit
 $data['description']['details'][] = 'Worked closely with front end written in Angular to create database queries to retrieve upcoming game info, bet history, and leaderboard';
 
 // $data['picture_source'] = 'app_pics/iBet-big.png';
-$data['picture_source'] = 'app_pics/iBet.png';
+$data['picture_source'] = 'app_pics/iBet-wide.png';
 $data['live_address'] = 'http://dev.danlee.site/c10_sports/';
 $data['github_address'] = 'https://github.com/xuesongc4/c10_sports';
 

@@ -1,0 +1,302 @@
+@import 'header';
+@import 'footer';
+@import 'pages/about';
+@import 'pages/apps';
+@import 'pages/technologies_used';
+@import 'pages/contact';
+
+$bg: #333;
+
+body{
+    height: 100%;
+    /*background-color: #FAFAFA;*/
+    background-color: white;
+}
+button:focus {
+    outline: 0;
+}
+.link_btn_container form{
+    display: inline-block;
+}
+.page{
+    position: absolute;
+    display: inline-block;
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*allows for gap between header and title*/
+.anchor{
+    display: block;
+    height: 60px; /*same height as header*/
+    margin-top: -60px; /*same height as header*/
+    visibility: hidden;
+}
+/*are for section title*/
+.title{
+    position: relative;
+    top: 0;
+}
+.title span{
+    background-color: red;
+    transform: skewX(-10deg) translateX(-5px);
+    display: inline-block;
+    position: relative;
+    width: 10%;
+    height: 2.5em;
+    // margin: 0;
+    vertical-align: 7px;
+    box-shadow: 1px 1px 3px 1px #000000;
+
+}
+.title h2{
+    padding: 0;
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+    vertical-align: bottom;
+}
+
+.content{
+    position: relative;
+}
+
+/*modal styling*/
+.modal-open {
+    overflow: scroll;
+}
+.modal-content{
+    /*background-color: darkgray;*/
+    background-color: #EEEEEE;
+}
+.modal form{
+    display: inline-block;
+}
+.close_modal, .description{
+    background-color: #FFBB00;
+    box-shadow: -3px -3px 2px 1px #e19d00 inset, 1px 1px 1px 1px #000000;
+}
+.close_modal:hover, .description:hover{
+    color: dimgray;
+        box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000;
+}
+
+/*animations*/
+/* Chrome, Safari, Opera */
+@-webkit-keyframes prev_image_in {
+    0%   {left: -100%}
+    25%  {left: -75%}
+    50%  {left: -50%}
+    75%  {left: -25%}
+    100% {left: 0}
+}
+/* Standard syntax */
+@keyframes prev_image_in {
+    0%   {left: -100%}
+    25%  {left: -75%}
+    50%  {left: -50%}
+    75%  {left: -25%}
+    100% {left: 0}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes prev_image_out {
+    0%   {left: 0}
+    25%  {left: 25%}
+    50%  {left: 50%}
+    75%  {left: 75%}
+    100% {left: 100%}
+}
+/* Standard syntax */
+@keyframes prev_image_out {
+    0%   {left: 0}
+    25%  {left: 25%}
+    50%  {left: 50%}
+    75%  {left: 75%}
+    100% {left: 100%}
+}
+
+@media (max-width: 1215px){
+    .apps_carousel_main{
+        height: 380px;
+    }
+    .apps_carousel{
+        height: 380px;
+        width: 768px;
+    }
+    .semicircle{
+        height: 40px;
+        width: 20px;
+    }
+    .skewed > .glyphicon{
+        font-size: 0.75em;
+    }
+    .nav_number{
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 950px){
+    .apps_carousel_main{
+        height: 285px;
+    }
+    .apps_carousel{
+        height: 285px;
+        width: 576px;
+    }
+    .semicircle{
+        height: 30px;
+        width: 15px;
+    }
+    .skewed > .glyphicon{
+        font-size: 0.5em;
+    }
+    .nav_number{
+        font-size: 1em;
+    }
+}
+@media (max-width: 740px){
+    .apps_carousel_main{
+        height: 190px;
+    }
+    .apps_carousel{
+        height: 190px;
+        width: 384px;
+    }
+    .semicircle{
+        height: 20px;
+        width: 10px;
+    }
+    .nav_number{
+        font-size: .75em;
+    }
+}
+@media (max-width: 640px){
+    #header ul{
+        width: 50%;
+        font-size: .75em;
+    }
+
+}
+
+
+
+
+/*.nav_links{
+    margin-right: 5px;
+    float: right;
+    color: white;
+    font-size: 1.25em;
+}
+.nav_links > a{
+    color: white;
+    text-decoration: none;
+}
+.nav_links > a:hover{
+    color: red;
+}*/
+
+
+html, body{
+  height: 100%;
+}
+body{
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+  background-color: $bg;
+}
+.main_screen{
+  display: inline-block;
+  width: 100%;
+  height: 60%;
+  position: relative;
+  top: 20%;
+
+  .screen{
+    width: 90%;
+    height: 100%;
+    background: #101010;
+    color: white;
+    border-radius: 15px;
+    // padding: 20px;
+    border: 10px solid black;
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+  }
+}
+
+
+.first{
+  background-color: green;
+}
+.second{
+  background-color: red;
+}
+.third{
+  background-color: orange;
+}
+.screen .hidden{
+  display: none;
+}
+.screen .shrunk{
+  animation-name: shrink;
+  animation-duration: 0.5s;
+}
+.screen .grown{
+  animation-name: grow;
+  animation-duration: 0.5s;
+}
+.slide{
+  animation: slide-in;
+  animation-duration: 0.5s;
+}
+
+@keyframes shrink{
+  0%{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    display: inline-block;
+  }
+  99%{
+    -webkit-transform: scale(0.0001);
+    transform: scale(0.0001);
+  }
+  100%{
+    display: none;
+    -webkit-transform: scale(0.0001);
+    transform: scale(0.0001);
+  }
+}
+@keyframes grow{
+  0%{
+    display: none;
+    -webkit-transform: scale(0.0001);
+    transform: scale(0.0001);
+  }
+  1%{
+    display: inline-block;
+    -webkit-transform: scale(0.0001);
+    transform: scale(0.0001);
+  }
+  100%{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    display: inline-block;
+  }
+}
+@keyframes slide-in{
+  0%{
+    visibility: hidden;
+    transform: translateX(-100%);
+  }
+  1%{
+    visibility: visible;
+  }
+  100%{
+    transform: translateX(0);
+  }
+}

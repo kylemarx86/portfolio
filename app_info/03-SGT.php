@@ -9,7 +9,7 @@ $data['description']['details'][] = 'Uses PHP and MySQL for create, read, update
 $data['description']['details'][] = 'Makes use of Bootstrap to format the HTML body and make the display responsive';
 
 // $data['picture_source'] = 'app_pics/SGT-big.png';
-$data['picture_source'] = 'app_pics/SGT.png';
+$data['picture_source'] = 'app_pics/SGT-wide.png';
 $data['live_address'] = 'http://dev.kylemarx86.com/SGT/';
 $data['github_address'] = 'https://github.com/kylemarx86/SGT_clone';
 

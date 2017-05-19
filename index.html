@@ -2,6 +2,11 @@
 <html>
 <head>
     <title>Kyle Marx - Portfolio</title>
+    <!--font resources-->
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    
+
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -20,7 +25,6 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div id='top'></div>
     <div id='header'>
         <svg id='canvas'>
             <defs>
@@ -37,144 +41,213 @@
                 <rect width='1800px' height='473px' fill='url(#inner_triangles)'/>
             </g>
         </svg>
-    </div>
-    <div class='about'>
-        <div class='title'>
-            <span></span>
-            <h2>About Me</h2>
-        </div>
-        <p>My name is Kyle Marx, and I am a web developer. I am a graduate from Cal State Fullerton with a degree in Mathematics. I have been in the education business for years, and I am now switching over to this new field. My interests include music, reading, board games, sports (especially baseball and soccer), and trivia. This is a portfolio dedicated to highlighting some of my applications and technological skills.</p>
-    </div>
-    <div class='apps'>
-        <div class='title'>
-            <span></span>
-            <h2>Selected Applications</h2>
-        </div>
-        <div class='apps_carousel_top'>
-            <div class='link_btn_container'>
-                <button class='link_btn description' data-toggle="modal" data-target="#description_modal">Description</button>
-                <form class='link_btn github' >
-                    <input type='submit' value='GitHub'>
-                </form>
-                <form class='link_btn live'>
-                    <input type='submit' value='Live Site'>
-                </form>
-            </div>
-        </div>
-        <div class='apps_carousel_main'>
-            <div class="apps_carousel">
-                <div id='image_container'></div>
-                <button class='prev_button skewed'></button>
-                <button class='next_button'>
-                    <div class='skewed next_btn_part'></div>
-                    <div class='semicircle next_btn_part'></div>
-                </button>
-                <div class='number_bar'></div>
-            </div>
-        </div>
-    </div>
-    <div class='technologies_used'>
-        <div class='title'>
-            <span></span>
-            <h2>Technologies Used</h2>
-        </div>
-        <div class='Technologies'>
-            <div class='tech'>
-                <div class='tech_pic'>
-                    <img src='tech_skills/php.png'>
-                </div>
-                <span class='name'>PHP</span>
-            </div>
-            <div class='tech'>
-                <div class='tech_pic'>
-                    <img src='tech_skills/mysql.png'>
-                </div>
-                <span class='name'>MySQL</span>
-            </div>  
-            <div class='tech'>
-                <div class='tech_pic'>
-                    <img src='tech_skills/js.png'>
-                </div>
-                <span class='name'>JavaScript</span>
-            </div>
-            <div class='tech'>
-                <div class='tech_pic'>
-                    <img src='tech_skills/jquery.png'>
-                </div>
-                <span class='name'>jQuery</span>
-            </div>
-            <div class='tech'>
-                <div class='tech_pic'>
-                    <img src='tech_skills/html5.png'>
-                </div>
-                <span class='name'>HTML5</span>
-            </div>
-            <div class='tech'>
-                <div class='tech_pic'>
-                    <img src='tech_skills/css3.png'>
-                </div>
-                <span class='name'>CSS3</span>
-            </div>
-            <div class='tech'>
-                <div class='tech_pic'>
-                    <img src='tech_skills/c_sharp.png'>
-                </div>
-                <span class='name'>C#</span>
-            </div>
-            <div class='tech'>
-                <div class='tech_pic'>
-                    <img src='tech_skills/bootstrap.png'>
-                </div>       
-                <span class='name'>Bootstrap</span>
-            </div>  
-        </div>
-    </div>
-    <div class='contact'>
-        <div class='title'>
-            <span></span>
-            <h2>Contact Me</h2>
-        </div>    
-        <form>
-            <table>
-                <tr>
-                    <td>Name</td>
-                    <td><input name="name" placeholder="name"></td>
-                </tr>
-                <tr>
-                    <td>Email address</td>
-                    <td><input name="email" placeholder="email address"></td>
-                </tr>
-                <tr>
-                    <td>Subject</td>
-                    <td><input name="subject" placeholder="subject"></td>
-                </tr>
-                <tr>
-                    <td>Message</td>
-                    <td><textarea name="body" placeholder="message" maxlength="750"></textarea></td>
-                </tr>
-            </table>
-            <button type="button" name="submit" value="submit" class='link_btn send'>Send Mail</button>
-
-        </form>
-        <div class='mail_response_container'>
-            <div class='mail_response'><p>I am local to the Orange County area of California. Feel free to contatct me.
-                </p></div>
-        </div>
-    </div>
-    <div class='footer'>
-        <div class='link_btn_container'>
-            <form class='link_btn github_main' action="https://github.com/kylemarx86">
-                <input type='submit' value='GitHub'>
-            </form>
-            <form class='link_btn linked_in' action='https://www.linkedin.com/in/kyle-marx-a9063b12a/' >
-                <input type='submit' value='LinkedIn'>
-            </form>
-            <button class="link_btn top" name='top'>
-                <span class="glyphicon glyphicon-arrow-up"></span>Top
-            </button>
-        </div>
+        <ul>
+            <li><a href="#about"><span>About Me</span></a></li>
+            <li><a href="#apps"><span>Selected Applications</span></a></li>
+            <li><a href="#tech"><span>Technologies Used</span></a></li>
+            <li><a href="#contact"><span>Contact Me</span></a></li>
+        </ul>
     </div>
     
+
+
+    <div class='main_screen background'>
+        <div class='screen'>
+    <!--<span class='anchor' id='about'></span>-->
+            <div class='page about'>
+                <div class='title slide'>
+                    <span></span>
+                    <h2>About Me</h2>
+                </div>
+                <div class='content grown'>
+                    <p>My name is Kyle Marx, and I am a web developer. I am a graduate from Cal State Fullerton with a degree in Mathematics. I have been in the education business for years, and I am now switching over to this new field. My interests include music, reading, board games, sports (especially baseball and soccer), and trivia. This is a portfolio dedicated to highlighting some of my applications and technological skills.</p>
+                </div>
+            </div>
+            <!--<span class='anchor' id='apps'></span>-->
+            <div class='page apps hidden'>
+                <div class='title'>
+                    <span></span>
+                    <h2>Selected Applications</h2>
+                </div>
+                <div class='content shrunk hidden'>
+                    <div class='apps_carousel_top'>
+                        <div class='link_btn_container'>
+                            <form class='link_btn github' target='_blank'>
+                                <input type='submit' value='GitHub'>
+                            </form>
+                            <form class='link_btn live'  target='_blank'>
+                                <input type='submit' value='Live Site'>
+                            </form>
+                            <button class='link_btn description' data-toggle="modal" data-target="#description_modal">Description</button>
+                        </div>
+                    </div>
+                    <div class='apps_carousel_main'>
+                        <div class="apps_carousel">
+                            <div id='image_container'></div>
+                            <button class='prev_button skewed'>
+                                <span class='glyphicon glyphicon-chevron-left'></span>
+                            </button>
+                            <button class='next_button skewed'>
+                                <span class='glyphicon glyphicon-chevron-right'></span>
+                            </button>
+                            <div class='number_bar'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<span class='anchor' id='tech'></span>-->
+            <div class='page technologies_used hidden'>
+                <div class='title'>
+                    <span></span>
+                    <h2>Technologies Used</h2>
+                </div>
+                <div class='content shrunk hidden'>
+                    <div class='Technologies'>
+                        <ul class='circle-container'>
+                            <li class='tech selected'><img src='resources/tech_skills/bootstrap.png'>Bootstrap</li>
+                            <li class='tech'><img src='resources/tech_skills/c_sharp.png'>C#</li>
+                            <li class='tech'><img src='resources/tech_skills/css3.png'>CSS3</li>
+                            <li class='tech'><img src='resources/tech_skills/html5.png'>HTML5</li>
+                            <li class='tech'><img src='resources/tech_skills/jquery.png'>jQuery</li>
+                            <li class='tech'><img src='resources/tech_skills/js.png'>JavaScript</li>
+                            <li class='tech'><img src='resources/tech_skills/mysql.png'>MySQL</li>
+                            <li class='tech'><img src='resources/tech_skills/php.png'>PHP</li>
+                            <li class='tech'><img src='resources/tech_skills/node.png'>Node.js</li>
+                        </ul>
+                        <!--<div class='tech'>
+                            <div class='tech_pic'>
+                                <img src='tech_skills/php.png'>
+                            </div>
+                            <span class='name'>PHP</span>
+                        </div>
+                        <div class='tech'>
+                            <div class='tech_pic'>
+                                <img src='tech_skills/mysql.png'>
+                            </div>
+                            <span class='name'>MySQL</span>
+                        </div>  
+                        <div class='tech'>
+                            <div class='tech_pic'>
+                                <img src='tech_skills/js.png'>
+                            </div>
+                            <span class='name'>JavaScript</span>
+                        </div>
+                        <div class='tech'>
+                            <div class='tech_pic'>
+                                <img src='tech_skills/jquery.png'>
+                            </div>
+                            <span class='name'>jQuery</span>
+                        </div>
+                        <div class='tech'>
+                            <div class='tech_pic'>
+                                <img src='tech_skills/html5.png'>
+                            </div>
+                            <span class='name'>HTML5</span>
+                        </div>
+                        <div class='tech'>
+                            <div class='tech_pic'>
+                                <img src='tech_skills/css3.png'>
+                            </div>
+                            <span class='name'>CSS3</span>
+                        </div>
+                        <div class='tech'>
+                            <div class='tech_pic'>
+                                <img src='tech_skills/c_sharp.png'>
+                            </div>
+                            <span class='name'>C#</span>
+                        </div>
+                        <div class='tech'>
+                            <div class='tech_pic'>
+                                <img src='tech_skills/bootstrap.png'>
+                            </div>       
+                            <span class='name'>Bootstrap</span>
+                        </div>  -->
+                    </div>
+                </div>
+            </div>
+            <!--<span class='anchor' id='contact'></span>-->
+            <div class='page contact hidden'>
+                <div class='title'>
+                    <span></span>
+                    <h2>Contact Me</h2>
+                </div>    
+                <div class='content shrunk hidden'>
+                    <form>
+                        <table>
+                            <tr>
+                                <td>Name</td>
+                                <td><input name="name" placeholder="name"></td>
+                            </tr>
+                            <tr>
+                                <td>Email address</td>
+                                <td><input name="email" placeholder="email address"></td>
+                            </tr>
+                            <tr>
+                                <td>Subject</td>
+                                <td><input name="subject" placeholder="subject"></td>
+                            </tr>
+                            <tr>
+                                <td>Message</td>
+                                <td><textarea name="body" placeholder="message" maxlength="750"></textarea></td>
+                            </tr>
+                        </table>
+                        <button type="button" name="submit" value="submit" class='link_btn send'>Send Mail</button>
+                    </form>
+                    <div class='mail_response_container'>
+                        <div class='mail_response'>
+                            <p>I am local to the Orange County area of California. Feel free to contatct me about my applications or skills.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class='control_panel'>
+            <div class='label_container'>
+                <div class='label red'>
+                    <span>Prev</span>
+                </div>
+            </div>
+            <div class='btn_container'>
+                <div class='arcade_btn red' id='prev'></div>
+            </div>
+            <div class='btn_container'>
+                <div class='arcade_btn blue' id='next'></div>
+            </div>
+            <div class='label_container'>
+                <div class='label blue'>
+                    <span>Next</span>
+                </div>        
+            </div>
+        </div>
+        <div class='links'>
+            <form action='https://github.com/kylemarx86' target='_blank'>
+                <div class='label'>
+                    <span>GitHub</span>
+                </div>
+                <br>
+                <div class='btn_area'>
+                    <div class='btn_container'>
+                        <input class='arcade_btn small github' type='submit' value="">
+                    </div>
+                </div>
+            </form>
+            <form action='https://www.linkedin.com/in/kyle-marx-a9063b12a/' target='_blank'>
+                <div class='label'>
+                    <span>LinkedIn</span>
+                </div>
+                <br>
+                <div class='btn_area'>
+                    <div class='btn_container'>
+                        <input class='arcade_btn small linkedin' type='submit' value="">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </footer>
+
     <!-- Modal -->
     <div class="modal fade" id="description_modal" role="dialog">
         <div class="modal-dialog">
@@ -189,14 +262,12 @@
                     <div class="desc"></div>
                 </div>
                 <div class="modal-footer">
-                    <form class='link_btn github' >
+                    <form class='link_btn github' target='_blank'>
                         <input type='submit' value='GitHub'>
                     </form>
-                    <form class='link_btn live'>
+                    <form class='link_btn live' target='_blank'>
                         <input type='submit' value='Live Site'>
                     </form>
-                    <!--<button class='link_btn github'>GitHub</button>
-                    <button class='link_btn live'>Live Site</button>-->
                     <button class="link_btn close_modal" data-dismiss="modal">Close</button>
                 </div>
             </div>
