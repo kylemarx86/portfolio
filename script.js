@@ -12,7 +12,7 @@ $(document).ready(function () {
     apps_array = [];
     rot_arr = [];
     draw_triangles();
-    initializeLocations();
+    initialize_locations();
     apply_event_handlers();
     click_event_happening = false;
     load_files();
@@ -195,7 +195,7 @@ function apply_event_handlers(){
 
     $('#prev').click(get_prev_screen);
     $('#next').click(get_next_screen);
-    $('.tech').click(toggleSelectedTech($(this)));
+    $('.tech').click(toggle_selected_tech($(this)));
 }
 
 //method to make ajax call to send email form.
@@ -402,14 +402,14 @@ function button_disable_and_reenable(){
     $('#next').click(get_next_screen);
   }, 1000);
 }
-function initializeLocations(){
+function initialize_locations(){
     var item_count = $('.circle-container .tech').length;
     for(var i = 0; i < item_count; i++){
         $(`.circle-container .tech:nth-of-type(${i+1})`).attr('loc', i);
         rot_arr[i] = 360 / item_count * i;
     }
 }
-function toggleSelectedTech(tech){
+function toggle_selected_tech(tech){
     $('.tech').click(function(){        
         //determine new rotation based on the location index of the clicked element
         var loc_index = $(this).attr('loc');
