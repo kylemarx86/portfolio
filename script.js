@@ -181,7 +181,7 @@ function get_poly_points(row, column){
     y[i] = row*43 + 21.5 + 21.5*Math.pow(-1,column + row + i + 1);
   }
   for(var i = 0; i < 3; i++){
-    retStr += x[i] + "," + y[i] + " ";
+    retStr += `${x[i]},${y[i]} `;
   }
   return retStr;
 }
@@ -355,7 +355,7 @@ function update_links(){
     var tech_used = '';
     for(var i = 0; i < apps_array[current_app_index].description.tech_used.length - 1; i++){
         // add all but the last of the tech used to a string separated by commas
-        tech_used += apps_array[current_app_index].description.tech_used[i] + ", ";
+        tech_used += `${apps_array[current_app_index].description.tech_used[i]}, `;
     }
     tech_used += apps_array[current_app_index].description.tech_used[apps_array[current_app_index].description.tech_used.length - 1];
     //replace the text with the new tech_used
@@ -363,7 +363,6 @@ function update_links(){
     //update descriptive detail lines of the apps
     $('.modal-body .desc').empty();
     for(var i = 0; i < apps_array[current_app_index].description.details.length; i++){
-        // $('.modal-body .desc').append('<p>' + apps_array[current_app_index].description.details[i] + '</p>');
         $('.modal-body .desc').append(`<p>${apps_array[current_app_index].description.details[i]}</p>`);
     }
     //update links for github and live site
