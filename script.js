@@ -13,7 +13,7 @@ $(document).ready(function () {
     rot_arr = [];
     draw_triangles();
     initialize_locations();
-    apply_event_handlers();
+    apply_click_handlers();
     click_event_happening = false;
     load_files();
 });
@@ -186,55 +186,70 @@ function get_poly_points(row, column){
   return retStr;
 }
 
-//apply standard event handlers
-function apply_event_handlers(){
+//apply standard click handlers
+function apply_click_handlers(){
+    // for footer
+    $('#prev').click(get_prev_screen);
+    $('#next').click(get_next_screen);
+    // for tech page
+    $('.tech').click(toggle_selected_tech($(this)));
+    // for contact page
     $('button[name="submit"]').click(send_form);
+
+
+    // not sure if i still want to include
     $('button[name="top"]').click(function(){
         window.location = "#top";
     });
+}
 
+// load previous page from page_arr
+function get_prev_screen(){
+  button_disable_and_reenable();
+  new_page = (curr_page + page_arr.length - 1) % page_arr.length;
+  update_page(new_page);
+}
+// load next page from page_arr
+function get_next_screen(){
+  button_disable_and_reenable();
+  new_page = (curr_page + 1) % page_arr.length;
+  update_page(new_page);
+}
+// called by get_prev_screen and get_next_screen to load a new page
+function update_page(new_page){
+  // title
+  $(`${page_arr[curr_page]} .title`).toggleClass('slide');
+  $(`${page_arr[new_page]} .title`).toggleClass('slide');
+  // content
+  $(`${page_arr[curr_page]} .content`).toggleClass('shrunk grown');
+  $(`${page_arr[new_page]} .content`).toggleClass('shrunk grown');
+
+  toggle_hidden(curr_page, new_page);
+  curr_page = new_page;
+  new_page = null;
+}
+// called by update_page to control what is hidden
+function toggle_hidden(curr_page, new_page){
+    setTimeout(function(){
+      // page
+      $(`${page_arr[curr_page]}.page`).toggleClass('hidden');
+      $(`${page_arr[new_page]}.page`).toggleClass('hidden');
+      //content
+      $(`${page_arr[curr_page]} .content`).toggleClass('hidden');
+      $(`${page_arr[new_page]} .content`).toggleClass('hidden');
+    }, 480);
+}
+// control button functionality when click event is happening 
+function button_disable_and_reenable(){
+  $('#prev, #next').off();
+  setTimeout(function(){
     $('#prev').click(get_prev_screen);
     $('#next').click(get_next_screen);
-    $('.tech').click(toggle_selected_tech($(this)));
+  }, 1000);
 }
 
-//method to make ajax call to send email form.
-function send_form(){
-    //change text of send button
-    $('.send').text('Sending...');
-    //disable send button until a response is received
-    $('.send').off('click');
 
-    $.ajax({
-        dataType:'json',
-        url: 'mailer/mail_handler.php',
-        method: 'post',
-        data: {
-            email: $('input[name="email"]').val(),
-            name: $('input[name="name"]').val(),
-            subject: $('input[name="subject"]').val(),
-            body: $('textarea[name="body"]').val()
-        },
-        success: function(response){
-            //change text of send button
-            $('button[name="submit"]').text('Send Mail');
-            //enable send button again
-            $('button[name="submit"]').click(send_form);
-            if(response.success){
-                $('.mail_response p').text(response.message);
-            }else{
-                $('.mail_response p').text('Message could not be sent.');
-            }
-        },
-        error: function(response){
-            $('.mail_response p').text('Message could not be sent due to server error');
-            //change text of send button
-            $('button[name="submit"]').text('Send Mail');
-            //enable send button again
-            $('button[name="submit"]').click(send_form);
-        }
-    });
-}
+
 
 //make ajax call to get_images.php and saves those images to image_array
 function load_files() {
@@ -258,7 +273,7 @@ function load_files() {
                 //initialize the link buttons
                 update_links();
                 //add event handlers to next and prev buttons
-                apply_next_and_prev_click_handlers();
+                apply_next_and_prev_app_click_handlers();
             }
         },
         error: function (response) {
@@ -339,11 +354,10 @@ function update_app(new_app_index, direction, time_duration = 1000) {
     }
 }
 //function to enable click handlers on prev and next app buttons
-function apply_next_and_prev_click_handlers() {
+function apply_next_and_prev_app_click_handlers() {
     $('.prev_button').click(get_prev_app);
     $('.next_button').click(get_next_app);
 }
-
 //function to update the links 
 function update_links(){
     var github_address = apps_array[current_app_index].github_address;
@@ -369,7 +383,6 @@ function update_links(){
     $('form.github').attr('action',github_address);
     $('form.live').attr('action',live_address);
 }
-
 //add the number links to the number bar
 function create_number_links(){
     //identify number bar
@@ -392,15 +405,7 @@ function create_number_links(){
     $('.nav_number:nth-of-type(1)').addClass('active_nav_number');
 }
 
-//for footer control panel
-function button_disable_and_reenable(){
-  $('#prev').off();
-  $('#next').off();
-  setTimeout(function(){
-    $('#prev').click(get_prev_screen);
-    $('#next').click(get_next_screen);
-  }, 1000);
-}
+
 function initialize_locations(){
     var item_count = $('.circle-container .tech').length;
     for(var i = 0; i < item_count; i++){
@@ -431,36 +436,40 @@ function toggle_selected_tech(tech){
     });
 }
 
-function get_prev_screen(){
-  button_disable_and_reenable();
-  new_page = (curr_page + page_arr.length - 1) % page_arr.length;
-  update_page(new_page);
-}
-function get_next_screen(){
-  button_disable_and_reenable();
-  new_page = (curr_page + 1) % page_arr.length;
-  update_page(new_page);
-}
-function update_page(new_page){
-  // title
-  $(`${page_arr[curr_page]} .title`).toggleClass('slide');
-  $(`${page_arr[new_page]} .title`).toggleClass('slide');
-  // content
-  $(`${page_arr[curr_page]} .content`).toggleClass('shrunk grown');
-  $(`${page_arr[new_page]} .content`).toggleClass('shrunk grown');
+//method to make ajax call to send email form.
+function send_form(){
+    //change text of send button
+    $('.send').text('Sending...');
+    //disable send button until a response is received
+    $('.send').off('click');
 
-  toggle_hidden(curr_page, new_page);
-  curr_page = new_page;
-  new_page = null;
-}
-function toggle_hidden(curr_page, new_page){
-    setTimeout(function(){
-      // page
-      $(`${page_arr[curr_page]}.page`).toggleClass('hidden');
-      $(`${page_arr[new_page]}.page`).toggleClass('hidden');
-
-      //content
-      $(`${page_arr[curr_page]} .content`).toggleClass('hidden');
-      $(`${page_arr[new_page]} .content`).toggleClass('hidden');
-    }, 480);
+    $.ajax({
+        dataType:'json',
+        url: 'mailer/mail_handler.php',
+        method: 'post',
+        data: {
+            email: $('input[name="email"]').val(),
+            name: $('input[name="name"]').val(),
+            subject: $('input[name="subject"]').val(),
+            body: $('textarea[name="body"]').val()
+        },
+        success: function(response){
+            //change text of send button
+            $('button[name="submit"]').text('Send Mail');
+            //enable send button again
+            $('button[name="submit"]').click(send_form);
+            if(response.success){
+                $('.mail_response p').text(response.message);
+            }else{
+                $('.mail_response p').text('Message could not be sent.');
+            }
+        },
+        error: function(response){
+            $('.mail_response p').text('Message could not be sent due to server error');
+            //change text of send button
+            $('button[name="submit"]').text('Send Mail');
+            //enable send button again
+            $('button[name="submit"]').click(send_form);
+        }
+    });
 }
