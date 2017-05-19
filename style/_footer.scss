@@ -1,0 +1,326 @@
+$btn_size_lg: 100px;
+$btn_size_sm: 0.5 * $btn_size_lg;
+
+
+footer{
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: $btn_size_lg * 1.25;
+  bottom: 0;
+  left: 0;
+  background-color: #524A4A;
+
+  .control_panel{
+      display: inline-block;
+      position: relative;
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+
+      .btn_container{
+        display: inline-block;
+        position: relative;
+        top: 0;
+        height: 100%;
+
+        .arcade_btn {
+            position: relative;
+            display: inline-block;
+            width: $btn_size_lg;
+            height: $btn_size_lg;
+            border: 0;
+            margin: 1em;
+            outline: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: box-shadow 200ms;
+
+            &.red{
+                $base-color: red;
+                background-color: $base-color;
+                box-shadow: 
+                inset 0 $btn_size_lg/32 0 lighten($base-color, 5%),
+                inset 0 (-$btn_size_lg/32) 0 darken($base-color, 5%),
+                inset 0 0 0 $btn_size_lg/32 darken($base-color, 3%),
+                inset 0 0 0 $btn_size_lg/12 $base-color,
+                inset 0 0 0 $btn_size_lg/10 darken($base-color, 20%),
+                inset 0 0 0 $btn_size_lg/9.2 darken($base-color, 50%),
+                inset 0 0 0 $btn_size_lg/7.5 transparentize(lighten($base-color, 30%), .3),
+                inset 0 0 0 $btn_size_lg/5.5 $base-color,
+                inset 0 $btn_size_lg/2.5 $btn_size_lg/7.5 darken($base-color, 5%),
+                inset 0 0 $btn_size_lg/10 $btn_size_lg/6 darken($base-color, 10%),
+                0 $btn_size_lg/20 0 rgba(0, 0, 0, .3);
+            }
+            &.blue{
+                $base-color: blue;
+                background-color: $base-color;
+                box-shadow: 
+                inset 0 $btn_size_lg/32 0 lighten($base-color, 5%),
+                inset 0 (-$btn_size_lg/32) 0 darken($base-color, 5%),
+                inset 0 0 0 $btn_size_lg/32 darken($base-color, 3%),
+                inset 0 0 0 $btn_size_lg/12 $base-color,
+                inset 0 0 0 $btn_size_lg/10 darken($base-color, 20%),
+                inset 0 0 0 $btn_size_lg/9.2 darken($base-color, 50%),
+                inset 0 0 0 $btn_size_lg/7.5 transparentize(lighten($base-color, 30%), .3),
+                inset 0 0 0 $btn_size_lg/5.5 $base-color,
+                inset 0 $btn_size_lg/2.5 $btn_size_lg/7.5 darken($base-color, 5%),
+                inset 0 0 $btn_size_lg/10 $btn_size_lg/6 darken($base-color, 10%),
+                0 $btn_size_lg/20 0 rgba(0, 0, 0, .3);
+            }
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: $btn_size_lg/20;
+            left: $btn_size_lg/10;
+            display: block;
+            width: $btn_size_lg/1.25;
+            height: $btn_size_lg/1.25;
+            border: $btn_size_lg/15 solid rgba(0, 0, 0, .3);
+            border-width: 0 0 $btn_size_lg/15;
+            border-radius: 50%;
+            transition-duration: 200ms;
+          }
+
+          &:active,
+          &.is-pushed {
+            $base-color: null;
+            &.red{
+                $base-color: red;
+                box-shadow: 
+              inset 0 $btn_size_lg/32 0 lighten($base-color, 5%),
+              inset 0 (-$btn_size_lg/32) 0 darken($base-color, 5%),
+              inset 0 0 0 $btn_size_lg/32 darken($base-color, 3%),
+              inset 0 0 0 $btn_size_lg/12 $base-color,
+              inset 0 0 0 $btn_size_lg/10 darken($base-color, 20%),
+              inset 0 0 0 $btn_size_lg/8.5 darken($base-color, 40%),
+              inset 0 0 0 $btn_size_lg/7.5 transparentize(lighten($base-color, 30%), .8),
+              inset 0 0 0 $btn_size_lg/5.5 darken($base-color, 3%),
+              inset 0 $btn_size_lg/2.5 $btn_size_lg/7.5 darken($base-color, 8%),
+              inset 0 0 $btn_size_lg/10 $btn_size_lg/6 darken($base-color, 15%),
+              0 $btn_size_lg/20 0 rgba(0, 0, 0, .3);
+            background-color: darken($base-color, 2%);
+            } 
+            &.blue{
+                $base-color: blue;
+                box-shadow: 
+              inset 0 $btn_size_lg/32 0 lighten($base-color, 5%),
+              inset 0 (-$btn_size_lg/32) 0 darken($base-color, 5%),
+              inset 0 0 0 $btn_size_lg/32 darken($base-color, 3%),
+              inset 0 0 0 $btn_size_lg/12 $base-color,
+              inset 0 0 0 $btn_size_lg/10 darken($base-color, 20%),
+              inset 0 0 0 $btn_size_lg/8.5 darken($base-color, 40%),
+              inset 0 0 0 $btn_size_lg/7.5 transparentize(lighten($base-color, 30%), .8),
+              inset 0 0 0 $btn_size_lg/5.5 darken($base-color, 3%),
+              inset 0 $btn_size_lg/2.5 $btn_size_lg/7.5 darken($base-color, 8%),
+              inset 0 0 $btn_size_lg/10 $btn_size_lg/6 darken($base-color, 15%),
+              0 $btn_size_lg/20 0 rgba(0, 0, 0, .3);
+            background-color: darken($base-color, 2%);
+            }
+            
+            &:after {
+              bottom: $btn_size_lg/20 + $btn_size_lg/15;
+              border-width: 0;
+            }
+          }
+        }
+      }
+
+      .label_container{
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        width: 86px;
+        margin: 0 10px;
+
+        .label{
+          position: absolute;
+          display: inline-block;
+          padding: 3px 10px;
+          border: 3px solid;
+          border-radius: 10px;
+          border-color: white;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          
+          &.red{
+            background-color: red;
+          }
+          &.blue{
+            background-color: blue;
+          }
+          span{
+            font-family: 'Varela Round', sans-serif;
+            font-size: 2em;
+            -webkit-text-stroke: 1px black;
+            color: white;
+              text-shadow:
+                1px 1px 0 #000;
+          }
+        }
+      }
+  }
+  .links{
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+
+    form{
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      .btn_area{
+        position: relative;
+
+        .btn_container{
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .arcade_btn {
+                position: relative;
+                display: inline-block;
+                width: $btn_size_sm;
+                height: $btn_size_sm;
+                border: 0;
+                margin: 1em;
+                outline: none;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: box-shadow 200ms;
+
+                &.small{
+                    $base-color: white;
+                    background-color: $base-color;
+                    background-size: 40px 40px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    box-shadow: 
+                      inset 0 $btn_size_sm/32 0 lighten($base-color, 5%),
+                      inset 0 (-$btn_size_sm/32) 0 darken($base-color, 5%),
+                      inset 0 0 0 $btn_size_sm/32 darken($base-color, 3%),
+                      inset 0 0 0 $btn_size_sm/12 $base-color,
+                      inset 0 0 0 $btn_size_sm/10 darken($base-color, 20%),
+                      inset 0 0 0 $btn_size_sm/9.2 darken($base-color, 50%),
+                      inset 0 0 0 $btn_size_sm/7.5 transparentize(lighten($base-color, 30%), .3),
+                      inset 0 0 0 $btn_size_sm/5.5 $base-color,
+                      // inset 0 $btn_size_sm/2.5 $btn_size_sm/7.5 darken($base-color, 5%),
+                      inset 0 0 $btn_size_sm/10 $btn_size_sm/6 darken($base-color, 10%),
+                      0 $btn_size_sm/20 0 rgba(0, 0, 0, .3);
+                              
+                    &.github{
+                      background-image: url('resources/github.png');
+                    }
+                    &.linkedin{
+                      background-image: url('resources/linkedin.png');
+                    }
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  bottom: $btn_size_sm/20;
+                  left: $btn_size_sm/10;
+                  display: block;
+                  width: $btn_size_sm/1.25;
+                  height: $btn_size_sm/1.25;
+                  border: $btn_size_sm/15 solid rgba(0, 0, 0, .3);
+                  border-width: 0 0 $btn_size_sm/15;
+                  border-radius: 50%;
+                  transition-duration: 200ms;
+            
+                }
+
+                &:active,
+                &.is-pushed {
+                  $base-color: null;
+                  &.small{
+                      $base-color: white;
+                      box-shadow: 
+                        inset 0 $btn_size_sm/32 0 lighten($base-color, 5%),
+                        inset 0 (-$btn_size_sm/32) 0 darken($base-color, 5%),
+                        inset 0 0 0 $btn_size_sm/32 darken($base-color, 3%),
+                        inset 0 0 0 $btn_size_sm/12 $base-color,
+                        inset 0 0 0 $btn_size_sm/10 darken($base-color, 20%),
+                        inset 0 0 0 $btn_size_sm/8.5 darken($base-color, 40%),
+                        inset 0 0 0 $btn_size_sm/7.5 transparentize(lighten($base-color, 30%), .8),
+                        inset 0 0 0 $btn_size_sm/5.5 darken($base-color, 3%),
+                        // inset 0 $btn_size_sm/2.5 $btn_size_sm/7.5 darken($base-color, 8%),
+                        inset 0 0 $btn_size_sm/10 $btn_size_sm/6 darken($base-color, 15%),
+                        0 $btn_size_sm/20 0 rgba(0, 0, 0, .3);
+                      background-color: darken($base-color, 2%);
+                      
+                  } 
+
+                
+                &:after {
+                  bottom: $btn_size_sm/20 + $btn_size_sm/15;
+                  border-width: 0;
+                }
+              }
+            }
+        }
+      }
+
+      .label{
+        position: relative;
+        display: inline-block;
+        padding: 3px 10px;
+        border: 3px solid;
+        border-radius: 10px;
+        border-color: white;
+        top: 5px;
+        background-color: grey;
+        
+      
+        span{
+          font-family: 'Varela Round', sans-serif;
+          font-size: 1.75em;
+          -webkit-text-stroke: 1px black;
+          color: white;
+            text-shadow:
+              1px 1px 0 #000;
+        }
+      }
+
+
+      }
+      .label_container{
+        position: relative;
+        display: inline-block;
+
+        .label{
+            position: absolute;
+            padding: 3px 10px;
+            border: 3px solid;
+            border-radius: 10px;
+            border-color: white;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+            background-color: grey;
+            
+          
+            span{
+              font-family: 'Varela Round', sans-serif;
+              font-size: 1.5em;
+              -webkit-text-stroke: 1px black;
+              color: white;
+                text-shadow:
+                  1px 1px 0 #000;
+            }
+        }
+      }
+  }
+    
+
+  }
