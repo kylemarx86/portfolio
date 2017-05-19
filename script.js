@@ -3,13 +3,16 @@ var curr_page = null;
 var new_page = null;
 var apps_array = [];
 var image_array = [];
+var rot_arr;    //keeps track of the rotations of each elt as they spin around in circular path
 var current_app_index = null;
 var click_event_happening = null;
 
 $(document).ready(function () {
     curr_page = 0;
     apps_array = [];
+    rot_arr = [];
     draw_triangles();
+    initializeLocations();
     apply_event_handlers();
     click_event_happening = false;
     load_files();
@@ -192,6 +195,7 @@ function apply_event_handlers(){
 
     $('#prev').click(get_prev_screen);
     $('#next').click(get_next_screen);
+    $('.tech').click(toggleSelectedTech($(this)));
 }
 
 //method to make ajax call to send email form.
@@ -398,6 +402,36 @@ function button_disable_and_reenable(){
     $('#next').click(get_next_screen);
   }, 1000);
 }
+function initializeLocations(){
+    var item_count = $('.circle-container .tech').length;
+    for(var i = 0; i < item_count; i++){
+        $(`.circle-container .tech:nth-of-type(${i+1})`).attr('loc', i);
+        rot_arr[i] = 360 / item_count * i;
+    }
+}
+function toggleSelectedTech(tech){
+    $('.tech').click(function(){        
+        //determine new rotation based on the location index of the clicked element
+        var loc_index = $(this).attr('loc');
+        var elt_count = $('.circle-container li.tech').length;
+        // determine which way to spin (cw or ccw) and by how much by first determining which is the closer path.
+            // this can be done by seeing if the clicked element is under or over the halfway mark of the number of elements
+        var new_rot = loc_index <= elt_count / 2 ? -1 * loc_index * 360 / elt_count : (elt_count - loc_index) * 360 / elt_count;
+        $('.tech').removeClass('selected');
+        for(var i = 0; i < elt_count; i++){
+            rot_arr[i] += new_rot;
+            var $elt = $(`.circle-container > .tech:nth-of-type(${i+1})`);
+            var $attr = $elt.attr('loc');
+            //assign new location idicator to element
+            var new_loc = ( $elt.attr('loc') - loc_index + elt_count ) % elt_count;
+            $elt.attr('loc', new_loc).css({
+                'transform': `rotateZ(${rot_arr[i]}deg) translate(12.5em) rotateZ(${-1*rot_arr[i]}deg)`,
+            });
+        }
+        $(this).toggleClass('selected');
+    });
+}
+
 function get_prev_screen(){
   button_disable_and_reenable();
   new_page = (curr_page + page_arr.length - 1) % page_arr.length;

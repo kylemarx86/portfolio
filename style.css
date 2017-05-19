@@ -434,15 +434,73 @@ button.link_btn:hover, .link_btn > input:hover {
   justify-content: center;
   align-items: center; }
 
-.tech:hover img {
-  transform: scale(1.1); }
-
 .tech:hover .name {
   font-weight: bold; }
 
 .tech .name {
   font-family: Calibri;
   font-size: 1.5em; }
+
+.circle-container {
+  position: relative;
+  width: 25em;
+  height: 25em;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+  margin: 5em auto 0;
+  border: dotted 5px orange; }
+  .circle-container .tech {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin: -50px; }
+    .circle-container .tech:nth-of-type(1) {
+      transform: rotate(0deg) translate(12.5em) rotate(0deg); }
+    .circle-container .tech:nth-of-type(2) {
+      transform: rotate(40deg) translate(12.5em) rotate(-40deg); }
+    .circle-container .tech:nth-of-type(3) {
+      transform: rotate(80deg) translate(12.5em) rotate(-80deg); }
+    .circle-container .tech:nth-of-type(4) {
+      transform: rotate(120deg) translate(12.5em) rotate(-120deg); }
+    .circle-container .tech:nth-of-type(5) {
+      transform: rotate(160deg) translate(12.5em) rotate(-160deg); }
+    .circle-container .tech:nth-of-type(6) {
+      transform: rotate(200deg) translate(12.5em) rotate(-200deg); }
+    .circle-container .tech:nth-of-type(7) {
+      transform: rotate(240deg) translate(12.5em) rotate(-240deg); }
+    .circle-container .tech:nth-of-type(8) {
+      transform: rotate(280deg) translate(12.5em) rotate(-280deg); }
+    .circle-container .tech:nth-of-type(9) {
+      transform: rotate(320deg) translate(12.5em) rotate(-320deg); }
+  .circle-container .tech {
+    height: 100px;
+    width: 100px;
+    border-radius: 10%;
+    background-color: white;
+    border: 2px solid black; }
+    .circle-container .tech.selected {
+      transition-duration: 0.5s;
+      background-color: yellow; }
+      .circle-container .tech.selected img {
+        filter: grayscale(0); }
+    .circle-container .tech:not(.selected) {
+      transition-duration: 0.5s; }
+  .circle-container img {
+    position: absolute;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    filter: grayscale(100%);
+    transition: .15s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .circle-container img:hover, .circle-container img:active {
+      filter: grayscale(0); }
 
 /*styling for contact form*/
 .contact form {
