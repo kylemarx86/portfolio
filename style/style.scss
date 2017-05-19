@@ -57,68 +57,9 @@ button:focus {
     font-family: 'Press Start 2P', cursive;
     vertical-align: bottom;
 }
-#top{
-    position: absolute;
-    top: 0;
-}
 
 .content{
     position: relative;
-}
-
-
-/*paragraphs*/
-p{
-    color: black;
-}
-
-
-
-
-
-
-/*footer styling*/
-.footer{
-    height: 45px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    background-color: black;
-    opacity: 0.8;
-}
-.footer:hover{
-    opacity: 1.0;
-    background-color: rgba(0,0,0,0.9);
-}
-.footer .link_btn_container{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-}
-.footer link_btn, .footer input{
-    height: 50%;
-}
-.footer input{
-    font-size: 1em;
-}
-.footer .top{
-    position: absolute;
-    right: 0;
-}
-.github_main input{
-    background-color: #44a340;
-    box-shadow: -3px -3px 2px 1px #1e6823 inset, 1px 1px 3px 1px #000000;
-}
-.github_main input:hover{
-    box-shadow: -3px -3px 2px 1px #0a540f inset, 1px 1px 1px 1px #000000;
-}
-.linked_in input{
-    background-color: #0077b5;
-    box-shadow: -3px -3px 2px 1px #001e8c inset, 1px 1px 3px 1px #000000;
-}
-.linked_in input:hover{
-    box-shadow: -3px -3px 2px 1px #000a78 inset, 1px 1px 1px 1px #000000;
 }
 
 /*modal styling*/
@@ -278,7 +219,7 @@ body{
     color: white;
     border-radius: 15px;
     // padding: 20px;
-
+    border: 10px solid black;
     position: absolute;
     display: inline-block;
     left: 50%;

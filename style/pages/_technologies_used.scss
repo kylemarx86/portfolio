@@ -24,9 +24,9 @@
     justify-content: center;
     align-items: center;
 }
-.tech:hover img{
-    transform: scale(1.1);
-}
+// .tech:hover img{
+//     transform: scale(1.1);
+// }
 .tech:hover .name{
     font-weight: bold;
 }
@@ -34,3 +34,97 @@
     font-family: Calibri;
     font-size: 1.5em;
 }
+
+
+
+
+
+
+
+
+/// Mixin to place items on a circle
+/// @author Hugo Giraudel
+/// @author Ana Tudor
+/// @param {Integer} $item-count - Number of items on the circle
+/// @param {Length} $circle-diam - Diameter of circle items rest on
+/// @param {Length} $item-size - Single item size
+@mixin on-circle($item-count, $circle-diam, $item-size) {
+  position: relative;
+  width:  $circle-diam;
+  height: $circle-diam;
+  padding: 0;
+  border-radius: 50%; 
+  list-style: none;       
+  
+  .tech {
+    display: block;
+    position: absolute;
+    top:  50%; 
+    left: 50%;
+    width:  $item-size;
+    height: $item-size;
+    margin: -($item-size / 2);
+  
+    $angle: (360 / $item-count);
+    $rot: 0;
+    // $rot: 360;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform: 
+          rotate($rot * 1deg) 
+          translate($circle-diam / 2) 
+          rotate($rot * -1deg);
+      }
+
+      $rot: $rot + $angle;
+    }
+  }
+}
+
+
+
+.circle-container {
+  @include on-circle($item-count: 9, $circle-diam: 25em, $item-size: 100px); 
+  margin: 5em auto 0;
+  border: dotted 5px orange;
+  .tech{
+    height: 100px;
+    width: 100px;
+    border-radius: 10%;      
+    background-color: white;
+    border: 2px solid black;
+    &.selected{
+        transition-duration: 0.5s;
+        // transition-delay: 0.5s;
+        background-color: yellow;
+        // transform: translateX(250%) scale(1.25);
+        img{
+            filter: grayscale(0);
+        }
+    }
+    &:not(.selected){
+        transition-duration: 0.5s;
+    }
+  }
+
+  
+  img { 
+    position: absolute;
+    display: block; 
+    max-width: 90%; 
+    max-height: 90%;
+    filter: grayscale(100%);
+    transition: .15s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    &:hover,
+    &:active {
+      filter: grayscale(0);
+    }
+  }
+}
+
+
