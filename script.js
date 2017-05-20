@@ -196,12 +196,6 @@ function apply_click_handlers(){
     $('.tech').click(toggle_selected_tech($(this)));
     // for contact page
     $('button[name="submit"]').click(send_form);
-
-
-    // not sure if i still want to include
-    $('button[name="top"]').click(function(){
-        window.location = "#top";
-    });
 }
 
 // load previous page from page_arr
