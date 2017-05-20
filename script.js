@@ -405,7 +405,7 @@ function create_number_links(){
     $('.nav_number:nth-of-type(1)').addClass('active_nav_number');
 }
 
-
+// functions related to technologies section
 function initialize_locations(){
     var item_count = $('.circle-container .tech').length;
     for(var i = 0; i < item_count; i++){
@@ -413,6 +413,7 @@ function initialize_locations(){
         rot_arr[i] = 360 / item_count * i;
     }
 }
+//rename this function
 function toggle_selected_tech(tech){
     $('.tech').click(function(){        
         //determine new rotation based on the location index of the clicked element
@@ -422,6 +423,8 @@ function toggle_selected_tech(tech){
             // this can be done by seeing if the clicked element is under or over the halfway mark of the number of elements
         var new_rot = loc_index <= elt_count / 2 ? -1 * loc_index * 360 / elt_count : (elt_count - loc_index) * 360 / elt_count;
         $('.tech').removeClass('selected');
+
+        // i need this code to fire after the previous line finishes 
         for(var i = 0; i < elt_count; i++){
             rot_arr[i] += new_rot;
             var $elt = $(`.circle-container > .tech:nth-of-type(${i+1})`);
@@ -429,10 +432,15 @@ function toggle_selected_tech(tech){
             //assign new location idicator to element
             var new_loc = ( $elt.attr('loc') - loc_index + elt_count ) % elt_count;
             $elt.attr('loc', new_loc).css({
-                'transform': `rotateZ(${rot_arr[i]}deg) translate(12.5em) rotateZ(${-1*rot_arr[i]}deg)`,
+                'transform': `rotateZ(${rot_arr[i]}deg) translate(12.5em) rotateZ(${-1*rot_arr[i]}deg)`
             });
         }
-        $(this).toggleClass('selected');
+        // i don't like the way this fires off
+        setTimeout(function(){
+            //find element at location 0 and apply selected class
+            $('.circle-container .tech[loc="0"]').toggleClass('selected');
+        }, 500);
+        
     });
 }
 

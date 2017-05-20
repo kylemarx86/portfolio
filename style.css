@@ -417,30 +417,6 @@ button.link_btn:hover, .link_btn > input:hover {
   align-items: center;
   flex-wrap: wrap; }
 
-.tech {
-  margin: 10px;
-  display: inline-block;
-  text-align: center;
-  border: 2px solid black;
-  border-radius: 5%;
-  background-color: white;
-  box-shadow: 1px 1px 3px 1px #000000; }
-
-.tech_pic {
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.tech:hover .name {
-  font-weight: bold; }
-
-.tech .name {
-  font-family: Calibri;
-  font-size: 1.5em; }
-
 .circle-container {
   position: relative;
   width: 25em;
@@ -477,18 +453,23 @@ button.link_btn:hover, .link_btn > input:hover {
     .circle-container .tech:nth-of-type(9) {
       transform: rotate(320deg) translate(12.5em) rotate(-320deg); }
   .circle-container .tech {
-    height: 100px;
-    width: 100px;
     border-radius: 10%;
     background-color: white;
-    border: 2px solid black; }
+    border: 2px solid black;
+    text-align: center;
+    box-shadow: 1px 1px 3px 1px #000000;
+    transition-duration: 0.5s;
+    transition-delay: 0.2s;
+    font-family: Calibri; }
     .circle-container .tech.selected {
-      transition-duration: 0.5s;
-      background-color: yellow; }
+      transition-duration: 0.3s;
+      transition-delay: 0.5s;
+      background-color: yellow;
+      transform: translateX(250%) scale(1.25) !important; }
       .circle-container .tech.selected img {
         filter: grayscale(0); }
     .circle-container .tech:not(.selected) {
-      transition-duration: 0.5s; }
+      transition-duration: 0.2s; }
   .circle-container img {
     position: absolute;
     display: block;
@@ -598,14 +579,9 @@ button:focus {
   font-family: 'Press Start 2P', cursive;
   vertical-align: bottom; }
 
-#top {
-  position: absolute;
-  top: 0; }
-
 .content {
   position: relative; }
 
-/*footer styling*/
 /*modal styling*/
 .modal-open {
   overflow: scroll; }
