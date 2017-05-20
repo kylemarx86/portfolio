@@ -191,6 +191,7 @@ function apply_click_handlers(){
     // for footer
     $('#prev').click(get_prev_screen);
     $('#next').click(get_next_screen);
+    $('.page_link').click(jump_to_screen($(this)));
     // for tech page
     $('.tech').click(toggle_selected_tech($(this)));
     // for contact page
@@ -215,6 +216,13 @@ function get_next_screen(){
   new_page = (curr_page + 1) % page_arr.length;
   update_page(new_page);
 }
+function jump_to_screen(screen){
+    $('.page_link').click(function(){
+        var new_page = $('ul .page_link').index(this);
+        update_page(new_page);
+    });
+}
+
 // called by get_prev_screen and get_next_screen to load a new page
 function update_page(new_page){
   // title

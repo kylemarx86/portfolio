@@ -57,23 +57,18 @@ pattern polygon {
   float: left;
   height: 100%;
   width: 25%;
-  margin: 0; }
-
-#header li a {
-  width: 100%;
-  height: 100%;
+  margin: 0;
   display: block;
   color: white;
   text-decoration: none;
-  position: absolute;
   line-height: 100%; }
 
-#header li a:hover {
+#header li:hover {
   background-color: #353535; }
 
-#header li a span {
+#header li span {
   position: absolute;
-  display: block;
+  display: inline-block;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
