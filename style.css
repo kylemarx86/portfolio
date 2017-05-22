@@ -406,76 +406,81 @@ button.link_btn:hover, .link_btn > input:hover {
 /*technologies area*/
 .technologies {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap; }
-
-.circle-container {
-  position: relative;
-  width: 25em;
-  height: 25em;
-  padding: 0;
-  border-radius: 50%;
-  list-style: none;
-  margin: 5em auto 0;
-  border: dotted 5px orange; }
-  .circle-container .tech {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    margin: -50px; }
-    .circle-container .tech:nth-of-type(1) {
-      transform: rotate(0deg) translate(12.5em) rotate(0deg); }
-    .circle-container .tech:nth-of-type(2) {
-      transform: rotate(40deg) translate(12.5em) rotate(-40deg); }
-    .circle-container .tech:nth-of-type(3) {
-      transform: rotate(80deg) translate(12.5em) rotate(-80deg); }
-    .circle-container .tech:nth-of-type(4) {
-      transform: rotate(120deg) translate(12.5em) rotate(-120deg); }
-    .circle-container .tech:nth-of-type(5) {
-      transform: rotate(160deg) translate(12.5em) rotate(-160deg); }
-    .circle-container .tech:nth-of-type(6) {
-      transform: rotate(200deg) translate(12.5em) rotate(-200deg); }
-    .circle-container .tech:nth-of-type(7) {
-      transform: rotate(240deg) translate(12.5em) rotate(-240deg); }
-    .circle-container .tech:nth-of-type(8) {
-      transform: rotate(280deg) translate(12.5em) rotate(-280deg); }
-    .circle-container .tech:nth-of-type(9) {
-      transform: rotate(320deg) translate(12.5em) rotate(-320deg); }
-  .circle-container .tech {
-    border-radius: 10%;
-    background-color: white;
-    border: 2px solid black;
-    text-align: center;
-    box-shadow: 1px 1px 3px 1px #000000;
-    transition-delay: 0.2s;
-    font-family: Calibri; }
-    .circle-container .tech.selected {
-      transition-duration: 0.3s;
-      transition-delay: 0.5s;
-      background-color: yellow;
-      transform: translateX(250%) scale(1.25) !important; }
-      .circle-container .tech.selected img {
+  .technologies .circle-container {
+    position: relative;
+    width: 25em;
+    height: 25em;
+    padding: 0;
+    border-radius: 50%;
+    list-style: none;
+    margin: 0;
+    border: dotted 5px orange;
+    float: left; }
+    .technologies .circle-container .tech {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      margin: -50px; }
+      .technologies .circle-container .tech:nth-of-type(1) {
+        transform: rotate(0deg) translate(12.5em) rotate(0deg); }
+      .technologies .circle-container .tech:nth-of-type(2) {
+        transform: rotate(40deg) translate(12.5em) rotate(-40deg); }
+      .technologies .circle-container .tech:nth-of-type(3) {
+        transform: rotate(80deg) translate(12.5em) rotate(-80deg); }
+      .technologies .circle-container .tech:nth-of-type(4) {
+        transform: rotate(120deg) translate(12.5em) rotate(-120deg); }
+      .technologies .circle-container .tech:nth-of-type(5) {
+        transform: rotate(160deg) translate(12.5em) rotate(-160deg); }
+      .technologies .circle-container .tech:nth-of-type(6) {
+        transform: rotate(200deg) translate(12.5em) rotate(-200deg); }
+      .technologies .circle-container .tech:nth-of-type(7) {
+        transform: rotate(240deg) translate(12.5em) rotate(-240deg); }
+      .technologies .circle-container .tech:nth-of-type(8) {
+        transform: rotate(280deg) translate(12.5em) rotate(-280deg); }
+      .technologies .circle-container .tech:nth-of-type(9) {
+        transform: rotate(320deg) translate(12.5em) rotate(-320deg); }
+    .technologies .circle-container .tech {
+      border-radius: 10%;
+      background-color: white;
+      border: 2px solid black;
+      text-align: center;
+      box-shadow: 1px 1px 3px 1px #000000;
+      transition-delay: 0.2s;
+      font-family: Calibri; }
+      .technologies .circle-container .tech.selected {
+        transition-duration: 0.3s;
+        transition-delay: 0.5s;
+        background-color: yellow;
+        transform: translateX(250%) scale(1.25) !important; }
+        .technologies .circle-container .tech.selected img {
+          filter: grayscale(0); }
+      .technologies .circle-container .tech:not(.selected) {
+        transition-duration: 0.2s; }
+    .technologies .circle-container img {
+      position: absolute;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+      filter: grayscale(100%);
+      transition: .15s;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .technologies .circle-container img:hover, .technologies .circle-container img:active {
         filter: grayscale(0); }
-    .circle-container .tech:not(.selected) {
-      transition-duration: 0.2s; }
-  .circle-container img {
-    position: absolute;
-    display: block;
-    max-width: 90%;
-    max-height: 90%;
-    filter: grayscale(100%);
-    transition: .15s;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-    .circle-container img:hover, .circle-container img:active {
-      filter: grayscale(0); }
+  .technologies .tech_info {
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+    background-color: blue; }
 
 /*styling for contact form*/
 .contact form {
@@ -503,7 +508,6 @@ button.link_btn:hover, .link_btn > input:hover {
   vertical-align: top;
   display: inline-block;
   width: 30%;
-  height: 100%;
   padding: 0 15px;
   background-color: black;
   box-sizing: border-box;
@@ -555,7 +559,10 @@ button:focus {
 /*are for section title*/
 .title {
   position: relative;
-  top: 0; }
+  top: 0;
+  height: 12%;
+  width: 100%;
+  display: inline-block; }
 
 .title span {
   background-color: red;
@@ -564,17 +571,21 @@ button:focus {
   position: relative;
   width: 10%;
   height: 2.5em;
-  vertical-align: 7px;
+  vertical-align: -2px;
   box-shadow: 1px 1px 3px 1px #000000; }
 
 .title h2 {
   padding: 0;
   display: inline-block;
   font-family: 'Press Start 2P', cursive;
-  vertical-align: bottom; }
+  vertical-align: bottom;
+  margin-bottom: 0; }
 
 .content {
-  position: relative; }
+  position: relative;
+  display: inline-block;
+  height: 88%;
+  width: 100%; }
 
 /*modal styling*/
 .modal-open {

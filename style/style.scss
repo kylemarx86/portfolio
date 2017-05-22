@@ -38,6 +38,11 @@ button:focus {
 .title{
     position: relative;
     top: 0;
+    // height: 2.5em;
+    height: 12%;
+    width: 100%;
+    display: inline-block;
+
 }
 .title span{
     background-color: red;
@@ -47,7 +52,7 @@ button:focus {
     width: 10%;
     height: 2.5em;
     // margin: 0;
-    vertical-align: 7px;
+    vertical-align: -2px;
     box-shadow: 1px 1px 3px 1px #000000;
 
 }
@@ -56,10 +61,14 @@ button:focus {
     display: inline-block;
     font-family: 'Press Start 2P', cursive;
     vertical-align: bottom;
+    margin-bottom: 0;
 }
 
 .content{
     position: relative;
+    display: inline-block;
+    height: 88%;
+    width: 100%;
 }
 
 /*modal styling*/
@@ -229,7 +238,7 @@ body{
   }
 }
 
-
+//remove
 .first{
   background-color: green;
 }
@@ -239,6 +248,8 @@ body{
 .third{
   background-color: orange;
 }
+
+
 .screen .hidden{
   display: none;
 }
