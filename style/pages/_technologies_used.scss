@@ -57,13 +57,15 @@
     border: 2px solid black;
     text-align: center;
     box-shadow: 1px 1px 3px 1px #000000;
-    transition-duration: 0.5s;
+    // transition-duration: 0.5s;
     transition-delay: 0.2s;
+    // transition-delay: 2s;
 
     font-family: Calibri;
 
     &.selected{
         transition-duration: 0.3s;
+        // transition-duration: 2.5s;
         transition-delay: 0.5s;
         background-color: yellow;
         transform: translateX(250%) scale(1.25) !important;
@@ -73,6 +75,7 @@
     }
     &:not(.selected){
         transition-duration: 0.2s;
+        // transition-duration: 2s;
     }
   }
 

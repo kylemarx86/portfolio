@@ -453,7 +453,6 @@ button.link_btn:hover, .link_btn > input:hover {
     border: 2px solid black;
     text-align: center;
     box-shadow: 1px 1px 3px 1px #000000;
-    transition-duration: 0.5s;
     transition-delay: 0.2s;
     font-family: Calibri; }
     .circle-container .tech.selected {
