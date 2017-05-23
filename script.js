@@ -485,7 +485,9 @@ function update_tech_info(){
     // console.log('new index: ', index);
     $('.tech_info .name').append(tech_array[index].name);
     for(var i = 0; i < tech_array[index].apps.length; i++){
-        $('.tech_info .apps').append(tech_array[index].apps[i]);
+        $li = $('<li>');
+        $li.append(tech_array[index].apps[i]);
+        $('.tech_info .apps').append($li);
     }
 }
 
