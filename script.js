@@ -251,10 +251,10 @@ function button_disable_and_reenable(){
 }
 
 
-//make ajax call to gather_app_info.php and saves those images to image_array
+//make ajax call to gather_apps_info.php and saves those images to image_array
 function load_files() {
     $.ajax({
-        url: 'gather_app_info.php',
+        url: 'gather_apps_info.php',
         dataType: 'json',
         success: function (response) {
             if(response.success){
