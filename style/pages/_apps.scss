@@ -147,3 +147,7 @@ button.link_btn:hover, .link_btn > input:hover{
     box-shadow: -3px -3px 2px 1px #A00000 inset;
     font-weight: bold;
 }
+
+.link_btn_container form{
+    display: inline-block;
+}
