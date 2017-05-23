@@ -397,7 +397,7 @@ button.link_btn:hover, .link_btn > input:hover {
   display: inline-block;
   background-color: red;
   box-sizing: border-box;
-  box-shadow: 2px 1px 1px 0 #000000;
+  box-shadow: 2px 0 0 0 #111111, 0 2px 0 0 #111111,  2px 2px 0 0 #111111;
   transition-duration: 750ms;
   cursor: pointer; }
 
