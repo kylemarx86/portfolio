@@ -429,6 +429,8 @@ function load_tech_info() {
                     rot_array[i] = 360 / tech_array.length * i;
                 }
                 $('.tech:nth-of-type(1)').addClass('selected');
+                //initialize the tech info box
+                update_tech_info();
                 // add click handlers to newly created items
                 $('.tech').click(toggle_selected_tech($(this)));
             }else{
@@ -468,10 +470,26 @@ function toggle_selected_tech(tech){
         setTimeout(function(){
             //find element at location 0 and apply selected class
             $('.circle-container .tech[loc="0"]').toggleClass('selected');
+            update_tech_info();
         }, 500);
         
     });
 }
+
+function update_tech_info(){
+    console.log('clearing and updating');
+    // clear name and apps from tech info box
+    $('.tech_info .name, .tech_info .apps').empty();
+
+    var index =  $('.circle-container .tech').index($('.selected'));
+    // console.log('new index: ', index);
+    $('.tech_info .name').append(tech_array[index].name);
+    for(var i = 0; i < tech_array[index].apps.length; i++){
+        $('.tech_info .apps').append(tech_array[index].apps[i]);
+    }
+}
+
+
 
 //method to make ajax call to send email form.
 function send_form(){
