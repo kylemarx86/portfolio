@@ -1,8 +1,9 @@
 var page_arr = ['.about', '.apps', '.technologies_used', '.contact'];
 var curr_page = null;
-var new_page = null;
+var new_page = null;    //doesn't need to be global variable
 var apps_array = [];
 var image_array = [];
+var tech_array = [];
 var rot_arr;    //keeps track of the rotations of each elt as they spin around in circular path
 var current_app_index = null;
 var click_event_happening = null;
@@ -12,10 +13,11 @@ $(document).ready(function () {
     apps_array = [];
     rot_arr = [];
     draw_triangles();
-    initialize_locations();
+    // initialize_locations();
     apply_click_handlers();
     click_event_happening = false;
     load_files();
+    load_tech_info();
 });
 
 //section to draw main logo
@@ -192,8 +194,6 @@ function apply_click_handlers(){
     $('#prev').click(get_prev_screen);
     $('#next').click(get_next_screen);
     $('.page_link').click(jump_to_screen($(this)));
-    // for tech page
-    $('.tech').click(toggle_selected_tech($(this)));
     // for contact page
     $('button[name="submit"]').click(send_form);
 }
@@ -251,9 +251,7 @@ function button_disable_and_reenable(){
 }
 
 
-
-
-//make ajax call to get_images.php and saves those images to image_array
+//make ajax call to gather_app_info.php and saves those images to image_array
 function load_files() {
     $.ajax({
         url: 'gather_app_info.php',
@@ -283,7 +281,6 @@ function load_files() {
         }
     });
 }
-
 
 //sets up pictures for display
     //change to be about initializing both pics and info
@@ -407,14 +404,47 @@ function create_number_links(){
     $('.nav_number:nth-of-type(1)').addClass('active_nav_number');
 }
 
-// functions related to technologies section
-function initialize_locations(){
-    var item_count = $('.circle-container .tech').length;
-    for(var i = 0; i < item_count; i++){
-        $(`.circle-container .tech:nth-of-type(${i+1})`).attr('loc', i);
-        rot_arr[i] = 360 / item_count * i;
-    }
+
+
+
+
+//make ajax call to gather_tech_info.php and saves those images to image_array
+function load_tech_info() {
+    console.log('firing');
+    $.ajax({
+        url: 'gather_tech_info.php',
+        dataType: 'json',
+        success: function (response) {
+            if(response.success){
+                tech_array = response.pages;
+                //identify circle container
+                var $circle_container = $('.circle-container');
+
+                for(var i = 0; i < tech_array.length; i++){
+                    // create image component with corresponding image 
+                    $img = $('<img>').attr('src', tech_array[i].image_src);
+                    // loc attribute to keep track of the position along the circle container where element will be
+                    $li = $('<li>').addClass('tech').attr('loc', i);
+                    $li.append($img);
+                    $circle_container.append($li);
+                    // initialize array of rotated angles
+                    rot_arr[i] = 360 / tech_array.length * i;
+                }
+                $('.tech:nth-of-type(1)').addClass('selected');
+                // add click handlers to newly created items
+                $('.tech').click(toggle_selected_tech($(this)));
+              
+            }else{
+                console.log('failed to retrieve technologies');
+            }
+        },
+        error: function (response) {
+            console.log('connection error');
+        }
+    });
 }
+
+
 //rename this function
 function toggle_selected_tech(tech){
     $('.tech').click(function(){        

@@ -1,8 +1,8 @@
 <?php
 $data = [];
-$data['name'] = 'JavaScript';
+$data['name'] = 'HTML5';
 
-$data['image_src'] = 'technologies/images/js.png';
+$data['image_src'] = 'technologies/images/html5.png';
 
 $data['apps'] = [];
 $data['apps'][] = 'iBet';
