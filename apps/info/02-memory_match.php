@@ -10,8 +10,7 @@ $data['description']['details'][] = 'jQuery was used to dynamically generate the
 $data['description']['details'][] = 'Utilizes Google Maps API to place markers on a map representing locations of matched National Parks';
 $data['description']['details'][] = 'Employs CSS to style the page, animate actions, and make the display responsive';
 
-// $data['picture_source'] = 'app_pics/memory_match-big.png';
-$data['picture_source'] = 'app_pics/memory_match-wide.png';
+$data['picture_source'] = 'apps/images/memory_match-wide.png';
 $data['live_address'] = 'http://dev.kylemarx86.com/memory_match/';
 $data['github_address'] = 'https://github.com/kylemarx86/memory_match_clone';
 
