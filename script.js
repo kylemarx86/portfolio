@@ -477,7 +477,6 @@ function toggle_selected_tech(tech){
 }
 
 function update_tech_info(){
-    console.log('clearing and updating');
     // clear name and apps from tech info box
     $('.tech_info .name, .tech_info .apps').empty();
 
