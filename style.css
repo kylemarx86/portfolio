@@ -301,6 +301,26 @@ footer {
     visibility: visible; }
   100% {
     transform: translateX(0); } }
+@keyframes tech-select {
+  from {
+    transform: translate(12.5em); }
+  to {
+    transform: translateX(250%) scale(1.25) !important; } }
+@-webkit-keyframes tech-select {
+  from {
+    -webkit-transform: translate(12.5em); }
+  to {
+    -webkit-transform: translateX(250%) scale(1.25) !important; } }
+@keyframes deselect-tech {
+  from {
+    transform: translateX(250%) scale(1.25); }
+  to {
+    transform: translate(12.5em); } }
+@-webkit-keyframes deselect-tech {
+  from {
+    -webkit-transform: translateX(250%) scale(1.25); }
+  to {
+    -webkit-transform: translate(12.5em); } }
 /*styling for about*/
 .about p {
   color: white;
@@ -507,7 +527,7 @@ button.link_btn:hover, .link_btn > input:hover {
       border: 2px solid black;
       text-align: center;
       box-shadow: 1px 1px 3px 1px #000000;
-      transition-delay: 0.2s;
+      transition-duration: 2s;
       font-family: Calibri; }
       .technologies .circle-container .tech.selected {
         transition-duration: 0.3s;
@@ -517,7 +537,9 @@ button.link_btn:hover, .link_btn > input:hover {
         .technologies .circle-container .tech.selected img {
           filter: grayscale(0); }
       .technologies .circle-container .tech:not(.selected) {
-        transition-duration: 0.2s; }
+        transition-duration: 2s; }
+      .technologies .circle-container .tech.deselected {
+        animation: deselect-tech 2s; }
     .technologies .circle-container img {
       position: absolute;
       display: block;

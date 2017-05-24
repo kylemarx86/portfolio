@@ -63,7 +63,8 @@
         text-align: center;
         box-shadow: 1px 1px 3px 1px #000000;
         // transition-duration: 0.5s;
-        transition-delay: 0.2s;
+        transition-duration: 2s;
+        // transition-delay: 0.2s;
         // transition-delay: 2s;
 
         font-family: Calibri;
@@ -74,13 +75,18 @@
             transition-delay: 0.5s;
             background-color: yellow;
             transform: translateX(250%) scale(1.25) !important;
+            // animation: tech-select 1s;
+            // -webkit-animation: tech-select 1s;
             img{
                 filter: grayscale(0);
             }
         }
         &:not(.selected){
-            transition-duration: 0.2s;
-            // transition-duration: 2s;
+            // transition-duration: 0.2s;
+            transition-duration: 2s;
+        }
+        &.deselected{
+          animation: deselect-tech 2s;
         }
       }
 
