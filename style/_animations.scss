@@ -44,21 +44,6 @@
   }
 }
 
-
-
-
-// @keyframes tech-select{
-//   from{
-//      transform: translate(12.5em);
-//     //  transform: rotate(0deg) translate(12.5em) rotate(0deg); 
-//   }
-//   to{ transform: translateX(250%) scale(1.25) !important; }
-// }
-// @-webkit-keyframes tech-select{
-//   from{ -webkit-transform: translate(12.5em); }
-//   to{ -webkit-transform: translateX(250%) scale(1.25) !important; }
-// }
-
 @keyframes tech-deselect{
   from{
     transform: translateX(250%) scale(1.25);
