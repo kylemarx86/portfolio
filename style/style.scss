@@ -39,6 +39,7 @@ button:focus {
     display: inline-block;
     left: 50%;
     top: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     overflow: hidden;
 
@@ -46,12 +47,12 @@ button:focus {
         display: none;
     }
     .shrunk{
-        animation-name: shrink;
-        animation-duration: 0.5s;
+        -webkit-animation: shrink 0.5s;
+        animation: shrink 0.5s;
     }
     .grown{
-        animation-name: grow;
-        animation-duration: 0.5s;
+        -webkit-animation: grow 0.5s;
+        animation: grow 0.5s;
     }
 
     .page{
@@ -70,6 +71,7 @@ button:focus {
 
             span{
                 background-color: red;
+                -webkit-transform: skewX(-10deg) translateX(-5px);
                 transform: skewX(-10deg) translateX(-5px);
                 display: inline-block;
                 position: relative;
@@ -100,8 +102,8 @@ button:focus {
 }
 
 .slide{
-  animation: slide-in;
-  animation-duration: 0.5s;
+  -webkit-animation: slide-in 0.5;
+  animation: slide-in 0.5;
 }
 
 
@@ -110,40 +112,6 @@ button:focus {
 
 
 
-
-/*animations*/
-/* Chrome, Safari, Opera */
-@-webkit-keyframes prev_image_in {
-    0%   {left: -100%}
-    25%  {left: -75%}
-    50%  {left: -50%}
-    75%  {left: -25%}
-    100% {left: 0}
-}
-/* Standard syntax */
-@keyframes prev_image_in {
-    0%   {left: -100%}
-    25%  {left: -75%}
-    50%  {left: -50%}
-    75%  {left: -25%}
-    100% {left: 0}
-}
-/* Chrome, Safari, Opera */
-@-webkit-keyframes prev_image_out {
-    0%   {left: 0}
-    25%  {left: 25%}
-    50%  {left: 50%}
-    75%  {left: 75%}
-    100% {left: 100%}
-}
-/* Standard syntax */
-@keyframes prev_image_out {
-    0%   {left: 0}
-    25%  {left: 25%}
-    50%  {left: 50%}
-    75%  {left: 75%}
-    100% {left: 100%}
-}
 
 @media (max-width: 1215px){
     .apps_carousel_main{

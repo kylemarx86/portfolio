@@ -32,6 +32,10 @@
           rotate($rot * 1deg) 
           translate($circle-diam / 2) 
           rotate($rot * -1deg);
+        -webkit-transform: 
+          rotate($rot * 1deg) 
+          translate($circle-diam / 2) 
+          rotate($rot * -1deg);
       }
 
       $rot: $rot + $angle;
@@ -50,9 +54,8 @@
     .circle-container {
       @include on-circle($item-count: 9, $circle-diam: 25em, $item-size: 100px); 
       // @include on-circle($item-count: 9, $circle-diam: 50%, $item-size: 100px); 
-      // margin: 5em auto 0;
+      // margin: 5em auto 0;    //original margins
       margin: 0;
-      // margin-left: 0;
       border: dotted 5px orange;
       float: left;
 
@@ -62,28 +65,32 @@
         border: 2px solid black;
         text-align: center;
         box-shadow: 1px 1px 3px 1px #000000;
-        // transition-duration: 0.5s;
-        transition-delay: 0.2s;
-        // transition-delay: 2s;
-
         font-family: Calibri;
+        -webkit-transition-duration: 0.75s;
+        transition-duration: 0.75s;
+        
 
         &.selected{
-            transition-duration: 0.3s;
-            // transition-duration: 2.5s;
+            -webkit-transition-duration: 0.25s;
+            transition-duration: 0.25s;
+            -webkit-transition-delay: 0.5s;
             transition-delay: 0.5s;
             background-color: yellow;
+            -webkit-transform: translateX(250%) scale(1.25) !important;
             transform: translateX(250%) scale(1.25) !important;
             img{
                 filter: grayscale(0);
             }
         }
         &:not(.selected){
-            transition-duration: 0.2s;
-            // transition-duration: 2s;
+            -webkit-transition-duration: 0.25s;
+            transition-duration: 0.25s;
+        }
+        &.deselected{
+          -webkit-animation: tech-deselect .2s;
+          animation: tech-deselect .2s;
         }
       }
-
       
       img { 
         position: absolute;
@@ -91,10 +98,13 @@
         max-width: 90%; 
         max-height: 90%;
         filter: grayscale(100%);
-        transition: .15s;
+        -webkit-transition-duration: .15s;
+        transition-duration: .15s;
         top: 50%;
         left: 50%;
+        -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+        
         
         &:hover,
         &:active {
