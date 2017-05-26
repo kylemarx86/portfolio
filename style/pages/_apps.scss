@@ -10,15 +10,17 @@
     display: inline-block;
     left: 50%;
     top: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 button.link_btn, .link_btn > input{
     color: #101010;
     margin: 0 10px;
     font-weight: bold;
+    -webkit-transform: skewX(-10deg);
     transform: skewX(-10deg);
-    -webkit-border-radius:0; 
     border: none;
+    -webkit-border-radius:0;
     border-radius:0;
 }
 button.link_btn:hover, .link_btn > input:hover{
@@ -56,6 +58,7 @@ button.link_btn:hover, .link_btn > input:hover{
     /*want to take on height of surrounding container: apps_carousel_main*/
     height: 475px;
     left: 50%;
+    -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
     overflow: visible;
 }
@@ -92,28 +95,33 @@ button.link_btn:hover, .link_btn > input:hover{
     box-shadow: 2px 0 0 0 #111111,
         0 2px 0 0 #111111, 
         2px 2px 0 0 #111111;
+    -webkit-transition-duration: 750ms;
     transition-duration: 750ms;
     cursor: pointer;
 }
 .prev_button{
     left: 0;
+    -webkit-transform: skewX(-10deg) translate(-50%);
     transform: skewX(-10deg) translate(-50%);
     z-index: 4;
 }
 .next_button{
     right: 0;
     z-index: 4;
+    -webkit-transform: skewX(-10deg) translate(50%);
     transform: skewX(-10deg) translate(50%);
 }
 .skewed > .glyphicon{
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 /*hover transitions*/
 .skewed:hover{
     background-color: #BB0000;
+    -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     box-shadow: none;
 }
@@ -135,6 +143,7 @@ button.link_btn:hover, .link_btn > input:hover{
     width: 5%;
     margin: 0 5px;
     top: 25%;
+    -webkit-transform: skewX(-10deg);
     transform: skewX(-10deg);
     color: black;
     background-color: white;
