@@ -268,31 +268,52 @@ footer {
   color: dimgray;
   box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000; }
 
-@keyframes shrink {
+@-webkit-keyframes shrink {
   0% {
     -webkit-transform: scale(1);
+    display: inline-block; }
+  99% {
+    -webkit-transform: scale(0.0001); }
+  100% {
+    display: none;
+    -webkit-transform: scale(0.0001); } }
+@keyframes shrink {
+  0% {
     transform: scale(1);
     display: inline-block; }
   99% {
-    -webkit-transform: scale(0.0001);
     transform: scale(0.0001); }
   100% {
     display: none;
-    -webkit-transform: scale(0.0001);
     transform: scale(0.0001); } }
+@-webkit-keyframes grow {
+  0% {
+    display: none;
+    -webkit-transform: scale(0.0001); }
+  1% {
+    display: inline-block;
+    -webkit-transform: scale(0.0001); }
+  100% {
+    -webkit-transform: scale(1);
+    display: inline-block; } }
 @keyframes grow {
   0% {
     display: none;
-    -webkit-transform: scale(0.0001);
     transform: scale(0.0001); }
   1% {
     display: inline-block;
-    -webkit-transform: scale(0.0001);
     transform: scale(0.0001); }
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
     display: inline-block; } }
+@-webkit-keyframes slide-in {
+  0% {
+    visibility: hidden;
+    -webkit-transform: translateX(-100%); }
+  1% {
+    visibility: visible; }
+  100% {
+    -webkit-transform: translateX(0); } }
 @keyframes slide-in {
   0% {
     visibility: hidden;
@@ -301,16 +322,60 @@ footer {
     visibility: visible; }
   100% {
     transform: translateX(0); } }
-@keyframes tech-deselect {
-  from {
-    transform: translateX(250%) scale(1.25); }
-  to {
-    transform: translate(12.5em); } }
+@-webkit-keyframes prev_image_in {
+  0% {
+    left: -100%; }
+  25% {
+    left: -75%; }
+  50% {
+    left: -50%; }
+  75% {
+    left: -25%; }
+  100% {
+    left: 0; } }
+@keyframes prev_image_in {
+  0% {
+    left: -100%; }
+  25% {
+    left: -75%; }
+  50% {
+    left: -50%; }
+  75% {
+    left: -25%; }
+  100% {
+    left: 0; } }
+@-webkit-keyframes prev_image_out {
+  0% {
+    left: 0; }
+  25% {
+    left: 25%; }
+  50% {
+    left: 50%; }
+  75% {
+    left: 75%; }
+  100% {
+    left: 100%; } }
+@keyframes prev_image_out {
+  0% {
+    left: 0; }
+  25% {
+    left: 25%; }
+  50% {
+    left: 50%; }
+  75% {
+    left: 75%; }
+  100% {
+    left: 100%; } }
 @-webkit-keyframes tech-deselect {
   from {
     -webkit-transform: translateX(250%) scale(1.25); }
   to {
     -webkit-transform: translate(12.5em); } }
+@keyframes tech-deselect {
+  from {
+    transform: translateX(250%) scale(1.25); }
+  to {
+    transform: translate(12.5em); } }
 /*styling for about*/
 .about p {
   color: white;
@@ -699,55 +764,6 @@ button:focus {
   animation: slide-in;
   animation-duration: 0.5s; }
 
-/*animations*/
-/* Chrome, Safari, Opera */
-@-webkit-keyframes prev_image_in {
-  0% {
-    left: -100%; }
-  25% {
-    left: -75%; }
-  50% {
-    left: -50%; }
-  75% {
-    left: -25%; }
-  100% {
-    left: 0; } }
-/* Standard syntax */
-@keyframes prev_image_in {
-  0% {
-    left: -100%; }
-  25% {
-    left: -75%; }
-  50% {
-    left: -50%; }
-  75% {
-    left: -25%; }
-  100% {
-    left: 0; } }
-/* Chrome, Safari, Opera */
-@-webkit-keyframes prev_image_out {
-  0% {
-    left: 0; }
-  25% {
-    left: 25%; }
-  50% {
-    left: 50%; }
-  75% {
-    left: 75%; }
-  100% {
-    left: 100%; } }
-/* Standard syntax */
-@keyframes prev_image_out {
-  0% {
-    left: 0; }
-  25% {
-    left: 25%; }
-  50% {
-    left: 50%; }
-  75% {
-    left: 75%; }
-  100% {
-    left: 100%; } }
 @media (max-width: 1215px) {
   .apps_carousel_main {
     height: 380px; }
