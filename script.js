@@ -4,20 +4,19 @@ var new_page = null;    //doesn't need to be global variable
 var apps_array = [];
 var image_array = [];
 var tech_array = [];
-var rot_arr;    //keeps track of the rotations of each elt as they spin around in circular path
+var rot_array = [];    //keeps track of the rotations of each elt as they spin around in circular path
 var current_app_index = null;
 var click_event_happening = null;
 
 $(document).ready(function () {
     curr_page = 0;
     apps_array = [];
-    rot_arr = [];
+    rot_array = [];
+    load_apps_info();
+    load_tech_info();
     draw_triangles();
-    // initialize_locations();
     apply_click_handlers();
     click_event_happening = false;
-    load_files();
-    load_tech_info();
 });
 
 //section to draw main logo
@@ -252,7 +251,7 @@ function button_disable_and_reenable(){
 
 
 //make ajax call to gather_apps_info.php and saves those images to image_array
-function load_files() {
+function load_apps_info() {
     $.ajax({
         url: 'gather_apps_info.php',
         dataType: 'json',
@@ -267,7 +266,7 @@ function load_files() {
                     $('#image_container').append(image_array[i]);
                 }
                 //initialize pictures
-                initialize_pictures();
+                initialize_app_pictures();
                 //add the number links to the number bar
                 create_number_links();
                 //initialize the link buttons
@@ -284,7 +283,7 @@ function load_files() {
 
 //sets up pictures for display
     //change to be about initializing both pics and info
-function initialize_pictures() {
+function initialize_app_pictures() {
     //create an image and set the source
     current_app_index = 0;
 
@@ -340,9 +339,9 @@ function update_app(new_app_index, direction, time_duration = 1000) {
         //prepare new image for move in
         $(image_array[new_app_index]).css({'left': `${direction*100}%`, 'top': '0'});
         //slide previous image out
-        $(image_array[current_app_index]).animate({left: `${direction*-100}%`},time_duration);
+        $(image_array[current_app_index]).animate({left: `${direction*-100}%`}, time_duration);
         //slide new image in
-        $(image_array[new_app_index]).animate({left: '0'},time_duration);
+        $(image_array[new_app_index]).animate({left: '0'}, time_duration);
         //change active app css
         $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
         
@@ -410,7 +409,6 @@ function create_number_links(){
 
 //make ajax call to gather_tech_info.php and saves those images to image_array
 function load_tech_info() {
-    console.log('firing');
     $.ajax({
         url: 'gather_tech_info.php',
         dataType: 'json',
@@ -428,12 +426,13 @@ function load_tech_info() {
                     $li.append($img);
                     $circle_container.append($li);
                     // initialize array of rotated angles
-                    rot_arr[i] = 360 / tech_array.length * i;
+                    rot_array[i] = 360 / tech_array.length * i;
                 }
                 $('.tech:nth-of-type(1)').addClass('selected');
+                //initialize the tech info box
+                update_tech_info();
                 // add click handlers to newly created items
                 $('.tech').click(toggle_selected_tech($(this)));
-              
             }else{
                 console.log('failed to retrieve technologies');
             }
@@ -458,23 +457,40 @@ function toggle_selected_tech(tech){
 
         // i need this code to fire after the previous line finishes 
         for(var i = 0; i < elt_count; i++){
-            rot_arr[i] += new_rot;
+            rot_array[i] += new_rot;
             var $elt = $(`.circle-container > .tech:nth-of-type(${i+1})`);
             var $attr = $elt.attr('loc');
             //assign new location idicator to element
             var new_loc = ( $elt.attr('loc') - loc_index + elt_count ) % elt_count;
             $elt.attr('loc', new_loc).css({
-                'transform': `rotateZ(${rot_arr[i]}deg) translate(12.5em) rotateZ(${-1*rot_arr[i]}deg)`
+                'transform': `rotateZ(${rot_array[i]}deg) translate(12.5em) rotateZ(${-1*rot_array[i]}deg)`
             });
         }
         // i don't like the way this fires off
         setTimeout(function(){
             //find element at location 0 and apply selected class
             $('.circle-container .tech[loc="0"]').toggleClass('selected');
+            update_tech_info();
         }, 500);
         
     });
 }
+
+function update_tech_info(){
+    // clear name and apps from tech info box
+    $('.tech_info .name, .tech_info .apps').empty();
+
+    var index =  $('.circle-container .tech').index($('.selected'));
+    // console.log('new index: ', index);
+    $('.tech_info .name').append(tech_array[index].name);
+    for(var i = 0; i < tech_array[index].apps.length; i++){
+        $li = $('<li>');
+        $li.append(tech_array[index].apps[i]);
+        $('.tech_info .apps').append($li);
+    }
+}
+
+
 
 //method to make ajax call to send email form.
 function send_form(){
