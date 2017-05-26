@@ -301,6 +301,16 @@ footer {
     visibility: visible; }
   100% {
     transform: translateX(0); } }
+@keyframes tech-deselect {
+  from {
+    transform: translateX(250%) scale(1.25); }
+  to {
+    transform: translate(12.5em); } }
+@-webkit-keyframes tech-deselect {
+  from {
+    -webkit-transform: translateX(250%) scale(1.25); }
+  to {
+    -webkit-transform: translate(12.5em); } }
 /*styling for about*/
 .about p {
   color: white;
@@ -507,17 +517,19 @@ button.link_btn:hover, .link_btn > input:hover {
       border: 2px solid black;
       text-align: center;
       box-shadow: 1px 1px 3px 1px #000000;
-      transition-delay: 0.2s;
+      transition-duration: 0.75s;
       font-family: Calibri; }
       .technologies .circle-container .tech.selected {
-        transition-duration: 0.3s;
+        transition-duration: 0.25s;
         transition-delay: 0.5s;
         background-color: yellow;
         transform: translateX(250%) scale(1.25) !important; }
         .technologies .circle-container .tech.selected img {
           filter: grayscale(0); }
       .technologies .circle-container .tech:not(.selected) {
-        transition-duration: 0.2s; }
+        transition-duration: 0.25s; }
+      .technologies .circle-container .tech.deselected {
+        animation: tech-deselect .2s; }
     .technologies .circle-container img {
       position: absolute;
       display: block;
