@@ -258,7 +258,7 @@ footer {
 
 /*modal styling*/
 .modal-open {
-  overflow: scroll; }
+  overflow: hidden; }
 
 .modal-content {
   background-color: #EEEEEE; }
