@@ -583,6 +583,7 @@ button.link_btn:hover, .link_btn > input:hover {
 .contact input, .contact textarea {
   margin: 5px;
   padding: 1px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   box-shadow: 1px 1px 3px 1px #000000;
   width: 100%; }
@@ -614,6 +615,7 @@ button.link_btn:hover, .link_btn > input:hover {
   padding: 0 5px; }
 
 .mail_response p {
+  -webkit-transform: skewX(10deg);
   transform: skewX(10deg);
   color: black;
   padding: 0 5px; }
