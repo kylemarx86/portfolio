@@ -724,16 +724,17 @@ button:focus {
     display: inline-block;
     left: 50%;
     top: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     overflow: hidden; }
     .main_screen .screen .hidden {
       display: none; }
     .main_screen .screen .shrunk {
-      animation-name: shrink;
-      animation-duration: 0.5s; }
+      -webkit-animation: shrink 0.5s;
+      animation: shrink 0.5s; }
     .main_screen .screen .grown {
-      animation-name: grow;
-      animation-duration: 0.5s; }
+      -webkit-animation: grow 0.5s;
+      animation: grow 0.5s; }
     .main_screen .screen .page {
       position: absolute;
       display: inline-block;
@@ -747,6 +748,7 @@ button:focus {
         display: inline-block; }
         .main_screen .screen .page .title span {
           background-color: red;
+          -webkit-transform: skewX(-10deg) translateX(-5px);
           transform: skewX(-10deg) translateX(-5px);
           display: inline-block;
           position: relative;
@@ -767,8 +769,8 @@ button:focus {
         width: 100%; }
 
 .slide {
-  animation: slide-in;
-  animation-duration: 0.5s; }
+  -webkit-animation: slide-in 0.5;
+  animation: slide-in 0.5; }
 
 @media (max-width: 1215px) {
   .apps_carousel_main {
