@@ -3,12 +3,13 @@ var curr_page = null;
 var new_page = null;    //doesn't need to be global variable
 var apps_array = [];
 var image_array = [];
-var tech_array = [];
+// var tech_array = [];
 var rot_array = [];    //keeps track of the rotations of each elt as they spin around in circular path
 var current_app_index = null;
 var click_event_happening = null;
 
-var tech_info = [
+// array of technologies to be displayed on technologies used page
+var tech_array = [
     { 
         name: 'JavaScript',
         image_src: 'technologies/images/js.png',
@@ -446,60 +447,8 @@ function create_number_links(){
 }
 
 
-
-
-
 //make ajax call to gather_tech_info.php and saves those images to image_array
 function load_tech_info() {
-    // $.ajax({
-    //     url: 'gather_tech_info.php',
-    //     dataType: 'json',
-    //     success: function (response) {
-    //         if(response.success){
-    //             tech_array = response.pages;
-    //             //identify circle container
-    //             var $circle_container = $('.circle-container');
-
-    //             for(var i = 0; i < tech_array.length; i++){
-    //                 // create image component with corresponding image 
-    //                 $img = $('<img>').attr('src', tech_array[i].image_src);
-    //                 // loc attribute to keep track of the position along the circle container where element will be
-    //                 $li = $('<li>').addClass('tech').attr('loc', i);
-    //                 $li.append($img);
-    //                 $circle_container.append($li);
-    //                 // initialize array of rotated angles
-    //                 rot_array[i] = 360 / tech_array.length * i;
-    //             }
-    //             $('.tech:nth-of-type(1)').addClass('selected');
-    //             //initialize the tech info box
-    //             update_tech_info();
-    //             // add click handlers to newly created items
-    //             $('.tech').click(toggle_selected_tech($(this)));
-
-
-    //             // the following code not working as expected
-    //             // $('.tech').on('transtionend webkitTranstionEnd MSTranstionEnd', function(){
-    //             //     //find element at location 0 and apply selected class
-    //             //     $('.circle-container .tech[loc="0"]').toggleClass('selected');
-    //             //     $('.circle-container .tech[loc="0"]').one('webkitAnimationEnd animationEnd', function(e){
-    //             //         // $('.selected')
-    //             //         update_tech_info();
-    //             //     });
-    //             // });
-              
-    //         }else{
-    //             console.log('failed to retrieve technologies');
-    //         }
-    //     },
-    //     error: function (response) {
-    //         console.log('connection error');
-    //     }
-    // });
-
-
-
-
-    tech_array = tech_info;
     //identify circle container
     var $circle_container = $('.circle-container');
     //place each element along circle
@@ -513,60 +462,24 @@ function load_tech_info() {
         // initialize array of rotated angles
         rot_array[i] = 360 / tech_array.length * i;
     }
-
-    
-    
-    // $('.tech').on('transitionend webkitTransitionEnd MSTransitionEnd', function(){
-    //     update_tech_info();
-    // });
-
-
-    // $('.tech').one('webkitTransitionEnd transitionend', function(e){
-    //     $('.circle-container .tech[loc="0"]').toggleClass('selected');
-    //     //initialize the tech info box
-    //     update_tech_info();    
-    // });
-    
     // add click handlers to newly created items
     $('.tech').click(toggle_selected_tech($(this)));
-    
     $('.tech:nth-of-type(1)').addClass('selected');
     update_tech_info();
-
-    // the following code not working as expected
-    // $('.tech').on('transtionend webkitTranstionEnd MSTranstionEnd', function(){
-    //     //find element at location 0 and apply selected class
-    //     $('.circle-container .tech[loc="0"]').toggleClass('selected');
-    //     $('.circle-container .tech[loc="0"]').one('webkitAnimationEnd animationEnd', function(e){
-    //         // $('.selected')
-    //         update_tech_info();
-    //     });
-    // });
 }
-
-
-
-
-
 
 
 //rename this function
 function toggle_selected_tech(tech){
     $('.tech').click(function(){
-        console.log('clicked');
         //determine new rotation based on the location index of the clicked element
         var loc_index = $(this).attr('loc');
         var elt_count = $('.circle-container li.tech').length;
         // determine which way to spin (cw or ccw) and by how much by first determining which is the closer path.
             // this can be done by seeing if the clicked element is under or over the halfway mark of the number of elements
         var new_rot = loc_index <= elt_count / 2 ? -1 * loc_index * 360 / elt_count : (elt_count - loc_index) * 360 / elt_count;
-        // $('.tech').removeClass('selected');
-        // $('.tech.selected').toggleClass('selected').toggleClass('deselected');
-        // $('.tech.selected').toggleClass('selected').addClass('deselected');
         $('.tech.selected').removeClass('selected').addClass('deselected');
-
         $('.deselected').one('webkitAnimationEnd animationEnd', function(e){
-            console.log('selected deselected');
             $('.tech.deselected').removeClass('deselected');
 
             for(var i = 0; i < elt_count; i++){
@@ -579,10 +492,8 @@ function toggle_selected_tech(tech){
                     'transform': `rotateZ(${rot_array[i]}deg) translate(12.5em) rotateZ(${-1*rot_array[i]}deg)`,
                 });
             }
-
             //after each of the techs have moved to their final position, then add the selected class to the tech at location 0
             var transitionEvent = whichTransitionEvent();
-
             $('.circle-container .tech[loc="0"]:not(.selected)').one(transitionEvent, function(e){
                 $('.circle-container .tech[loc="0"]').toggleClass('selected');
                 update_tech_info();
@@ -614,14 +525,11 @@ function whichTransitionEvent(){
 
 
 
-
 function update_tech_info(){
-    console.log('update tech info');
     // clear name and apps from tech info box
     $('.tech_info .name, .tech_info .apps').empty();
 
     var index =  $('.circle-container .tech').index($('.selected'));
-    // console.log('new index: ', index);
     $('.tech_info .name').append(tech_array[index].name);
     for(var i = 0; i < tech_array[index].apps.length; i++){
         $li = $('<li>');
