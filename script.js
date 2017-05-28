@@ -581,7 +581,6 @@ function update_tech_info(){
 
 // i might consider rewriting other modal method so that info is always updated when clicked as opposed to when app is switched
 function update_modal(app_index){
-    console.log('update the modal info');
     // gather github and live site addresses
     var github_address = apps_array[app_index].github_address;
     var live_address = apps_array[app_index].live_address;
