@@ -361,8 +361,8 @@ function load_apps_info() {
     initialize_app_pictures();
     //add the number links to the number bar
     create_number_links();
-    //initialize the link buttons
-    update_links();
+    //initialize the link buttons and modal
+    update_modal_and_links(current_app_index);
     //add event handlers to next and prev buttons
     apply_next_and_prev_app_click_handlers();
 }
@@ -433,8 +433,8 @@ function update_app(new_app_index, direction, time_duration = 1000) {
         
         //update current_app_index
         current_app_index = new_app_index;    
-        //update the button links in the main page and modal
-        update_links();
+        //update the modal info and button links in the main page and modal
+        update_modal_and_links(current_app_index);
     }
 }
 // NOTE: consider moving this to regular click handler set up
@@ -443,14 +443,7 @@ function apply_next_and_prev_app_click_handlers() {
     $('.prev_button').click(get_prev_app);
     $('.next_button').click(get_next_app);
 }
-//function to update the links 
-function update_links(){
-    var github_address = apps_array[current_app_index].github_address;
-    var live_address = apps_array[current_app_index].live_address;
 
-    //update modal
-    update_modal(current_app_index);
-}
 //add the number links to the number bar
 function create_number_links(){
     //identify number bar
@@ -579,7 +572,7 @@ function update_tech_info(){
 }
 
 // i might consider rewriting other modal method so that info is always updated when clicked as opposed to when app is switched
-function update_modal(app_index){
+function update_modal_and_links(app_index){
     // gather github and live site addresses
     var github_address = apps_array[app_index].github_address;
     var live_address = apps_array[app_index].live_address;
@@ -611,13 +604,12 @@ function find_app_index(app_clicked){
         var text = $app_clicked.parent().find('span').text();
         for(var i = 0; i < apps_array.length; i++){
             if(apps_array[i].name === text){
-                update_modal(i);
+                update_modal_and_links(i);
                 return;
             }
         }
     });
 }
-
 
 
 //method to make ajax call to send email form.
