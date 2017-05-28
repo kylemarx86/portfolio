@@ -3,7 +3,7 @@ $data = [];
 $data['name'] = 'Memory Match';
 
 $data['description'] = [];
-$data['description']['tech_used'] = ['HTML', 'JavaScript', 'jQuery', 'Google Maps API', 'CSS',];
+$data['description']['tech_used'] = ['HTML', 'JavaScript', 'jQuery', 'Google Maps API', 'CSS'];
 $data['description']['details'] = [];
 $data['description']['details'][] = 'Uses JavaScript to control game logic, manage game statistics, and monitor win conditions';
 $data['description']['details'][] = 'jQuery was used to dynamically generate the game board of DOM elements';
@@ -12,7 +12,7 @@ $data['description']['details'][] = 'Employs CSS to style the page, animate acti
 
 $data['picture_source'] = 'apps/images/memory_match-wide.png';
 $data['live_address'] = 'http://dev.kylemarx86.com/memory_match/';
-$data['github_address'] = 'https://github.com/kylemarx86/memory_match_clone';
+$data['github_address'] = 'https://github.com/kylemarx86/memory_match';
 
 print(json_encode($data));
 ?>

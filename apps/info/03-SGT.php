@@ -10,7 +10,7 @@ $data['description']['details'][] = 'Makes use of Bootstrap to format the HTML b
 
 $data['picture_source'] = 'apps/images/SGT-wide.png';
 $data['live_address'] = 'http://dev.kylemarx86.com/SGT/';
-$data['github_address'] = 'https://github.com/kylemarx86/SGT_clone';
+$data['github_address'] = 'https://github.com/kylemarx86/SGT';
 
 print(json_encode($data));
 ?>
