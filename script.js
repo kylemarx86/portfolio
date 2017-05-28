@@ -1,10 +1,9 @@
-var page_arr = ['.about', '.apps', '.technologies_used', '.contact'];
-var curr_page = null;
-// var new_page = null;    //doesn't need to be global variable
-var image_array = [];
+var page_arr = ['.about', '.apps', '.technologies_used', '.contact'];   // array of classes that represent the page titles
+var curr_page = null;   // index of the page number currently shown
+var image_array = [];   // array of images sources for the apps
 var rot_array = [];    //keeps track of the rotations of each elt as they spin around in circular path
-var current_app_index = null;
-var click_event_happening = null;
+var current_app_index = null;   // index of the application currently shown
+var click_event_happening = null;   // boolean to control when an event is happening so as to prevent interruptions
 
 // array of apps to be displayed on apps page
 var apps_array = [
@@ -271,14 +270,14 @@ function draw_poly(row, column) {
 
 //function to get the coordinates of the triangle to draw based on the index of the row and column to draw it in
 function get_poly_points(row, column){
-  var x=[];
-  var y=[];
+  var x = [];
+  var y = [];
   var retStr = "";
-  for(var i=0; i<3; i++){
-    x[i] = (column+i)*25;
+  for(var i = 0; i < 3; i++){
+    x[i] = (column + i) * 25;
   }
-  for(i=0; i<3; i++){
-    y[i] = row*43 + 21.5 + 21.5*Math.pow(-1,column + row + i + 1);
+  for(i = 0; i < 3; i++){
+    y[i] = row * 43 + 21.5 + 21.5 * Math.pow(-1, column + row + i + 1);
   }
   for(var i = 0; i < 3; i++){
     retStr += `${x[i]},${y[i]} `;
@@ -301,13 +300,13 @@ function apply_click_handlers(){
 // load previous page from page_arr
 function get_prev_screen(){
   button_disable_and_reenable();
-  new_page = (curr_page + page_arr.length - 1) % page_arr.length;
+  var new_page = (curr_page + page_arr.length - 1) % page_arr.length;
   update_page(new_page);
 }
 // load next page from page_arr
 function get_next_screen(){
   button_disable_and_reenable();
-  new_page = (curr_page + 1) % page_arr.length;
+  var new_page = (curr_page + 1) % page_arr.length;
   update_page(new_page);
 }
 function jump_to_screen(screen){
@@ -352,10 +351,8 @@ function button_disable_and_reenable(){
 }
 
 
-//make ajax call to gather_apps_info.php and saves those images to image_array
+//make saves images to image_array and sets up carousel for display of apps
 function load_apps_info() {
-    //removing ajax call to have all info on load
-
     //identify carousel container
     var $carousel_container = $('.apps_carousel');                
     //set up the gathered images
@@ -536,8 +533,10 @@ function toggle_selected_tech(tech){
 }
 
 
-
-// Function from David Walsh: http://davidwalsh.name/css-animation-callback
+/**
+ * Function from David Walsh: http://davidwalsh.name/css-animation-callback
+ * 
+ */
 function whichTransitionEvent(){
   var t,
       el = document.createElement("fakeelement");
@@ -557,7 +556,10 @@ function whichTransitionEvent(){
 }
 
 
-
+/**
+ * 
+ * 
+ */
 function update_tech_info(){
     // clear name and apps from tech info box
     $('.tech_info .name, .tech_info .apps').empty();
