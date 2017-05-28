@@ -293,8 +293,6 @@ function apply_click_handlers(){
     $('.page_link').click(jump_to_screen($(this)));
     // for contact page
     $('button[name="submit"]').click(send_form);
-    // for apps page
-    $('.apps button.description').click(update_modal(current_app_index));
 }
 
 // load previous page from page_arr
