@@ -1,3 +1,4 @@
+/** @global */
 var page_arr = ['.about', '.apps', '.technologies_used', '.contact'];   // array of classes that represent the page titles
 var curr_page = null;   // index of the page number currently shown
 var image_array = [];   // array of images sources for the apps
@@ -109,15 +110,16 @@ var tech_array = [
 $(document).ready(function () {
     curr_page = 0;
     rot_array = [];
-    load_apps_info();
-    load_tech_info();
     draw_triangles();
     apply_click_handlers();
+    load_apps_info();
+    load_tech_info();
     click_event_happening = false;
 });
 
 //section to draw main logo
 //draw name in triangles
+//rename to reflect a more general purpose for this
 function draw_triangles(){
   //draw k
   draw_poly(1,6);
@@ -312,8 +314,22 @@ function jump_to_screen(screen){
         update_page(new_page);
     });
 }
+// control button functionality when click event is happening
+    // NOTE: consider setting up the reenabling of click handlers based on animationEnd or transitionend
+function button_disable_and_reenable(){
+  $('#prev, #next').off();
+  setTimeout(function(){
+    $('#prev').click(get_prev_screen);
+    $('#next').click(get_next_screen);
+  }, 1000);
+}
 
-// called by get_prev_screen and get_next_screen to load a new page
+
+/**
+ * called by get_prev_screen and get_next_screen to load a new page
+ * @alias update_page 
+ * @param {number} new_page - the index of the new page
+ */
 function update_page(new_page){
   // title
   $(`${page_arr[curr_page]} .title`).toggleClass('slide');
@@ -326,7 +342,12 @@ function update_page(new_page){
   curr_page = new_page;
   new_page = null;
 }
-// called by update_page to control what is hidden
+/**
+ * called by update_page to control what is hidden
+ * @alias toggle_hidden
+ * @param {number} curr_page - index of page to be hidden
+ * @param {number} new_page - index of page to be shown
+ */
 function toggle_hidden(curr_page, new_page){
     setTimeout(function(){
       // page
@@ -337,15 +358,9 @@ function toggle_hidden(curr_page, new_page){
       $(`${page_arr[new_page]} .content`).toggleClass('hidden');
     }, 480);
 }
-// control button functionality when click event is happening
-    // NOTE: consider setting up the reenabling of click handlers based on animationEnd or transitionend
-function button_disable_and_reenable(){
-  $('#prev, #next').off();
-  setTimeout(function(){
-    $('#prev').click(get_prev_screen);
-    $('#next').click(get_next_screen);
-  }, 1000);
-}
+
+
+
 
 
 //make saves images to image_array and sets up carousel for display of apps
@@ -465,6 +480,9 @@ function create_number_links(){
     //give the first app the active nav_number css
     $('.nav_number:nth-of-type(1)').addClass('active_nav_number');
 }
+
+
+
 
 
 //make ajax call to gather_tech_info.php and saves those images to image_array
@@ -610,6 +628,9 @@ function find_app_index(app_clicked){
         }
     });
 }
+
+
+
 
 
 //method to make ajax call to send email form.
