@@ -108,7 +108,6 @@ var tech_array = [
 
 $(document).ready(function () {
     curr_page = 0;
-    // apps_array = [];
     rot_array = [];
     load_apps_info();
     load_tech_info();
