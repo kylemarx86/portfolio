@@ -434,13 +434,14 @@ function jump_to_app(new_app_index){
 //time_duration is the time in ms for the app to finish animation
 function update_app(new_app_index, direction, time_duration = 1000) {
     if(!click_event_happening){
-        //prevent further clicks
+        //prevent further clicks while animation happens
         click_event_happening = true;   
-        setTimeout(function(){ click_event_happening=false; }, time_duration);
+        // reenable clicks after animation has happened
+        setTimeout(function(){ click_event_happening = false; }, time_duration);
         //prepare new image for move in
-        $(image_array[new_app_index]).css({'left': `${direction*100}%`, 'top': '0'});
+        $(image_array[new_app_index]).css({'left': `${direction * 100}%`, 'top': '0'});
         //slide previous image out
-        $(image_array[current_app_index]).animate({left: `${direction*-100}%`}, time_duration);
+        $(image_array[current_app_index]).animate({left: `${direction * -100}%`}, time_duration);
         //slide new image in
         $(image_array[new_app_index]).animate({left: '0'}, time_duration);
         //change active app css
