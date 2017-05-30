@@ -1,3 +1,4 @@
+/** @global */
 var page_arr = ['.about', '.apps', '.technologies_used', '.contact'];   // array of classes that represent the page titles
 var curr_page = null;   // index of the page number currently shown
 var image_array = [];   // array of images sources for the apps
@@ -109,15 +110,16 @@ var tech_array = [
 $(document).ready(function () {
     curr_page = 0;
     rot_array = [];
-    load_apps_info();
-    load_tech_info();
     draw_triangles();
     apply_click_handlers();
+    load_apps_info();
+    load_tech_info();
     click_event_happening = false;
 });
 
 //section to draw main logo
 //draw name in triangles
+//rename to reflect a more general purpose for this
 function draw_triangles(){
   //draw k
   draw_poly(1,6);
@@ -312,8 +314,22 @@ function jump_to_screen(screen){
         update_page(new_page);
     });
 }
+// control button functionality when click event is happening
+    // NOTE: consider setting up the reenabling of click handlers based on animationEnd or transitionend
+function button_disable_and_reenable(){
+  $('#prev, #next').off();
+  setTimeout(function(){
+    $('#prev').click(get_prev_screen);
+    $('#next').click(get_next_screen);
+  }, 1000);
+}
 
-// called by get_prev_screen and get_next_screen to load a new page
+
+/**
+ * called by get_prev_screen and get_next_screen to load a new page
+ * @alias update_page 
+ * @param {number} new_page - the index of the new page
+ */
 function update_page(new_page){
   // title
   $(`${page_arr[curr_page]} .title`).toggleClass('slide');
@@ -326,7 +342,12 @@ function update_page(new_page){
   curr_page = new_page;
   new_page = null;
 }
-// called by update_page to control what is hidden
+/**
+ * called by update_page to control what is hidden
+ * @alias toggle_hidden
+ * @param {number} curr_page - index of page to be hidden
+ * @param {number} new_page - index of page to be shown
+ */
 function toggle_hidden(curr_page, new_page){
     setTimeout(function(){
       // page
@@ -337,15 +358,9 @@ function toggle_hidden(curr_page, new_page){
       $(`${page_arr[new_page]} .content`).toggleClass('hidden');
     }, 480);
 }
-// control button functionality when click event is happening
-    // NOTE: consider setting up the reenabling of click handlers based on animationEnd or transitionend
-function button_disable_and_reenable(){
-  $('#prev, #next').off();
-  setTimeout(function(){
-    $('#prev').click(get_prev_screen);
-    $('#next').click(get_next_screen);
-  }, 1000);
-}
+
+
+
 
 
 //make saves images to image_array and sets up carousel for display of apps
@@ -419,13 +434,14 @@ function jump_to_app(new_app_index){
 //time_duration is the time in ms for the app to finish animation
 function update_app(new_app_index, direction, time_duration = 1000) {
     if(!click_event_happening){
-        //prevent further clicks
+        //prevent further clicks while animation happens
         click_event_happening = true;   
-        setTimeout(function(){ click_event_happening=false; }, time_duration);
+        // reenable clicks after animation has happened
+        setTimeout(function(){ click_event_happening = false; }, time_duration);
         //prepare new image for move in
-        $(image_array[new_app_index]).css({'left': `${direction*100}%`, 'top': '0'});
+        $(image_array[new_app_index]).css({'left': `${direction * 100}%`, 'top': '0'});
         //slide previous image out
-        $(image_array[current_app_index]).animate({left: `${direction*-100}%`}, time_duration);
+        $(image_array[current_app_index]).animate({left: `${direction * -100}%`}, time_duration);
         //slide new image in
         $(image_array[new_app_index]).animate({left: '0'}, time_duration);
         //change active app css
@@ -444,7 +460,7 @@ function apply_next_and_prev_app_click_handlers() {
     $('.next_button').click(get_next_app);
 }
 
-//add the number links to the number bar
+//add the number links to the number bar of apps carousel
 function create_number_links(){
     //identify number bar
     var $number_bar = $('.number_bar');
@@ -467,7 +483,10 @@ function create_number_links(){
 }
 
 
-//make ajax call to gather_tech_info.php and saves those images to image_array
+
+
+
+// loads images to circle showing technologies. adds click handlers to allow the toggling of technologies.
 function load_tech_info() {
     //identify circle container
     var $circle_container = $('.circle-container');
@@ -571,7 +590,10 @@ function update_tech_info(){
     $('.tech button.description').click(find_app_index($(this)));
 }
 
-// i might consider rewriting other modal method so that info is always updated when clicked as opposed to when app is switched
+/**
+ * updates the links and the modal with info from the associated app
+ * @param {number} app_index - index of the app modal and links are updating to
+ */
 function update_modal_and_links(app_index){
     // gather github and live site addresses
     var github_address = apps_array[app_index].github_address;
@@ -598,6 +620,10 @@ function update_modal_and_links(app_index){
     $('form.live').attr('action',live_address);
 }
 
+/**
+ * 
+ * @param {*} app_clicked 
+ */
 function find_app_index(app_clicked){
     $('.tech_info button.description').click(function(){
         var $app_clicked = $(this);
@@ -610,6 +636,9 @@ function find_app_index(app_clicked){
         }
     });
 }
+
+
+
 
 
 //method to make ajax call to send email form.
