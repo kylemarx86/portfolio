@@ -460,7 +460,7 @@ function apply_next_and_prev_app_click_handlers() {
     $('.next_button').click(get_next_app);
 }
 
-//add the number links to the number bar
+//add the number links to the number bar of apps carousel
 function create_number_links(){
     //identify number bar
     var $number_bar = $('.number_bar');
@@ -486,7 +486,7 @@ function create_number_links(){
 
 
 
-//make ajax call to gather_tech_info.php and saves those images to image_array
+// loads images to circle showing technologies. adds click handlers to allow the toggling of technologies.
 function load_tech_info() {
     //identify circle container
     var $circle_container = $('.circle-container');
@@ -590,7 +590,10 @@ function update_tech_info(){
     $('.tech button.description').click(find_app_index($(this)));
 }
 
-// i might consider rewriting other modal method so that info is always updated when clicked as opposed to when app is switched
+/**
+ * updates the links and the modal with info from the associated app
+ * @param {number} app_index - index of the app modal and links are updating to
+ */
 function update_modal_and_links(app_index){
     // gather github and live site addresses
     var github_address = apps_array[app_index].github_address;
@@ -617,6 +620,10 @@ function update_modal_and_links(app_index){
     $('form.live').attr('action',live_address);
 }
 
+/**
+ * 
+ * @param {*} app_clicked 
+ */
 function find_app_index(app_clicked){
     $('.tech_info button.description').click(function(){
         var $app_clicked = $(this);
