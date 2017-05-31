@@ -117,16 +117,45 @@
       display: inline-block;
       height: 100%;
       width: 20%;
-      background-color: blue;
+      background-color: #353535;
 
       .name{
-        
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
       }
       .apps{
-        
+        padding: 0 5px;
         li{
-
+          position: relative;
+          list-style: none;
+          display: inline-block;
+          width: 100%;
+          margin: 5px 0;
+          padding: 5px 0;
+          span{
+            font-size: 1.25em;
+          }
+          
+          button{
+            float: right;
+            position: relative;
+            right: 5px;
+          }
         }
+
+        li:not(:last-child):after {
+          position: absolute;
+          content: '';
+          left: 50%;
+          width: 50%;
+          height: 100%;
+          transform: translateX(-50%);
+          border-bottom: 2px solid white;
+        }
+
+
       }
     }
 }
