@@ -656,22 +656,25 @@ button.link_btn:hover, .link_btn > input:hover {
         list-style: none;
         display: inline-block;
         width: 100%;
-        margin: 5px 0;
-        padding: 5px 0; }
+        margin: 0;
+        padding: 10px 0; }
         .technologies .tech_info .apps li span {
           font-size: 1.25em; }
         .technologies .tech_info .apps li button {
           float: right;
           position: relative;
-          right: 5px; }
-      .technologies .tech_info .apps li:not(:last-child):after {
+          right: 5px;
+          margin-bottom: 5px; }
+      .technologies .tech_info .apps li:not(:last-child)::after {
+        top: 5px;
         position: absolute;
         content: '';
         left: 50%;
-        width: 50%;
+        width: 60%;
         height: 100%;
         transform: translateX(-50%);
-        border-bottom: 2px solid white; }
+        border-bottom: 2px solid white;
+        top: 0; }
 
 /*styling for contact form*/
 .contact form {
