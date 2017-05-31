@@ -53,7 +53,6 @@
 
     .circle-container {
       @include on-circle($item-count: 9, $circle-diam: 25em, $item-size: 100px); 
-      // @include on-circle($item-count: 9, $circle-diam: 50%, $item-size: 100px); 
       // margin: 5em auto 0;    //original margins
       margin: 0;
       border: dotted 5px orange;
@@ -147,7 +146,6 @@
         }
 
         li:not(:last-child)::after {
-          top: 5px;
           position: absolute;
           content: '';
           left: 50%;

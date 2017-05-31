@@ -666,7 +666,6 @@ button.link_btn:hover, .link_btn > input:hover {
           right: 5px;
           margin-bottom: 5px; }
       .technologies .tech_info .apps li:not(:last-child)::after {
-        top: 5px;
         position: absolute;
         content: '';
         left: 50%;
