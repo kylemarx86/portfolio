@@ -292,6 +292,10 @@ function apply_click_handlers(){
     $('#prev').click(get_prev_screen);
     $('#next').click(get_next_screen);
     $('.page_link').click(jump_to_screen($(this)));
+
+    // for apps page
+    $('.prev_button').click(get_prev_app);
+    $('.next_button').click(get_next_app);
     // for contact page
     $('button[name="submit"]').click(send_form);
 }
@@ -378,8 +382,6 @@ function load_apps_info() {
     create_number_links();
     //initialize the link buttons and modal
     update_modal_and_links(current_app_index);
-    //add event handlers to next and prev buttons
-    apply_next_and_prev_app_click_handlers();
 }
 
 //sets up pictures for display
@@ -452,12 +454,6 @@ function update_app(new_app_index, direction, time_duration = 1000) {
         //update the modal info and button links in the main page and modal
         update_modal_and_links(current_app_index);
     }
-}
-// NOTE: consider moving this to regular click handler set up
-//function to enable click handlers on prev and next app buttons
-function apply_next_and_prev_app_click_handlers() {
-    $('.prev_button').click(get_prev_app);
-    $('.next_button').click(get_next_app);
 }
 
 //add the number links to the number bar of apps carousel
