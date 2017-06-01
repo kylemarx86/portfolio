@@ -643,7 +643,37 @@ button.link_btn:hover, .link_btn > input:hover {
     display: inline-block;
     height: 100%;
     width: 20%;
-    background-color: blue; }
+    background-color: #353535; }
+    .technologies .tech_info .name {
+      display: inline-block;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%); }
+    .technologies .tech_info .apps {
+      padding: 0 5px; }
+      .technologies .tech_info .apps li {
+        position: relative;
+        list-style: none;
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+        padding: 10px 0; }
+        .technologies .tech_info .apps li span {
+          font-size: 1.25em; }
+        .technologies .tech_info .apps li button {
+          float: right;
+          position: relative;
+          right: 5px;
+          margin-bottom: 5px; }
+      .technologies .tech_info .apps li:not(:last-child)::after {
+        position: absolute;
+        content: '';
+        left: 50%;
+        width: 60%;
+        height: 100%;
+        transform: translateX(-50%);
+        border-bottom: 2px solid white;
+        top: 0; }
 
 /*styling for contact form*/
 .contact form {
