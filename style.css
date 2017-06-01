@@ -74,6 +74,10 @@ pattern polygon {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
+@media (max-width: 640px) {
+  #header ul {
+    width: 50%;
+    font-size: .75em; } }
 footer {
   position: fixed;
   display: block;
@@ -390,7 +394,7 @@ footer {
 /*area above the app carousel*/
 .apps_carousel_top {
   width: 100%;
-  height: 50px;
+  height: 10%;
   background-color: #202020;
   box-shadow: 1px 1px 3px 1px #000000; }
 
@@ -432,10 +436,9 @@ button.link_btn:hover, .link_btn > input:hover {
 
 /*the main area of the app carousel*/
 .apps_carousel_main {
-  background-color: #353535;
+  background-color: #151515;
   width: 100%;
-  height: 475px;
-  /*determines height of dark background, should be same height as images will be*/
+  height: 100%;
   box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset; }
 
 .apps_carousel {
@@ -546,6 +549,12 @@ button.link_btn:hover, .link_btn > input:hover {
 
 .link_btn_container form {
   display: inline-block; }
+
+.apps_carousel_bottom {
+  width: 100%;
+  height: 10%;
+  background-color: #202020;
+  box-shadow: 1px 1px 3px 1px #000000; }
 
 /*technologies area*/
 .technologies {
@@ -803,58 +812,5 @@ button:focus {
 .slide {
   -webkit-animation: slide-in 0.5s;
   animation: slide-in 0.5s; }
-
-@media (max-width: 1215px) {
-  .apps_carousel_main {
-    height: 380px; }
-
-  .apps_carousel {
-    height: 380px;
-    width: 768px; }
-
-  .semicircle {
-    height: 40px;
-    width: 20px; }
-
-  .skewed > .glyphicon {
-    font-size: 0.75em; }
-
-  .nav_number {
-    font-size: 1.5em; } }
-@media (max-width: 950px) {
-  .apps_carousel_main {
-    height: 285px; }
-
-  .apps_carousel {
-    height: 285px;
-    width: 576px; }
-
-  .semicircle {
-    height: 30px;
-    width: 15px; }
-
-  .skewed > .glyphicon {
-    font-size: 0.5em; }
-
-  .nav_number {
-    font-size: 1em; } }
-@media (max-width: 740px) {
-  .apps_carousel_main {
-    height: 190px; }
-
-  .apps_carousel {
-    height: 190px;
-    width: 384px; }
-
-  .semicircle {
-    height: 20px;
-    width: 10px; }
-
-  .nav_number {
-    font-size: .75em; } }
-@media (max-width: 640px) {
-  #header ul {
-    width: 50%;
-    font-size: .75em; } }
 
 /*# sourceMappingURL=style.css.map */
