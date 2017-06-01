@@ -427,6 +427,8 @@ button.link_btn, .link_btn > input {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+    .apps_carousel_top .link_btn_container form {
+      display: inline-block; }
 
 /*the main area of the app carousel*/
 .apps_carousel_main {
@@ -463,84 +465,70 @@ button.link_btn, .link_btn > input {
         position: absolute;
         top: 0;
         z-index: 2; }
-
-/*styling of carousel buttons*/
-.skewed {
-  position: absolute;
-  width: 9%;
-  height: 100%;
-  border: 1px solid #740000;
-  margin: 0;
-  padding: 0;
-  font-size: 2em;
-  display: inline-block;
-  background-color: red;
-  box-sizing: border-box;
-  box-shadow: 2px 0 0 0 #111111, 0 2px 0 0 #111111,  2px 2px 0 0 #111111;
-  -webkit-transition-duration: 750ms;
-  transition-duration: 750ms;
-  cursor: pointer; }
-
-.prev_button {
-  left: 0;
-  -webkit-transform: skewX(-10deg) translate(-50%);
-  transform: skewX(-10deg) translate(-50%);
-  z-index: 4; }
-
-.next_button {
-  right: 0;
-  z-index: 4;
-  -webkit-transform: skewX(-10deg) translate(50%);
-  transform: skewX(-10deg) translate(50%); }
-
-.skewed > .glyphicon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-
-/*hover transitions*/
-.skewed:hover {
-  background-color: #BB0000;
-  -webkit-transition-duration: 500ms;
-  transition-duration: 500ms;
-  box-shadow: none; }
-
-/*number bar*/
-.number_bar {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 10%;
-  padding-left: 15px;
-  background-color: black;
-  z-index: 3; }
-
-.nav_number {
-  position: relative;
-  display: inline-block;
-  height: 75%;
-  width: 5%;
-  margin: 0 5px;
-  top: 25%;
-  -webkit-transform: skewX(-10deg);
-  transform: skewX(-10deg);
-  color: black;
-  background-color: white;
-  box-shadow: -3px -3px 2px 1px #A0A0A0 inset;
-  text-align: center;
-  cursor: pointer;
-  font-size: 1.75em; }
-
-.active_nav_number {
-  color: white;
-  background-color: red;
-  box-shadow: -3px -3px 2px 1px #A00000 inset;
-  font-weight: bold; }
-
-.link_btn_container form {
-  display: inline-block; }
+    .apps_carousel_main .apps_carousel .skewed {
+      position: absolute;
+      width: 9%;
+      height: 100%;
+      border: 1px solid #740000;
+      margin: 0;
+      padding: 0;
+      font-size: 2em;
+      display: inline-block;
+      background-color: red;
+      box-sizing: border-box;
+      box-shadow: 2px 0 0 0 #111111, 0 2px 0 0 #111111,  2px 2px 0 0 #111111;
+      -webkit-transition-duration: 750ms;
+      transition-duration: 750ms;
+      cursor: pointer; }
+      .apps_carousel_main .apps_carousel .skewed.prev_button {
+        left: 0;
+        -webkit-transform: skewX(-10deg) translate(-50%);
+        transform: skewX(-10deg) translate(-50%);
+        z-index: 4; }
+      .apps_carousel_main .apps_carousel .skewed.next_button {
+        right: 0;
+        z-index: 4;
+        -webkit-transform: skewX(-10deg) translate(50%);
+        transform: skewX(-10deg) translate(50%); }
+      .apps_carousel_main .apps_carousel .skewed:hover {
+        background-color: #BB0000;
+        -webkit-transition-duration: 500ms;
+        transition-duration: 500ms;
+        box-shadow: none; }
+      .apps_carousel_main .apps_carousel .skewed > .glyphicon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
+    .apps_carousel_main .apps_carousel .number_bar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 10%;
+      padding-left: 15px;
+      background-color: black;
+      z-index: 3; }
+      .apps_carousel_main .apps_carousel .number_bar .nav_number {
+        position: relative;
+        display: inline-block;
+        height: 75%;
+        width: 5%;
+        margin: 0 5px;
+        top: 25%;
+        -webkit-transform: skewX(-10deg);
+        transform: skewX(-10deg);
+        color: black;
+        background-color: white;
+        box-shadow: -3px -3px 2px 1px #A0A0A0 inset;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1.75em; }
+        .apps_carousel_main .apps_carousel .number_bar .nav_number.active_nav_number {
+          color: white;
+          background-color: red;
+          box-shadow: -3px -3px 2px 1px #A00000 inset;
+          font-weight: bold; }
 
 .apps_carousel_bottom {
   width: 100%;
