@@ -1,5 +1,6 @@
 @import 'header';
 @import 'footer';
+@import 'buttons';
 @import 'modal';
 @import 'animations';
 @import 'pages/about';
@@ -105,9 +106,6 @@ button:focus {
   -webkit-animation: slide-in 0.5s;
   animation: slide-in 0.5s;
 }
-
-
-
 
 
 
