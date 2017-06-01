@@ -678,28 +678,24 @@ button.link_btn, .link_btn > input {
         border-bottom: 2px solid white;
         top: 0; }
 
-/*styling for contact form*/
 .contact form {
   display: inline-block;
   width: 50%;
   margin-left: 5px; }
-
-.contact input, .contact textarea {
-  margin: 5px;
-  padding: 1px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 3px 1px #000000;
-  width: 100%; }
-
-.contact button {
-  background-color: red; }
-
-.contact table {
-  width: 100%; }
-
-.contact textarea {
-  resize: vertical; }
+  .contact form table {
+    width: 100%; }
+  .contact form input, .contact form textarea {
+    margin: 5px;
+    padding: 1px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px #000000;
+    width: 100%; }
+    .contact form input:focus, .contact form textarea:focus {
+      outline-width: 1px;
+      outline-color: red; }
+  .contact form textarea {
+    resize: vertical; }
 
 .mail_response_container {
   vertical-align: top;
@@ -710,23 +706,17 @@ button.link_btn, .link_btn > input {
   box-sizing: border-box;
   box-shadow: 1px 1px 3px 1px #000000;
   transform: translateX(50%) skewX(-10deg); }
-
-.mail_response {
-  color: white;
-  width: 100%;
-  height: 100%;
-  background-color: silver;
-  padding: 0 5px; }
-
-.mail_response p {
-  -webkit-transform: skewX(10deg);
-  transform: skewX(10deg);
-  color: black;
-  padding: 0 5px; }
-
-textarea:focus, input:focus {
-  outline-width: 1px;
-  outline-color: red; }
+  .mail_response_container .mail_response {
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-color: silver;
+    padding: 0 5px; }
+    .mail_response_container .mail_response p {
+      -webkit-transform: skewX(10deg);
+      transform: skewX(10deg);
+      color: black;
+      padding: 0 5px; }
 
 html, body {
   height: 100%; }
