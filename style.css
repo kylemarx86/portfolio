@@ -659,7 +659,9 @@ button.link_btn:hover, .link_btn > input:hover {
         margin: 0;
         padding: 10px 0; }
         .technologies .tech_info .apps li span {
-          font-size: 1.25em; }
+          display: inline-block;
+          font-size: 1.25em;
+          line-height: 1.5; }
         .technologies .tech_info .apps li button {
           float: right;
           position: relative;
