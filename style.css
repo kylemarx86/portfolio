@@ -414,7 +414,6 @@ button.link_btn, .link_btn > input {
   color: white;
   margin: 10px; }
 
-/*area above the app carousel*/
 .apps_carousel_top {
   width: 100%;
   height: 10%;
@@ -430,8 +429,8 @@ button.link_btn, .link_btn > input {
     .apps_carousel_top .link_btn_container form {
       display: inline-block; }
 
-/*the main area of the app carousel*/
 .apps_carousel_main {
+  position: relative;
   background-color: #151515;
   width: 100%;
   height: 80%;
@@ -441,10 +440,9 @@ button.link_btn, .link_btn > input {
     /*the following are based on the images real dimensions*/
     /*new wide images are 960px x 475px*/
     /*determines width of images in carousel*/
-    width: 960px;
+    width: 80%;
     /*determines height of images in carousel*/
     /*want to take on height of surrounding container: apps_carousel_main*/
-    height: 475px;
     height: 100%;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
