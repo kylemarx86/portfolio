@@ -1,81 +1,65 @@
 /*header*/
-#header {
+header {
   position: fixed;
   top: 0;
   width: 100%;
   height: 60px;
   background-color: #202020;
   z-index: 6;
-  box-shadow: 1px 1px 2px 1px black; }
-
-/*area for name written in triangles*/
-#canvas {
-  height: 60px;
-  width: 225px; }
-
-#main {
-  border: 1px solid black; }
-
-#main rect {
-  stroke: black; }
-
-#inner_triangles rect {
-  fill: #202020; }
-
-line {
-  stroke: #000000;
-  stroke-width: 1; }
-
-pattern polygon {
-  stroke: black;
-  fill: #202020; }
-
-#inner_triangles {
-  width: 50px;
-  height: 86px; }
-
-.name {
-  fill: red;
-  stroke: black; }
-
-/*navigation bar*/
-#header ul {
-  position: absolute;
-  display: inline-block;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #202020;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 65%; }
-
-#header li {
-  position: relative;
-  float: left;
-  height: 100%;
-  width: 25%;
-  margin: 0;
-  display: block;
-  color: white;
-  text-decoration: none;
-  line-height: 100%; }
-
-#header li:hover {
-  background-color: #353535; }
-
-#header li span {
-  position: absolute;
-  display: inline-block;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
+  box-shadow: 1px 1px 2px 1px black;
+  /*area for name written in triangles*/ }
+  header #canvas {
+    height: 60px;
+    width: 225px; }
+    header #canvas #main {
+      border: 1px solid black; }
+      header #canvas #main rect {
+        stroke: black; }
+      header #canvas #main .name {
+        fill: red;
+        stroke: black; }
+    header #canvas #inner_triangles {
+      width: 50px;
+      height: 86px; }
+      header #canvas #inner_triangles rect {
+        fill: #202020; }
+      header #canvas #inner_triangles line {
+        stroke: black;
+        stroke-width: 1; }
+  header ul {
+    position: absolute;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #202020;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 65%; }
+    header ul li {
+      position: relative;
+      float: left;
+      height: 100%;
+      width: 25%;
+      margin: 0;
+      display: block;
+      color: white;
+      text-decoration: none;
+      line-height: 100%; }
+      header ul li:hover {
+        background-color: #353535; }
+      header ul li span {
+        position: absolute;
+        display: inline-block;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
 
 @media (max-width: 640px) {
-  #header ul {
+  header ul {
     width: 50%;
     font-size: .75em; } }
 footer {
