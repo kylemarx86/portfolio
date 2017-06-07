@@ -105,8 +105,6 @@ var tech_array = [
     }
 ];
 
-
-
 $(document).ready(function () {
     curr_page = 0;
     rot_array = [];
@@ -533,7 +531,7 @@ function toggle_selected_tech(tech){
                 $('.circle-container .tech[loc="0"]').toggleClass('selected');
                 update_tech_info();
             });
-        });        
+        });
     });
 }
 
@@ -632,8 +630,6 @@ function find_app_index(app_clicked){
         }
     });
 }
-
-
 
 
 

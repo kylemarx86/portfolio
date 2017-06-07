@@ -8,11 +8,4 @@
 .modal form{
     display: inline-block;
 }
-.close_modal, .description{
-    background-color: #FFBB00;
-    box-shadow: -3px -3px 2px 1px #e19d00 inset, 1px 1px 1px 1px #000000;
-}
-.close_modal:hover, .description:hover{
-    color: dimgray;
-    box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000;
-}
+// NOTE: buttons for modal are styled in _buttons.scss

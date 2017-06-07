@@ -1,164 +1,156 @@
-/*area above the app carousel*/
+// area above the app carousel
 .apps_carousel_top{
     width: 100%;
-    height: 50px;
+    height: 10%;
+    background-color: #202020;
+    box-shadow: 1px 1px 3px 1px #000000;
+
+    .link_btn_container{
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        form{
+            display: inline-block;
+        }
+    }
+}
+
+// the main area of the app carousel
+.apps_carousel_main{
+    position: relative;
+    background-color: #151515;
+    width: 100%;
+    height: 80%;
+    // height: 475px;      /*determines height of dark background, should be same height as images will be*/
+    box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
+
+    .apps_carousel{
+        position: absolute;
+        /*the following are based on the images real dimensions*/
+        /*new wide images are 960px x 475px*/
+        /*determines width of images in carousel*/
+        // width: 960px;
+        width: 80%;
+        /*determines height of images in carousel*/
+        /*want to take on height of surrounding container: apps_carousel_main*/
+        height: 100%;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        overflow: visible;
+
+        #image_container{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            /*each image should be
+                -100% of the width of the container
+                -positioned absolutely
+                -left and top at 0*/
+            img{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                z-index: 2;
+            }
+        }
+
+        // styling of carousel buttons
+        .skewed{
+            position: absolute;
+            width: 9%;
+            height: 100%;
+            border: 1px solid #740000;
+            margin: 0;
+            padding: 0;
+            font-size: 2em;
+            display: inline-block;
+            background-color: red;
+            box-sizing: border-box;
+            box-shadow: 2px 0 0 0 #111111,
+                0 2px 0 0 #111111, 
+                2px 2px 0 0 #111111;
+            -webkit-transition-duration: 750ms;
+            transition-duration: 750ms;
+            cursor: pointer;
+            
+            &.prev_button {
+                left: 0;
+                -webkit-transform: skewX(-10deg) translate(-50%);
+                transform: skewX(-10deg) translate(-50%);
+                z-index: 4;
+            }
+            &.next_button {
+                right: 0;
+                z-index: 4;
+                -webkit-transform: skewX(-10deg) translate(50%);
+                transform: skewX(-10deg) translate(50%);
+            }
+            // hover transitions
+            &:hover{
+                background-color: #BB0000;
+                -webkit-transition-duration: 500ms;
+                transition-duration: 500ms;
+                box-shadow: none;
+            }
+            > .glyphicon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        // number bar
+        .number_bar{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 10%;
+            padding-left: 15px;
+            background-color: black;
+            z-index: 3;
+
+            .nav_number{
+                position: relative;
+                display: inline-block;
+                height: 75%;
+                width: 5%;
+                margin: 0 5px;
+                top: 25%;
+                -webkit-transform: skewX(-10deg);
+                transform: skewX(-10deg);
+                color: black;
+                background-color: white;
+                box-shadow: -3px -3px 2px 1px #A0A0A0 inset;
+                text-align: center;
+                cursor: pointer;
+                font-size: 1.75em;
+                
+                &.active_nav_number{
+                    color: white;
+                    background-color: red;
+                    box-shadow: -3px -3px 2px 1px #A00000 inset;
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
+}
+
+.apps_carousel_bottom{
+    width: 100%;
+    height: 10%;
     background-color: #202020;
     box-shadow: 1px 1px 3px 1px #000000;
 }
-.apps .link_btn_container{
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-button.link_btn, .link_btn > input{
-    color: #101010;
-    margin: 0 10px;
-    font-weight: bold;
-    -webkit-transform: skewX(-10deg);
-    transform: skewX(-10deg);
-    border: none;
-    -webkit-border-radius:0;
-    border-radius:0;
-}
-button.link_btn:hover, .link_btn > input:hover{
-    color: darkgray;
-}
-/*location of top button stuff*/
-.github > input, .send, .top{
-    background-color: red;
-    box-shadow: -3px -3px 2px 1px #cd0000 inset, 1px 1px 1px 1px #000000;
-}
-.github > input:hover, .send:hover, .top:hover{
-    box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
-}
-.live > input{
-    background-color: orangered;
-    box-shadow: -3px -3px 2px 1px #cd1300 inset, 1px 1px 1px 1px #000000;
-}
-.live > input:hover{
-    box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
-}
-/*the main area of the app carousel*/
-.apps_carousel_main{
-    background-color: #353535;
-    width: 100%;
-    height: 475px;      /*determines height of dark background, should be same height as images will be*/
-    box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
-}
-.apps_carousel{
-    position: absolute;
-    /*the following are based on the images real dimensions*/
-    /*new wide images are 960px x 475px*/
-    /*determines width of images in carousel*/
-    width: 960px;
-    /*determines height of images in carousel*/
-    /*want to take on height of surrounding container: apps_carousel_main*/
-    height: 475px;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    overflow: visible;
-}
-#image_container{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
 
-/*each image should be
-    -100% of the width of the container
-    -positioned absolutely
-    -left and top at 0*/
-#image_container img{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 2;
-}
-/*styling of carousel buttons*/
-.skewed{
-    position: absolute;
-    width: 9%;
-    height: 100%;
-    border: 1px solid #740000;
-    margin: 0;
-    padding: 0;
-    font-size: 2em;
-    display: inline-block;
-    background-color: red;
-    box-sizing: border-box;
-    box-shadow: 2px 0 0 0 #111111,
-        0 2px 0 0 #111111, 
-        2px 2px 0 0 #111111;
-    -webkit-transition-duration: 750ms;
-    transition-duration: 750ms;
-    cursor: pointer;
-}
-.prev_button{
-    left: 0;
-    -webkit-transform: skewX(-10deg) translate(-50%);
-    transform: skewX(-10deg) translate(-50%);
-    z-index: 4;
-}
-.next_button{
-    right: 0;
-    z-index: 4;
-    -webkit-transform: skewX(-10deg) translate(50%);
-    transform: skewX(-10deg) translate(50%);
-}
-.skewed > .glyphicon{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-/*hover transitions*/
-.skewed:hover{
-    background-color: #BB0000;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-    box-shadow: none;
-}
-
-/*number bar*/
-.number_bar{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 10%;
-    padding-left: 15px;
-    background-color: black;
-    z-index: 3;
-}
-.nav_number{
-    position: relative;
-    display: inline-block;
-    height: 75%;
-    width: 5%;
-    margin: 0 5px;
-    top: 25%;
-    -webkit-transform: skewX(-10deg);
-    transform: skewX(-10deg);
-    color: black;
-    background-color: white;
-    box-shadow: -3px -3px 2px 1px #A0A0A0 inset;
-    text-align: center;
-    cursor: pointer;
-    font-size: 1.75em;
-}
-.active_nav_number{
-    color: white;
-    background-color: red;
-    box-shadow: -3px -3px 2px 1px #A00000 inset;
-    font-weight: bold;
-}
-
-.link_btn_container form{
-    display: inline-block;
-}
