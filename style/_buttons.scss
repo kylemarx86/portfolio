@@ -1,0 +1,40 @@
+button.link_btn, .link_btn > input {
+    color: #101010;
+    margin: 0 10px;
+    font-weight: bold;
+    -webkit-transform: skewX(-10deg);
+    transform: skewX(-10deg);
+    border: none;
+    -webkit-border-radius:0;
+    border-radius:0;
+
+    &:hover{
+        color: darkgray;
+    }
+}
+//specific button coloring and shadowning
+.github > input, .send{
+    background-color: red;
+    box-shadow: -3px -3px 2px 1px #cd0000 inset, 1px 1px 1px 1px #000000;
+
+    &:hover{
+        box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
+    }
+}
+.live > input{
+    background-color: orangered;
+    box-shadow: -3px -3px 2px 1px #cd1300 inset, 1px 1px 1px 1px #000000;
+
+    &:hover{
+        box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
+    }
+}
+.close_modal, .description{
+    background-color: #FFBB00;
+    box-shadow: -3px -3px 2px 1px #e19d00 inset, 1px 1px 1px 1px #000000;
+
+    &:hover{
+        color: dimgray;
+        box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000;
+    }
+}

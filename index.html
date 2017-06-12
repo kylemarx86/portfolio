@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>Kyle Marx - Portfolio</title>
+    <!--<meta http-equiv="Cache-control" content="public">-->
     <!--font resources-->
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     
-
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -23,9 +23,10 @@
 
     <!--<meta name="viewport" content="initial-scale=1, user-scalable=no">-->
     <script src="script.js"></script>
+
 </head>
 <body>
-    <div id='header'>
+    <header>
         <svg id='canvas'>
             <defs>
                 <pattern id='inner_triangles' width='50px' height='86px' patternUnits='userSpaceOnUse'>
@@ -42,18 +43,18 @@
             </g>
         </svg>
         <ul>
-            <li><a href="#about"><span>About Me</span></a></li>
-            <li><a href="#apps"><span>Selected Applications</span></a></li>
-            <li><a href="#tech"><span>Technologies Used</span></a></li>
-            <li><a href="#contact"><span>Contact Me</span></a></li>
+            <li class='page_link'><span>About Me</span></li>
+            <li class='page_link'><span>Selected Applications</span></li>
+            <li class='page_link'><span>Technologies Used</span></li>
+            <li class='page_link'><span>Contact Me</span></li>
         </ul>
-    </div>
+    </header>
     
 
 
     <div class='main_screen background'>
         <div class='screen'>
-    <!--<span class='anchor' id='about'></span>-->
+            <!--about page-->
             <div class='page about'>
                 <div class='title slide'>
                     <span></span>
@@ -63,7 +64,7 @@
                     <p>My name is Kyle Marx, and I am a web developer. I am a graduate from Cal State Fullerton with a degree in Mathematics. I have been in the education business for years, and I am now switching over to this new field. My interests include music, reading, board games, sports (especially baseball and soccer), and trivia. This is a portfolio dedicated to highlighting some of my applications and technological skills.</p>
                 </div>
             </div>
-            <!--<span class='anchor' id='apps'></span>-->
+            <!--apps page-->
             <div class='page apps hidden'>
                 <div class='title'>
                     <span></span>
@@ -93,79 +94,27 @@
                             <div class='number_bar'></div>
                         </div>
                     </div>
+                    <div class='apps_carousel_bottom'>
+                    </div>
                 </div>
             </div>
-            <!--<span class='anchor' id='tech'></span>-->
+            <!--technologies page-->
             <div class='page technologies_used hidden'>
                 <div class='title'>
                     <span></span>
                     <h2>Technologies Used</h2>
                 </div>
                 <div class='content shrunk hidden'>
-                    <div class='Technologies'>
-                        <ul class='circle-container'>
-                            <li class='tech selected'><img src='resources/tech_skills/bootstrap.png'>Bootstrap</li>
-                            <li class='tech'><img src='resources/tech_skills/c_sharp.png'>C#</li>
-                            <li class='tech'><img src='resources/tech_skills/css3.png'>CSS3</li>
-                            <li class='tech'><img src='resources/tech_skills/html5.png'>HTML5</li>
-                            <li class='tech'><img src='resources/tech_skills/jquery.png'>jQuery</li>
-                            <li class='tech'><img src='resources/tech_skills/js.png'>JavaScript</li>
-                            <li class='tech'><img src='resources/tech_skills/mysql.png'>MySQL</li>
-                            <li class='tech'><img src='resources/tech_skills/php.png'>PHP</li>
-                            <li class='tech'><img src='resources/tech_skills/node.png'>Node.js</li>
-                        </ul>
-                        <!--<div class='tech'>
-                            <div class='tech_pic'>
-                                <img src='tech_skills/php.png'>
-                            </div>
-                            <span class='name'>PHP</span>
+                    <div class='technologies'>
+                        <ul class='circle-container'></ul>
+                        <div class='tech_info'>
+                            <h2 class='name'></h2>
+                            <ul class='apps'></ul>
                         </div>
-                        <div class='tech'>
-                            <div class='tech_pic'>
-                                <img src='tech_skills/mysql.png'>
-                            </div>
-                            <span class='name'>MySQL</span>
-                        </div>  
-                        <div class='tech'>
-                            <div class='tech_pic'>
-                                <img src='tech_skills/js.png'>
-                            </div>
-                            <span class='name'>JavaScript</span>
-                        </div>
-                        <div class='tech'>
-                            <div class='tech_pic'>
-                                <img src='tech_skills/jquery.png'>
-                            </div>
-                            <span class='name'>jQuery</span>
-                        </div>
-                        <div class='tech'>
-                            <div class='tech_pic'>
-                                <img src='tech_skills/html5.png'>
-                            </div>
-                            <span class='name'>HTML5</span>
-                        </div>
-                        <div class='tech'>
-                            <div class='tech_pic'>
-                                <img src='tech_skills/css3.png'>
-                            </div>
-                            <span class='name'>CSS3</span>
-                        </div>
-                        <div class='tech'>
-                            <div class='tech_pic'>
-                                <img src='tech_skills/c_sharp.png'>
-                            </div>
-                            <span class='name'>C#</span>
-                        </div>
-                        <div class='tech'>
-                            <div class='tech_pic'>
-                                <img src='tech_skills/bootstrap.png'>
-                            </div>       
-                            <span class='name'>Bootstrap</span>
-                        </div>  -->
                     </div>
                 </div>
             </div>
-            <!--<span class='anchor' id='contact'></span>-->
+            <!--contact page-->
             <div class='page contact hidden'>
                 <div class='title'>
                     <span></span>
@@ -200,9 +149,10 @@
                     </div>
                 </div>
             </div>
-
+            <!-- end of pages -->
         </div>
     </div>
+    <!-- end of main screen -->
     <footer>
         <div class='control_panel'>
             <div class='label_container'>

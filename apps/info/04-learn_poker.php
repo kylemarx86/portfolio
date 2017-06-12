@@ -9,7 +9,7 @@ $data['description']['details'][] = 'Educational application intended to help us
 $data['description']['details'][] = 'Uses an object oriented model to create cards and identify hands';
 $data['description']['details'][] = 'Utilizes RequireJS to maintain orderly file structure';
 
-$data['picture_source'] = 'app_pics/learn_poker-wide.png';
+$data['picture_source'] = 'apps/images/learn_poker-wide.png';
 $data['live_address'] = 'http://dev.kylemarx86.com/learn_poker/';
 $data['github_address'] = 'https://github.com/kylemarx86/learn_poker';
 

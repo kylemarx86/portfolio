@@ -1,0 +1,11 @@
+/*modal styling*/
+.modal-open {
+    overflow: hidden;
+}
+.modal-content{
+    background-color: #EEEEEE;
+}
+.modal form{
+    display: inline-block;
+}
+// NOTE: buttons for modal are styled in _buttons.scss

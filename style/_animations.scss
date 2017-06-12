@@ -1,0 +1,133 @@
+// animations for main screen
+// controls the shrinking of pages as page switches out
+@-webkit-keyframes shrink{
+  0%{
+    -webkit-transform: scale(1);
+    display: inline-block;
+  }
+  99%{
+    -webkit-transform: scale(0.0001);
+  }
+  100%{
+    display: none;
+    -webkit-transform: scale(0.0001);
+  }
+}
+@keyframes shrink{
+  0%{
+    transform: scale(1);
+    display: inline-block;
+  }
+  99%{
+    transform: scale(0.0001);
+  }
+  100%{
+    display: none;
+    transform: scale(0.0001);
+  }
+}
+
+// controls the growing of pages as new page switches in
+@-webkit-keyframes grow{
+  0%{
+    display: none;
+    -webkit-transform: scale(0.0001);
+  }
+  1%{
+    display: inline-block;
+    -webkit-transform: scale(0.0001);
+  }
+  100%{
+    -webkit-transform: scale(1);
+    display: inline-block;
+  }
+}
+@keyframes grow{
+  0%{
+    display: none;
+    transform: scale(0.0001);
+  }
+  1%{
+    display: inline-block;
+    transform: scale(0.0001);
+  }
+  100%{
+    transform: scale(1);
+    display: inline-block;
+  }
+}
+//controls titles that slide in on page switch
+@-webkit-keyframes slide-in{
+  0%{
+    visibility: hidden;
+    -webkit-transform: translateX(-100%);
+  }
+  1%{
+    visibility: visible;
+  }
+  100%{
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes slide-in{
+  0%{
+    visibility: hidden;
+    transform: translateX(-100%);
+  }
+  1%{
+    visibility: visible;
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+//animations for apps page
+//controls images of apps in carousel as they move in
+@-webkit-keyframes prev_image_in {
+    0%   {left: -100%}
+    25%  {left: -75%}
+    50%  {left: -50%}
+    75%  {left: -25%}
+    100% {left: 0}
+}
+@keyframes prev_image_in {
+    0%   {left: -100%}
+    25%  {left: -75%}
+    50%  {left: -50%}
+    75%  {left: -25%}
+    100% {left: 0}
+}
+//controls images of apps in carousel as they move out
+@-webkit-keyframes prev_image_out {
+    0%   {left: 0}
+    25%  {left: 25%}
+    50%  {left: 50%}
+    75%  {left: 75%}
+    100% {left: 100%}
+}
+@keyframes prev_image_out {
+    0%   {left: 0}
+    25%  {left: 25%}
+    50%  {left: 50%}
+    75%  {left: 75%}
+    100% {left: 100%}
+}
+
+//animations for tech page
+//animates the movement of the selected tech back into the circle as the selected tech becomes deselected
+@-webkit-keyframes tech-deselect{
+  from{
+    -webkit-transform: translateX(250%) scale(1.25);
+  }
+  to{
+    -webkit-transform: translate(12.5em);
+  }
+}
+@keyframes tech-deselect{
+  from{
+    transform: translateX(250%) scale(1.25);
+  }
+  to{
+    transform: translate(12.5em);
+  }
+}

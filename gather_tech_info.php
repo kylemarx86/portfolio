@@ -4,7 +4,7 @@ date_default_timezone_set('America/Los_Angeles');
 $output = [];
 $output['success'] = false;
 
-$pages = glob('app_info/*.php');
+$pages = glob('technologies/info/*.php');
 
 //check if any files were gathered
 if($pages){

@@ -1,25 +1,123 @@
-var page_arr = ['.about', '.apps', '.technologies_used', '.contact'];
-var curr_page = null;
-var new_page = null;
-var apps_array = [];
-var image_array = [];
-var rot_arr;    //keeps track of the rotations of each elt as they spin around in circular path
-var current_app_index = null;
-var click_event_happening = null;
+/** @global */
+var page_arr = ['.about', '.apps', '.technologies_used', '.contact'];   // array of classes that represent the page titles
+var curr_page = null;   // index of the page number currently shown
+var image_array = [];   // array of images sources for the apps
+var rot_array = [];    //keeps track of the rotations of each elt as they spin around in circular path
+var current_app_index = null;   // index of the application currently shown
+var click_event_happening = null;   // boolean to control when an event is happening so as to prevent interruptions
+
+// array of apps to be displayed on apps page
+var apps_array = [
+    {
+        name: 'iBet',
+        description: {
+            tech_used: ['PHP', 'MySQL', 'JavaScript', 'jQuery', 'APIs', 'Angular', 'HTML', 'CSS'],
+            details: [
+                'Allows you to place simulated bets on real sports games utilizing information pulled in through an API',
+                'Uses PHP and MySQL to create, read, and update entries in database',
+                'Utilizes PHP to control logic of win conditions and payouts',
+                'Worked closely with front end written in Angular to create database queries to retrieve upcoming game info, bet history, and leaderboard'
+            ]
+        },
+        picture_source: 'apps/images/iBet-wide.png',
+        live_address: 'http://dev.danlee.site/c10_sports/',
+        github_address: 'https://github.com/xuesongc4/c10_sports'
+    }, {
+        name: 'Memory Match',
+        description: {
+            tech_used: ['HTML', 'JavaScript', 'jQuery', 'Google Maps API', 'CSS'],
+            details: [
+                'Uses JavaScript to control game logic, manage game statistics, and monitor win conditions',
+                'jQuery was used to dynamically generate the game board of DOM elements',
+                'Utilizes Google Maps API to place markers on a map representing locations of matched National Parks',
+                'Employs CSS to style the page, animate actions, and make the display responsive'
+            ]
+        },
+        picture_source: 'apps/images/memory_match-wide.png',
+        live_address: 'http://dev.kylemarx86.com/memory_match/',
+        github_address: 'https://github.com/kylemarx86/memory_match_clone'
+    }, {
+        name: 'Student Grade Table',
+        description: {
+            tech_used: ['HTML', 'JavaScript', 'jQuery', 'PHP', 'MySQL', 'Bootstrap'],
+            details: [
+                'Uses PHP and MySQL for create, read, update, and delete operations on the database',
+                'Makes use of Bootstrap to format the HTML body and make the display responsive'
+            ]
+        },
+        picture_source: 'apps/images/SGT-wide.png',
+        live_address: 'http://dev.kylemarx86.com/SGT/',
+        github_address: 'https://github.com/kylemarx86/SGT'
+    }, {
+        name: 'Learn Poker',
+        description: {
+            tech_used: ['HTML', 'JavaScript', 'jQuery', 'RequireJS', 'Node.js'],
+            details: [
+                'Educational application intended to help users learn to identify poker hands and their relative strength',
+                'Uses an object oriented model to create cards and identify hands',
+                'Utilizes RequireJS to maintain orderly file structure'
+            ]
+        },
+        picture_source: 'apps/images/learn_poker-wide.png',
+        live_address: 'http://dev.kylemarx86.com/learn_poker/',
+        github_address: 'https://github.com/kylemarx86/learn_poker'
+    }
+];
+
+// array of technologies to be displayed on technologies used page
+var tech_array = [
+    { 
+        name: 'JavaScript',
+        image_src: 'technologies/images/js.png',
+        apps: ['iBet', 'Memory Match', 'Student Grade Table', 'Learn Poker']
+    }, {
+        name: 'HTML5',
+        image_src: 'technologies/images/html5.png',
+        apps: ['iBet', 'Memory Match', 'Student Grade Table', 'Learn Poker']
+    }, {
+        name: 'CSS3',
+        image_src: 'technologies/images/css3.png',
+        apps: ['iBet', 'Memory Match', 'Student Grade Table', 'Learn Poker']
+    }, {
+        name: 'jQuery',
+        image_src: 'technologies/images/jquery.png',
+        apps: ['iBet', 'Memory Match', 'Student Grade Table', 'Learn Poker']
+    }, {
+        name: 'PHP',
+        image_src: 'technologies/images/php.png',
+        apps: ['iBet', 'Student Grade Table']
+    }, {
+        name: 'MySQL',
+        image_src: 'technologies/images/mysql.png',
+        apps: ['iBet', 'Student Grade Table']
+    }, {
+        name: 'Node.js',
+        image_src: 'technologies/images/node.png',
+        apps: ['Learn Poker']
+    }, {
+        name: 'C#',
+        image_src: 'technologies/images/c_sharp.png',
+        apps: []
+    }, {
+        name: 'Bootstrap',
+        image_src: 'technologies/images/bootstrap.png',
+        apps: ['Student Grade Table']
+    }
+];
 
 $(document).ready(function () {
     curr_page = 0;
-    apps_array = [];
-    rot_arr = [];
+    rot_array = [];
     draw_triangles();
-    initialize_locations();
     apply_click_handlers();
+    load_apps_info();
+    load_tech_info();
     click_event_happening = false;
-    load_files();
 });
 
 //section to draw main logo
 //draw name in triangles
+//rename to reflect a more general purpose for this
 function draw_triangles(){
   //draw k
   draw_poly(1,6);
@@ -171,14 +269,14 @@ function draw_poly(row, column) {
 
 //function to get the coordinates of the triangle to draw based on the index of the row and column to draw it in
 function get_poly_points(row, column){
-  var x=[];
-  var y=[];
+  var x = [];
+  var y = [];
   var retStr = "";
-  for(var i=0; i<3; i++){
-    x[i] = (column+i)*25;
+  for(var i = 0; i < 3; i++){
+    x[i] = (column + i) * 25;
   }
-  for(i=0; i<3; i++){
-    y[i] = row*43 + 21.5 + 21.5*Math.pow(-1,column + row + i + 1);
+  for(i = 0; i < 3; i++){
+    y[i] = row * 43 + 21.5 + 21.5 * Math.pow(-1, column + row + i + 1);
   }
   for(var i = 0; i < 3; i++){
     retStr += `${x[i]},${y[i]} `;
@@ -191,31 +289,49 @@ function apply_click_handlers(){
     // for footer
     $('#prev').click(get_prev_screen);
     $('#next').click(get_next_screen);
-    // for tech page
-    $('.tech').click(toggle_selected_tech($(this)));
+    $('.page_link').click(jump_to_screen($(this)));
+
+    // for apps page
+    $('.prev_button').click(get_prev_app);
+    $('.next_button').click(get_next_app);
     // for contact page
     $('button[name="submit"]').click(send_form);
-
-
-    // not sure if i still want to include
-    $('button[name="top"]').click(function(){
-        window.location = "#top";
-    });
 }
 
 // load previous page from page_arr
 function get_prev_screen(){
   button_disable_and_reenable();
-  new_page = (curr_page + page_arr.length - 1) % page_arr.length;
+  var new_page = (curr_page + page_arr.length - 1) % page_arr.length;
   update_page(new_page);
 }
 // load next page from page_arr
 function get_next_screen(){
   button_disable_and_reenable();
-  new_page = (curr_page + 1) % page_arr.length;
+  var new_page = (curr_page + 1) % page_arr.length;
   update_page(new_page);
 }
-// called by get_prev_screen and get_next_screen to load a new page
+function jump_to_screen(screen){
+    $('.page_link').click(function(){
+        var new_page = $('ul .page_link').index(this);
+        update_page(new_page);
+    });
+}
+// control button functionality when click event is happening
+    // NOTE: consider setting up the reenabling of click handlers based on animationEnd or transitionend
+function button_disable_and_reenable(){
+  $('#prev, #next').off();
+  setTimeout(function(){
+    $('#prev').click(get_prev_screen);
+    $('#next').click(get_next_screen);
+  }, 1000);
+}
+
+
+/**
+ * called by get_prev_screen and get_next_screen to load a new page
+ * @alias update_page 
+ * @param {number} new_page - the index of the new page
+ */
 function update_page(new_page){
   // title
   $(`${page_arr[curr_page]} .title`).toggleClass('slide');
@@ -228,7 +344,12 @@ function update_page(new_page){
   curr_page = new_page;
   new_page = null;
 }
-// called by update_page to control what is hidden
+/**
+ * called by update_page to control what is hidden
+ * @alias toggle_hidden
+ * @param {number} curr_page - index of page to be hidden
+ * @param {number} new_page - index of page to be shown
+ */
 function toggle_hidden(curr_page, new_page){
     setTimeout(function(){
       // page
@@ -239,53 +360,31 @@ function toggle_hidden(curr_page, new_page){
       $(`${page_arr[new_page]} .content`).toggleClass('hidden');
     }, 480);
 }
-// control button functionality when click event is happening 
-function button_disable_and_reenable(){
-  $('#prev, #next').off();
-  setTimeout(function(){
-    $('#prev').click(get_prev_screen);
-    $('#next').click(get_next_screen);
-  }, 1000);
+
+
+
+
+
+//make saves images to image_array and sets up carousel for display of apps
+function load_apps_info() {
+    //identify carousel container
+    var $carousel_container = $('.apps_carousel');                
+    //set up the gathered images
+    for(var i = 0; i < apps_array.length; i++){
+        image_array.push($('<img>').attr('src', apps_array[i].picture_source));
+        $('#image_container').append(image_array[i]);
+    }
+    //initialize pictures
+    initialize_app_pictures();
+    //add the number links to the number bar
+    create_number_links();
+    //initialize the link buttons and modal
+    update_modal_and_links(current_app_index);
 }
-
-
-
-
-//make ajax call to get_images.php and saves those images to image_array
-function load_files() {
-    $.ajax({
-        url: 'gather_app_info.php',
-        dataType: 'json',
-        success: function (response) {
-            if(response.success){
-                apps_array = response.pages;
-                //identify carousel container
-                var $carousel_container = $('.apps_carousel');                
-                //set up the gathered images
-                for(var i = 0; i < apps_array.length; i++){
-                    image_array.push($('<img>').attr('src', apps_array[i].picture_source));
-                    $('#image_container').append(image_array[i]);
-                }
-                //initialize pictures
-                initialize_pictures();
-                //add the number links to the number bar
-                create_number_links();
-                //initialize the link buttons
-                update_links();
-                //add event handlers to next and prev buttons
-                apply_next_and_prev_app_click_handlers();
-            }
-        },
-        error: function (response) {
-            console.log('connection error');
-        }
-    });
-}
-
 
 //sets up pictures for display
-    //change to be about initializing both pics and info
-function initialize_pictures() {
+    //change to be about initializing both pics and info - not sure if i need to do this now
+function initialize_app_pictures() {
     //create an image and set the source
     current_app_index = 0;
 
@@ -335,55 +434,27 @@ function jump_to_app(new_app_index){
 //time_duration is the time in ms for the app to finish animation
 function update_app(new_app_index, direction, time_duration = 1000) {
     if(!click_event_happening){
-        //prevent further clicks
+        //prevent further clicks while animation happens
         click_event_happening = true;   
-        setTimeout(function(){ click_event_happening=false; }, time_duration);
+        // reenable clicks after animation has happened
+        setTimeout(function(){ click_event_happening = false; }, time_duration);
         //prepare new image for move in
-        $(image_array[new_app_index]).css({'left': `${direction*100}%`, 'top': '0'});
+        $(image_array[new_app_index]).css({'left': `${direction * 100}%`, 'top': '0'});
         //slide previous image out
-        $(image_array[current_app_index]).animate({left: `${direction*-100}%`},time_duration);
+        $(image_array[current_app_index]).animate({left: `${direction * -100}%`}, time_duration);
         //slide new image in
-        $(image_array[new_app_index]).animate({left: '0'},time_duration);
+        $(image_array[new_app_index]).animate({left: '0'}, time_duration);
         //change active app css
         $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
         
         //update current_app_index
         current_app_index = new_app_index;    
-        //update the button links in the main page and modal
-        update_links();
+        //update the modal info and button links in the main page and modal
+        update_modal_and_links(current_app_index);
     }
 }
-//function to enable click handlers on prev and next app buttons
-function apply_next_and_prev_app_click_handlers() {
-    $('.prev_button').click(get_prev_app);
-    $('.next_button').click(get_next_app);
-}
-//function to update the links 
-function update_links(){
-    var github_address = apps_array[current_app_index].github_address;
-    var live_address = apps_array[current_app_index].live_address;
 
-    //update title
-    $('.modal-body .title').text(apps_array[current_app_index].name);
-    //update tech used
-    var tech_used = '';
-    for(var i = 0; i < apps_array[current_app_index].description.tech_used.length - 1; i++){
-        // add all but the last of the tech used to a string separated by commas
-        tech_used += `${apps_array[current_app_index].description.tech_used[i]}, `;
-    }
-    tech_used += apps_array[current_app_index].description.tech_used[apps_array[current_app_index].description.tech_used.length - 1];
-    //replace the text with the new tech_used
-    $('.modal-body .tech_used').text(tech_used);
-    //update descriptive detail lines of the apps
-    $('.modal-body .desc').empty();
-    for(var i = 0; i < apps_array[current_app_index].description.details.length; i++){
-        $('.modal-body .desc').append(`<p>${apps_array[current_app_index].description.details[i]}</p>`);
-    }
-    //update links for github and live site
-    $('form.github').attr('action',github_address);
-    $('form.live').attr('action',live_address);
-}
-//add the number links to the number bar
+//add the number links to the number bar of apps carousel
 function create_number_links(){
     //identify number bar
     var $number_bar = $('.number_bar');
@@ -406,35 +477,161 @@ function create_number_links(){
 }
 
 
-function initialize_locations(){
-    var item_count = $('.circle-container .tech').length;
-    for(var i = 0; i < item_count; i++){
-        $(`.circle-container .tech:nth-of-type(${i+1})`).attr('loc', i);
-        rot_arr[i] = 360 / item_count * i;
+
+
+
+// loads images to circle showing technologies. adds click handlers to allow the toggling of technologies.
+function load_tech_info() {
+    //identify circle container
+    var $circle_container = $('.circle-container');
+    //place each element along circle
+    for(var i = 0; i < tech_array.length; i++){
+        // create image component with corresponding image 
+        $img = $('<img>').attr('src', tech_array[i].image_src);
+        // loc attribute to keep track of the position along the circle container where element will be
+        $li = $('<li>').addClass('tech').attr('loc', i);
+        $li.append($img);
+        $circle_container.append($li);
+        // initialize array of rotated angles
+        rot_array[i] = 360 / tech_array.length * i;
     }
+    // add click handlers to newly created items
+    $('.tech').click(toggle_selected_tech($(this)));
+    $('.tech:nth-of-type(1)').addClass('selected');
+    update_tech_info();
 }
+
+
+//rename this function
 function toggle_selected_tech(tech){
-    $('.tech').click(function(){        
+    $('.tech').click(function(){
         //determine new rotation based on the location index of the clicked element
         var loc_index = $(this).attr('loc');
         var elt_count = $('.circle-container li.tech').length;
         // determine which way to spin (cw or ccw) and by how much by first determining which is the closer path.
             // this can be done by seeing if the clicked element is under or over the halfway mark of the number of elements
         var new_rot = loc_index <= elt_count / 2 ? -1 * loc_index * 360 / elt_count : (elt_count - loc_index) * 360 / elt_count;
-        $('.tech').removeClass('selected');
-        for(var i = 0; i < elt_count; i++){
-            rot_arr[i] += new_rot;
-            var $elt = $(`.circle-container > .tech:nth-of-type(${i+1})`);
-            var $attr = $elt.attr('loc');
-            //assign new location idicator to element
-            var new_loc = ( $elt.attr('loc') - loc_index + elt_count ) % elt_count;
-            $elt.attr('loc', new_loc).css({
-                'transform': `rotateZ(${rot_arr[i]}deg) translate(12.5em) rotateZ(${-1*rot_arr[i]}deg)`,
+        $('.tech.selected').removeClass('selected').addClass('deselected');
+        $('.deselected').one('webkitAnimationEnd animationEnd', function(e){
+            $('.tech.deselected').removeClass('deselected');
+
+            for(var i = 0; i < elt_count; i++){
+                rot_array[i] += new_rot;
+                var $elt = $(`.circle-container > .tech:nth-of-type(${i+1})`);
+                var $attr = $elt.attr('loc');
+                //assign new location idicator to element
+                var new_loc = ( $elt.attr('loc') - loc_index + elt_count ) % elt_count;
+                $elt.attr('loc', new_loc).css({
+                    'transform': `rotateZ(${rot_array[i]}deg) translate(12.5em) rotateZ(${-1*rot_array[i]}deg)`,
+                });
+            }
+            //after each of the techs have moved to their final position, then add the selected class to the tech at location 0
+            var transitionEvent = whichTransitionEvent();
+            $('.circle-container .tech[loc="0"]:not(.selected)').one(transitionEvent, function(e){
+                $('.circle-container .tech[loc="0"]').toggleClass('selected');
+                update_tech_info();
             });
-        }
-        $(this).toggleClass('selected');
+        });
     });
 }
+
+
+/**
+ * Function from David Walsh: http://davidwalsh.name/css-animation-callback
+ * 
+ */
+function whichTransitionEvent(){
+  var t,
+      el = document.createElement("fakeelement");
+
+  var transitions = {
+    "transition"      : "transitionend",
+    "OTransition"     : "oTransitionEnd",
+    "MozTransition"   : "transitionend",
+    "WebkitTransition": "webkitTransitionEnd"
+  }
+
+  for (t in transitions){
+    if (el.style[t] !== undefined){
+      return transitions[t];
+    }
+  }
+}
+
+
+/**
+ * 
+ * 
+ */
+function update_tech_info(){
+    // clear name and apps from tech info box
+    $('.tech_info .name, .tech_info .apps').empty();
+    // identify index of the selected technology
+    var index =  $('.circle-container .tech').index($('.selected'));
+    $('.tech_info .name').append(tech_array[index].name);
+    // append apps that utilize the technology
+    for(var i = 0; i < tech_array[index].apps.length; i++){
+        $li = $('<li>');
+        $span = $('<span>').text(tech_array[index].apps[i]);
+        $button = $('<button>').addClass('link_btn description').attr({
+            'data-toggle': 'modal',
+            'data-target': '#description_modal'
+        }).text('Description');
+        $li.append($span, $button);
+        $('.tech_info .apps').append($li);
+    }
+    //add click handlers to description buttons
+    $('.tech button.description').click(find_app_index($(this)));
+}
+
+/**
+ * updates the links and the modal with info from the associated app
+ * @param {number} app_index - index of the app modal and links are updating to
+ */
+function update_modal_and_links(app_index){
+    // gather github and live site addresses
+    var github_address = apps_array[app_index].github_address;
+    var live_address = apps_array[app_index].live_address;
+    //update title in modal
+    $('.modal-body .title').text(apps_array[app_index].name);
+    //update tech used in modal
+    var tech_used = '';
+    for(var i = 0; i < apps_array[app_index].description.tech_used.length - 1; i++){
+        // add all but the last of the tech used to a string separated by commas
+        tech_used += `${apps_array[app_index].description.tech_used[i]}, `;
+    }
+    // add the last of the tech used to the string
+    tech_used += apps_array[app_index].description.tech_used[apps_array[app_index].description.tech_used.length - 1];
+    //replace the text with the new tech_used
+    $('.modal-body .tech_used').text(tech_used);
+    //update descriptive detail lines of the apps
+    $('.modal-body .desc').empty();
+    for(var i = 0; i < apps_array[app_index].description.details.length; i++){
+        $('.modal-body .desc').append(`<p>${apps_array[app_index].description.details[i]}</p>`);
+    }
+    //update links for github and live site
+    $('form.github').attr('action',github_address);
+    $('form.live').attr('action',live_address);
+}
+
+/**
+ * 
+ * @param {*} app_clicked 
+ */
+function find_app_index(app_clicked){
+    $('.tech_info button.description').click(function(){
+        var $app_clicked = $(this);
+        var text = $app_clicked.parent().find('span').text();
+        for(var i = 0; i < apps_array.length; i++){
+            if(apps_array[i].name === text){
+                update_modal_and_links(i);
+                return;
+            }
+        }
+    });
+}
+
+
 
 //method to make ajax call to send email form.
 function send_form(){
