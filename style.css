@@ -56,7 +56,8 @@ header {
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%); }
+        transform: translate(-50%, -50%);
+        text-align: center; }
 
 @media (max-width: 640px) {
   header ul {
@@ -70,7 +71,9 @@ header {
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 @media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
   header {
-    height: 7%; } }
+    height: 7%; }
+    header ul li span {
+      font-size: 22px; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 footer {
   position: fixed;
@@ -539,8 +542,10 @@ button.link_btn, .link_btn > input {
     width: 9%; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 @media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
-  .apps_carousel_main .apps_carousel .skewed {
-    width: 9%; } }
+  .apps_carousel_main .apps_carousel {
+    width: 70%; }
+    .apps_carousel_main .apps_carousel .skewed {
+      width: 9%; } }
 /*technologies area*/
 .technologies {
   width: 100%;
@@ -794,9 +799,9 @@ button:focus {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
-  body {
-    font-size: 22px; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+  .main_screen {
+    top: 15%; } }
 
 /*# sourceMappingURL=style.css.map */
