@@ -62,6 +62,16 @@ header {
   header ul {
     width: 50%;
     font-size: .75em; } }
+/*specific media queries*/
+/*portrait - iPad Pro*/
+/*landscape - iPad Pro*/
+/*portrait - iPad*/
+/*landscape - iPad*/
+/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+  header {
+    height: 7%; } }
+/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 footer {
   position: fixed;
   display: block;
@@ -449,7 +459,7 @@ button.link_btn, .link_btn > input {
         z-index: 2; }
     .apps_carousel_main .apps_carousel .skewed {
       position: absolute;
-      width: 9%;
+      width: 70px;
       height: 100%;
       border: 1px solid #740000;
       margin: 0;
@@ -518,6 +528,19 @@ button.link_btn, .link_btn > input {
   background-color: #202020;
   box-shadow: 1px 1px 3px 1px #000000; }
 
+/*specific media queries*/
+/*portrait - iPad Pro*/
+/*landscape - iPad Pro*/
+/*portrait - iPad*/
+/*landscape - iPad*/
+/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+  .apps_carousel_main .apps_carousel .skewed {
+    width: 9%; } }
+/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+  .apps_carousel_main .apps_carousel .skewed {
+    width: 9%; } }
 /*technologies area*/
 .technologies {
   width: 100%;
@@ -764,5 +787,16 @@ button:focus {
 .slide {
   -webkit-animation: slide-in 0.5s;
   animation: slide-in 0.5s; }
+
+/*specific media queries*/
+/*portrait - iPad Pro*/
+/*landscape - iPad Pro*/
+/*portrait - iPad*/
+/*landscape - iPad*/
+/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+  body {
+    font-size: 22px; } }
+/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 
 /*# sourceMappingURL=style.css.map */
