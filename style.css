@@ -545,7 +545,9 @@ button.link_btn, .link_btn > input {
   .apps_carousel_main .apps_carousel {
     width: 70%; }
     .apps_carousel_main .apps_carousel .skewed {
-      width: 9%; } }
+      width: 9%; }
+    .apps_carousel_main .apps_carousel .number_bar {
+      height: 20%; } }
 /*technologies area*/
 .technologies {
   width: 100%;
