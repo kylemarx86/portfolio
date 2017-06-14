@@ -514,6 +514,7 @@ function toggle_selected_tech(tech){
         $('.tech.selected').removeClass('selected').addClass('deselected');
         $('.deselected').one('webkitAnimationEnd animationEnd', function(e){
             $('.tech.deselected').removeClass('deselected');
+            var circle_radius = $('.circle-container').outerWidth() / 2;
 
             for(var i = 0; i < elt_count; i++){
                 rot_array[i] += new_rot;
@@ -522,7 +523,7 @@ function toggle_selected_tech(tech){
                 //assign new location idicator to element
                 var new_loc = ( $elt.attr('loc') - loc_index + elt_count ) % elt_count;
                 $elt.attr('loc', new_loc).css({
-                    'transform': `rotateZ(${rot_array[i]}deg) translate(12.5em) rotateZ(${-1*rot_array[i]}deg)`,
+                    'transform': `rotateZ(${rot_array[i]}deg) translate(${circle_radius}px) rotateZ(${-1*rot_array[i]}deg)`
                 });
             }
             //after each of the techs have moved to their final position, then add the selected class to the tech at location 0
