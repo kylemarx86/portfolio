@@ -714,6 +714,16 @@ button.link_btn, .link_btn > input {
         border-bottom: 2px solid white;
         top: 0; }
 
+/*specific media queries*/
+/*portrait - iPad Pro*/
+/*landscape - iPad Pro*/
+/*portrait - iPad*/
+/*landscape - iPad*/
+/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+  .technologies .tech_info {
+    height: initial; } }
+/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 .contact form {
   display: inline-block;
   width: 50%;
