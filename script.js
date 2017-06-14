@@ -95,8 +95,8 @@ var tech_array = [
         image_src: 'technologies/images/node.png',
         apps: ['Learn Poker']
     }, {
-        name: 'C#',
-        image_src: 'technologies/images/c_sharp.png',
+        name: 'Sass',
+        image_src: 'technologies/images/sass.png',
         apps: []
     }, {
         name: 'Bootstrap',
