@@ -109,7 +109,7 @@ $(document).ready(function () {
     curr_page = 0;
     rot_array = [];
     draw_triangles();
-    apply_click_handlers();
+    apply_event_handlers();
     load_apps_info();
     load_tech_info();
     click_event_happening = false;
@@ -284,8 +284,8 @@ function get_poly_points(row, column){
   return retStr;
 }
 
-//apply standard click handlers
-function apply_click_handlers(){
+//apply standard event handlers
+function apply_event_handlers(){
     // for footer
     $('#prev').click(get_prev_screen);
     $('#next').click(get_next_screen);
@@ -296,6 +296,7 @@ function apply_click_handlers(){
     $('.next_button').click(get_next_app);
     // for contact page
     $('button[name="submit"]').click(send_form);
+    $(window).resize(resize_screen_components);
 }
 
 // load previous page from page_arr
@@ -535,7 +536,21 @@ function toggle_selected_tech(tech){
         });
     });
 }
+/**
+ * function to resize elements within the tech page (possibly others) on the resizing of the screen
+ */
+function resize_screen_components(){
+    var elt_count = $('.circle-container li.tech').length;
+    var circle_radius = $('.circle-container').outerWidth() / 2;
 
+    for(var i = 0; i < elt_count; i++){
+        var $elt = $(`.circle-container > .tech:nth-of-type(${i+1})`);
+        var $attr = $elt.attr('loc');
+        $elt.css({
+            'transform': `rotateZ(${rot_array[i]}deg) translate(${circle_radius}px) rotateZ(${-1*rot_array[i]}deg)`
+        });
+    }
+}
 
 /**
  * Function from David Walsh: http://davidwalsh.name/css-animation-callback
