@@ -105,9 +105,16 @@ header{
 
 
 @media (max-width: 640px){
-    header ul{
-        width: 50%;
-        font-size: .75em;
+    header {
+        ul {
+            width: 50%;
+            font-size: .75em;
+            li{
+                span{
+                }
+            }
+            
+        }
     }
 }
 
@@ -122,19 +129,44 @@ header{
 }
 /*portrait - iPad*/
 @media screen and (width: 980px) and (height: 1306px) {
-
+    header {
+        ul {
+            width: 50%;
+            font-size: .75em;
+            li{
+                span{
+                }
+            }
+            
+        }
+    }
 }
 /*landscape - iPad*/
 @media screen and (width: 1306px) and (height: 980px) {
-
+    header {
+        ul {
+            width: 50%;
+            font-size: .75em;
+            li{
+                span{
+                }
+            }
+            
+        }
+    }
 }
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 @media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
-    header{
+    header {
         height: 7%;
-        
-        ul li span{
-            font-size: 22px;
+        ul {
+            li{
+                span{
+                    font-size: 24px;
+                    line-height: 100%;
+                }
+            }
+            
         }
     }
 }
