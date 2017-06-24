@@ -476,99 +476,106 @@ button.link_btn, .link_btn > input {
   background-color: #151515;
   width: 100%;
   height: 80%;
-  box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset; }
-  .apps_carousel_main .apps_carousel {
+  box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
+  overflow: hidden; }
+  .apps_carousel_main .apps_carousel_container {
     position: absolute;
-    /*the following are based on the images real dimensions*/
-    /*new wide images are 960px x 475px*/
-    /*determines width of images in carousel*/
-    width: 80%;
     /*determines height of images in carousel*/
     /*want to take on height of surrounding container: apps_carousel_main*/
-    height: 100%;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
-    overflow: visible; }
-    .apps_carousel_main .apps_carousel #image_container {
+    overflow: visible;
+    padding-top: 49.47917%;
+    width: 80%; }
+    .apps_carousel_main .apps_carousel_container .apps_carousel {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      /*each image should be
-          -100% of the width of the container
-          -positioned absolutely
-          -left and top at 0*/ }
-      .apps_carousel_main .apps_carousel #image_container img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        z-index: 2; }
-    .apps_carousel_main .apps_carousel .skewed {
-      position: absolute;
-      width: 70px;
-      height: 100%;
-      border: 1px solid #740000;
-      margin: 0;
-      padding: 0;
-      font-size: 2em;
-      display: inline-block;
-      background-color: red;
-      box-sizing: border-box;
-      box-shadow: 2px 0 0 0 #111111, 0 2px 0 0 #111111,  2px 2px 0 0 #111111;
-      -webkit-transition-duration: 750ms;
-      transition-duration: 750ms;
-      cursor: pointer; }
-      .apps_carousel_main .apps_carousel .skewed.prev_button {
-        left: 0;
-        -webkit-transform: skewX(-10deg) translate(-50%);
-        transform: skewX(-10deg) translate(-50%);
-        z-index: 4; }
-      .apps_carousel_main .apps_carousel .skewed.next_button {
-        right: 0;
-        z-index: 4;
-        -webkit-transform: skewX(-10deg) translate(50%);
-        transform: skewX(-10deg) translate(50%); }
-      .apps_carousel_main .apps_carousel .skewed:hover {
-        background-color: #BB0000;
-        -webkit-transition-duration: 500ms;
-        transition-duration: 500ms;
-        box-shadow: none; }
-      .apps_carousel_main .apps_carousel .skewed > .glyphicon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%); }
-    .apps_carousel_main .apps_carousel .number_bar {
-      position: absolute;
+      top: 0;
+      left: 0;
       bottom: 0;
-      width: 100%;
-      height: 10%;
-      padding-left: 15px;
-      background-color: black;
-      z-index: 3; }
-      .apps_carousel_main .apps_carousel .number_bar .nav_number {
-        position: relative;
+      right: 0;
+      /*the following are based on the images real dimensions*/
+      /*new wide images are 960px x 475px*/
+      /*determines width of images in carousel*/ }
+      .apps_carousel_main .apps_carousel_container .apps_carousel #image_container {
+        position: absolute;
+        width: 100%;
+        height: 90%;
+        overflow: hidden;
+        /*each image should be
+            -100% of the width of the container
+            -positioned absolutely
+            -left and top at 0*/ }
+        .apps_carousel_main .apps_carousel_container .apps_carousel #image_container img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          z-index: 2; }
+      .apps_carousel_main .apps_carousel_container .apps_carousel .skewed {
+        position: absolute;
+        width: 9%;
+        height: 100%;
+        border: 1px solid #740000;
+        margin: 0;
+        padding: 0;
+        font-size: 2em;
         display: inline-block;
-        height: 75%;
-        width: 5%;
-        margin: 0 5px;
-        top: 25%;
-        -webkit-transform: skewX(-10deg);
-        transform: skewX(-10deg);
-        color: black;
-        background-color: white;
-        box-shadow: -3px -3px 2px 1px #D0D0D0 inset;
-        text-align: center;
-        cursor: pointer;
-        font-size: 1.75em; }
-        .apps_carousel_main .apps_carousel .number_bar .nav_number.active_nav_number {
-          color: white;
-          background-color: red;
-          box-shadow: -3px -3px 2px 1px #A00000 inset;
-          font-weight: bold; }
+        background-color: red;
+        box-sizing: border-box;
+        box-shadow: 2px 0 0 0 #111111, 0 2px 0 0 #111111,  2px 2px 0 0 #111111;
+        -webkit-transition-duration: 750ms;
+        transition-duration: 750ms;
+        cursor: pointer; }
+        .apps_carousel_main .apps_carousel_container .apps_carousel .skewed.prev_button {
+          left: 0;
+          -webkit-transform: skewX(-10deg) translateX(-45%);
+          transform: skewX(-10deg) translateX(-45%);
+          z-index: 4; }
+        .apps_carousel_main .apps_carousel_container .apps_carousel .skewed.next_button {
+          right: 0;
+          z-index: 4;
+          -webkit-transform: skewX(-10deg) translateX(45%);
+          transform: skewX(-10deg) translateX(45%); }
+        .apps_carousel_main .apps_carousel_container .apps_carousel .skewed:hover {
+          background-color: #BB0000;
+          -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+          box-shadow: none; }
+        .apps_carousel_main .apps_carousel_container .apps_carousel .skewed > .glyphicon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+      .apps_carousel_main .apps_carousel_container .apps_carousel .number_bar {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+        padding-left: 15px;
+        background-color: black;
+        z-index: 3; }
+        .apps_carousel_main .apps_carousel_container .apps_carousel .number_bar .nav_number {
+          position: relative;
+          display: inline-block;
+          height: 75%;
+          width: 5%;
+          margin: 0 5px;
+          top: 25%;
+          -webkit-transform: skewX(-10deg);
+          transform: skewX(-10deg);
+          color: black;
+          background-color: white;
+          box-shadow: -3px -3px 2px 1px #D0D0D0 inset;
+          text-align: center;
+          cursor: pointer;
+          font-size: 1.75em; }
+          .apps_carousel_main .apps_carousel_container .apps_carousel .number_bar .nav_number.active_nav_number {
+            color: white;
+            background-color: red;
+            box-shadow: -3px -3px 2px 1px #A00000 inset;
+            font-weight: bold; }
 
 .apps_carousel_bottom {
   width: 100%;
