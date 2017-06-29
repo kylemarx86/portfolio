@@ -496,19 +496,14 @@ button.link_btn, .link_btn > input {
       display: inline-block;
       width: auto;
       height: 100%;
-      left: 10%;
-      /*each image should be
-          -100% of the width of the container
-          -positioned absolutely
-          -left and top at 0*/ }
+      left: 10%; }
       .apps_carousel_main .apps_carousel .image_container img {
         position: absolute;
         display: inline-block;
         width: auto;
         height: 100%;
         top: 0;
-        left: 0;
-        z-index: 1; }
+        left: 0; }
         .apps_carousel_main .apps_carousel .image_container img.spacer {
           position: relative;
           opacity: 0; }
