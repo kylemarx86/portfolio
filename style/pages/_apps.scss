@@ -41,8 +41,17 @@ $aspect_ratio: 475 / 960 * 100%;
         height: 100%;
         width: 100%;
 
-        overflow: hidden;
-        
+        // overflow: hidden;
+        // clip-path: polygon(0% 0%, 0% 100%, 200% 100%, 200% 0%);
+        .cover{
+            position: absolute;
+            display: inline-block;
+            height: 100%;
+            width: 10%;
+            background-color: #101010;
+            left: 0;
+            z-index: 2;
+        }
         .image_container{
             position: absolute;
             display: inline-block;
@@ -51,6 +60,12 @@ $aspect_ratio: 475 / 960 * 100%;
             // overflow: hidden;
             left: 10%;
             // float: left;
+
+            &::nth-of-type(1){
+                // clip-path: polygon(200% 0, 0 0, 0 100%, 200% 100%, 200% 0);
+            }
+
+           
 
             /*each image should be
                 -100% of the width of the container
@@ -68,17 +83,48 @@ $aspect_ratio: 475 / 960 * 100%;
                 z-index: 1;
                 &.spacer{
                     position: relative;
-                    z-index: -1;
+                    // z-index: -1;
+                    opacity: 0;
                 }
                 &.real{
                     // position: absolute;
+                    // clip-path: polygon(200% 0, 0 0, 0 100%, 200% 100%, 200% 0);
+                    //  &::nth-of-type(1){
+                        
+                    // }
                 }
             }
             &.gray{
-                float: left;
-                img{
-                    left: 100%;
-                }
+                // left: 10%;
+                // position: absolute;
+                // transform: translateX(100%);
+                // z-index: 3;
+
+                left: 10%;
+                position: absolute;
+                transform: translateX(100%);
+                z-index: 3;
+                // filter: grayscale(0.5);
+                background: #101010;
+                opacity: 0.7;
+                background: -webkit-linear-gradient(left, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(to right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* Standard syntax */
+
+                // left: 100%;
+                // filter: grayscale(0.5);
+                // float: left;
+                // img{
+                //     left: 100%;
+                // }
+
+                // .gradient{
+                //     // filter: grayscale(100%);
+                //     // display: inline-block;
+                //     // height: 100%;
+                //     // width: 100%;
+                // }
             }
         }
 

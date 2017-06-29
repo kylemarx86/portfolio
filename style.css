@@ -481,8 +481,15 @@ button.link_btn, .link_btn > input {
     position: relative;
     display: inline-block;
     height: 100%;
-    width: 100%;
-    overflow: hidden; }
+    width: 100%; }
+    .apps_carousel_main .apps_carousel .cover {
+      position: absolute;
+      display: inline-block;
+      height: 100%;
+      width: 10%;
+      background-color: #101010;
+      left: 0;
+      z-index: 2; }
     .apps_carousel_main .apps_carousel .image_container {
       position: absolute;
       display: inline-block;
@@ -503,11 +510,22 @@ button.link_btn, .link_btn > input {
         z-index: 1; }
         .apps_carousel_main .apps_carousel .image_container img.spacer {
           position: relative;
-          z-index: -1; }
+          opacity: 0; }
       .apps_carousel_main .apps_carousel .image_container.gray {
-        float: left; }
-        .apps_carousel_main .apps_carousel .image_container.gray img {
-          left: 100%; }
+        left: 10%;
+        position: absolute;
+        transform: translateX(100%);
+        z-index: 3;
+        background: #101010;
+        opacity: 0.7;
+        background: -webkit-linear-gradient(left, rgba(16, 16, 16, 0.2), #101010 30%);
+        /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(right, rgba(16, 16, 16, 0.2), #101010 30%);
+        /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(right, rgba(16, 16, 16, 0.2), #101010 30%);
+        /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to right, rgba(16, 16, 16, 0.2), #101010 30%);
+        /* Standard syntax */ }
     .apps_carousel_main .apps_carousel .skewed {
       position: absolute;
       width: 9%;
