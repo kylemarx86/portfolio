@@ -481,7 +481,8 @@ button.link_btn, .link_btn > input {
     position: relative;
     display: inline-block;
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    overflow: hidden; }
     .apps_carousel_main .apps_carousel .cover {
       position: absolute;
       display: inline-block;
