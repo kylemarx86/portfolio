@@ -4,6 +4,7 @@ var curr_page = null;   // index of the page number currently shown
 var image_array = [];   // array of images sources for the apps
 var rot_array = [];    //keeps track of the rotations of each elt as they spin around in circular path
 var current_app_index = null;   // index of the application currently shown
+var current_preview_index = null;   // index of the application currently being previewed
 var click_event_happening = null;   // boolean to control when an event is happening so as to prevent interruptions
 
 // array of apps to be displayed on apps page
@@ -372,7 +373,8 @@ function load_apps_info() {
     var $carousel_container = $('.apps_carousel');                
     //set up the gathered images
     for(var i = 0; i < apps_array.length; i++){
-        image_array.push($('<img>').attr('src', apps_array[i].picture_source));
+        //not sure about adding 'real' class here
+        image_array.push($('<img>').addClass('real').attr('src', apps_array[i].picture_source));
         $('#image_container').append(image_array[i]);
     }
     //initialize pictures
@@ -388,33 +390,88 @@ function load_apps_info() {
 function initialize_app_pictures() {
     //create an image and set the source
     current_app_index = 0;
+    current_preview_index = 1;  //assuming more than one image in apps_array
 
     for(var i = 1; i < image_array.length; i++){
-        image_array[i].css('left','100%');
+        image_array[i].css('left','200%');
     }
     image_array[0].css('left','0%');
+    image_array[1].css('left','100%');
 }
 
 //function to determine what app to be updated to and which direction it should come from
 function get_next_app(){
     var new_app_index = null;
+    var new_preview_index = null;
+    // ensure the current app and the preview app aren't the final indices in the array
     if (current_app_index < apps_array.length - 1) {
-        new_app_index = current_app_index + 1;
+        // new_app_index = current_app_index + 1;
+        new_app_index = current_preview_index;
+        new_preview_index = (new_app_index + 1 < apps_array.length) ? new_app_index + 1 : 0;
     } else {
         new_app_index = 0;
+        new_preview_index = new_app_index + 1;
     }
-    update_app(new_app_index, 1);
+    
+    var time_duration = 1000;
+
+    if(!click_event_happening){
+        //prevent further clicks while animation happens
+        click_event_happening = true;   
+        // reenable clicks after animation has happened
+        setTimeout(function(){ click_event_happening = false; }, time_duration);
+        //prepare new images for move in
+        $(image_array[new_preview_index]).css({'left': '200%', 'top': '0'});
+        //slide previous image out
+        $(image_array[current_app_index]).animate({left: '-100%'}, time_duration);
+        //slide new images in
+        $(image_array[current_preview_index]).animate({left: '0'}, time_duration);
+        $(image_array[new_preview_index]).animate({left: '100%'}, time_duration);
+        //change active app css
+        $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
+        //update current_app_index and current_preview_index
+        current_app_index = new_app_index;
+        current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
+        //update the modal info and button links in the main page and modal
+        update_modal_and_links(current_app_index);
+    }
 }
 
 //function to determine what app to be updated to and which direction it should come from
 function get_prev_app() {
     var new_app_index = null;
-    if(current_app_index > 0){
+    var new_preview_index = null;
+    // ensure the current app isn't the first index in the array
+    if (current_app_index > 0) {
         new_app_index = current_app_index - 1;
-    }else{
+        new_preview_index = (new_app_index + 1 < apps_array.length) ? new_app_index + 1 : 0;
+    } else {
         new_app_index = apps_array.length - 1;
+        new_preview_index = 0;
     }
-    update_app(new_app_index, -1);
+
+    var time_duration = 1000;
+
+    if(!click_event_happening){
+        //prevent further clicks while animation happens
+        click_event_happening = true;   
+        // reenable clicks after animation has happened
+        setTimeout(function(){ click_event_happening = false; }, time_duration);
+        //prepare new images for move in
+        $(image_array[new_app_index]).css({'left': '-100%', 'top': '0'});
+        //slide previous images out
+        $(image_array[current_preview_index]).animate({left: '200%'}, time_duration);
+        //slide new images in
+        $(image_array[new_app_index]).animate({left: '0'}, time_duration);
+        $(image_array[new_preview_index]).animate({left: '100%'}, time_duration);
+        //change active app css
+        $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');        
+        //update current_app_index and current_preview_index
+        current_app_index = new_app_index;
+        current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
+        //update the modal info and button links in the main page and modal
+        update_modal_and_links(current_app_index);
+    }
 }
 
 //function to determine which direction the next app should come from
@@ -439,12 +496,15 @@ function update_app(new_app_index, direction, time_duration = 1000) {
         click_event_happening = true;   
         // reenable clicks after animation has happened
         setTimeout(function(){ click_event_happening = false; }, time_duration);
-        //prepare new image for move in
+        //prepare new images for move in
         $(image_array[new_app_index]).css({'left': `${direction * 100}%`, 'top': '0'});
-        //slide previous image out
+        $(image_array[new_app_index + 1]).css({'left': `${direction * 200}%`, 'top': '0'});
+        //slide previous images out
         $(image_array[current_app_index]).animate({left: `${direction * -100}%`}, time_duration);
-        //slide new image in
+        $(image_array[current_app_index + 1]).animate({left: '0'}, time_duration);
+        //slide new images in
         $(image_array[new_app_index]).animate({left: '0'}, time_duration);
+        $(image_array[new_app_index + 1]).animate({left: '100%'}, time_duration);
         //change active app css
         $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
         
