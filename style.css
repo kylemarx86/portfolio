@@ -912,7 +912,8 @@ button:focus {
         position: relative;
         display: inline-block;
         height: 88%;
-        width: 100%; }
+        width: 100%;
+        overflow: hidden; }
 
 .slide {
   -webkit-animation: slide-in 0.5s;
