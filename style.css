@@ -481,8 +481,7 @@ button.link_btn, .link_btn > input {
     position: relative;
     display: inline-block;
     height: 100%;
-    width: 100%;
-    overflow: hidden; }
+    width: 100%; }
     .apps_carousel_main .apps_carousel .cover {
       position: absolute;
       display: inline-block;
@@ -511,17 +510,22 @@ button.link_btn, .link_btn > input {
         left: 10%;
         position: absolute;
         transform: translateX(100%);
-        z-index: 3;
+        z-index: 1;
         background: #101010;
-        opacity: 0.7;
-        background: -webkit-linear-gradient(left, rgba(16, 16, 16, 0.2), #101010 30%);
+        background: -webkit-linear-gradient(left, rgba(21, 21, 21, 0.2), #151515);
         /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(right, rgba(16, 16, 16, 0.2), #101010 30%);
+        background: -o-linear-gradient(right, rgba(21, 21, 21, 0.2), #151515);
         /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(right, rgba(16, 16, 16, 0.2), #101010 30%);
+        background: -moz-linear-gradient(right, rgba(21, 21, 21, 0.2), #151515);
         /* For Firefox 3.6 to 15 */
-        background: linear-gradient(to right, rgba(16, 16, 16, 0.2), #101010 30%);
+        background: linear-gradient(to right, rgba(21, 21, 21, 0.2), #151515);
         /* Standard syntax */ }
+      .apps_carousel_main .apps_carousel .image_container.cover {
+        left: 10%;
+        position: absolute;
+        transform: translateX(200%);
+        z-index: 1;
+        background: #151515; }
     .apps_carousel_main .apps_carousel .skewed {
       position: absolute;
       width: 9%;
@@ -537,15 +541,14 @@ button.link_btn, .link_btn > input {
       box-shadow: 2px 0 0 0 #111111, 0 2px 0 0 #111111,  2px 2px 0 0 #111111;
       -webkit-transition-duration: 750ms;
       transition-duration: 750ms;
-      cursor: pointer; }
+      cursor: pointer;
+      z-index: 2; }
       .apps_carousel_main .apps_carousel .skewed.prev_button {
         left: 0;
         -webkit-transform: skewX(-5deg) translateX(-50%);
-        transform: skewX(-5deg) translateX(-50%);
-        z-index: 4; }
+        transform: skewX(-5deg) translateX(-50%); }
       .apps_carousel_main .apps_carousel .skewed.next_button {
         right: 0;
-        z-index: 4;
         -webkit-transform: skewX(-5deg) translateX(50%);
         transform: skewX(-5deg) translateX(50%); }
       .apps_carousel_main .apps_carousel .skewed:hover {
@@ -566,7 +569,7 @@ button.link_btn, .link_btn > input {
       height: 10%;
       padding-left: 15px;
       background-color: black;
-      z-index: 3; }
+      z-index: 1; }
       .apps_carousel_main .apps_carousel .number_bar .nav_number {
         position: relative;
         display: inline-block;
