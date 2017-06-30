@@ -47,7 +47,8 @@ header {
       display: block;
       color: white;
       text-decoration: none;
-      line-height: 100%; }
+      line-height: 100%;
+      cursor: pointer; }
       header ul li:hover {
         background-color: #353535; }
       header ul li span {
