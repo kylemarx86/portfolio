@@ -481,8 +481,10 @@ function jump_to_app(new_app_index){
             // index clicked on is that of the preview, slide from that direction
             get_next_app();
         }else if(new_app_index === current_app_index - 1 || (current_app_index === 0 && new_app_index === apps_array.length - 1) ){
+            // index clicked on is the index prior to the current app, slide from that direciton
             get_prev_app();
         }else{
+            // index clicked on and current app index are not consecutive, slide from preview side but further
             var new_preview_index = null;
             // ensure the current app and the preview app aren't the final indices in the array
             if (current_app_index < apps_array.length - 1) {
