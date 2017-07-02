@@ -519,34 +519,6 @@ function jump_to_app(new_app_index){
     }
 
 }
-//takes param new_app_index, direction, and (optional) time_duration
-//if direction = 1, then we will move forward through the image array (i.e. increase index)
-//if direction = -1, then we will move backward through the image array (i.e. decrease index)
-//time_duration is the time in ms for the app to finish animation
-function update_app(new_app_index, direction, time_duration = 1000) {
-    if(!click_event_happening){
-        //prevent further clicks while animation happens
-        click_event_happening = true;   
-        // reenable clicks after animation has happened
-        setTimeout(function(){ click_event_happening = false; }, time_duration);
-        //prepare new images for move in
-        $(image_array[new_app_index]).css({'left': `${direction * 100}%`, 'top': '0'});
-        $(image_array[new_app_index + 1]).css({'left': `${direction * 200}%`, 'top': '0'});
-        //slide previous images out
-        $(image_array[current_app_index]).animate({left: `${direction * -100}%`}, time_duration);
-        $(image_array[current_app_index + 1]).animate({left: '0'}, time_duration);
-        //slide new images in
-        $(image_array[new_app_index]).animate({left: '0'}, time_duration);
-        $(image_array[new_app_index + 1]).animate({left: '100%'}, time_duration);
-        //change active app css
-        $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
-        
-        //update current_app_index
-        current_app_index = new_app_index;    
-        //update the modal info and button links in the main page and modal
-        update_modal_and_links(current_app_index);
-    }
-}
 
 //add the number links to the number bar of apps carousel
 function create_number_links(){
@@ -569,9 +541,6 @@ function create_number_links(){
     //give the first app the active nav_number css
     $('.nav_number:nth-of-type(1)').addClass('active_nav_number');
 }
-
-
-
 
 
 // loads images to circle showing technologies. adds click handlers to allow the toggling of technologies.
