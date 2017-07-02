@@ -477,14 +477,47 @@ function get_prev_app() {
 //function to determine which direction the next app should come from
 function jump_to_app(new_app_index){
     if(!click_event_happening){
-        if(current_app_index < new_app_index){
-            // new app is moving in the forward direction
-            update_app(new_app_index, 1, 750);
-        }else if(current_app_index > new_app_index){
-            // new app is moving in the backward direction
-            update_app(new_app_index, -1, 750);
+        if(new_app_index === current_app_index + 1 || (current_app_index === apps_array.length - 1 && new_app_index === 0) ){
+            // index clicked on is that of the preview, slide from that direction
+            get_next_app();
+        }else if(new_app_index === current_app_index - 1 || (current_app_index === 0 && new_app_index === apps_array.length - 1) ){
+            get_prev_app();
+        }else{
+            var new_preview_index = null;
+            // ensure the current app and the preview app aren't the final indices in the array
+            if (current_app_index < apps_array.length - 1) {
+                new_preview_index = (new_app_index + 1 < apps_array.length) ? new_app_index + 1 : 0;
+            } else {
+                new_preview_index = new_app_index + 1;
+            }
+            
+            var time_duration = 1000;
+
+            if(!click_event_happening){
+                //prevent further clicks while animation happens
+                click_event_happening = true;   
+                // reenable clicks after animation has happened
+                setTimeout(function(){ click_event_happening = false; }, time_duration);
+                //prepare new images for move in
+                $(image_array[new_app_index]).css({'left': '200%', 'top': '0'});
+                $(image_array[new_preview_index]).css({'left': '300%', 'top': '0'});
+                //slide previous image out
+                $(image_array[current_app_index]).animate({left: '-200%'}, time_duration);
+                $(image_array[current_preview_index]).animate({left: '-100%'}, time_duration);
+                //slide new images in
+                $(image_array[new_app_index]).animate({left: '0'}, time_duration);
+                $(image_array[new_preview_index]).animate({left: '100%'}, time_duration);
+                //change active app css
+                $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
+                //update current_app_index and current_preview_index
+                current_app_index = new_app_index;
+                current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
+                //update the modal info and button links in the main page and modal
+                update_modal_and_links(current_app_index);
+            }
         }
     }
+
 }
 //takes param new_app_index, direction, and (optional) time_duration
 //if direction = 1, then we will move forward through the image array (i.e. increase index)
