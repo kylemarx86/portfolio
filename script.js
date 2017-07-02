@@ -413,7 +413,7 @@ function get_next_app(){
         new_preview_index = new_app_index + 1;
     }
     
-    var time_duration = 1000;
+    var time_duration = 500;
 
     if(!click_event_happening){
         //prevent further clicks while animation happens
@@ -450,7 +450,7 @@ function get_prev_app() {
         new_preview_index = 0;
     }
 
-    var time_duration = 1000;
+    var time_duration = 500;
 
     if(!click_event_happening){
         //prevent further clicks while animation happens
