@@ -568,9 +568,10 @@ button.link_btn, .link_btn > input {
       bottom: 0;
       width: 100%;
       height: 10%;
-      padding-left: 15px;
       background-color: black;
-      z-index: 1; }
+      z-index: 1;
+      padding-left: 5%;
+      box-sizing: border-box; }
       .apps_carousel_main .apps_carousel .number_bar .nav_number {
         position: relative;
         display: inline-block;
@@ -578,8 +579,8 @@ button.link_btn, .link_btn > input {
         width: 5%;
         margin: 0 5px;
         top: 25%;
-        -webkit-transform: skewX(-10deg);
-        transform: skewX(-10deg);
+        -webkit-transform: skewX(-5deg);
+        transform: skewX(-5deg);
         color: black;
         background-color: white;
         box-shadow: -3px -3px 2px 1px #D0D0D0 inset;
