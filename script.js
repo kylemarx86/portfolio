@@ -395,8 +395,8 @@ function initialize_app_pictures() {
     for(var i = 1; i < image_array.length; i++){
         image_array[i].css('left','200%');
     }
-    image_array[0].css('left','0%');
-    image_array[1].css('left','100%');
+    image_array[0].addClass('curr_app').css('left','0%');
+    image_array[1].addClass('curr_preview').css('left','100%');
 }
 
 //function to determine what app to be updated to and which direction it should come from
@@ -483,7 +483,7 @@ function jump_to_app(new_app_index){
         }else if(new_app_index === current_app_index - 1 || (current_app_index === 0 && new_app_index === apps_array.length - 1) ){
             // index clicked on is the index prior to the current app, slide from that direciton
             get_prev_app();
-        }else{
+        }else if(new_app_index !== current_app_index){
             // index clicked on and current app index are not consecutive, slide from preview side but further
             var new_preview_index = null;
             // ensure the current app and the preview app aren't the final indices in the array
@@ -501,21 +501,80 @@ function jump_to_app(new_app_index){
                 // reenable clicks after animation has happened
                 setTimeout(function(){ click_event_happening = false; }, time_duration);
                 //prepare new images for move in
-                $(image_array[new_app_index]).css({'left': '200%', 'top': '0'});
-                $(image_array[new_preview_index]).css({'left': '300%', 'top': '0'});
+                $(image_array[new_app_index]).css({'left': '200%', 'top': '0', 'visibility': 'visible'});
+                $(image_array[new_preview_index]).css({'left': '300%', 'top': '0', 'visibility': 'visible'});
                 //slide previous image out
-                $(image_array[current_app_index]).animate({left: '-200%'}, time_duration);
-                $(image_array[current_preview_index]).animate({left: '-100%'}, time_duration);
+                $(image_array[current_app_index]).toggleClass('curr_app').animate({left: '-200%'}, time_duration, function() {
+                    // $(image_array[current_app_index]).css({'visibility': 'hidden'});
+                });
+                $(image_array[current_preview_index]).toggleClass('curr_preview').animate({left: '-100%'}, time_duration, function(){
+                    // $(image_array[current_preview_index]).css({'visibility': 'hidden'});
+                });
                 //slide new images in
-                $(image_array[new_app_index]).animate({left: '0'}, time_duration);
-                $(image_array[new_preview_index]).animate({left: '100%'}, time_duration);
-                //change active app css
-                $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
-                //update current_app_index and current_preview_index
-                current_app_index = new_app_index;
-                current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
-                //update the modal info and button links in the main page and modal
-                update_modal_and_links(current_app_index);
+                $(image_array[new_app_index]).toggleClass('curr_app').animate({left: '0'}, time_duration);
+                $(image_array[new_preview_index]).toggleClass('curr_preview').animate({left: '100%'}, time_duration, function(){
+                    // $(image_array[current_app_index]).css({'visibility': 'hidden'});
+                    // $(image_array[current_preview_index]).css({'visibility': 'hidden'});
+                    $('.real:not(.curr_app, .curr_preview)').css({'visibility': 'hidden'});
+                    //change active app css
+                    $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
+                    //update current_app_index and current_preview_index
+                    current_app_index = new_app_index;
+                    current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
+                    //update the modal info and button links in the main page and modal
+                    update_modal_and_links(current_app_index);
+
+                });
+                // //change active app css
+                // $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
+                // //update current_app_index and current_preview_index
+                // current_app_index = new_app_index;
+                // current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
+                // //update the modal info and button links in the main page and modal
+                // update_modal_and_links(current_app_index);
+
+
+                //after each of the techs have moved to their final position, then add the selected class to the tech at location 0
+                // var animationEvent = whichAnimationEvent();
+                // $(image_array[new_preview_index]).one(animationEvent, function(e){
+                //     console.log('visibility firing off');
+                //     $(image_array[current_app_index]).css({'visibility': 'hidden'});                    
+                //     $(image_array[current_preview_index]).css({'visibility': 'hidden'});
+                // });
+
+                // $(image_array[current_app_index]).animate({left: '-200%'}, time_duration).one('webkitAnimationEnd animationEnd', function(e){
+                //     $(image_array[current_app_index]).css({'visibility': 'hidden'});
+                // });;
+                // $(image_array[current_preview_index]).animate({left: '-100%'}, time_duration).one('webkitAnimationEnd animationEnd', function(e){
+                //     console.log('visibility firing off');
+                //     $(image_array[current_preview_index]).css({'visibility': 'hidden'});
+                // });;
+
+                // $(image_array[current_app_index]).one('webkitAnimationEnd animationEnd', function(e){
+                //     $(image_array[current_app_index]).css({'visibility': 'hidden'});
+                // });
+                // $(image_array[current_app_index]).one('webkitAnimationEnd animationEnd', function(e){
+                //     $(image_array[current_preview_index]).css({'visibility': 'hidden'});
+                // });
+                
+
+                // .one('webkitAnimationEnd animationEnd', function(e){
+                //    //change active app css
+                //     $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
+                //     //update current_app_index and current_preview_index
+                //     current_app_index = new_app_index;
+                //     current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
+                //     //update the modal info and button links in the main page and modal
+                //     update_modal_and_links(current_app_index); 
+                // });
+
+                // //change active app css
+                // $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
+                // //update current_app_index and current_preview_index
+                // current_app_index = new_app_index;
+                // current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
+                // //update the modal info and button links in the main page and modal
+                // update_modal_and_links(current_app_index);
             }
         }
     }
@@ -637,6 +696,29 @@ function whichTransitionEvent(){
     }
   }
 }
+
+/**
+ * Function from David Walsh: http://davidwalsh.name/css-animation-callback
+ * 
+ */
+function whichAnimationEvent(){
+  var t,
+      el = document.createElement("fakeelement");
+
+  var transitions = {
+    "animation"      : "animationend",
+    "OAnimation"     : "oAnimationEnd",
+    "MozAnimation"   : "animationend",
+    "WebkitAnimation": "webkitAnimationEnd"
+  }
+
+  for (t in transitions){
+    if (el.style[t] !== undefined){
+      return transitions[t];
+    }
+  }
+}
+
 
 
 /**
