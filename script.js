@@ -395,14 +395,15 @@ function initialize_app_pictures() {
     for(var i = 1; i < image_array.length; i++){
         image_array[i].css('left','200%');
     }
-    image_array[0].addClass('curr_app').css('left','0%');
-    image_array[1].addClass('curr_preview').css('left','100%');
+    image_array[0].addClass('curr_app visible').css('left','0%');
+    image_array[1].addClass('curr_preview visible').css('left','100%');
 }
 
 //function to determine what app to be updated to and which direction it should come from
 function get_next_app(){
     var new_app_index = null;
     var new_preview_index = null;
+    var time_duration = 500;    // controls speed of animation
     // ensure the current app and the preview app aren't the final indices in the array
     if (current_app_index < apps_array.length - 1) {
         // new_app_index = current_app_index + 1;
@@ -412,8 +413,6 @@ function get_next_app(){
         new_app_index = 0;
         new_preview_index = new_app_index + 1;
     }
-    
-    var time_duration = 500;
 
     if(!click_event_happening){
         //prevent further clicks while animation happens
@@ -421,21 +420,14 @@ function get_next_app(){
         // reenable clicks after animation has happened
         setTimeout(function(){ click_event_happening = false; }, time_duration);
         //prepare new images for move in
-        $(image_array[new_preview_index]).css({'left': '200%', 'top': '0', 'visibility': 'visible'});
+        $(image_array[new_preview_index]).addClass('visible').css({'left': '200%', 'top': '0'});
         //slide previous image out
         $(image_array[current_app_index]).removeClass('curr_app').animate({left: '-100%'}, time_duration);
         $(image_array[current_preview_index]).removeClass('curr_preview');
         //slide new images in
         $(image_array[current_preview_index]).addClass('curr_app').animate({left: '0'}, time_duration);
         $(image_array[new_preview_index]).addClass('curr_preview').animate({left: '100%'}, time_duration, function(){
-            $('.real:not(.curr_app, .curr_preview)').css({'visibility': 'hidden'});
-            //change active app css
-            $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
-            //update current_app_index and current_preview_index
-            current_app_index = new_app_index;
-            current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
-            //update the modal info and button links in the main page and modal
-            update_modal_and_links(current_app_index);
+            finish_animation_processes(new_app_index);
         });
     }
 }
@@ -444,6 +436,7 @@ function get_next_app(){
 function get_prev_app() {
     var new_app_index = null;
     var new_preview_index = null;
+    var time_duration = 500;    // controls speed of animation
     // ensure the current app isn't the first index in the array
     if (current_app_index > 0) {
         new_app_index = current_app_index - 1;
@@ -453,7 +446,31 @@ function get_prev_app() {
         new_preview_index = 0;
     }
 
-    var time_duration = 500;
+    if(!click_event_happening){
+        //prevent further clicks while animation happens
+        click_event_happening = true;   
+        // reenable clicks after animation has happened
+        setTimeout(function(){ click_event_happening = false; }, time_duration);
+        //prepare new images for move in
+        $(image_array[new_app_index]).addClass('visible').css({'left': '-100%', 'top': '0'});
+        //slide previous images out
+        $(image_array[current_preview_index]).removeClass('curr_preview').animate({left: '200%'}, time_duration);
+        //slide new images in
+        $(image_array[new_app_index]).addClass('curr_app').animate({left: '0'}, time_duration);
+        $(image_array[new_preview_index]).removeClass('curr_app').addClass('curr_preview').animate({left: '100%'}, time_duration, function(){
+            finish_animation_processes(new_app_index);
+        });
+    }
+}
+function jump_multiple_apps(new_app_index){
+    var new_preview_index = null;
+    var time_duration = 1000;   // controls speed of animation
+    // ensure the current app and the preview app aren't the final indices in the array
+    if (current_app_index < apps_array.length - 1) {
+        new_preview_index = (new_app_index + 1 < apps_array.length) ? new_app_index + 1 : 0;
+    } else {
+        new_preview_index = new_app_index + 1;
+    }
 
     if(!click_event_happening){
         //prevent further clicks while animation happens
@@ -461,24 +478,33 @@ function get_prev_app() {
         // reenable clicks after animation has happened
         setTimeout(function(){ click_event_happening = false; }, time_duration);
         //prepare new images for move in
-        $(image_array[new_app_index]).css({'left': '-100%', 'top': '0', 'visibility': 'visible'});
-        //slide previous images out
-        $(image_array[current_preview_index]).removeClass('curr_preview').animate({left: '200%'}, time_duration);
+        $(image_array[new_app_index]).addClass('visible').css({'left': '200%', 'top': '0'});
+        $(image_array[new_preview_index]).addClass('visible').css({'left': '300%', 'top': '0'});
+        //slide previous image out
+        $(image_array[current_app_index]).removeClass('curr_app').animate({left: '-200%'}, time_duration);
+        $(image_array[current_preview_index]).removeClass('curr_preview').animate({left: '-100%'}, time_duration);
         //slide new images in
         $(image_array[new_app_index]).addClass('curr_app').animate({left: '0'}, time_duration);
-        $(image_array[new_preview_index]).removeClass('curr_app').addClass('curr_preview').animate({left: '100%'}, time_duration, function(){
-            //change active app css
-            $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');        
-            //update current_app_index and current_preview_index
-            current_app_index = new_app_index;
-            current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
-            //update the modal info and button links in the main page and modal
-            update_modal_and_links(current_app_index);
+        $(image_array[new_preview_index]).addClass('curr_preview').animate({left: '100%'}, time_duration, function(){
+            finish_animation_processes(new_app_index);
         });
     }
 }
 
-//function to determine which direction the next app should come from
+//updates visibility of apps images, updates the display of nav_numbers, updates indices of current and preveiw apps
+function finish_animation_processes(new_app_index){
+    //ensure apps not currently displayed in curr_app or curr_preview are hidden
+    $('.real:not(.curr_app, .curr_preview)').removeClass('visible');
+    //change active app css
+    $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
+    //update current_app_index and current_preview_index
+    current_app_index = new_app_index;
+    current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
+    //update the modal info and button links in the main page and modal
+    update_modal_and_links(current_app_index);
+}
+
+//function to determine which direction the next app should come from and where to move to
 function jump_to_app(new_app_index){
     if(!click_event_happening){
         if(new_app_index === current_app_index + 1 || (current_app_index === apps_array.length - 1 && new_app_index === 0) ){
@@ -489,44 +515,9 @@ function jump_to_app(new_app_index){
             get_prev_app();
         }else if(new_app_index !== current_app_index){
             // index clicked on and current app index are not consecutive, slide from preview side but further
-            var new_preview_index = null;
-            // ensure the current app and the preview app aren't the final indices in the array
-            if (current_app_index < apps_array.length - 1) {
-                new_preview_index = (new_app_index + 1 < apps_array.length) ? new_app_index + 1 : 0;
-            } else {
-                new_preview_index = new_app_index + 1;
-            }
-            
-            var time_duration = 1000;
-
-            if(!click_event_happening){
-                //prevent further clicks while animation happens
-                click_event_happening = true;   
-                // reenable clicks after animation has happened
-                setTimeout(function(){ click_event_happening = false; }, time_duration);
-                //prepare new images for move in
-                $(image_array[new_app_index]).css({'left': '200%', 'top': '0', 'visibility': 'visible'});
-                $(image_array[new_preview_index]).css({'left': '300%', 'top': '0', 'visibility': 'visible'});
-                //slide previous image out
-                $(image_array[current_app_index]).removeClass('curr_app').animate({left: '-200%'}, time_duration);
-                $(image_array[current_preview_index]).removeClass('curr_preview').animate({left: '-100%'}, time_duration);
-                //slide new images in
-                $(image_array[new_app_index]).addClass('curr_app').animate({left: '0'}, time_duration);
-                $(image_array[new_preview_index]).addClass('curr_preview').animate({left: '100%'}, time_duration, function(){
-                    $('.real:not(.curr_app, .curr_preview)').css({'visibility': 'hidden'});
-                    //change active app css
-                    $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
-                    //update current_app_index and current_preview_index
-                    current_app_index = new_app_index;
-                    current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
-                    //update the modal info and button links in the main page and modal
-                    update_modal_and_links(current_app_index);
-
-                });
-            }
+            jump_multiple_apps(new_app_index);
         }
     }
-
 }
 
 //add the number links to the number bar of apps carousel

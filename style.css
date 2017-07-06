@@ -503,10 +503,13 @@ button.link_btn, .link_btn > input {
         width: auto;
         height: 100%;
         top: 0;
-        left: 0; }
+        left: 0;
+        visibility: hidden; }
         .apps_carousel_main .apps_carousel .image_container img.spacer {
           position: relative;
           opacity: 0; }
+        .apps_carousel_main .apps_carousel .image_container img.visible {
+          visibility: visible; }
       .apps_carousel_main .apps_carousel .image_container.gray {
         left: 10%;
         position: absolute;
