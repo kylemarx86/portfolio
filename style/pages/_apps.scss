@@ -29,142 +29,162 @@ $aspect_ratio: 475 / 960 * 100%;
     background-color: #151515;
     width: 100%;
     height: 80%;
-    
-    // height: 475px;      /*determines height of dark background, should be same height as images will be*/
     box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
-    overflow: hidden;
-    .apps_carousel_container{
-        position: absolute;
-        
-        /*determines height of images in carousel*/
-        /*want to take on height of surrounding container: apps_carousel_main*/
-        left: 50%;
-        -webkit-transform: translate(-50%, 0);
-        transform: translate(-50%, 0);
-        overflow: visible;
-        padding-top: $aspect_ratio;
-        // padding-left: $aspect_ratio;
-        // height: 100%;
-        width: 80%;
 
-        .apps_carousel{
+    .apps_carousel{
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        // overflow: hidden;
+
+        .cover{
             position: absolute;
-            top: 0;
+            display: inline-block;
+            height: 100%;
+            width: 10%;
+            background-color: #101010;
             left: 0;
-            bottom: 0;
-            right: 0;
-            /*the following are based on the images real dimensions*/
-            /*new wide images are 960px x 475px*/
-            /*determines width of images in carousel*/
-            // width: 960px;
-            
-            // width: 80%;
-            // padding-top: 49.4791666%;
-            
-
-            #image_container{
-                position: absolute;
-                width: 100%;
-                height: 90%;
-                overflow: hidden;
-
-                /*each image should be
-                    -100% of the width of the container
-                    -positioned absolutely
-                    -left and top at 0*/
-                img{
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    top: 0;
-                    z-index: 2;
-                }
-            }
-
-            // styling of carousel buttons
-            .skewed{
-                position: absolute;
-                width: 9%;
-                // width: 70px;
-                height: 100%;
-                border: 1px solid #740000;
-                margin: 0;
-                padding: 0;
-                font-size: 2em;
-                display: inline-block;
-                background-color: red;
-                box-sizing: border-box;
-                box-shadow: 2px 0 0 0 #111111,
-                    0 2px 0 0 #111111, 
-                    2px 2px 0 0 #111111;
-                -webkit-transition-duration: 750ms;
-                transition-duration: 750ms;
-                cursor: pointer;
-                
-                &.prev_button {
-                    left: 0;
-                    -webkit-transform: skewX(-10deg) translateX(-45%);
-                    transform: skewX(-10deg) translateX(-45%);
-                    z-index: 4;
-                }
-                &.next_button {
-                    right: 0;
-                    z-index: 4;
-                    -webkit-transform: skewX(-10deg) translateX(45%);
-                    transform: skewX(-10deg) translateX(45%);
-                }
-                // hover transitions
-                &:hover{
-                    background-color: #BB0000;
-                    -webkit-transition-duration: 500ms;
-                    transition-duration: 500ms;
-                    box-shadow: none;
-                }
-                > .glyphicon {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    -webkit-transform: translate(-50%, -50%);
-                    transform: translate(-50%, -50%);
-                }
-            }
-
-            // number bar
-            .number_bar{
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                height: 10%;
-                padding-left: 15px;
-                background-color: black;
-                z-index: 3;
-
-                .nav_number{
-                    position: relative;
-                    display: inline-block;
-                    height: 75%;
-                    width: 5%;
-                    margin: 0 5px;
-                    top: 25%;
-                    -webkit-transform: skewX(-10deg);
-                    transform: skewX(-10deg);
-                    color: black;
-                    background-color: white;
-                    box-shadow: -3px -3px 2px 1px #D0D0D0 inset;
-                    text-align: center;
-                    cursor: pointer;
-                    font-size: 1.75em;
-                    
-                    &.active_nav_number{
-                        color: white;
-                        background-color: red;
-                        box-shadow: -3px -3px 2px 1px #A00000 inset;
-                        font-weight: bold;
-                    }
-                }
-            }
-
+            z-index: 2;
         }
+        .image_container{
+            position: absolute;
+            display: inline-block;
+            width: auto;
+            height: 100%;
+            left: 10%;
+
+            img{
+                position: absolute;
+                display: inline-block;
+                width: auto;
+                height: 100%;
+                
+                top: 0;
+                left: 0;
+                visibility: hidden;
+                // z-index: 1;
+                &.spacer{
+                    position: relative;
+                    opacity: 0;
+                }
+                &.visible{
+                    visibility: visible;
+                }
+            }
+            &.gray{
+                left: 10%;
+                position: absolute;
+                transform: translateX(100%);
+                z-index: 1;
+                background: #101010;
+                // opacity: 0.7;
+                // old
+                // background: -webkit-linear-gradient(left, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Safari 5.1 to 6.0 */
+                // background: -o-linear-gradient(right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Opera 11.1 to 12.0 */
+                // background: -moz-linear-gradient(right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Firefox 3.6 to 15 */
+                // background: linear-gradient(to right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* Standard syntax */
+                // new
+                background: -webkit-linear-gradient(left, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(to right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* Standard syntax */
+            }
+            &.cover{
+                left: 10%;
+                position: absolute;
+                transform: translateX(200%);
+                z-index: 1;
+                background: #151515;
+            }
+        }
+
+        // styling of carousel buttons
+        .skewed{
+            position: absolute;
+            width: 9%;
+            height: 100%;
+            top: 0;
+            border: 1px solid #740000;
+            margin: 0;
+            padding: 0;
+            font-size: 2em;
+            display: inline-block;
+            background-color: red;
+            box-sizing: border-box;
+            box-shadow: 2px 0 0 0 #111111,
+                0 2px 0 0 #111111, 
+                2px 2px 0 0 #111111;
+            -webkit-transition-duration: 750ms;
+            transition-duration: 750ms;
+            cursor: pointer;
+            z-index: 2;
+            
+            &.prev_button {
+                left: 0;
+                // z-index: 4;
+                -webkit-transform: skewX(-5deg) translateX(-50%);
+                transform: skewX(-5deg) translateX(-50%);
+            }
+            &.next_button {
+                right: 0;
+                // z-index: 4;
+                -webkit-transform: skewX(-5deg) translateX(50%);
+                transform: skewX(-5deg) translateX(50%);
+            }
+            // hover transitions
+            &:hover{
+                background-color: #BB0000;
+                -webkit-transition-duration: 500ms;
+                transition-duration: 500ms;
+                box-shadow: none;
+            }
+            > .glyphicon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        // number bar
+        .number_bar{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 10%;
+            
+            background-color: black;
+            z-index: 1;
+            padding-left: 5%;
+            box-sizing: border-box;
+
+            .nav_number{
+                position: relative;
+                display: inline-block;
+                height: 75%;
+                width: 5%;
+                margin: 0 5px;
+                top: 25%;
+                -webkit-transform: skewX(-5deg);
+                transform: skewX(-5deg);
+                color: black;
+                background-color: white;
+                box-shadow: -3px -3px 2px 1px #D0D0D0 inset;
+                text-align: center;
+                cursor: pointer;
+                font-size: 1.75em;
+                
+                &.active_nav_number{
+                    color: white;
+                    background-color: red;
+                    box-shadow: -3px -3px 2px 1px #A00000 inset;
+                    font-weight: bold;
+                }
+            }
+        }
+
     }
     
 }
