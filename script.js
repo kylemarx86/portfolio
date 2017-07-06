@@ -428,15 +428,7 @@ function get_next_app(){
         //slide new images in
         $(image_array[current_preview_index]).addClass('curr_app').animate({left: '0'}, time_duration);
         $(image_array[new_preview_index]).addClass('curr_preview').animate({left: '100%'}, time_duration, function(){
-            //ensure apps not currently displayed in curr_app or curr_preview are hidden
-            $('.real:not(.curr_app, .curr_preview)').removeClass('visible');
-            //change active app css
-            $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
-            //update current_app_index and current_preview_index
-            current_app_index = new_app_index;
-            current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
-            //update the modal info and button links in the main page and modal
-            update_modal_and_links(current_app_index);
+            finish_animation_processes(new_app_index);
         });
     }
 }
@@ -468,14 +460,7 @@ function get_prev_app() {
         //slide new images in
         $(image_array[new_app_index]).addClass('curr_app').animate({left: '0'}, time_duration);
         $(image_array[new_preview_index]).removeClass('curr_app').addClass('curr_preview').animate({left: '100%'}, time_duration, function(){
-            //ensure apps not currently displayed in curr_app or curr_preview are hidden
-            $('.real:not(.curr_app, .curr_preview)').removeClass('visible');
-            //change active app css
-            $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');            //update current_app_index and current_preview_index
-            current_app_index = new_app_index;
-            current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
-            //update the modal info and button links in the main page and modal
-            update_modal_and_links(current_app_index);
+            finish_animation_processes(new_app_index);
         });
     }
 }
@@ -504,17 +489,22 @@ function jump_multiple_apps(new_app_index){
         //slide new images in
         $(image_array[new_app_index]).addClass('curr_app').animate({left: '0'}, time_duration);
         $(image_array[new_preview_index]).addClass('curr_preview').animate({left: '100%'}, time_duration, function(){
-            //ensure apps not currently displayed in curr_app or curr_preview are hidden
-            $('.real:not(.curr_app, .curr_preview)').removeClass('visible');
-            //change active app css
-            $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
-            //update current_app_index and current_preview_index
-            current_app_index = new_app_index;
-            current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
-            //update the modal info and button links in the main page and modal
-            update_modal_and_links(current_app_index);
+            finish_animation_processes(new_app_index);
         });
     }
+}
+
+//updates visibility of apps images, updates the display of nav_numbers, updates indices of current and preveiw apps
+function finish_animation_processes(new_app_index){
+    //ensure apps not currently displayed in curr_app or curr_preview are hidden
+    $('.real:not(.curr_app, .curr_preview)').removeClass('visible');
+    //change active app css
+    $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
+    //update current_app_index and current_preview_index
+    current_app_index = new_app_index;
+    current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
+    //update the modal info and button links in the main page and modal
+    update_modal_and_links(current_app_index);
 }
 
 //function to determine which direction the next app should come from and where to move to
