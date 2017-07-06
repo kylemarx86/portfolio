@@ -421,19 +421,22 @@ function get_next_app(){
         // reenable clicks after animation has happened
         setTimeout(function(){ click_event_happening = false; }, time_duration);
         //prepare new images for move in
-        $(image_array[new_preview_index]).css({'left': '200%', 'top': '0'});
+        $(image_array[new_preview_index]).css({'left': '200%', 'top': '0', 'visibility': 'visible'});
         //slide previous image out
-        $(image_array[current_app_index]).animate({left: '-100%'}, time_duration);
+        $(image_array[current_app_index]).toggleClass('curr_app').animate({left: '-100%'}, time_duration);
+        $(image_array[current_preview_index]).toggleClass('curr_preview');
         //slide new images in
-        $(image_array[current_preview_index]).animate({left: '0'}, time_duration);
-        $(image_array[new_preview_index]).animate({left: '100%'}, time_duration);
-        //change active app css
-        $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
-        //update current_app_index and current_preview_index
-        current_app_index = new_app_index;
-        current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
-        //update the modal info and button links in the main page and modal
-        update_modal_and_links(current_app_index);
+        $(image_array[current_preview_index]).toggleClass('curr_app').animate({left: '0'}, time_duration);
+        $(image_array[new_preview_index]).toggleClass('curr_preview').animate({left: '100%'}, time_duration, function(){
+            $('.real:not(.curr_app, .curr_preview)').css({'visibility': 'hidden'});
+            //change active app css
+            $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
+            //update current_app_index and current_preview_index
+            current_app_index = new_app_index;
+            current_preview_index = (current_app_index + 1 < apps_array.length) ? current_app_index + 1 : 0;
+            //update the modal info and button links in the main page and modal
+            update_modal_and_links(current_app_index);
+        });
     }
 }
 
