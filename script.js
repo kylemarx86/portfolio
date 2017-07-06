@@ -403,6 +403,7 @@ function initialize_app_pictures() {
 function get_next_app(){
     var new_app_index = null;
     var new_preview_index = null;
+    var time_duration = 500;    // controls speed of animation
     // ensure the current app and the preview app aren't the final indices in the array
     if (current_app_index < apps_array.length - 1) {
         // new_app_index = current_app_index + 1;
@@ -412,8 +413,6 @@ function get_next_app(){
         new_app_index = 0;
         new_preview_index = new_app_index + 1;
     }
-    
-    var time_duration = 500;
 
     if(!click_event_happening){
         //prevent further clicks while animation happens
@@ -437,6 +436,7 @@ function get_next_app(){
 function get_prev_app() {
     var new_app_index = null;
     var new_preview_index = null;
+    var time_duration = 500;    // controls speed of animation
     // ensure the current app isn't the first index in the array
     if (current_app_index > 0) {
         new_app_index = current_app_index - 1;
@@ -445,8 +445,6 @@ function get_prev_app() {
         new_app_index = apps_array.length - 1;
         new_preview_index = 0;
     }
-
-    var time_duration = 500;
 
     if(!click_event_happening){
         //prevent further clicks while animation happens
@@ -466,14 +464,13 @@ function get_prev_app() {
 }
 function jump_multiple_apps(new_app_index){
     var new_preview_index = null;
+    var time_duration = 1000;   // controls speed of animation
     // ensure the current app and the preview app aren't the final indices in the array
     if (current_app_index < apps_array.length - 1) {
         new_preview_index = (new_app_index + 1 < apps_array.length) ? new_app_index + 1 : 0;
     } else {
         new_preview_index = new_app_index + 1;
     }
-    
-    var time_duration = 1000;
 
     if(!click_event_happening){
         //prevent further clicks while animation happens
