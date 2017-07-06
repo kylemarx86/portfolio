@@ -422,8 +422,6 @@ function get_next_app(){
         setTimeout(function(){ click_event_happening = false; }, time_duration);
         //prepare new images for move in
         $(image_array[new_preview_index]).addClass('visible').css({'left': '200%', 'top': '0'});
-        // $(image_array[new_preview_index]).addClass('visible').css({'left': '200%', 'top': '0', 'visibility': 'visible'});
-
         //slide previous image out
         $(image_array[current_app_index]).removeClass('curr_app').animate({left: '-100%'}, time_duration);
         $(image_array[current_preview_index]).removeClass('curr_preview');
@@ -431,7 +429,6 @@ function get_next_app(){
         $(image_array[current_preview_index]).addClass('curr_app').animate({left: '0'}, time_duration);
         $(image_array[new_preview_index]).addClass('curr_preview').animate({left: '100%'}, time_duration, function(){
             $('.real:not(.curr_app, .curr_preview)').removeClass('visible');
-            // $('.real:not(.curr_app, .curr_preview)').removeClass('visible').css({'visibility': 'hidden'});
             //change active app css
             $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
             //update current_app_index and current_preview_index
