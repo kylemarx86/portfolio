@@ -508,15 +508,16 @@ function jump_to_app(new_app_index){
                 // reenable clicks after animation has happened
                 setTimeout(function(){ click_event_happening = false; }, time_duration);
                 //prepare new images for move in
-                $(image_array[new_app_index]).css({'left': '200%', 'top': '0', 'visibility': 'visible'});
-                $(image_array[new_preview_index]).css({'left': '300%', 'top': '0', 'visibility': 'visible'});
+                $(image_array[new_app_index]).addClass('visible').css({'left': '200%', 'top': '0'});
+                $(image_array[new_preview_index]).addClass('visible').css({'left': '300%', 'top': '0'});
                 //slide previous image out
                 $(image_array[current_app_index]).removeClass('curr_app').animate({left: '-200%'}, time_duration);
                 $(image_array[current_preview_index]).removeClass('curr_preview').animate({left: '-100%'}, time_duration);
                 //slide new images in
                 $(image_array[new_app_index]).addClass('curr_app').animate({left: '0'}, time_duration);
                 $(image_array[new_preview_index]).addClass('curr_preview').animate({left: '100%'}, time_duration, function(){
-                    $('.real:not(.curr_app, .curr_preview)').css({'visibility': 'hidden'});
+                    //ensure apps not currently displayed in curr_app or curr_preview are hidden
+                    $('.real:not(.curr_app, .curr_preview)').removeClass('visible');
                     //change active app css
                     $(`.nav_number:nth-of-type(${current_app_index + 1}), .nav_number:nth-of-type(${new_app_index + 1})`).toggleClass('active_nav_number');
                     //update current_app_index and current_preview_index
