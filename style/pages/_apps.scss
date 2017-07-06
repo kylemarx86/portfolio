@@ -1,13 +1,16 @@
 // aspect ratio for apps pics
 // $aspect_ratio: 960 / 475 * 100%;
 $aspect_ratio: 475 / 960 * 100%;
-
+$carousel_vert_offset: 10%;
 // area above the app carousel
 .apps_carousel_top{
+    position: absolute;
     width: 100%;
-    height: 10%;
+    height: $carousel_vert_offset;      //10%
     background-color: #202020;
     box-shadow: 1px 1px 3px 1px #000000;
+    z-index: 3;
+    top: 0;
 
     .link_btn_container{
         position: relative;
@@ -30,6 +33,8 @@ $aspect_ratio: 475 / 960 * 100%;
     width: 100%;
     height: 80%;
     box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
+    top: $carousel_vert_offset;
+
 
     .apps_carousel{
         position: relative;
@@ -190,10 +195,13 @@ $aspect_ratio: 475 / 960 * 100%;
 }
 
 .apps_carousel_bottom{
+    position: absolute;
     width: 100%;
     height: 10%;
     background-color: #202020;
     box-shadow: 1px 1px 3px 1px #000000;
+    z-index: 3;
+    bottom: 0;
 }
 
 
