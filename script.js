@@ -461,10 +461,9 @@ function get_prev_app() {
         // reenable clicks after animation has happened
         setTimeout(function(){ click_event_happening = false; }, time_duration);
         //prepare new images for move in
-        $(image_array[new_app_index]).removeClass('curr_app').css({'left': '-100%', 'top': '0', 'visibility': 'visible'});
-        // $(image_array[new_preview_index]).removeClass('curr_preview');
+        $(image_array[new_app_index]).css({'left': '-100%', 'top': '0', 'visibility': 'visible'});
         //slide previous images out
-        $(image_array[current_preview_index]).animate({left: '200%'}, time_duration);
+        $(image_array[current_preview_index]).removeClass('curr_preview').animate({left: '200%'}, time_duration);
         //slide new images in
         $(image_array[new_app_index]).addClass('curr_app').animate({left: '0'}, time_duration);
         $(image_array[new_preview_index]).removeClass('curr_app').addClass('curr_preview').animate({left: '100%'}, time_duration, function(){
