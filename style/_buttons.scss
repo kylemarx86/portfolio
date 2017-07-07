@@ -38,3 +38,49 @@ button.link_btn, .link_btn > input {
         box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000;
     }
 }
+
+/*specific media queries*/
+/*portrait - iPad Pro*/
+@media screen and (orientation: portrait) and (width: 1024px) and (height: 1366px){
+
+}
+/*landscape - iPad Pro*/
+@media screen and (width: 1366px) and (height: 1024px) {
+
+}
+/*portrait - iPad*/
+@media screen and (width: 980px) and (height: 1306px) {
+
+}
+/*landscape - iPad*/
+@media screen and (width: 1306px) and (height: 980px) {
+
+}
+/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+    button.link_btn, .link_btn > input {
+        font-size: 24px;
+        &:hover{
+        }
+    }
+    //specific button coloring and shadowning
+    .github > input, .send{
+      
+        &:hover{
+
+        }
+    }
+    .live > input{
+
+        &:hover{
+        }
+    }
+    .close_modal, .description{
+        &:hover{
+        }
+    }
+}
+/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px){
+
+}
