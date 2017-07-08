@@ -725,7 +725,8 @@ button.link_btn, .link_btn > input {
     display: inline-block;
     height: 100%;
     width: 20%;
-    background-color: #353535; }
+    background-color: #353535;
+    border: 2px solid darkorange; }
     .technologies .tech_info .name {
       display: inline-block;
       position: relative;
