@@ -92,7 +92,8 @@ footer {
   height: 125px;
   bottom: 0;
   left: 0;
-  background-color: #524A4A; }
+  background-color: #524A4A;
+  box-shadow: 0px -1px 2px 1px black; }
   footer .control_panel {
     display: inline-block;
     position: relative;
@@ -458,10 +459,13 @@ button.link_btn, .link_btn > input {
     font-size: 24px; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 .apps_carousel_top {
+  position: absolute;
   width: 100%;
   height: 10%;
   background-color: #202020;
-  box-shadow: 1px 1px 3px 1px #000000; }
+  box-shadow: 1px 1px 3px 1px #000000;
+  z-index: 3;
+  top: 0; }
   .apps_carousel_top .link_btn_container {
     position: relative;
     display: inline-block;
@@ -477,7 +481,8 @@ button.link_btn, .link_btn > input {
   background-color: #151515;
   width: 100%;
   height: 80%;
-  box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset; }
+  box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
+  top: 10%; }
   .apps_carousel_main .apps_carousel {
     position: relative;
     display: inline-block;
@@ -597,10 +602,13 @@ button.link_btn, .link_btn > input {
           font-weight: bold; }
 
 .apps_carousel_bottom {
+  position: absolute;
   width: 100%;
   height: 10%;
   background-color: #202020;
-  box-shadow: 1px 1px 3px 1px #000000; }
+  box-shadow: 1px 1px 3px 1px #000000;
+  z-index: 3;
+  bottom: 0; }
 
 /*specific media queries*/
 /*portrait - iPad Pro*/
@@ -861,9 +869,9 @@ button:focus {
 .main_screen {
   display: inline-block;
   width: 100%;
-  height: 60%;
+  height: 75%;
   position: relative;
-  top: 20%; }
+  top: 10%; }
   .main_screen .screen {
     width: 90%;
     height: 100%;
