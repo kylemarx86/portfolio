@@ -814,7 +814,8 @@ button.link_btn, .link_btn > input {
         transform: rotate(320deg) translate(8.75em) rotate(-320deg);
         -webkit-transform: rotate(320deg) translate(8.75em) rotate(-320deg); }
   .technologies .tech_info {
-    height: initial; } }
+    height: initial;
+    width: 35%; } }
 .contact form {
   display: inline-block;
   width: 50%;
