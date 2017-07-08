@@ -246,7 +246,6 @@
     
       .circle-container {
         @include on-circle($item-count: 9, $circle-diam: 17.5em, $item-size: 75px);
-        // @include on-circle($item-count: 9, $circle-diam: 12.5em, $item-size: 50px);
 
         .tech{
 
