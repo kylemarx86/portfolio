@@ -335,7 +335,122 @@ footer {
 }
 /*portrait - iPad*/
 @media screen and (width: 980px) and (height: 1306px) {
+    footer {
+    
 
+    .control_panel {
+
+        .btn_container {
+          
+          .arcade_btn {
+            
+              &.red {
+
+              }
+              &.blue {
+
+              }
+
+            &:after {
+
+            }
+
+            &:active,
+            &.is-pushed {
+
+              &.red {
+
+              } 
+              &.blue {
+
+              }
+              &:after {
+
+              }
+            }
+          }
+        }
+
+        .label_container {
+
+          .label {
+            
+            &.red {
+
+            }
+            &.blue {
+
+            }
+            span {
+
+            }
+          }
+        }
+      }
+      .links{
+
+        form{
+
+          .btn_area{
+
+            .btn_container{
+
+                .arcade_btn {
+
+                    &.small{
+                                  
+                        &.github{
+
+                        }
+                        &.linkedin{
+
+                        }
+                    }
+
+                    &:after {
+                
+                    }
+
+                    &:active,
+                    &.is-pushed {
+      
+                      &.small{
+                          
+                      } 
+
+                    
+                    &:after {
+
+                    }
+                  }
+                }
+            }
+          }
+
+          .label {
+          
+            span {
+
+            }
+          }
+
+
+          }
+          .label_container {
+
+
+            .label {
+              
+                span {
+  
+                }
+            }
+          }
+      }
+
+
+
+  }
 }
 /*landscape - iPad*/
 @media screen and (width: 1306px) and (height: 980px) {
