@@ -166,7 +166,7 @@ footer {
       position: relative;
       display: inline-block;
       height: 100%;
-      width: 86px;
+      width: 5.5em;
       margin: 0 10px; }
       footer .control_panel .label_container .label {
         position: absolute;
@@ -344,7 +344,15 @@ footer {
           background-color: #0000f5; }
           footer .control_panel .btn_container .arcade_btn:active.blue:after, footer .control_panel .btn_container .arcade_btn.is-pushed.blue:after {
             bottom: 23.33333px;
-            border-width: 0; } }
+            border-width: 0; }
+    footer .control_panel .label_container {
+      margin: 0; }
+      footer .control_panel .label_container .label span {
+        font-size: 3em; }
+    footer .links form .label span {
+      font-size: 2em;
+      -webkit-text-stroke: unset;
+      text-shadow: 2px 2px 0px black; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 @media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
   footer {
