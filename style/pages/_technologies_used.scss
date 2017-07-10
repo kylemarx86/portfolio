@@ -179,10 +179,112 @@
 /*portrait - iPad*/
 @media screen and (width: 980px) and (height: 1306px) {
   
+  .technologies{
+    
+      .circle-container {
+        // @include on-circle($item-count: 9, $circle-diam: 40em, $item-size: 130px); 
+
+        .tech{
+
+          &.selected{
+
+              img{
+              }
+          }
+          &:not(.selected){
+
+          }
+          &.deselected{
+
+          }
+        }
+        
+        img { 
+          
+          &:hover,
+          &:active {
+          }
+        }
+      }
+
+      .tech_info{
+        height: initial;
+        width: 25%;
+        .name{
+        
+        }
+        .apps{
+          li{
+
+            span{
+   
+            }
+            
+            button{
+
+            }
+          }
+
+          li:not(:last-child)::after {
+
+          }
+        }
+      }
+  }
 }
 /*landscape - iPad*/
 @media screen and (width: 1306px) and (height: 980px) {
 
+  .technologies{
+    
+      .circle-container {
+        // @include on-circle($item-count: 9, $circle-diam: 40em, $item-size: 130px); 
+
+        .tech{
+
+          &.selected{
+
+              img{
+              }
+          }
+          &:not(.selected){
+
+          }
+          &.deselected{
+
+          }
+        }
+        
+        img { 
+          
+          &:hover,
+          &:active {
+          }
+        }
+      }
+
+      .tech_info{
+        .name{
+        
+        }
+        .apps{
+          li{
+
+            span{
+   
+            }
+            
+            button{
+
+            }
+          }
+
+          li:not(:last-child)::after {
+
+          }
+        }
+      }
+  }
 }
 /*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
   Nexus 5X looks messed up*/
