@@ -14,7 +14,21 @@ $btn_size_sm: 0.5 * $btn_size_lg;
     inset 0 0 0 $btn-size/5.5 $base-color,
     inset 0 $btn-size/2.5 $btn-size/7.5 darken($base-color, 5%),
     inset 0 0 $btn-size/10 $btn-size/6 darken($base-color, 10%),
-    0 $btn_size_lg/20 0 rgba(0, 0, 0, .3);
+    0 $btn-size/20 0 rgba(0, 0, 0, .3);
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: $btn-size/20;
+    left: $btn-size/10;
+    display: block;
+    width: $btn-size/1.25;
+    height: $btn-size/1.25;
+    border: $btn-size/15 solid rgba(0, 0, 0, .3);
+    border-width: 0 0 $btn-size/15;
+    border-radius: 50%;
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+  }
 }
 @mixin button_pushed($base-color, $btn-size) {
   box-shadow: 
@@ -30,6 +44,10 @@ $btn_size_sm: 0.5 * $btn_size_lg;
     inset 0 0 $btn-size/10 $btn-size/6 darken($base-color, 15%),
     0 $btn-size/20 0 rgba(0, 0, 0, .3);
   background-color: darken($base-color, 2%);
+  &:after{
+    bottom: $btn-size/20 + $btn-size/15;
+    border-width: 0;
+  }
 }
 
 footer {
@@ -76,33 +94,13 @@ footer {
               @include button_norm(blue, $btn_size_lg);
             }
 
-          &:after {
-            content: '';
-            position: absolute;
-            bottom: $btn_size_lg/20;
-            left: $btn_size_lg/10;
-            display: block;
-            width: $btn_size_lg/1.25;
-            height: $btn_size_lg/1.25;
-            border: $btn_size_lg/15 solid rgba(0, 0, 0, .3);
-            border-width: 0 0 $btn_size_lg/15;
-            border-radius: 50%;
-            -webkit-transition-duration: 200ms;
-            transition-duration: 200ms;
-          }
-
           &:active,
           &.is-pushed {
-            $base-color: null;
             &.red {
               @include button_pushed(red, $btn_size_lg);
             } 
             &.blue {
               @include button_pushed(blue, $btn_size_lg);
-            }
-            &:after {
-              bottom: $btn_size_lg/20 + $btn_size_lg/15;
-              border-width: 0;
             }
           }
         }
@@ -435,7 +433,126 @@ footer {
 }
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 @media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+  footer {
+    $btn_size: $btn_size_lg * 2;  //200px
+    height: $btn_size;
 
+    .control_panel {
+
+
+        .btn_container {
+          height: $btn_size;
+          width: $btn_size;
+          .arcade_btn {
+              margin: 0;
+              transform: scale(0.75);
+              width: $btn_size;
+              height: $btn_size;
+              &.red {
+                @include button_norm(red, $btn_size);
+              }
+              &.blue {
+                @include button_norm(blue, $btn_size);
+              }
+
+            &:after {
+
+            }
+
+            &:active,
+            &.is-pushed {
+
+              &.red {
+                @include button_pushed(red, $btn_size);
+              } 
+              &.blue {
+                @include button_pushed(blue, $btn_size);
+              }
+              &:after {
+
+              }
+            }
+          }
+        }
+
+        .label_container {
+
+          .label {
+            
+            &.red {
+
+            }
+            &.blue {
+
+            }
+            span {
+
+            }
+          }
+        }
+      }
+      .links{
+
+        form{
+
+          .btn_area{
+
+            .btn_container{
+
+                .arcade_btn {
+
+                    &.small{
+                                  
+                        &.github{
+
+                        }
+                        &.linkedin{
+
+                        }
+                    }
+
+                    &:after {
+                
+                    }
+
+                    &:active,
+                    &.is-pushed {
+      
+                      &.small{
+                          
+                      } 
+
+                    
+                    &:after {
+
+                    }
+                  }
+                }
+            }
+          }
+
+          .label {
+          
+            span {
+
+            }
+          }
+
+
+          }
+          .label_container {
+
+
+            .label {
+              
+                span {
+  
+                }
+            }
+          }
+      }
+
+  }
 }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 @media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px){
@@ -553,8 +670,6 @@ footer {
             }
           }
       }
-
-
 
   }
 }
