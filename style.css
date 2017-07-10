@@ -725,7 +725,8 @@ button.link_btn, .link_btn > input {
     display: inline-block;
     height: 100%;
     width: 20%;
-    background-color: #353535; }
+    background-color: #353535;
+    border: 2px solid darkorange; }
     .technologies .tech_info .name {
       display: inline-block;
       position: relative;
@@ -756,7 +757,8 @@ button.link_btn, .link_btn > input {
         width: 60%;
         height: 100%;
         transform: translateX(-50%);
-        border-bottom: 2px solid white;
+        border-bottom: 2px solid #202020;
+        box-shadow: inset 0px -2px white;
         top: 0; }
 
 /*specific media queries*/
@@ -813,7 +815,8 @@ button.link_btn, .link_btn > input {
         transform: rotate(320deg) translate(8.75em) rotate(-320deg);
         -webkit-transform: rotate(320deg) translate(8.75em) rotate(-320deg); }
   .technologies .tech_info {
-    height: initial; } }
+    height: initial;
+    width: 35%; } }
 .contact form {
   display: inline-block;
   width: 50%;
