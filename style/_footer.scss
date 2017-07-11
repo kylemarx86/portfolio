@@ -1,7 +1,7 @@
 $btn_size_lg: 100px;
 $btn_size_sm: 0.5 * $btn_size_lg;
 
-@mixin button_norm($base-color, $btn-size) {
+@mixin lg_button($base-color, $btn-size) {
   background-color: $base-color;
   box-shadow: 
     inset 0 $btn-size/32 0 lighten($base-color, 5%),
@@ -147,10 +147,10 @@ footer {
         transition: box-shadow 200ms;
 
         &.red {
-          @include button_norm(red, $btn_size_lg);
+          @include lg_button(red, $btn_size_lg);
         }
         &.blue {
-          @include button_norm(blue, $btn_size_lg);
+          @include lg_button(blue, $btn_size_lg);
         }
       }
     }
@@ -391,10 +391,10 @@ footer {
           width: $btn_size;
           height: $btn_size;
           &.red {
-            @include button_norm(red, $btn_size);
+            @include lg_button(red, $btn_size);
           }
           &.blue {
-            @include button_norm(blue, $btn_size);
+            @include lg_button(blue, $btn_size);
           }
         }
       }
