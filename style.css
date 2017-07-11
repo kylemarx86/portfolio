@@ -134,6 +134,12 @@ footer {
             border-radius: 50%;
             -webkit-transition-duration: 200ms;
             transition-duration: 200ms; }
+          footer .control_panel .btn_container .arcade_btn.red:active, footer .control_panel .btn_container .arcade_btn.red.is-pushed {
+            box-shadow: inset 0 3.125px 0 #ff1a1a, inset 0 -3.125px 0 #e60000, inset 0 0 0 3.125px #f00000, inset 0 0 0 8.33333px red, inset 0 0 0 10px #990000, inset 0 0 0 11.76471px #330000, inset 0 0 0 13.33333px rgba(255, 153, 153, 0.2), inset 0 0 0 18.18182px #f00000, inset 0 40px 13.33333px #d60000, inset 0 0 10px 16.66667px #b30000, 0 5px 0 rgba(0, 0, 0, 0.3);
+            background-color: #f50000; }
+            footer .control_panel .btn_container .arcade_btn.red:active:after, footer .control_panel .btn_container .arcade_btn.red.is-pushed:after {
+              bottom: 11.66667px;
+              border-width: 0; }
         footer .control_panel .btn_container .arcade_btn.blue {
           background-color: blue;
           box-shadow: inset 0 3.125px 0 #1a1aff, inset 0 -3.125px 0 #0000e6, inset 0 0 0 3.125px #0000f0, inset 0 0 0 8.33333px blue, inset 0 0 0 10px #000099, inset 0 0 0 10.86957px black, inset 0 0 0 13.33333px rgba(153, 153, 255, 0.7), inset 0 0 0 18.18182px blue, inset 0 40px 13.33333px #0000e6, inset 0 0 10px 16.66667px #0000cc, 0 5px 0 rgba(0, 0, 0, 0.3); }
@@ -150,18 +156,12 @@ footer {
             border-radius: 50%;
             -webkit-transition-duration: 200ms;
             transition-duration: 200ms; }
-        footer .control_panel .btn_container .arcade_btn:active.red, footer .control_panel .btn_container .arcade_btn.is-pushed.red {
-          box-shadow: inset 0 3.125px 0 #ff1a1a, inset 0 -3.125px 0 #e60000, inset 0 0 0 3.125px #f00000, inset 0 0 0 8.33333px red, inset 0 0 0 10px #990000, inset 0 0 0 11.76471px #330000, inset 0 0 0 13.33333px rgba(255, 153, 153, 0.2), inset 0 0 0 18.18182px #f00000, inset 0 40px 13.33333px #d60000, inset 0 0 10px 16.66667px #b30000, 0 5px 0 rgba(0, 0, 0, 0.3);
-          background-color: #f50000; }
-          footer .control_panel .btn_container .arcade_btn:active.red:after, footer .control_panel .btn_container .arcade_btn.is-pushed.red:after {
-            bottom: 11.66667px;
-            border-width: 0; }
-        footer .control_panel .btn_container .arcade_btn:active.blue, footer .control_panel .btn_container .arcade_btn.is-pushed.blue {
-          box-shadow: inset 0 3.125px 0 #1a1aff, inset 0 -3.125px 0 #0000e6, inset 0 0 0 3.125px #0000f0, inset 0 0 0 8.33333px blue, inset 0 0 0 10px #000099, inset 0 0 0 11.76471px #000033, inset 0 0 0 13.33333px rgba(153, 153, 255, 0.2), inset 0 0 0 18.18182px #0000f0, inset 0 40px 13.33333px #0000d6, inset 0 0 10px 16.66667px #0000b3, 0 5px 0 rgba(0, 0, 0, 0.3);
-          background-color: #0000f5; }
-          footer .control_panel .btn_container .arcade_btn:active.blue:after, footer .control_panel .btn_container .arcade_btn.is-pushed.blue:after {
-            bottom: 11.66667px;
-            border-width: 0; }
+          footer .control_panel .btn_container .arcade_btn.blue:active, footer .control_panel .btn_container .arcade_btn.blue.is-pushed {
+            box-shadow: inset 0 3.125px 0 #1a1aff, inset 0 -3.125px 0 #0000e6, inset 0 0 0 3.125px #0000f0, inset 0 0 0 8.33333px blue, inset 0 0 0 10px #000099, inset 0 0 0 11.76471px #000033, inset 0 0 0 13.33333px rgba(153, 153, 255, 0.2), inset 0 0 0 18.18182px #0000f0, inset 0 40px 13.33333px #0000d6, inset 0 0 10px 16.66667px #0000b3, 0 5px 0 rgba(0, 0, 0, 0.3);
+            background-color: #0000f5; }
+            footer .control_panel .btn_container .arcade_btn.blue:active:after, footer .control_panel .btn_container .arcade_btn.blue.is-pushed:after {
+              bottom: 11.66667px;
+              border-width: 0; }
     footer .control_panel .label_container {
       position: relative;
       display: inline-block;
@@ -317,6 +317,12 @@ footer {
             border-radius: 50%;
             -webkit-transition-duration: 200ms;
             transition-duration: 200ms; }
+          footer .control_panel .btn_container .arcade_btn.red:active, footer .control_panel .btn_container .arcade_btn.red.is-pushed {
+            box-shadow: inset 0 6.25px 0 #ff1a1a, inset 0 -6.25px 0 #e60000, inset 0 0 0 6.25px #f00000, inset 0 0 0 16.66667px red, inset 0 0 0 20px #990000, inset 0 0 0 23.52941px #330000, inset 0 0 0 26.66667px rgba(255, 153, 153, 0.2), inset 0 0 0 36.36364px #f00000, inset 0 80px 26.66667px #d60000, inset 0 0 20px 33.33333px #b30000, 0 10px 0 rgba(0, 0, 0, 0.3);
+            background-color: #f50000; }
+            footer .control_panel .btn_container .arcade_btn.red:active:after, footer .control_panel .btn_container .arcade_btn.red.is-pushed:after {
+              bottom: 23.33333px;
+              border-width: 0; }
         footer .control_panel .btn_container .arcade_btn.blue {
           background-color: blue;
           box-shadow: inset 0 6.25px 0 #1a1aff, inset 0 -6.25px 0 #0000e6, inset 0 0 0 6.25px #0000f0, inset 0 0 0 16.66667px blue, inset 0 0 0 20px #000099, inset 0 0 0 21.73913px black, inset 0 0 0 26.66667px rgba(153, 153, 255, 0.7), inset 0 0 0 36.36364px blue, inset 0 80px 26.66667px #0000e6, inset 0 0 20px 33.33333px #0000cc, 0 10px 0 rgba(0, 0, 0, 0.3); }
@@ -333,18 +339,12 @@ footer {
             border-radius: 50%;
             -webkit-transition-duration: 200ms;
             transition-duration: 200ms; }
-        footer .control_panel .btn_container .arcade_btn:active.red, footer .control_panel .btn_container .arcade_btn.is-pushed.red {
-          box-shadow: inset 0 6.25px 0 #ff1a1a, inset 0 -6.25px 0 #e60000, inset 0 0 0 6.25px #f00000, inset 0 0 0 16.66667px red, inset 0 0 0 20px #990000, inset 0 0 0 23.52941px #330000, inset 0 0 0 26.66667px rgba(255, 153, 153, 0.2), inset 0 0 0 36.36364px #f00000, inset 0 80px 26.66667px #d60000, inset 0 0 20px 33.33333px #b30000, 0 10px 0 rgba(0, 0, 0, 0.3);
-          background-color: #f50000; }
-          footer .control_panel .btn_container .arcade_btn:active.red:after, footer .control_panel .btn_container .arcade_btn.is-pushed.red:after {
-            bottom: 23.33333px;
-            border-width: 0; }
-        footer .control_panel .btn_container .arcade_btn:active.blue, footer .control_panel .btn_container .arcade_btn.is-pushed.blue {
-          box-shadow: inset 0 6.25px 0 #1a1aff, inset 0 -6.25px 0 #0000e6, inset 0 0 0 6.25px #0000f0, inset 0 0 0 16.66667px blue, inset 0 0 0 20px #000099, inset 0 0 0 23.52941px #000033, inset 0 0 0 26.66667px rgba(153, 153, 255, 0.2), inset 0 0 0 36.36364px #0000f0, inset 0 80px 26.66667px #0000d6, inset 0 0 20px 33.33333px #0000b3, 0 10px 0 rgba(0, 0, 0, 0.3);
-          background-color: #0000f5; }
-          footer .control_panel .btn_container .arcade_btn:active.blue:after, footer .control_panel .btn_container .arcade_btn.is-pushed.blue:after {
-            bottom: 23.33333px;
-            border-width: 0; }
+          footer .control_panel .btn_container .arcade_btn.blue:active, footer .control_panel .btn_container .arcade_btn.blue.is-pushed {
+            box-shadow: inset 0 6.25px 0 #1a1aff, inset 0 -6.25px 0 #0000e6, inset 0 0 0 6.25px #0000f0, inset 0 0 0 16.66667px blue, inset 0 0 0 20px #000099, inset 0 0 0 23.52941px #000033, inset 0 0 0 26.66667px rgba(153, 153, 255, 0.2), inset 0 0 0 36.36364px #0000f0, inset 0 80px 26.66667px #0000d6, inset 0 0 20px 33.33333px #0000b3, 0 10px 0 rgba(0, 0, 0, 0.3);
+            background-color: #0000f5; }
+            footer .control_panel .btn_container .arcade_btn.blue:active:after, footer .control_panel .btn_container .arcade_btn.blue.is-pushed:after {
+              bottom: 23.33333px;
+              border-width: 0; }
     footer .control_panel .label_container {
       margin: 0; }
       footer .control_panel .label_container .label span {

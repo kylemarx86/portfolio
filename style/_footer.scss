@@ -29,25 +29,25 @@ $btn_size_sm: 0.5 * $btn_size_lg;
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
   }
-}
-
-@mixin button_pushed($base-color, $btn-size) {
-  box-shadow: 
-    inset 0 $btn-size/32 0 lighten($base-color, 5%),
-    inset 0 (-$btn-size/32) 0 darken($base-color, 5%),
-    inset 0 0 0 $btn-size/32 darken($base-color, 3%),
-    inset 0 0 0 $btn-size/12 $base-color,
-    inset 0 0 0 $btn-size/10 darken($base-color, 20%),
-    inset 0 0 0 $btn-size/8.5 darken($base-color, 40%),
-    inset 0 0 0 $btn-size/7.5 transparentize(lighten($base-color, 30%), .8),
-    inset 0 0 0 $btn-size/5.5 darken($base-color, 3%),
-    inset 0 $btn-size/2.5 $btn-size/7.5 darken($base-color, 8%),
-    inset 0 0 $btn-size/10 $btn-size/6 darken($base-color, 15%),
-    0 $btn-size/20 0 rgba(0, 0, 0, .3);
-  background-color: darken($base-color, 2%);
-  &:after{
-    bottom: $btn-size/20 + $btn-size/15;
-    border-width: 0;
+  &:active,
+  &.is-pushed {
+    box-shadow: 
+      inset 0 $btn-size/32 0 lighten($base-color, 5%),
+      inset 0 (-$btn-size/32) 0 darken($base-color, 5%),
+      inset 0 0 0 $btn-size/32 darken($base-color, 3%),
+      inset 0 0 0 $btn-size/12 $base-color,
+      inset 0 0 0 $btn-size/10 darken($base-color, 20%),
+      inset 0 0 0 $btn-size/8.5 darken($base-color, 40%),
+      inset 0 0 0 $btn-size/7.5 transparentize(lighten($base-color, 30%), .8),
+      inset 0 0 0 $btn-size/5.5 darken($base-color, 3%),
+      inset 0 $btn-size/2.5 $btn-size/7.5 darken($base-color, 8%),
+      inset 0 0 $btn-size/10 $btn-size/6 darken($base-color, 15%),
+      0 $btn-size/20 0 rgba(0, 0, 0, .3);
+    background-color: darken($base-color, 2%);
+    &:after{
+      bottom: $btn-size/20 + $btn-size/15;
+      border-width: 0;
+    }
   }
 }
 
@@ -151,16 +151,6 @@ footer {
         }
         &.blue {
           @include button_norm(blue, $btn_size_lg);
-        }
-
-        &:active,
-        &.is-pushed {
-          &.red {
-            @include button_pushed(red, $btn_size_lg);
-          } 
-          &.blue {
-            @include button_pushed(blue, $btn_size_lg);
-          }
         }
       }
     }
@@ -314,29 +304,11 @@ footer {
         
         .arcade_btn {
           
-            &.red {
-
-            }
-            &.blue {
-
-            }
-
-          &:after {
+          &.red {
 
           }
+          &.blue {
 
-          &:active,
-          &.is-pushed {
-
-            &.red {
-
-            } 
-            &.blue {
-
-            }
-            &:after {
-
-            }
           }
         }
       }
@@ -410,98 +382,84 @@ footer {
 
     .control_panel {
 
-        .btn_container {
-          height: $btn_size;
-          width: $btn_size;
-          .arcade_btn {
-            margin: 0;
-            transform: scale(0.75);
-            width: $btn_size;
-            height: $btn_size;
-            &.red {
-              @include button_norm(red, $btn_size);
-            }
-            &.blue {
-              @include button_norm(blue, $btn_size);
-            }
-
-            &:active,
-            &.is-pushed {
-
-              &.red {
-                @include button_pushed(red, $btn_size);
-              } 
-              &.blue {
-                @include button_pushed(blue, $btn_size);
-              }
-            }
-          }
-        }
-
-        .label_container {
+      .btn_container {
+        height: $btn_size;
+        width: $btn_size;
+        .arcade_btn {
           margin: 0;
-          .label {
-            
-            &.red {
-
-            }
-            &.blue {
-
-            }
-            span {
-              font-size: 3em;
-            }
+          transform: scale(0.75);
+          width: $btn_size;
+          height: $btn_size;
+          &.red {
+            @include button_norm(red, $btn_size);
           }
-        }
-      }
-      .links{
-
-        form{
-
-          .btn_area{
-
-            .btn_container{
-              position: relative;
-              left: unset;
-              -webkit-transform: unset;
-              transform: unset;
-              .arcade_btn {
-                width: $btn_size_sm * 1.5;
-                height: $btn_size_sm * 1.5;
-                &.small{
-                    @include sm_button($btn_size_sm * 1.5);
-                    &.github{
-
-                    }
-                    &.linkedin{
-
-                    }
-                }
-              }
-            }
-          }
-
-          .label {
-            display: none;
-            span {
-              // font-size: 2em;
-              // -webkit-text-stroke: unset;
-              // text-shadow: 2px 2px 0px black;
-            }
-          }
-
-        }
-        .label_container {
-
-          .label {
-            
-              span {
-
-              }
+          &.blue {
+            @include button_norm(blue, $btn_size);
           }
         }
       }
 
+      .label_container {
+        margin: 0;
+        .label {
+          
+          &.red {
+
+          }
+          &.blue {
+
+          }
+          span {
+            font-size: 3em;
+          }
+        }
+      }
+    }
+    .links{
+
+      form{
+
+        .btn_area{
+
+          .btn_container{
+            position: relative;
+            left: unset;
+            -webkit-transform: unset;
+            transform: unset;
+            .arcade_btn {
+              width: $btn_size_sm * 1.5;
+              height: $btn_size_sm * 1.5;
+              &.small{
+                  @include sm_button($btn_size_sm * 1.5);
+                  &.github{
+
+                  }
+                  &.linkedin{
+
+                  }
+              }
+            }
+          }
+        }
+
+        .label {
+          display: none;
+          span {
+
+          }
+        }
+
+      }
+      .label_container {
+
+        .label {
+          
+          span {
+
+          }
+        }
+      }
+    }
   }
 }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
@@ -511,97 +469,96 @@ footer {
 
     .control_panel {
 
-        .btn_container {
-          height: 100px;
-          width: 100px;
-          .arcade_btn {
-              margin: 0;
-              transform: scale(0.75);
-              &.red {
-
-              }
-              &.blue {
-
-              }
-
-            &:after {
-
-            }
-
-            &:active,
-            &.is-pushed {
-
-              &.red {
-
-              } 
-              &.blue {
-
-              }
-              &:after {
-
-              }
-            }
-          }
-        }
-
-        .label_container {
-
-          .label {
-            
+      .btn_container {
+        height: 100px;
+        width: 100px;
+        .arcade_btn {
+            margin: 0;
+            transform: scale(0.75);
             &.red {
 
             }
             &.blue {
 
             }
-            span {
+
+          &:after {
+
+          }
+
+          &:active,
+          &.is-pushed {
+
+            &.red {
+
+            } 
+            &.blue {
+
+            }
+            &:after {
 
             }
           }
         }
       }
-      .links{
 
-        form{
+      .label_container {
 
-          .btn_area{
+        .label {
+          
+          &.red {
 
-            .btn_container{
+          }
+          &.blue {
 
-                .arcade_btn {
+          }
+          span {
 
-                    &.small{
-                                  
-                        &.github{
+          }
+        }
+      }
+    }
+    .links{
 
-                        }
-                        &.linkedin{
+      form{
 
-                        }
+        .btn_area{
+
+          .btn_container{
+
+            .arcade_btn {
+
+                &.small{
+                              
+                    &.github{
+
+                    }
+                    &.linkedin{
+
                     }
                 }
             }
           }
+        }
 
-          .label {
-          
-            span {
-
-            }
-          }
-
+        .label {
+        
+          span {
 
           }
-          .label_container {
+        }
 
 
-            .label {
-              
-                span {
-  
-                }
-            }
-          }
       }
+      .label_container {
+
+        .label {
+          
+          span {
+
+          }
+        }
+      }
+    }
   }
 }
