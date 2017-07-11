@@ -78,7 +78,7 @@ header {
     width: 50%;
     font-size: .75em; } }
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   header {
     height: 7%; }
     header ul li span {
@@ -290,7 +290,7 @@ footer {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   footer {
     height: 200px; }
     footer .control_panel .btn_container {
@@ -390,7 +390,7 @@ footer {
       footer .links form .label {
         display: none; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+@media screen and (width: 980px) and (max-height: 555px) {
   footer {
     height: 100px; }
     footer .control_panel .btn_container {
@@ -436,7 +436,7 @@ button.link_btn, .link_btn > input {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   button.link_btn, .link_btn > input {
     font-size: 24px; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
@@ -569,7 +569,7 @@ button.link_btn, .link_btn > input {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .about p {
     font-size: 24px; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
@@ -731,13 +731,13 @@ button.link_btn, .link_btn > input {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .apps_carousel_main {
     height: 50%; }
     .apps_carousel_main .apps_carousel .skewed {
       width: 9%; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+@media screen and (width: 980px) and (max-height: 555px) {
   .apps_carousel_main .apps_carousel {
     width: 70%; }
     .apps_carousel_main .apps_carousel .skewed {
@@ -872,8 +872,8 @@ button.link_btn, .link_btn > input {
         width: 60%;
         height: 100%;
         transform: translateX(-50%);
-        border-bottom: 2px solid #202020;
-        box-shadow: inset 0px -2px white;
+        border-bottom: 2px solid white;
+        box-shadow: 0 1px #202020;
         top: 0; }
 
 /*specific media queries*/
@@ -888,63 +888,65 @@ button.link_btn, .link_btn > input {
 /*landscape - iPad*/
 /*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
   Nexus 5X looks messed up*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .technologies .circle-container {
     position: relative;
-    width: 40em;
-    height: 40em;
+    width: 30em;
+    height: 30em;
     padding: 0;
     border-radius: 50%;
     list-style: none;
-    top: 5%;
-    position: absolute; }
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%); }
     .technologies .circle-container .tech {
       display: block;
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 130px;
-      height: 130px;
-      margin: -65px; }
+      width: 120px;
+      height: 120px;
+      margin: -60px; }
       .technologies .circle-container .tech:nth-of-type(1) {
-        transform: rotate(0deg) translate(20em) rotate(0deg);
-        -webkit-transform: rotate(0deg) translate(20em) rotate(0deg); }
+        transform: rotate(0deg) translate(15em) rotate(0deg);
+        -webkit-transform: rotate(0deg) translate(15em) rotate(0deg); }
       .technologies .circle-container .tech:nth-of-type(2) {
-        transform: rotate(40deg) translate(20em) rotate(-40deg);
-        -webkit-transform: rotate(40deg) translate(20em) rotate(-40deg); }
+        transform: rotate(40deg) translate(15em) rotate(-40deg);
+        -webkit-transform: rotate(40deg) translate(15em) rotate(-40deg); }
       .technologies .circle-container .tech:nth-of-type(3) {
-        transform: rotate(80deg) translate(20em) rotate(-80deg);
-        -webkit-transform: rotate(80deg) translate(20em) rotate(-80deg); }
+        transform: rotate(80deg) translate(15em) rotate(-80deg);
+        -webkit-transform: rotate(80deg) translate(15em) rotate(-80deg); }
       .technologies .circle-container .tech:nth-of-type(4) {
-        transform: rotate(120deg) translate(20em) rotate(-120deg);
-        -webkit-transform: rotate(120deg) translate(20em) rotate(-120deg); }
+        transform: rotate(120deg) translate(15em) rotate(-120deg);
+        -webkit-transform: rotate(120deg) translate(15em) rotate(-120deg); }
       .technologies .circle-container .tech:nth-of-type(5) {
-        transform: rotate(160deg) translate(20em) rotate(-160deg);
-        -webkit-transform: rotate(160deg) translate(20em) rotate(-160deg); }
+        transform: rotate(160deg) translate(15em) rotate(-160deg);
+        -webkit-transform: rotate(160deg) translate(15em) rotate(-160deg); }
       .technologies .circle-container .tech:nth-of-type(6) {
-        transform: rotate(200deg) translate(20em) rotate(-200deg);
-        -webkit-transform: rotate(200deg) translate(20em) rotate(-200deg); }
+        transform: rotate(200deg) translate(15em) rotate(-200deg);
+        -webkit-transform: rotate(200deg) translate(15em) rotate(-200deg); }
       .technologies .circle-container .tech:nth-of-type(7) {
-        transform: rotate(240deg) translate(20em) rotate(-240deg);
-        -webkit-transform: rotate(240deg) translate(20em) rotate(-240deg); }
+        transform: rotate(240deg) translate(15em) rotate(-240deg);
+        -webkit-transform: rotate(240deg) translate(15em) rotate(-240deg); }
       .technologies .circle-container .tech:nth-of-type(8) {
-        transform: rotate(280deg) translate(20em) rotate(-280deg);
-        -webkit-transform: rotate(280deg) translate(20em) rotate(-280deg); }
+        transform: rotate(280deg) translate(15em) rotate(-280deg);
+        -webkit-transform: rotate(280deg) translate(15em) rotate(-280deg); }
       .technologies .circle-container .tech:nth-of-type(9) {
-        transform: rotate(320deg) translate(20em) rotate(-320deg);
-        -webkit-transform: rotate(320deg) translate(20em) rotate(-320deg); }
+        transform: rotate(320deg) translate(15em) rotate(-320deg);
+        -webkit-transform: rotate(320deg) translate(15em) rotate(-320deg); }
   .technologies .tech_info {
     height: initial;
     width: 75%;
     position: absolute;
-    bottom: 2.5%;
+    bottom: 1.5%;
     left: 50%;
     transform: translateX(-50%); }
     .technologies .tech_info .apps li span {
       font-size: 2em;
       line-height: 2; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+@media screen and (width: 980px) and (max-height: 555px) {
   .technologies .circle-container {
     position: relative;
     width: 17.5em;
@@ -1114,11 +1116,17 @@ button:focus {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .main_screen .screen {
-    width: 96%; } }
+    width: 96%; }
+    .main_screen .screen .page .title {
+      height: 10%; }
+      .main_screen .screen .page .title span {
+        height: 3em; }
+      .main_screen .screen .page .title h2 {
+        font-size: 3em; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+@media screen and (width: 980px) and (max-height: 555px) {
   .main_screen {
     top: 12%;
     height: 69%; }

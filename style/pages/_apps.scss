@@ -223,7 +223,7 @@ $carousel_vert_offset: 10%;
 
 }
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
     // area above the app carousel
     .apps_carousel_top{
         .link_btn_container{
@@ -278,7 +278,7 @@ $carousel_vert_offset: 10%;
     }
 }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px){
+@media screen and (width: 980px) and (max-height: 555px){
     // the main area of the app carousel
     .apps_carousel_main{
         
