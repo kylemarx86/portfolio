@@ -365,38 +365,20 @@ footer {
 
           .btn_container{
 
-              .arcade_btn {
+            .arcade_btn {
 
-                  &.small{
-                                
-                      &.github{
+              &.small{
+                            
+                &.github{
 
-                      }
-                      &.linkedin{
+                }
+                &.linkedin{
 
-                      }
-                  }
-
-                  &:after {
-              
-                  }
-
-                  &:active,
-                  &.is-pushed {
-    
-                    &.small{
-                        
-                    } 
-
-                  
-                  &:after {
-
-                  }
                 }
               }
+            }
           }
         }
-
         .label {
         
           span {
@@ -406,12 +388,11 @@ footer {
       }
       .label_container {
 
-
         .label {
           
-            span {
+          span {
 
-            }
+          }
         }
       }
     }
@@ -493,14 +474,6 @@ footer {
                         }
                     }
 
-                    &:active,
-                    &.is-pushed {
-      
-                      &.small{
-                          
-                      } 
-
-                  }
                 }
             }
           }
@@ -605,23 +578,6 @@ footer {
 
                         }
                     }
-
-                    &:after {
-                
-                    }
-
-                    &:active,
-                    &.is-pushed {
-      
-                      &.small{
-                          
-                      } 
-
-                    
-                    &:after {
-
-                    }
-                  }
                 }
             }
           }
