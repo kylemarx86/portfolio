@@ -294,7 +294,7 @@
       .circle-container {
         @include on-circle($item-count: 9, $circle-diam: 30em, $item-size: 120px); 
         position: absolute;
-        top: 5%;
+        top: 7%;
         left: 50%;
         transform: translateX(-50%);
 
