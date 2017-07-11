@@ -51,7 +51,7 @@ $btn_size_sm: 0.5 * $btn_size_lg;
   }
 }
 
-@mixin sm_button_norm($btn-size){
+@mixin sm_button($btn-size){
   $base-color: white;
   background-color: $base-color;
   background-size: 40px 40px;
@@ -235,7 +235,7 @@ footer {
             transition: box-shadow 200ms;
 
             &.small{
-              @include sm_button_norm($btn_size_sm);
+              @include sm_button($btn_size_sm);
                           
               &.github{
                 background-image: url('resources/github.png');
