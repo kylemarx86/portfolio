@@ -891,8 +891,8 @@ button.link_btn, .link_btn > input {
 @media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .technologies .circle-container {
     position: relative;
-    width: 40em;
-    height: 40em;
+    width: 30em;
+    height: 30em;
     padding: 0;
     border-radius: 50%;
     list-style: none;
@@ -909,32 +909,32 @@ button.link_btn, .link_btn > input {
       height: 130px;
       margin: -65px; }
       .technologies .circle-container .tech:nth-of-type(1) {
-        transform: rotate(0deg) translate(20em) rotate(0deg);
-        -webkit-transform: rotate(0deg) translate(20em) rotate(0deg); }
+        transform: rotate(0deg) translate(15em) rotate(0deg);
+        -webkit-transform: rotate(0deg) translate(15em) rotate(0deg); }
       .technologies .circle-container .tech:nth-of-type(2) {
-        transform: rotate(40deg) translate(20em) rotate(-40deg);
-        -webkit-transform: rotate(40deg) translate(20em) rotate(-40deg); }
+        transform: rotate(40deg) translate(15em) rotate(-40deg);
+        -webkit-transform: rotate(40deg) translate(15em) rotate(-40deg); }
       .technologies .circle-container .tech:nth-of-type(3) {
-        transform: rotate(80deg) translate(20em) rotate(-80deg);
-        -webkit-transform: rotate(80deg) translate(20em) rotate(-80deg); }
+        transform: rotate(80deg) translate(15em) rotate(-80deg);
+        -webkit-transform: rotate(80deg) translate(15em) rotate(-80deg); }
       .technologies .circle-container .tech:nth-of-type(4) {
-        transform: rotate(120deg) translate(20em) rotate(-120deg);
-        -webkit-transform: rotate(120deg) translate(20em) rotate(-120deg); }
+        transform: rotate(120deg) translate(15em) rotate(-120deg);
+        -webkit-transform: rotate(120deg) translate(15em) rotate(-120deg); }
       .technologies .circle-container .tech:nth-of-type(5) {
-        transform: rotate(160deg) translate(20em) rotate(-160deg);
-        -webkit-transform: rotate(160deg) translate(20em) rotate(-160deg); }
+        transform: rotate(160deg) translate(15em) rotate(-160deg);
+        -webkit-transform: rotate(160deg) translate(15em) rotate(-160deg); }
       .technologies .circle-container .tech:nth-of-type(6) {
-        transform: rotate(200deg) translate(20em) rotate(-200deg);
-        -webkit-transform: rotate(200deg) translate(20em) rotate(-200deg); }
+        transform: rotate(200deg) translate(15em) rotate(-200deg);
+        -webkit-transform: rotate(200deg) translate(15em) rotate(-200deg); }
       .technologies .circle-container .tech:nth-of-type(7) {
-        transform: rotate(240deg) translate(20em) rotate(-240deg);
-        -webkit-transform: rotate(240deg) translate(20em) rotate(-240deg); }
+        transform: rotate(240deg) translate(15em) rotate(-240deg);
+        -webkit-transform: rotate(240deg) translate(15em) rotate(-240deg); }
       .technologies .circle-container .tech:nth-of-type(8) {
-        transform: rotate(280deg) translate(20em) rotate(-280deg);
-        -webkit-transform: rotate(280deg) translate(20em) rotate(-280deg); }
+        transform: rotate(280deg) translate(15em) rotate(-280deg);
+        -webkit-transform: rotate(280deg) translate(15em) rotate(-280deg); }
       .technologies .circle-container .tech:nth-of-type(9) {
-        transform: rotate(320deg) translate(20em) rotate(-320deg);
-        -webkit-transform: rotate(320deg) translate(20em) rotate(-320deg); }
+        transform: rotate(320deg) translate(15em) rotate(-320deg);
+        -webkit-transform: rotate(320deg) translate(15em) rotate(-320deg); }
   .technologies .tech_info {
     height: initial;
     width: 75%;

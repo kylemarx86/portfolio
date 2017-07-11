@@ -292,7 +292,7 @@
 @media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .technologies{
       .circle-container {
-        @include on-circle($item-count: 9, $circle-diam: 40em, $item-size: 130px); 
+        @include on-circle($item-count: 9, $circle-diam: 30em, $item-size: 130px); 
         position: absolute;
         top: 5%;
         left: 50%;
