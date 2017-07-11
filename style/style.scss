@@ -139,7 +139,7 @@ button:focus {
 
 }
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
     .main_screen{
 
         .screen{
@@ -176,7 +176,7 @@ button:focus {
     }    
 }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px){
+@media screen and (width: 980px) and (max-height: 555px){
     .main_screen{
         top: 12%;
         height: 69%;

@@ -78,7 +78,7 @@ header {
     width: 50%;
     font-size: .75em; } }
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   header {
     height: 7%; }
     header ul li span {
@@ -436,7 +436,7 @@ button.link_btn, .link_btn > input {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   button.link_btn, .link_btn > input {
     font-size: 24px; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
@@ -569,7 +569,7 @@ button.link_btn, .link_btn > input {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .about p {
     font-size: 24px; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
@@ -731,13 +731,13 @@ button.link_btn, .link_btn > input {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .apps_carousel_main {
     height: 50%; }
     .apps_carousel_main .apps_carousel .skewed {
       width: 9%; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+@media screen and (width: 980px) and (max-height: 555px) {
   .apps_carousel_main .apps_carousel {
     width: 70%; }
     .apps_carousel_main .apps_carousel .skewed {
@@ -888,7 +888,7 @@ button.link_btn, .link_btn > input {
 /*landscape - iPad*/
 /*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
   Nexus 5X looks messed up*/
-@media screen and (width: 980px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .technologies .circle-container {
     position: relative;
     width: 40em;
@@ -944,7 +944,7 @@ button.link_btn, .link_btn > input {
       font-size: 2em;
       line-height: 2; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+@media screen and (width: 980px) and (max-height: 555px) {
   .technologies .circle-container {
     position: relative;
     width: 17.5em;
@@ -1114,11 +1114,11 @@ button:focus {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .main_screen .screen {
     width: 96%; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+@media screen and (width: 980px) and (max-height: 555px) {
   .main_screen {
     top: 12%;
     height: 69%; }
