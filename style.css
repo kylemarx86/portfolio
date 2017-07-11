@@ -878,7 +878,8 @@ button.link_btn, .link_btn > input {
 @media screen and (width: 980px) and (height: 1306px) {
   .technologies .tech_info {
     height: initial;
-    width: 25%; } }
+    width: 30%;
+    margin-left: 10%; } }
 /*landscape - iPad*/
 /*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
   Nexus 5X looks messed up*/
