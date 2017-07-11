@@ -237,7 +237,9 @@ footer {
           }
         }
       }
+      br{
 
+      }
       .label {
         position: relative;
         display: inline-block;
@@ -351,6 +353,9 @@ footer {
             }
           }
         }
+        br{
+
+        }
         .label {
         
           span {
@@ -418,7 +423,8 @@ footer {
     .links{
 
       form{
-
+        display: flex;
+        flex-direction: column;
         .btn_area{
 
           .btn_container{
@@ -430,18 +436,20 @@ footer {
               width: $btn_size_sm * 1.5;
               height: $btn_size_sm * 1.5;
               &.small{
-                  @include sm_button($btn_size_sm * 1.5);
-                  &.github{
+                @include sm_button($btn_size_sm * 1.5);
+                &.github{
 
-                  }
-                  &.linkedin{
+                }
+                &.linkedin{
 
-                  }
+                }
               }
             }
           }
         }
-
+        br{
+           display: none;       
+        }
         .label {
           display: none;
           span {
@@ -540,7 +548,9 @@ footer {
             }
           }
         }
-
+        br{
+          
+        }
         .label {
         
           span {
