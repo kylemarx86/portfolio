@@ -349,10 +349,41 @@ footer {
       margin: 0; }
       footer .control_panel .label_container .label span {
         font-size: 3em; }
-    footer .links form .label span {
-      font-size: 2em;
-      -webkit-text-stroke: unset;
-      text-shadow: 2px 2px 0px black; } }
+    footer .links form .btn_area .btn_container {
+      position: relative;
+      left: unset;
+      -webkit-transform: unset;
+      transform: unset; }
+      footer .links form .btn_area .btn_container .arcade_btn {
+        width: 75px;
+        height: 75px; }
+        footer .links form .btn_area .btn_container .arcade_btn.small {
+          background-color: white;
+          background-size: 40px 40px;
+          background-repeat: no-repeat;
+          background-position: center;
+          box-shadow: inset 0 2.34375px 0 white, inset 0 -2.34375px 0 #f2f2f2, inset 0 0 0 2.34375px #f7f7f7, inset 0 0 0 6.25px white, inset 0 0 0 7.5px #cccccc, inset 0 0 0 8.15217px gray, inset 0 0 0 10px rgba(255, 255, 255, 0.7), inset 0 0 0 13.63636px white, inset 0 0 7.5px 12.5px #e6e6e6, 0 3.75px 0 rgba(0, 0, 0, 0.3); }
+          footer .links form .btn_area .btn_container .arcade_btn.small:after {
+            content: '';
+            position: absolute;
+            bottom: 3.75px;
+            left: 7.5px;
+            display: block;
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(0, 0, 0, 0.3);
+            border-width: 0 0 5px;
+            border-radius: 50%;
+            -webkit-transition-duration: 200ms;
+            transition-duration: 200ms; }
+          footer .links form .btn_area .btn_container .arcade_btn.small:active.small, footer .links form .btn_area .btn_container .arcade_btn.small.is-pushed.small {
+            box-shadow: inset 0 2.34375px 0 white, inset 0 -2.34375px 0 #f2f2f2, inset 0 0 0 2.34375px #f7f7f7, inset 0 0 0 6.25px white, inset 0 0 0 7.5px #cccccc, inset 0 0 0 8.82353px #999999, inset 0 0 0 10px rgba(255, 255, 255, 0.2), inset 0 0 0 13.63636px #f7f7f7, inset 0 0 7.5px 12.5px #d9d9d9, 0 3.75px 0 rgba(0, 0, 0, 0.3);
+            background-color: #fafafa; }
+          footer .links form .btn_area .btn_container .arcade_btn.small:active:after, footer .links form .btn_area .btn_container .arcade_btn.small.is-pushed:after {
+            bottom: 8.75px;
+            border-width: 0; }
+    footer .links form .label {
+      display: none; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 @media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
   footer {

@@ -461,36 +461,37 @@ footer {
           .btn_area{
 
             .btn_container{
+              position: relative;
+              left: unset;
+              -webkit-transform: unset;
+              transform: unset;
+              .arcade_btn {
+                width: $btn_size_sm * 1.5;
+                height: $btn_size_sm * 1.5;
+                &.small{
+                    @include sm_button($btn_size_sm * 1.5);
+                    &.github{
 
-                .arcade_btn {
-
-                    &.small{
-                                  
-                        &.github{
-
-                        }
-                        &.linkedin{
-
-                        }
                     }
+                    &.linkedin{
 
+                    }
                 }
+              }
             }
           }
 
           .label {
-
+            display: none;
             span {
-              font-size: 2em;
-              -webkit-text-stroke: unset;
-              text-shadow: 2px 2px 0px black;
+              // font-size: 2em;
+              // -webkit-text-stroke: unset;
+              // text-shadow: 2px 2px 0px black;
             }
           }
 
-
         }
         .label_container {
-
 
           .label {
             
