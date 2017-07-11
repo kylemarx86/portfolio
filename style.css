@@ -897,7 +897,7 @@ button.link_btn, .link_btn > input {
     border-radius: 50%;
     list-style: none;
     position: absolute;
-    top: 7%;
+    top: 6%;
     left: 50%;
     transform: translateX(-50%); }
     .technologies .circle-container .tech {
@@ -939,7 +939,7 @@ button.link_btn, .link_btn > input {
     height: initial;
     width: 75%;
     position: absolute;
-    bottom: 2%;
+    bottom: 1.5%;
     left: 50%;
     transform: translateX(-50%); }
     .technologies .tech_info .apps li span {
