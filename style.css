@@ -896,8 +896,10 @@ button.link_btn, .link_btn > input {
     padding: 0;
     border-radius: 50%;
     list-style: none;
+    position: absolute;
     top: 5%;
-    position: absolute; }
+    left: 50%;
+    transform: translateX(-50%); }
     .technologies .circle-container .tech {
       display: block;
       position: absolute;

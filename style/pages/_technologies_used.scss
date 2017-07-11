@@ -293,8 +293,10 @@
   .technologies{
       .circle-container {
         @include on-circle($item-count: 9, $circle-diam: 40em, $item-size: 130px); 
-        top: 5%;
         position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
 
         .tech{
 
