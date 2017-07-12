@@ -747,9 +747,11 @@ button.link_btn, .link_btn > input {
 .technologies {
   width: 100%;
   height: 100%;
-  display: flex;
   justify-content: space-around;
   align-items: center;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  display: flex;
   flex-wrap: wrap; }
   .technologies .circle-container {
     position: relative;
