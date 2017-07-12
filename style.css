@@ -349,6 +349,8 @@ footer {
       footer .control_panel .label_container .label span {
         font-size: 3em; }
     footer .links form {
+      display: -webkit-flex;
+      -webkit-flex-direction: column;
       display: flex;
       flex-direction: column; }
       footer .links form .btn_area .btn_container {
