@@ -117,6 +117,7 @@
       height: 100%;
       width: 20%;
       background-color: #353535;
+      border: 2px solid darkorange;
 
       .name{
         display: inline-block;
@@ -154,7 +155,12 @@
           width: 60%;
           height: 100%;
           transform: translateX(-50%);
+          // border-bottom: 2px solid #202020;
+          // box-shadow: inset 0px -2px white;
+          // border-bottom: 1px solid #202020;
+          // box-shadow: inset 0 -1px white;
           border-bottom: 2px solid white;
+          box-shadow: 0 1px #202020;
           top: 0;
         }
 
@@ -176,19 +182,11 @@
 }
 /*portrait - iPad*/
 @media screen and (width: 980px) and (height: 1306px) {
-
-}
-/*landscape - iPad*/
-@media screen and (width: 1306px) and (height: 980px) {
-
-}
-/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
-
+  
   .technologies{
     
       .circle-container {
-        // @include on-circle($item-count: 9, $circle-diam: 25em, $item-size: 100px); 
+        // @include on-circle($item-count: 9, $circle-diam: 40em, $item-size: 130px); 
 
         .tech{
 
@@ -215,7 +213,8 @@
 
       .tech_info{
         height: initial;
-
+        width: 30%;
+        margin-left: 10%;
         .name{
         
         }
@@ -223,7 +222,7 @@
           li{
 
             span{
-
+   
             }
             
             button{
@@ -237,15 +236,71 @@
         }
       }
   }
-
 }
-/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px){
+/*landscape - iPad*/
+@media screen and (width: 1306px) and (height: 980px) {
+
   .technologies{
     
       .circle-container {
-        @include on-circle($item-count: 9, $circle-diam: 17.5em, $item-size: 75px);
-        // @include on-circle($item-count: 9, $circle-diam: 12.5em, $item-size: 50px);
+        // @include on-circle($item-count: 9, $circle-diam: 40em, $item-size: 130px); 
+
+        .tech{
+
+          &.selected{
+
+              img{
+              }
+          }
+          &:not(.selected){
+
+          }
+          &.deselected{
+
+          }
+        }
+        
+        img { 
+          
+          &:hover,
+          &:active {
+          }
+        }
+      }
+
+      .tech_info{
+        .name{
+        
+        }
+        .apps{
+          li{
+
+            span{
+   
+            }
+            
+            button{
+
+            }
+          }
+
+          li:not(:last-child)::after {
+
+          }
+        }
+      }
+  }
+}
+/*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
+  Nexus 5X looks messed up*/
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
+  .technologies{
+      .circle-container {
+        @include on-circle($item-count: 9, $circle-diam: 30em, $item-size: 120px); 
+        position: absolute;
+        top: 6%;
+        left: 50%;
+        transform: translateX(-50%);
 
         .tech{
 
@@ -272,6 +327,70 @@
 
       .tech_info{
         height: initial;
+        width: 75%;
+        position: absolute;
+        bottom: 1.5%;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        .name{
+        
+        }
+        .apps{
+          li{
+
+            span{
+              font-size: 2em;
+              line-height: 2;
+            }
+            
+            button{
+
+            }
+          }
+
+          li:not(:last-child)::after {
+            // border-bottom: 1px solid #202020;
+            // box-shadow: inset 0 -2px white;
+          }
+        }
+      }
+  }
+
+}
+/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen and (width: 980px) and (max-height: 555px){
+  .technologies{
+    
+      .circle-container {
+        @include on-circle($item-count: 9, $circle-diam: 17.5em, $item-size: 75px);
+
+        .tech{
+
+          &.selected{
+
+              img{
+              }
+          }
+          &:not(.selected){
+
+          }
+          &.deselected{
+
+          }
+        }
+        
+        img { 
+          
+          &:hover,
+          &:active {
+          }
+        }
+      }
+
+      .tech_info{
+        height: initial;
+        width: 35%;
         
         .name{
         

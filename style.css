@@ -78,7 +78,7 @@ header {
     width: 50%;
     font-size: .75em; } }
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   header {
     height: 7%; }
     header ul li span {
@@ -92,7 +92,8 @@ footer {
   height: 125px;
   bottom: 0;
   left: 0;
-  background-color: #524A4A; }
+  background-color: #524A4A;
+  box-shadow: 0px -1px 2px 1px black; }
   footer .control_panel {
     display: inline-block;
     position: relative;
@@ -120,36 +121,52 @@ footer {
         footer .control_panel .btn_container .arcade_btn.red {
           background-color: red;
           box-shadow: inset 0 3.125px 0 #ff1a1a, inset 0 -3.125px 0 #e60000, inset 0 0 0 3.125px #f00000, inset 0 0 0 8.33333px red, inset 0 0 0 10px #990000, inset 0 0 0 10.86957px black, inset 0 0 0 13.33333px rgba(255, 153, 153, 0.7), inset 0 0 0 18.18182px red, inset 0 40px 13.33333px #e60000, inset 0 0 10px 16.66667px #cc0000, 0 5px 0 rgba(0, 0, 0, 0.3); }
+          footer .control_panel .btn_container .arcade_btn.red:after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 10px;
+            display: block;
+            width: 80px;
+            height: 80px;
+            border: 6.66667px solid rgba(0, 0, 0, 0.3);
+            border-width: 0 0 6.66667px;
+            border-radius: 50%;
+            -webkit-transition-duration: 200ms;
+            transition-duration: 200ms; }
+          footer .control_panel .btn_container .arcade_btn.red:active, footer .control_panel .btn_container .arcade_btn.red.is-pushed {
+            box-shadow: inset 0 3.125px 0 #ff1a1a, inset 0 -3.125px 0 #e60000, inset 0 0 0 3.125px #f00000, inset 0 0 0 8.33333px red, inset 0 0 0 10px #990000, inset 0 0 0 11.76471px #330000, inset 0 0 0 13.33333px rgba(255, 153, 153, 0.2), inset 0 0 0 18.18182px #f00000, inset 0 40px 13.33333px #d60000, inset 0 0 10px 16.66667px #b30000, 0 5px 0 rgba(0, 0, 0, 0.3);
+            background-color: #f50000; }
+            footer .control_panel .btn_container .arcade_btn.red:active:after, footer .control_panel .btn_container .arcade_btn.red.is-pushed:after {
+              bottom: 11.66667px;
+              border-width: 0; }
         footer .control_panel .btn_container .arcade_btn.blue {
           background-color: blue;
           box-shadow: inset 0 3.125px 0 #1a1aff, inset 0 -3.125px 0 #0000e6, inset 0 0 0 3.125px #0000f0, inset 0 0 0 8.33333px blue, inset 0 0 0 10px #000099, inset 0 0 0 10.86957px black, inset 0 0 0 13.33333px rgba(153, 153, 255, 0.7), inset 0 0 0 18.18182px blue, inset 0 40px 13.33333px #0000e6, inset 0 0 10px 16.66667px #0000cc, 0 5px 0 rgba(0, 0, 0, 0.3); }
-        footer .control_panel .btn_container .arcade_btn:after {
-          content: '';
-          position: absolute;
-          bottom: 5px;
-          left: 10px;
-          display: block;
-          width: 80px;
-          height: 80px;
-          border: 6.66667px solid rgba(0, 0, 0, 0.3);
-          border-width: 0 0 6.66667px;
-          border-radius: 50%;
-          -webkit-transition-duration: 200ms;
-          transition-duration: 200ms; }
-        footer .control_panel .btn_container .arcade_btn:active.red, footer .control_panel .btn_container .arcade_btn.is-pushed.red {
-          box-shadow: inset 0 3.125px 0 #ff1a1a, inset 0 -3.125px 0 #e60000, inset 0 0 0 3.125px #f00000, inset 0 0 0 8.33333px red, inset 0 0 0 10px #990000, inset 0 0 0 11.76471px #330000, inset 0 0 0 13.33333px rgba(255, 153, 153, 0.2), inset 0 0 0 18.18182px #f00000, inset 0 40px 13.33333px #d60000, inset 0 0 10px 16.66667px #b30000, 0 5px 0 rgba(0, 0, 0, 0.3);
-          background-color: #f50000; }
-        footer .control_panel .btn_container .arcade_btn:active.blue, footer .control_panel .btn_container .arcade_btn.is-pushed.blue {
-          box-shadow: inset 0 3.125px 0 #1a1aff, inset 0 -3.125px 0 #0000e6, inset 0 0 0 3.125px #0000f0, inset 0 0 0 8.33333px blue, inset 0 0 0 10px #000099, inset 0 0 0 11.76471px #000033, inset 0 0 0 13.33333px rgba(153, 153, 255, 0.2), inset 0 0 0 18.18182px #0000f0, inset 0 40px 13.33333px #0000d6, inset 0 0 10px 16.66667px #0000b3, 0 5px 0 rgba(0, 0, 0, 0.3);
-          background-color: #0000f5; }
-        footer .control_panel .btn_container .arcade_btn:active:after, footer .control_panel .btn_container .arcade_btn.is-pushed:after {
-          bottom: 11.66667px;
-          border-width: 0; }
+          footer .control_panel .btn_container .arcade_btn.blue:after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 10px;
+            display: block;
+            width: 80px;
+            height: 80px;
+            border: 6.66667px solid rgba(0, 0, 0, 0.3);
+            border-width: 0 0 6.66667px;
+            border-radius: 50%;
+            -webkit-transition-duration: 200ms;
+            transition-duration: 200ms; }
+          footer .control_panel .btn_container .arcade_btn.blue:active, footer .control_panel .btn_container .arcade_btn.blue.is-pushed {
+            box-shadow: inset 0 3.125px 0 #1a1aff, inset 0 -3.125px 0 #0000e6, inset 0 0 0 3.125px #0000f0, inset 0 0 0 8.33333px blue, inset 0 0 0 10px #000099, inset 0 0 0 11.76471px #000033, inset 0 0 0 13.33333px rgba(153, 153, 255, 0.2), inset 0 0 0 18.18182px #0000f0, inset 0 40px 13.33333px #0000d6, inset 0 0 10px 16.66667px #0000b3, 0 5px 0 rgba(0, 0, 0, 0.3);
+            background-color: #0000f5; }
+            footer .control_panel .btn_container .arcade_btn.blue:active:after, footer .control_panel .btn_container .arcade_btn.blue.is-pushed:after {
+              bottom: 11.66667px;
+              border-width: 0; }
     footer .control_panel .label_container {
       position: relative;
       display: inline-block;
       height: 100%;
-      width: 86px;
+      width: 5.5em;
       margin: 0 10px; }
       footer .control_panel .label_container .label {
         position: absolute;
@@ -208,29 +225,29 @@ footer {
               background-repeat: no-repeat;
               background-position: center;
               box-shadow: inset 0 1.5625px 0 white, inset 0 -1.5625px 0 #f2f2f2, inset 0 0 0 1.5625px #f7f7f7, inset 0 0 0 4.16667px white, inset 0 0 0 5px #cccccc, inset 0 0 0 5.43478px gray, inset 0 0 0 6.66667px rgba(255, 255, 255, 0.7), inset 0 0 0 9.09091px white, inset 0 0 5px 8.33333px #e6e6e6, 0 2.5px 0 rgba(0, 0, 0, 0.3); }
+              footer .links form .btn_area .btn_container .arcade_btn.small:after {
+                content: '';
+                position: absolute;
+                bottom: 2.5px;
+                left: 5px;
+                display: block;
+                width: 40px;
+                height: 40px;
+                border: 3.33333px solid rgba(0, 0, 0, 0.3);
+                border-width: 0 0 3.33333px;
+                border-radius: 50%;
+                -webkit-transition-duration: 200ms;
+                transition-duration: 200ms; }
+              footer .links form .btn_area .btn_container .arcade_btn.small:active.small, footer .links form .btn_area .btn_container .arcade_btn.small.is-pushed.small {
+                box-shadow: inset 0 1.5625px 0 white, inset 0 -1.5625px 0 #f2f2f2, inset 0 0 0 1.5625px #f7f7f7, inset 0 0 0 4.16667px white, inset 0 0 0 5px #cccccc, inset 0 0 0 5.88235px #999999, inset 0 0 0 6.66667px rgba(255, 255, 255, 0.2), inset 0 0 0 9.09091px #f7f7f7, inset 0 0 5px 8.33333px #d9d9d9, 0 2.5px 0 rgba(0, 0, 0, 0.3);
+                background-color: #fafafa; }
+              footer .links form .btn_area .btn_container .arcade_btn.small:active:after, footer .links form .btn_area .btn_container .arcade_btn.small.is-pushed:after {
+                bottom: 5.83333px;
+                border-width: 0; }
               footer .links form .btn_area .btn_container .arcade_btn.small.github {
                 background-image: url("resources/github.png"); }
               footer .links form .btn_area .btn_container .arcade_btn.small.linkedin {
                 background-image: url("resources/linkedin.png"); }
-            footer .links form .btn_area .btn_container .arcade_btn:after {
-              content: '';
-              position: absolute;
-              bottom: 2.5px;
-              left: 5px;
-              display: block;
-              width: 40px;
-              height: 40px;
-              border: 3.33333px solid rgba(0, 0, 0, 0.3);
-              border-width: 0 0 3.33333px;
-              border-radius: 50%;
-              -webkit-transition-duration: 200ms;
-              transition-duration: 200ms; }
-            footer .links form .btn_area .btn_container .arcade_btn:active.small, footer .links form .btn_area .btn_container .arcade_btn.is-pushed.small {
-              box-shadow: inset 0 1.5625px 0 white, inset 0 -1.5625px 0 #f2f2f2, inset 0 0 0 1.5625px #f7f7f7, inset 0 0 0 4.16667px white, inset 0 0 0 5px #cccccc, inset 0 0 0 5.88235px #999999, inset 0 0 0 6.66667px rgba(255, 255, 255, 0.2), inset 0 0 0 9.09091px #f7f7f7, inset 0 0 5px 8.33333px #d9d9d9, 0 2.5px 0 rgba(0, 0, 0, 0.3);
-              background-color: #fafafa; }
-            footer .links form .btn_area .btn_container .arcade_btn:active:after, footer .links form .btn_area .btn_container .arcade_btn.is-pushed:after {
-              bottom: 5.83333px;
-              border-width: 0; }
       footer .links form .label {
         position: relative;
         display: inline-block;
@@ -273,8 +290,107 @@ footer {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
+  footer {
+    height: 200px; }
+    footer .control_panel .btn_container {
+      height: 200px;
+      width: 200px; }
+      footer .control_panel .btn_container .arcade_btn {
+        margin: 0;
+        transform: scale(0.75);
+        width: 200px;
+        height: 200px; }
+        footer .control_panel .btn_container .arcade_btn.red {
+          background-color: red;
+          box-shadow: inset 0 6.25px 0 #ff1a1a, inset 0 -6.25px 0 #e60000, inset 0 0 0 6.25px #f00000, inset 0 0 0 16.66667px red, inset 0 0 0 20px #990000, inset 0 0 0 21.73913px black, inset 0 0 0 26.66667px rgba(255, 153, 153, 0.7), inset 0 0 0 36.36364px red, inset 0 80px 26.66667px #e60000, inset 0 0 20px 33.33333px #cc0000, 0 10px 0 rgba(0, 0, 0, 0.3); }
+          footer .control_panel .btn_container .arcade_btn.red:after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            display: block;
+            width: 160px;
+            height: 160px;
+            border: 13.33333px solid rgba(0, 0, 0, 0.3);
+            border-width: 0 0 13.33333px;
+            border-radius: 50%;
+            -webkit-transition-duration: 200ms;
+            transition-duration: 200ms; }
+          footer .control_panel .btn_container .arcade_btn.red:active, footer .control_panel .btn_container .arcade_btn.red.is-pushed {
+            box-shadow: inset 0 6.25px 0 #ff1a1a, inset 0 -6.25px 0 #e60000, inset 0 0 0 6.25px #f00000, inset 0 0 0 16.66667px red, inset 0 0 0 20px #990000, inset 0 0 0 23.52941px #330000, inset 0 0 0 26.66667px rgba(255, 153, 153, 0.2), inset 0 0 0 36.36364px #f00000, inset 0 80px 26.66667px #d60000, inset 0 0 20px 33.33333px #b30000, 0 10px 0 rgba(0, 0, 0, 0.3);
+            background-color: #f50000; }
+            footer .control_panel .btn_container .arcade_btn.red:active:after, footer .control_panel .btn_container .arcade_btn.red.is-pushed:after {
+              bottom: 23.33333px;
+              border-width: 0; }
+        footer .control_panel .btn_container .arcade_btn.blue {
+          background-color: blue;
+          box-shadow: inset 0 6.25px 0 #1a1aff, inset 0 -6.25px 0 #0000e6, inset 0 0 0 6.25px #0000f0, inset 0 0 0 16.66667px blue, inset 0 0 0 20px #000099, inset 0 0 0 21.73913px black, inset 0 0 0 26.66667px rgba(153, 153, 255, 0.7), inset 0 0 0 36.36364px blue, inset 0 80px 26.66667px #0000e6, inset 0 0 20px 33.33333px #0000cc, 0 10px 0 rgba(0, 0, 0, 0.3); }
+          footer .control_panel .btn_container .arcade_btn.blue:after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            display: block;
+            width: 160px;
+            height: 160px;
+            border: 13.33333px solid rgba(0, 0, 0, 0.3);
+            border-width: 0 0 13.33333px;
+            border-radius: 50%;
+            -webkit-transition-duration: 200ms;
+            transition-duration: 200ms; }
+          footer .control_panel .btn_container .arcade_btn.blue:active, footer .control_panel .btn_container .arcade_btn.blue.is-pushed {
+            box-shadow: inset 0 6.25px 0 #1a1aff, inset 0 -6.25px 0 #0000e6, inset 0 0 0 6.25px #0000f0, inset 0 0 0 16.66667px blue, inset 0 0 0 20px #000099, inset 0 0 0 23.52941px #000033, inset 0 0 0 26.66667px rgba(153, 153, 255, 0.2), inset 0 0 0 36.36364px #0000f0, inset 0 80px 26.66667px #0000d6, inset 0 0 20px 33.33333px #0000b3, 0 10px 0 rgba(0, 0, 0, 0.3);
+            background-color: #0000f5; }
+            footer .control_panel .btn_container .arcade_btn.blue:active:after, footer .control_panel .btn_container .arcade_btn.blue.is-pushed:after {
+              bottom: 23.33333px;
+              border-width: 0; }
+    footer .control_panel .label_container {
+      margin: 0; }
+      footer .control_panel .label_container .label span {
+        font-size: 3em; }
+    footer .links form {
+      display: flex;
+      flex-direction: column; }
+      footer .links form .btn_area .btn_container {
+        position: relative;
+        left: unset;
+        -webkit-transform: unset;
+        transform: unset; }
+        footer .links form .btn_area .btn_container .arcade_btn {
+          width: 75px;
+          height: 75px; }
+          footer .links form .btn_area .btn_container .arcade_btn.small {
+            background-color: white;
+            background-size: 40px 40px;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: inset 0 2.34375px 0 white, inset 0 -2.34375px 0 #f2f2f2, inset 0 0 0 2.34375px #f7f7f7, inset 0 0 0 6.25px white, inset 0 0 0 7.5px #cccccc, inset 0 0 0 8.15217px gray, inset 0 0 0 10px rgba(255, 255, 255, 0.7), inset 0 0 0 13.63636px white, inset 0 0 7.5px 12.5px #e6e6e6, 0 3.75px 0 rgba(0, 0, 0, 0.3); }
+            footer .links form .btn_area .btn_container .arcade_btn.small:after {
+              content: '';
+              position: absolute;
+              bottom: 3.75px;
+              left: 7.5px;
+              display: block;
+              width: 60px;
+              height: 60px;
+              border: 5px solid rgba(0, 0, 0, 0.3);
+              border-width: 0 0 5px;
+              border-radius: 50%;
+              -webkit-transition-duration: 200ms;
+              transition-duration: 200ms; }
+            footer .links form .btn_area .btn_container .arcade_btn.small:active.small, footer .links form .btn_area .btn_container .arcade_btn.small.is-pushed.small {
+              box-shadow: inset 0 2.34375px 0 white, inset 0 -2.34375px 0 #f2f2f2, inset 0 0 0 2.34375px #f7f7f7, inset 0 0 0 6.25px white, inset 0 0 0 7.5px #cccccc, inset 0 0 0 8.82353px #999999, inset 0 0 0 10px rgba(255, 255, 255, 0.2), inset 0 0 0 13.63636px #f7f7f7, inset 0 0 7.5px 12.5px #d9d9d9, 0 3.75px 0 rgba(0, 0, 0, 0.3);
+              background-color: #fafafa; }
+            footer .links form .btn_area .btn_container .arcade_btn.small:active:after, footer .links form .btn_area .btn_container .arcade_btn.small.is-pushed:after {
+              bottom: 8.75px;
+              border-width: 0; }
+      footer .links form br {
+        display: none; }
+      footer .links form .label {
+        display: none; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+@media screen and (width: 980px) and (max-height: 555px) {
   footer {
     height: 100px; }
     footer .control_panel .btn_container {
@@ -320,7 +436,7 @@ button.link_btn, .link_btn > input {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   button.link_btn, .link_btn > input {
     font-size: 24px; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
@@ -453,15 +569,18 @@ button.link_btn, .link_btn > input {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .about p {
     font-size: 24px; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 .apps_carousel_top {
+  position: absolute;
   width: 100%;
   height: 10%;
   background-color: #202020;
-  box-shadow: 1px 1px 3px 1px #000000; }
+  box-shadow: 1px 1px 3px 1px #000000;
+  z-index: 3;
+  top: 0; }
   .apps_carousel_top .link_btn_container {
     position: relative;
     display: inline-block;
@@ -477,7 +596,8 @@ button.link_btn, .link_btn > input {
   background-color: #151515;
   width: 100%;
   height: 80%;
-  box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset; }
+  box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
+  top: 10%; }
   .apps_carousel_main .apps_carousel {
     position: relative;
     display: inline-block;
@@ -597,10 +717,13 @@ button.link_btn, .link_btn > input {
           font-weight: bold; }
 
 .apps_carousel_bottom {
+  position: absolute;
   width: 100%;
   height: 10%;
   background-color: #202020;
-  box-shadow: 1px 1px 3px 1px #000000; }
+  box-shadow: 1px 1px 3px 1px #000000;
+  z-index: 3;
+  bottom: 0; }
 
 /*specific media queries*/
 /*portrait - iPad Pro*/
@@ -608,13 +731,13 @@ button.link_btn, .link_btn > input {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .apps_carousel_main {
     height: 50%; }
     .apps_carousel_main .apps_carousel .skewed {
       width: 9%; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+@media screen and (width: 980px) and (max-height: 555px) {
   .apps_carousel_main .apps_carousel {
     width: 70%; }
     .apps_carousel_main .apps_carousel .skewed {
@@ -717,7 +840,8 @@ button.link_btn, .link_btn > input {
     display: inline-block;
     height: 100%;
     width: 20%;
-    background-color: #353535; }
+    background-color: #353535;
+    border: 2px solid darkorange; }
     .technologies .tech_info .name {
       display: inline-block;
       position: relative;
@@ -749,19 +873,80 @@ button.link_btn, .link_btn > input {
         height: 100%;
         transform: translateX(-50%);
         border-bottom: 2px solid white;
+        box-shadow: 0 1px #202020;
         top: 0; }
 
 /*specific media queries*/
 /*portrait - iPad Pro*/
 /*landscape - iPad Pro*/
 /*portrait - iPad*/
-/*landscape - iPad*/
-/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (height: 1306px) {
   .technologies .tech_info {
-    height: initial; } }
+    height: initial;
+    width: 30%;
+    margin-left: 10%; } }
+/*landscape - iPad*/
+/*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
+  Nexus 5X looks messed up*/
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
+  .technologies .circle-container {
+    position: relative;
+    width: 30em;
+    height: 30em;
+    padding: 0;
+    border-radius: 50%;
+    list-style: none;
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%); }
+    .technologies .circle-container .tech {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      margin: -60px; }
+      .technologies .circle-container .tech:nth-of-type(1) {
+        transform: rotate(0deg) translate(15em) rotate(0deg);
+        -webkit-transform: rotate(0deg) translate(15em) rotate(0deg); }
+      .technologies .circle-container .tech:nth-of-type(2) {
+        transform: rotate(40deg) translate(15em) rotate(-40deg);
+        -webkit-transform: rotate(40deg) translate(15em) rotate(-40deg); }
+      .technologies .circle-container .tech:nth-of-type(3) {
+        transform: rotate(80deg) translate(15em) rotate(-80deg);
+        -webkit-transform: rotate(80deg) translate(15em) rotate(-80deg); }
+      .technologies .circle-container .tech:nth-of-type(4) {
+        transform: rotate(120deg) translate(15em) rotate(-120deg);
+        -webkit-transform: rotate(120deg) translate(15em) rotate(-120deg); }
+      .technologies .circle-container .tech:nth-of-type(5) {
+        transform: rotate(160deg) translate(15em) rotate(-160deg);
+        -webkit-transform: rotate(160deg) translate(15em) rotate(-160deg); }
+      .technologies .circle-container .tech:nth-of-type(6) {
+        transform: rotate(200deg) translate(15em) rotate(-200deg);
+        -webkit-transform: rotate(200deg) translate(15em) rotate(-200deg); }
+      .technologies .circle-container .tech:nth-of-type(7) {
+        transform: rotate(240deg) translate(15em) rotate(-240deg);
+        -webkit-transform: rotate(240deg) translate(15em) rotate(-240deg); }
+      .technologies .circle-container .tech:nth-of-type(8) {
+        transform: rotate(280deg) translate(15em) rotate(-280deg);
+        -webkit-transform: rotate(280deg) translate(15em) rotate(-280deg); }
+      .technologies .circle-container .tech:nth-of-type(9) {
+        transform: rotate(320deg) translate(15em) rotate(-320deg);
+        -webkit-transform: rotate(320deg) translate(15em) rotate(-320deg); }
+  .technologies .tech_info {
+    height: initial;
+    width: 75%;
+    position: absolute;
+    bottom: 1.5%;
+    left: 50%;
+    transform: translateX(-50%); }
+    .technologies .tech_info .apps li span {
+      font-size: 2em;
+      line-height: 2; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+@media screen and (width: 980px) and (max-height: 555px) {
   .technologies .circle-container {
     position: relative;
     width: 17.5em;
@@ -805,7 +990,8 @@ button.link_btn, .link_btn > input {
         transform: rotate(320deg) translate(8.75em) rotate(-320deg);
         -webkit-transform: rotate(320deg) translate(8.75em) rotate(-320deg); }
   .technologies .tech_info {
-    height: initial; } }
+    height: initial;
+    width: 35%; } }
 .contact form {
   display: inline-block;
   width: 50%;
@@ -861,9 +1047,9 @@ button:focus {
 .main_screen {
   display: inline-block;
   width: 100%;
-  height: 60%;
+  height: 75%;
   position: relative;
-  top: 20%; }
+  top: 10%; }
   .main_screen .screen {
     width: 90%;
     height: 100%;
@@ -930,11 +1116,17 @@ button:focus {
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 1569px) and (max-height: 1743px) {
+@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
   .main_screen .screen {
-    width: 96%; } }
+    width: 96%; }
+    .main_screen .screen .page .title {
+      height: 10%; }
+      .main_screen .screen .page .title span {
+        height: 3em; }
+      .main_screen .screen .page .title h2 {
+        font-size: 3em; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px) {
+@media screen and (width: 980px) and (max-height: 555px) {
   .main_screen {
     top: 12%;
     height: 69%; }
