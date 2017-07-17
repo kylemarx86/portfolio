@@ -1013,8 +1013,7 @@ button.link_btn, .link_btn > input {
       outline-color: red; }
   .contact form textarea {
     resize: vertical; }
-
-.mail_response_container {
+.contact .mail_response_container {
   vertical-align: top;
   display: inline-block;
   width: 30%;
@@ -1023,13 +1022,13 @@ button.link_btn, .link_btn > input {
   box-sizing: border-box;
   box-shadow: 1px 1px 3px 1px #000000;
   transform: translateX(50%) skewX(-10deg); }
-  .mail_response_container .mail_response {
+  .contact .mail_response_container .mail_response {
     color: white;
     width: 100%;
     height: 100%;
     background-color: silver;
     padding: 0 5px; }
-    .mail_response_container .mail_response p {
+    .contact .mail_response_container .mail_response p {
       -webkit-transform: skewX(10deg);
       transform: skewX(10deg);
       color: black;
