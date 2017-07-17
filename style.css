@@ -1001,6 +1001,8 @@ button.link_btn, .link_btn > input {
   margin-left: 5px; }
   .contact form table {
     width: 100%; }
+    .contact form table .req {
+      color: red; }
     .contact form table input, .contact form table textarea {
       color: black;
       margin: 5px;
