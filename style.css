@@ -1033,7 +1033,7 @@ button.link_btn, .link_btn > input {
           outline-width: 1px;
           outline-color: red; }
       .contact form table td textarea {
-        resize: vertical; }
+        resize: none; }
 .contact .mail_response_container {
   vertical-align: top;
   display: inline-block;
