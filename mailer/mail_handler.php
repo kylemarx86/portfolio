@@ -29,10 +29,9 @@ $mail->FromName = 'Kyle Marx';//your email sending account name
 
 // $mail->addAddress(your email address, or the email the sender if you are sending confirmation, email address user name);     // Add a recipient   // Name is optional
 $mail->addAddress(EMAIL_USER, 'Kyle Marx');     // Add a recipient
-$mail->addAddress($_POST['email'], $_POST['name']);     // Add a recipient
+// $mail->addAddress($_POST['email'], $_POST['name']);     // Add a recipient
 
 // $mail->addReplyTo(/*email address of the person sending the message, so you can reply*/);
-// not sure if this is working, I don't have anything to tell me that it is.
 $mail->addReplyTo($_POST['email'], $_POST['name']);
 
 //$mail->addCC('cc@example.com');
@@ -42,8 +41,14 @@ $mail->addReplyTo($_POST['email'], $_POST['name']);
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
+// construct message
+$name = $_POST['name'];
+$email = $_POST['email'];
+$body = $_POST['body'];
+$message = "<p>name: $name</p><p>email: $email</p>$body";
+
 $mail->Subject = $_POST['subject'];         //accept a post variable
-$mail->Body = $_POST['body'];         //accept a post variable
+$mail->Body = $message;         //accept a post variable       //not anymore
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';        //i should change this
 
 $output = [];

@@ -741,6 +741,8 @@ function send_form(){
     //disable send button until a response is received
     $('.send').off('click');
 
+
+
     $.ajax({
         dataType:'json',
         url: 'mailer/mail_handler.php',
@@ -759,10 +761,16 @@ function send_form(){
             if(response.success){
                 $('.mail_response p').text(response.message);
             }else{
-                $('.mail_response p').text('Message could not be sent.');
+                console.log('success function');
+                console.log(response.message);
+                for(var i = 0; i < response.message.length; i++){
+                    $('.mail_response p').text(response.message[i]);
+                }
             }
         },
         error: function(response){
+            console.log('error function');
+            console.log(response);
             $('.mail_response p').text('Message could not be sent due to server error');
             //change text of send button
             $('button[name="submit"]').text('Send Mail');
