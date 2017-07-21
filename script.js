@@ -637,30 +637,6 @@ function whichTransitionEvent(){
 }
 
 /**
- * Function from David Walsh: http://davidwalsh.name/css-animation-callback
- * 
- */
-function whichAnimationEvent(){
-  var t,
-      el = document.createElement("fakeelement");
-
-  var transitions = {
-    "animation"      : "animationend",
-    "OAnimation"     : "oAnimationEnd",
-    "MozAnimation"   : "animationend",
-    "WebkitAnimation": "webkitAnimationEnd"
-  }
-
-  for (t in transitions){
-    if (el.style[t] !== undefined){
-      return transitions[t];
-    }
-  }
-}
-
-
-
-/**
  * 
  * 
  */
