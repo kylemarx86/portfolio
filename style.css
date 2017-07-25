@@ -615,14 +615,12 @@ button.link_btn, .link_btn > input {
     .apps_carousel_main .apps_carousel .image_container {
       position: absolute;
       display: inline-block;
-      width: auto;
-      height: 100%;
       left: 10%; }
       .apps_carousel_main .apps_carousel .image_container img {
         position: absolute;
         display: inline-block;
-        width: auto;
-        height: 100%;
+        width: 960px;
+        height: 475px;
         top: 0;
         left: 0;
         visibility: hidden; }
@@ -632,19 +630,20 @@ button.link_btn, .link_btn > input {
         .apps_carousel_main .apps_carousel .image_container img.visible {
           visibility: visible; }
       .apps_carousel_main .apps_carousel .image_container.gray {
-        left: 1%;
+        left: 10%;
         width: 200%;
+        width: 1920px;
         position: absolute;
-        transform: translateX(25%);
+        transform: translateX(50%);
         z-index: 1;
         background: #101010;
-        background: -webkit-linear-gradient(left, rgba(21, 21, 21, 0.2) 0%, #151515 20%);
+        background: -webkit-linear-gradient(left, rgba(21, 21, 21, 0.2) 0%, #151515 50%);
         /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(right, rgba(21, 21, 21, 0.2) 0%, #151515 20%);
+        background: -o-linear-gradient(right, rgba(21, 21, 21, 0.2) 0%, #151515 50%);
         /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(right, rgba(21, 21, 21, 0.2) 0%, #151515 20%);
+        background: -moz-linear-gradient(right, rgba(21, 21, 21, 0.2) 0%, #151515 50%);
         /* For Firefox 3.6 to 15 */
-        background: linear-gradient(to right, rgba(21, 21, 21, 0.2) 0%, #151515 20%);
+        background: linear-gradient(to right, rgba(21, 21, 21, 0.2) 0%, #151515 50%);
         /* Standard syntax */ }
     .apps_carousel_main .apps_carousel .skewed {
       position: absolute;
