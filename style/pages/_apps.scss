@@ -1,6 +1,3 @@
-// aspect ratio for apps pics
-// $aspect_ratio: 960 / 475 * 100%;
-$aspect_ratio: 475 / 960 * 100%;
 $carousel_vert_offset: 10%;
 $initial_img_width: 960px;
 $initial_img_height: 475px;
@@ -34,7 +31,6 @@ $initial_img_height: 475px;
     background-color: #151515;
     width: 100%;
     height: $initial_img_height;
-    // height: 80%;
     box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
     top: $carousel_vert_offset;
 
@@ -44,7 +40,6 @@ $initial_img_height: 475px;
         display: inline-block;
         height: 100%;
         width: 100%;
-        // overflow: hidden;
 
         .cover{
             position: absolute;
@@ -58,23 +53,17 @@ $initial_img_height: 475px;
         .image_container{
             position: absolute;
             display: inline-block;
-            // width: auto;
-            // height: 100%;
             left: 10%;
 
             img{
                 position: absolute;
                 display: inline-block;
-                // width: auto;
-                // max-width: 100%;
-                // height: 100%;
                 width: 960px;
                 height: 475px;
                 
                 top: 0;
                 left: 0;
                 visibility: hidden;
-                // z-index: 1;
                 &.spacer{
                     position: relative;
                     opacity: 0;
@@ -84,44 +73,21 @@ $initial_img_height: 475px;
                 }
             }
             &.gray{
-                // left: 10%;
-                // width: 100%;
                 left: 10%;
                 width: 200%;
                 width: 2 * $initial_img_width;
                 position: absolute;
-                // transform: translateX(100%);
                 transform: translateX(50%);
                 z-index: 1;
-                background: #101010;
-                // opacity: 0.7;
-                // old
-                // background: -webkit-linear-gradient(left, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Safari 5.1 to 6.0 */
-                // background: -o-linear-gradient(right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Opera 11.1 to 12.0 */
-                // background: -moz-linear-gradient(right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Firefox 3.6 to 15 */
-                // background: linear-gradient(to right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* Standard syntax */
-                // new
-                // background: -webkit-linear-gradient(left, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50% ); /* For Safari 5.1 to 6.0 */
-                // background: -o-linear-gradient(right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Opera 11.1 to 12.0 */
-                // background: -moz-linear-gradient(right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Firefox 3.6 to 15 */
-                // background: linear-gradient(to right, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50%); /* Standard syntax */
 
+                background: #101010;
                 background: -webkit-linear-gradient(left, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50% ); /* For Safari 5.1 to 6.0 */
                 background: -o-linear-gradient(right, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50%); /* For Opera 11.1 to 12.0 */
                 background: -moz-linear-gradient(right, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50%); /* For Firefox 3.6 to 15 */
                 background: linear-gradient(to right, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50%); /* Standard syntax */
                 .spacer{
-                    // width: 100%;
-                    // width: auto;
                 }
             }
-            // &.cover{
-            //     left: 10%;
-            //     position: absolute;
-            //     transform: translateX(200%);
-            //     z-index: 1;
-            //     background: #151515;
-            // }
         }
 
         // styling of carousel buttons
@@ -147,13 +113,11 @@ $initial_img_height: 475px;
             
             &.prev_button {
                 left: 0;
-                // z-index: 4;
                 -webkit-transform: skewX(-5deg) translateX(-50%);
                 transform: skewX(-5deg) translateX(-50%);
             }
             &.next_button {
                 right: 0;
-                // z-index: 4;
                 -webkit-transform: skewX(-5deg) translateX(50%);
                 transform: skewX(-5deg) translateX(50%);
             }
@@ -215,15 +179,12 @@ $initial_img_height: 475px;
 }
 
 .apps_carousel_bottom{
-    // position: absolute;
     position: relative;
     width: 100%;
-    // height: 10%;
     height: Calc(100% - 10% - #{$initial_img_height});
     background-color: #202020;
     box-shadow: 0 -1px 3px 1px #000000;
     z-index: 3;
-    // bottom: 0;
     top: 10%;
 }
 
