@@ -63,6 +63,7 @@ $carousel_vert_offset: 10%;
                 position: absolute;
                 display: inline-block;
                 width: auto;
+                // max-width: 100%;
                 height: 100%;
                 
                 top: 0;
@@ -78,9 +79,13 @@ $carousel_vert_offset: 10%;
                 }
             }
             &.gray{
-                left: 10%;
+                // left: 10%;
+                // width: 100%;
+                left: 1%;
+                width: 200%;
                 position: absolute;
-                transform: translateX(100%);
+                // transform: translateX(100%);
+                transform: translateX(25%);
                 z-index: 1;
                 background: #101010;
                 // opacity: 0.7;
@@ -90,18 +95,23 @@ $carousel_vert_offset: 10%;
                 // background: -moz-linear-gradient(right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Firefox 3.6 to 15 */
                 // background: linear-gradient(to right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* Standard syntax */
                 // new
-                background: -webkit-linear-gradient(left, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Safari 5.1 to 6.0 */
-                background: -o-linear-gradient(right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Opera 11.1 to 12.0 */
-                background: -moz-linear-gradient(right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Firefox 3.6 to 15 */
-                background: linear-gradient(to right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* Standard syntax */
+                // background: -webkit-linear-gradient(left, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50% ); /* For Safari 5.1 to 6.0 */
+                // background: -o-linear-gradient(right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Opera 11.1 to 12.0 */
+                // background: -moz-linear-gradient(right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Firefox 3.6 to 15 */
+                // background: linear-gradient(to right, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50%); /* Standard syntax */
+
+                background: -webkit-linear-gradient(left, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 20% ); /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(right, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 20%); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(right, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 20%); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(to right, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 20%); /* Standard syntax */
             }
-            &.cover{
-                left: 10%;
-                position: absolute;
-                transform: translateX(200%);
-                z-index: 1;
-                background: #151515;
-            }
+            // &.cover{
+            //     left: 10%;
+            //     position: absolute;
+            //     transform: translateX(200%);
+            //     z-index: 1;
+            //     background: #151515;
+            // }
         }
 
         // styling of carousel buttons

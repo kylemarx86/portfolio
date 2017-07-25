@@ -632,25 +632,20 @@ button.link_btn, .link_btn > input {
         .apps_carousel_main .apps_carousel .image_container img.visible {
           visibility: visible; }
       .apps_carousel_main .apps_carousel .image_container.gray {
-        left: 10%;
+        left: 1%;
+        width: 200%;
         position: absolute;
-        transform: translateX(100%);
+        transform: translateX(25%);
         z-index: 1;
         background: #101010;
-        background: -webkit-linear-gradient(left, rgba(21, 21, 21, 0.2), #151515);
+        background: -webkit-linear-gradient(left, rgba(21, 21, 21, 0.2) 0%, #151515 20%);
         /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(right, rgba(21, 21, 21, 0.2), #151515);
+        background: -o-linear-gradient(right, rgba(21, 21, 21, 0.2) 0%, #151515 20%);
         /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(right, rgba(21, 21, 21, 0.2), #151515);
+        background: -moz-linear-gradient(right, rgba(21, 21, 21, 0.2) 0%, #151515 20%);
         /* For Firefox 3.6 to 15 */
-        background: linear-gradient(to right, rgba(21, 21, 21, 0.2), #151515);
+        background: linear-gradient(to right, rgba(21, 21, 21, 0.2) 0%, #151515 20%);
         /* Standard syntax */ }
-      .apps_carousel_main .apps_carousel .image_container.cover {
-        left: 10%;
-        position: absolute;
-        transform: translateX(200%);
-        z-index: 1;
-        background: #151515; }
     .apps_carousel_main .apps_carousel .skewed {
       position: absolute;
       width: 9%;
@@ -1025,7 +1020,6 @@ button.link_btn, .link_btn > input {
         color: black;
         margin: 5px;
         padding: 1px;
-        -webkit-border-radius: 5px;
         border-radius: 5px;
         box-shadow: 1px 1px 3px 1px #000000;
         width: 100%; }
