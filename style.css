@@ -276,11 +276,10 @@ footer {
 
 /*specific media queries*/
 /*portrait - iPad Pro*/
-/*landscape - iPad Pro*/
 /*portrait - iPad*/
 /*landscape - iPad*/
-/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
+/*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen and (orientation: portrait) and (max-width: 736px) and (max-height: 1743px) and (-webkit-min-device-pixel-ratio: 2) {
   footer {
     height: 200px; }
     footer .control_panel .btn_container {
@@ -382,7 +381,7 @@ footer {
       footer .links form .label {
         display: none; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (max-height: 555px) {
+@media screen and (orientation: landscape) and (max-width: 736px) and (max-height: 555px) and (-webkit-min-device-pixel-ratio: 2) {
   footer {
     height: 100px; }
     footer .control_panel .btn_container {
@@ -422,15 +421,9 @@ button.link_btn, .link_btn > input {
     color: dimgray;
     box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000; }
 
-/*specific media queries*/
-/*portrait - iPad Pro*/
-/*landscape - iPad Pro*/
 /*portrait - iPad*/
 /*landscape - iPad*/
-/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
-  button.link_btn, .link_btn > input {
-    font-size: 24px; } }
+/*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 /*modal styling*/
 .modal-open {
@@ -1104,9 +1097,6 @@ button:focus {
   -webkit-animation: slide-in 0.5s;
   animation: slide-in 0.5s; }
 
-/*specific media queries*/
-/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 /*portrait - iPad*/
 /*landscape - iPad*/
 /*portrait -  iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
