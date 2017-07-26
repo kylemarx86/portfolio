@@ -602,14 +602,6 @@ function toggle_selected_tech(tech){
  * function to resize elements within the tech page (possibly others) on the resizing of the screen
  */
 function resize_screen_components(){
-    // resizing of apps
-    // forces resizing/reapplication of css
-    // $('#image_container .real').css('width','auto');
-    // $('#image_container .spacer').css('width','auto');
-    $('#image_container').css('max-width','100%');
-    console.log('changing');
-
-
     // resizing of technologies
     var elt_count = $('.circle-container li.tech').length;
     var circle_radius = $('.circle-container').outerWidth() / 2;
