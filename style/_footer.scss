@@ -257,7 +257,7 @@ footer {
           color: white;
         }
       }
-    }   // end of .form styling
+    }   // end of form styling
     .label_container {
       position: relative;
       display: inline-block;
@@ -291,275 +291,6 @@ footer {
 
 
 
-// OLD
-/*specific media queries*/
-/*portrait - iPad Pro*/
-// @media screen and (orientation: portrait) and (width: 1024px) and (height: 1366px){
-
-// }
-// /*landscape - iPad Pro*/
-// @media screen and (width: 1366px) and (height: 1024px) {
-
-// }
-// /*portrait - iPad*/
-// @media screen and (width: 980px) and (height: 1306px) {
-//   footer {
-
-//     .control_panel {
-
-//       .btn_container {
-        
-//         .arcade_btn {
-          
-//           &.red {
-
-//           }
-//           &.blue {
-
-//           }
-//         }
-//       }
-
-//       .label_container {
-
-//         .label {
-          
-//           &.red {
-
-//           }
-//           &.blue {
-
-//           }
-//           span {
-            
-//           }
-//         }
-//       }
-//     }
-//     .links{
-
-//       form{
-
-//         .btn_area{
-
-//           .btn_container{
-
-//             .arcade_btn {
-
-//               &.small{
-                            
-//                 &.github{
-
-//                 }
-//                 &.linkedin{
-
-//                 }
-//               }
-//             }
-//           }
-//         }
-//         br{
-
-//         }
-//         .label {
-        
-//           span {
-
-//           }
-//         }
-//       }
-//       .label_container {
-
-//         .label {
-          
-//           span {
-
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// /*landscape - iPad*/
-// @media screen and (width: 1306px) and (height: 980px) {
-
-// }
-
-
-
-// /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-// // @media screen and (width: 980px) and (max-height: 1743px){
-// @media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
-//   footer {
-//     $btn_size: $btn_size_lg * 2;  //200px
-//     height: $btn_size;
-
-//     .control_panel {
-
-//       .btn_container {
-//         height: $btn_size;
-//         width: $btn_size;
-//         .arcade_btn {
-//           margin: 0;
-//           transform: scale(0.75);
-//           width: $btn_size;
-//           height: $btn_size;
-//           &.red {
-//             @include lg_button(red, $btn_size);
-//           }
-//           &.blue {
-//             @include lg_button(blue, $btn_size);
-//           }
-//         }
-//       }
-
-//       .label_container {
-//         margin: 0;
-//         .label {
-          
-//           &.red {
-
-//           }
-//           &.blue {
-
-//           }
-//           span {
-//             font-size: 3em;
-//           }
-//         }
-//       }
-//     }
-//     .links{
-
-//       form{
-//         display: -webkit-flex;
-//         -webkit-flex-direction: column;
-//         display: flex;
-//         flex-direction: column;
-//         .btn_area{
-
-//           .btn_container{
-//             position: relative;
-//             left: unset;
-//             -webkit-transform: unset;
-//             transform: unset;
-//             .arcade_btn {
-//               width: $btn_size_sm * 1.5;
-//               height: $btn_size_sm * 1.5;
-//               &.small{
-//                 @include sm_button($btn_size_sm * 1.5);
-//                 &.github{
-
-//                 }
-//                 &.linkedin{
-
-//                 }
-//               }
-//             }
-//           }
-//         }
-//         br{
-//            display: none;       
-//         }
-//         .label {
-//           display: none;
-//           span {
-
-//           }
-//         }
-
-//       }
-//       .label_container {
-
-//         .label {
-          
-//           span {
-
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-// // @media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px){
-// @media screen and (width: 980px) and (max-height: 555px){
-// // @media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px){
-//    footer {
-//     height: 100px;
-//     .control_panel {
-//       .btn_container {
-//         height: 100px;
-//         width: 100px;
-//         .arcade_btn {
-//             margin: 0;
-//             transform: scale(0.75);
-//             &.red {
-//             }
-//             &.blue {
-//             }
-//           &:after {
-//           }
-//           &:active,
-//           &.is-pushed {
-//             &.red {
-//             } 
-//             &.blue {
-//             }
-//             &:after {
-//             }
-//           }
-//         }
-//       }
-
-//       .label_container {
-//         .label {
-//           &.red {
-//           }
-//           &.blue {
-//           }
-//           span {
-//           }
-//         }
-//       }
-//     }
-//     .links{
-//       form{
-//         .btn_area{
-//           .btn_container{
-//             .arcade_btn {
-//                 &.small{
-//                   &.github{
-//                   }
-//                   &.linkedin{
-//                   }
-//                 }
-//             }
-//           }
-//         }
-//         br{
-//         }
-//         .label {
-//           span {
-//           }
-//         }
-//       }
-//       .label_container {
-//         .label {
-//           span {
-//           }
-//         }
-//       }
-//     } // end links
-//   }
-// }
-
-
-
-
-
-
 // redone media queries
 // device specific media queries
 
@@ -582,15 +313,148 @@ and (min-width: 768px)
 and (max-width: 1024px) 
 and (orientation: portrait)
 and (-webkit-min-device-pixel-ratio: 2){
-
+  footer {
+  // height: 100px;
+    // $button_dim: 100px;
+    .control_panel {
+      .btn_container {
+        // height: 100px;
+        // width: 100px;
+        .arcade_btn {
+            // margin: 0;
+            // transform: scale(0.75);
+            &.red {
+            }
+            &.blue {
+            }
+          &:after {
+          }
+          &:active,
+          &.is-pushed {
+            &.red {
+            } 
+            &.blue {
+            }
+            &:after {
+            }
+          }
+        }
+      }
+      .label_container {
+        .label {
+          &.red {
+          }
+          &.blue {
+          }
+          span {
+          }
+        }
+      }
+    }
+    .links{
+      form{
+        .btn_area{
+          .btn_container{
+            .arcade_btn {
+                &.small{
+                  &.github{
+                  }
+                  &.linkedin{
+                  }
+                }
+            }
+          }
+        }
+        br{
+        }
+        .label {
+          span {
+          }
+        }
+      }
+      .label_container {
+        .label {
+          span {
+          }
+        }
+      }
+    } // end links
+  }
 }
 /*landscape - iPad*/
 @media only screen 
-and (min-width: 768px) 
+and (min-width: 768px)
 and (max-width: 1024px) 
 and (orientation: landscape) 
 and (-webkit-min-device-pixel-ratio: 2){
-
+  $button_dim: 100px;
+  footer {
+    // background: green;
+    height: $button_dim;
+    .control_panel {
+      .btn_container {
+        height: $button_dim;
+        width: $button_dim;
+        .arcade_btn {
+            margin: 0;
+            transform: scale(0.75);
+            &.red {
+            }
+            &.blue {
+            }
+          &:after {
+          }
+          &:active,
+          &.is-pushed {
+            &.red {
+            } 
+            &.blue {
+            }
+            &:after {
+            }
+          }
+        }
+      }
+      .label_container {
+        .label {
+          &.red {
+          }
+          &.blue {
+          }
+          span {
+          }
+        }
+      }
+    }
+    .links{
+      form{
+        .btn_area{
+          .btn_container{
+            .arcade_btn {
+                &.small{
+                  &.github{
+                  }
+                  &.linkedin{
+                  }
+                }
+            }
+          }
+        }
+        br{
+        }
+        .label {
+          span {
+          }
+        }
+      }
+      .label_container {
+        .label {
+          span {
+          }
+        }
+      }
+    } // end links
+  }
 }
 
 /*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/

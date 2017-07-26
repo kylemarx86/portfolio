@@ -7,7 +7,6 @@ button.link_btn, .link_btn > input {
     border: none;
     -webkit-border-radius:0;
     border-radius:0;
-
     &:hover{
         color: darkgray;
     }
@@ -16,7 +15,6 @@ button.link_btn, .link_btn > input {
 .github > input, .send{
     background-color: red;
     box-shadow: -3px -3px 2px 1px #cd0000 inset, 1px 1px 1px 1px #000000;
-
     &:hover{
         box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
     }
@@ -24,7 +22,6 @@ button.link_btn, .link_btn > input {
 .live > input{
     background-color: orangered;
     box-shadow: -3px -3px 2px 1px #cd1300 inset, 1px 1px 1px 1px #000000;
-
     &:hover{
         box-shadow: -3px -3px 2px 1px #9b0000 inset, 1px 1px 1px 1px #000000;
     }
@@ -32,7 +29,6 @@ button.link_btn, .link_btn > input {
 .close_modal, .description{
     background-color: #FFBB00;
     box-shadow: -3px -3px 2px 1px #e19d00 inset, 1px 1px 1px 1px #000000;
-
     &:hover{
         color: dimgray;
         box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000;
@@ -62,7 +58,9 @@ and (min-width: 768px)
 and (max-width: 1024px) 
 and (orientation: portrait)
 and (-webkit-min-device-pixel-ratio: 2){
-
+    button.link_btn, .link_btn > input {
+        font-size: 1.75em;
+    }
 }
 /*landscape - iPad*/
 @media only screen 
@@ -70,7 +68,9 @@ and (min-width: 768px)
 and (max-width: 1024px) 
 and (orientation: landscape) 
 and (-webkit-min-device-pixel-ratio: 2){
-
+    button.link_btn, .link_btn > input {
+        font-size: 1.25em;
+    }
 }
 
 /*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
