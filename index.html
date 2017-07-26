@@ -134,20 +134,20 @@
                     <form>
                         <table>
                             <tr>
-                                <td>Name</td>
-                                <td><input name="name" placeholder="name"></td>
+                                <td><span class='field'>Name<span class='tooltip'>Required field</span></span>*</td>
+                                <td><input name="name" placeholder="name" required></td>
                             </tr>
                             <tr>
-                                <td>Email address</td>
-                                <td><input name="email" placeholder="email address"></td>
+                                <td><span class='field'>Email address<span class='tooltip'>Required field</span></span>*</td>
+                                <td><input name="email" placeholder="email address" required></td>
                             </tr>
                             <tr>
-                                <td>Subject</td>
-                                <td><input name="subject" placeholder="subject"></td>
+                                <td><span class='field'>Subject<span class='tooltip'>Required field</span></span>*</td>
+                                <td><input name="subject" placeholder="subject" required></td>
                             </tr>
                             <tr>
-                                <td>Message</td>
-                                <td><textarea name="body" placeholder="message" maxlength="750"></textarea></td>
+                                <td><span class='field'>Message<span class='tooltip'>Required field</span></span>*</td>
+                                <td><textarea name="body" placeholder="message" maxlength="750" rows="5" required></textarea></td>
                             </tr>
                         </table>
                         <button type="button" name="submit" value="submit" class='link_btn send'>Send Mail</button>

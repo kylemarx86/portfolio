@@ -430,6 +430,8 @@ footer {
     .links{
 
       form{
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
         display: flex;
         flex-direction: column;
         .btn_area{
