@@ -34,7 +34,6 @@ $initial_img_height: 475px;
     box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
     top: $carousel_vert_offset;
 
-
     .apps_carousel{
         position: relative;
         display: inline-block;
@@ -58,8 +57,8 @@ $initial_img_height: 475px;
             img{
                 position: absolute;
                 display: inline-block;
-                width: 960px;
-                height: 475px;
+                width: $initial_img_width;
+                height: $initial_img_height;
                 
                 top: 0;
                 left: 0;
@@ -74,7 +73,6 @@ $initial_img_height: 475px;
             }
             &.gray{
                 left: 10%;
-                width: 200%;
                 width: 2 * $initial_img_width;
                 position: absolute;
                 transform: translateX(50%);
@@ -181,7 +179,7 @@ $initial_img_height: 475px;
 .apps_carousel_bottom{
     position: relative;
     width: 100%;
-    height: Calc(100% - 10% - #{$initial_img_height});
+    height: Calc(100% - #{$carousel_vert_offset} - #{$initial_img_height});
     background-color: #202020;
     box-shadow: 0 -1px 3px 1px #000000;
     z-index: 3;
@@ -189,132 +187,9 @@ $initial_img_height: 475px;
 }
 
 
-// /*specific media queries*/
-// /*portrait - iPad Pro*/
-// @media screen and (orientation: portrait) and (width: 1024px) and (height: 1366px){
-
-// }
-// /*landscape - iPad Pro*/
-// @media screen and (width: 1366px) and (height: 1024px) {
-
-// }
-// /*portrait - iPad*/
-// @media screen and (width: 980px) and (height: 1306px) {
-
-// }
-// /*landscape - iPad*/
-// @media screen and (width: 1306px) and (height: 980px) {
-
-// }
-// /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-// @media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
-//     // area above the app carousel
-//     .apps_carousel_top{
-//         .link_btn_container{
-//             form{
-//             }
-//         }
-//     }
-//     // the main area of the app carousel
-//     .apps_carousel_main{
-//         height: 50%;
-        
-//         .apps_carousel{
-
-//             #image_container{
-
-//                 img{
-
-//                 }
-//             }
-
-//             // styling of carousel buttons
-//             .skewed{
-//                 width: 9%;
-            
-//                 &.prev_button {
-     
-//                 }
-//                 &.next_button {
-                    
-//                 }
-//                 // hover transitions
-//                 &:hover{
-           
-//                 }
-//                 > .glyphicon {
-           
-//                 }
-//             }
-
-//             // number bar
-//             .number_bar{
-
-//                 .nav_number{
-                    
-//                     &.active_nav_number{
-                  
-//                     }
-//                 }
-//             }
-
-//         }
-//     }
-// }
-// /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-// @media screen and (width: 980px) and (max-height: 555px){
-//     // the main area of the app carousel
-//     .apps_carousel_main{
-        
-//         .apps_carousel{
-//             width: 70%;
-//             #image_container{
-
-//                 img{
-
-//                 }
-//             }
-
-//             // styling of carousel buttons
-//             .skewed{
-//                 width: 9%;
-            
-//                 &.prev_button {
-     
-//                 }
-//                 &.next_button {
-                    
-//                 }
-//                 // hover transitions
-//                 &:hover{
-           
-//                 }
-//                 > .glyphicon {
-           
-//                 }
-//             }
-
-//             // number bar
-//             .number_bar{
-//                 height: 20%;
-
-//                 .nav_number{
-
-//                     &.active_nav_number{
-                  
-//                     }
-//                 }
-//             }
-
-//         }
-//     }
-// }
 
 
-
-
-
-/*device specific media queries*/
+// device specific media queries
 
 // /*portrait - iPad Pro*/
 // @media screen 
@@ -333,10 +208,12 @@ $initial_img_height: 475px;
 @media only screen 
 and (min-width: 768px)
 and (max-width: 1024px) 
+and (orientation: portrait)
 and (-webkit-min-device-pixel-ratio: 2){
-    $carousel_vert_offset: 10%;
-    $initial_img_width: 960px;
-    $initial_img_height: 475px;
+    // $carousel_vert_offset: 10%;
+    // $initial_img_width: 960px;
+    // $initial_img_height: 475px;
+    $img_reduction_factor: .75;
     // area above the app carousel
     .apps_carousel_top{
         .link_btn_container{
@@ -344,20 +221,23 @@ and (-webkit-min-device-pixel-ratio: 2){
             }
         }
     }
-
     // the main area of the app carousel
     .apps_carousel_main{
+        height: $initial_img_height * $img_reduction_factor;
         .apps_carousel{
             .cover{
             }
             .image_container{
                 img{
+                    height: $initial_img_height * $img_reduction_factor;
+                    width: $initial_img_width * $img_reduction_factor;
                     &.spacer{
                     }
                     &.visible{
                     }
                 }
                 &.gray{
+                    width: 2 * $initial_img_width * $img_reduction_factor;
                     .spacer{
                     }
                 }
@@ -383,9 +263,9 @@ and (-webkit-min-device-pixel-ratio: 2){
                 }
             }
         }
-    }
-
+    } // end apps_carousel_main
     .apps_carousel_bottom{
+        height: 10%;
     }
 }
 /*landscape - iPad*/
@@ -395,8 +275,7 @@ and (max-width: 1024px)
 and (orientation: landscape) 
 and (-webkit-min-device-pixel-ratio: 2){
     $carousel_vert_offset: 10%;
-    $initial_img_width: 960px;
-    $initial_img_height: 475px;
+    $img_reduction_factor: .75;
     // area above the app carousel
     .apps_carousel_top{
         .link_btn_container{
@@ -407,17 +286,23 @@ and (-webkit-min-device-pixel-ratio: 2){
 
     // the main area of the app carousel
     .apps_carousel_main{
+        height: $initial_img_height * $img_reduction_factor;
         .apps_carousel{
             .cover{
             }
             .image_container{
+                // height: $initial_img_height * $img_reduction_factor;
+                // width: $initial_img_width * $img_reduction_factor;
                 img{
+                    height: $initial_img_height * $img_reduction_factor;
+                    width: $initial_img_width * $img_reduction_factor;
                     &.spacer{
                     }
                     &.visible{
                     }
                 }
                 &.gray{
+                    width: 2 * $initial_img_width * $img_reduction_factor;
                     .spacer{
                     }
                 }
@@ -446,41 +331,43 @@ and (-webkit-min-device-pixel-ratio: 2){
     }
 
     .apps_carousel_bottom{
+        height: Calc(100% - #{$carousel_vert_offset} - #{$initial_img_height * $img_reduction_factor});
     }  
 }
 
 /*portrait -  iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 @media screen
-and (orientation: portrait) 
+and (min-width: 320px) 
 and (max-width: 736px) 
-and (min-height: 601px) 
+// and (min-height: 601px) 
 and (max-height: 1743px) 
+and (orientation: portrait) 
 and (-webkit-min-device-pixel-ratio: 2){
     
 }
 /*landscape - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 @media screen 
-and (orientation: landscape) 
 and (max-width: 736px) 
-and (min-height: 351px) 
+// and (min-height: 351px) 
 and (max-height: 555px)
+and (orientation: landscape) 
 and (-webkit-min-device-pixel-ratio: 2){
     
 }
 
-/*portrait -  iPhone 5*/
-@media screen 
-and (orientation: portrait) 
-and (max-width: 980px) 
-and (max-height: 600px)
-and (-webkit-min-device-pixel-ratio: 2){
+// /*portrait -  iPhone 5*/
+// @media screen 
+// and (orientation: portrait) 
+// and (max-width: 980px) 
+// and (max-height: 600px)
+// and (-webkit-min-device-pixel-ratio: 2){
     
-}
-/*landscape - iPhone 5*/
-@media screen
-and (max-width: 980px) 
-and (max-height: 350px)
-and (orientation: landscape)
-and (-webkit-min-device-pixel-ratio: 2){
+// }
+// /*landscape - iPhone 5*/
+// @media screen
+// and (max-width: 980px) 
+// and (max-height: 350px)
+// and (orientation: landscape)
+// and (-webkit-min-device-pixel-ratio: 2){
     
-}
+// }

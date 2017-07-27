@@ -286,7 +286,7 @@ footer {
         margin: 0;
         transform: scale(0.75); } }
 /*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (orientation: portrait) and (max-width: 736px) and (max-height: 1743px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (orientation: portrait) and (max-width: 736px) and (min-width: 320px) and (max-height: 1743px) and (-webkit-min-device-pixel-ratio: 2) {
   footer {
     height: 200px; }
     footer .control_panel .btn_container {
@@ -388,7 +388,7 @@ footer {
       footer .links form .label {
         display: none; } }
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (orientation: landscape) and (max-width: 736px) and (max-height: 555px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (orientation: landscape) and (max-width: 736px) and (min-width: 320px) and (max-height: 555px) and (-webkit-min-device-pixel-ratio: 2) {
   footer {
     height: 100px; }
     footer .control_panel .btn_container {
@@ -631,7 +631,6 @@ button.link_btn, .link_btn > input {
           visibility: visible; }
       .apps_carousel_main .apps_carousel .image_container.gray {
         left: 10%;
-        width: 200%;
         width: 1920px;
         position: absolute;
         transform: translateX(50%);
@@ -720,13 +719,32 @@ button.link_btn, .link_btn > input {
   z-index: 3;
   top: 10%; }
 
-/*device specific media queries*/
 /*portrait - iPad*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .apps_carousel_main {
+    height: 356.25px; }
+    .apps_carousel_main .apps_carousel .image_container img {
+      height: 356.25px;
+      width: 720px; }
+    .apps_carousel_main .apps_carousel .image_container.gray {
+      width: 1440px; }
+
+  .apps_carousel_bottom {
+    height: 10%; } }
 /*landscape - iPad*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .apps_carousel_main {
+    height: 356.25px; }
+    .apps_carousel_main .apps_carousel .image_container img {
+      height: 356.25px;
+      width: 720px; }
+    .apps_carousel_main .apps_carousel .image_container.gray {
+      width: 1440px; }
+
+  .apps_carousel_bottom {
+    height: Calc(100% - 10% - 356.25px); } }
 /*portrait -  iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 /*landscape - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-/*portrait -  iPhone 5*/
-/*landscape - iPhone 5*/
 /*technologies area*/
 .technologies {
   width: 100%;
