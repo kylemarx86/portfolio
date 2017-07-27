@@ -49,12 +49,12 @@ $btn_size_sm: 0.5 * $btn_size_lg;
       border-width: 0;
     }
   }
-}
+} // end lg_button mixin
 
 @mixin sm_button($btn-size){
   $base-color: white;
   background-color: $base-color;
-  background-size: 40px 40px;
+  background-size: 75% 75%;
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 
@@ -106,7 +106,7 @@ $btn_size_sm: 0.5 * $btn_size_lg;
       border-width: 0;
     }
   }
-} // end of small button mixin
+} // end of sm_button mixin
 
 footer {
   position: fixed;
@@ -188,7 +188,7 @@ footer {
         }
       }
     }
-  } //end of control panel
+  } //end control panel
   .links{
     position: absolute;
     display: inline-block;
@@ -257,7 +257,7 @@ footer {
           color: white;
         }
       }
-    }   // end of form styling
+    }   // end form styling
     .label_container {
       position: relative;
       display: inline-block;
@@ -283,8 +283,8 @@ footer {
         }
       }
     }
-  }   // end of links styling
-}   // end of footer
+  }   // end links styling
+}   // end footer
 
 
 // standard media queries
@@ -313,16 +313,17 @@ and (min-width: 768px)
 and (max-width: 1024px) 
 and (orientation: portrait)
 and (-webkit-min-device-pixel-ratio: 2){
+  $button_dim: 100px;
   footer {
-  // height: 100px;
-    // $button_dim: 100px;
+    // background: yellow;    // for testing only
+    height: $button_dim;
     .control_panel {
       .btn_container {
-        // height: 100px;
-        // width: 100px;
+        height: $button_dim;
+        width: $button_dim;
         .arcade_btn {
-            // margin: 0;
-            // transform: scale(0.75);
+            margin: 0;
+            transform: scale(0.75);
             &.red {
             }
             &.blue {
@@ -389,7 +390,7 @@ and (orientation: landscape)
 and (-webkit-min-device-pixel-ratio: 2){
   $button_dim: 100px;
   footer {
-    // background: green;
+    // background: green;   // for testing only
     height: $button_dim;
     .control_panel {
       .btn_container {
@@ -458,14 +459,16 @@ and (-webkit-min-device-pixel-ratio: 2){
 }
 
 /*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+// separate out iphone 5 sizes again
 @media screen
 and (orientation: portrait) 
 and (max-width: 736px) 
 and (min-width: 320px) 
 and (max-height: 1743px) 
 and (-webkit-min-device-pixel-ratio: 2){
+  $btn_size: $btn_size_lg;  // 100px
+  $sm_btn_size: $btn_size * 0.25;   // 25px;
   footer {
-    $btn_size: $btn_size_lg * 2;  //200px
     height: $btn_size;
     .control_panel {
       .btn_container {
@@ -486,13 +489,14 @@ and (-webkit-min-device-pixel-ratio: 2){
       }
       .label_container {
         margin: 0;
+        width: 3em;
         .label {
           &.red {
           }
           &.blue {
           }
           span {
-            font-size: 3em;
+            font-size: 1.5em;
           }
         }
       }
@@ -509,11 +513,13 @@ and (-webkit-min-device-pixel-ratio: 2){
             left: unset;
             -webkit-transform: unset;
             transform: unset;
+            // transform: scale(0.75);
             .arcade_btn {
-              width: $btn_size_sm * 1.5;
-              height: $btn_size_sm * 1.5;
+              
+              width: $sm_btn_size;
+              height: $sm_btn_size;
               &.small{
-                @include sm_button($btn_size_sm * 1.5);
+                @include sm_button($sm_btn_size);
                 &.github{
                 }
                 &.linkedin{
