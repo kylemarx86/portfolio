@@ -117,86 +117,21 @@ header{
     }
 }
 
-// /*specific media queries*/
-// /*portrait - iPad Pro*/
-// @media screen and (orientation: portrait) and (width: 1024px) and (height: 1366px){
-
-// }
-// /*landscape - iPad Pro*/
-// @media screen and (width: 1366px) and (height: 1024px) {
-
-// }
-// /*portrait - iPad*/
-// @media screen and (width: 980px) and (height: 1306px) {
-//     header {
-//         ul {
-//             width: 50%;
-//             font-size: .75em;
-//             li{
-//                 span{
-//                 }
-//             }
-//         }
-//     }
-// }
-// /*landscape - iPad*/
-// @media screen and (width: 1306px) and (height: 980px) {
-//     header {
-//         ul {
-//             width: 50%;
-//             font-size: .75em;
-//             li{
-//                 span{
-//                 }
-//             }
-//         }
-//     }
-// }
-// /*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-// @media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
-//     header {
-//         height: 7%;
-//         ul {
-//             li{
-//                 span{
-//                     font-size: 24px;
-//                     line-height: 100%;
-//                 }
-//             }
-//         }
-//     }
-// }
-// /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-// @media screen and (width: 980px) and (max-height: 555px){
-
-// }
+// *********************************************************************************
+// *********************************************************************************
 
 
-// redone media queries
+
+// revised media queries
 // device specific media queries
 
-// /*portrait - iPad Pro*/
-// @media screen 
-// and (max-width: 1024px)
-// and (max-height: 1366px)
-// and (orientation: portrait){
-// }
-
-// /*landscape - iPad Pro*/
-// @media screen 
-// and (width: 1366px) 
-// and (height: 1024px) {
-// }
-
-/*portrait -  iPhone 5*/
+// smaller phones - iPhone 5, galaxy s5
+// portrait mode
 @media screen 
 and (orientation: portrait) 
-and (min-width: 320px) 
-and (max-width: 568px) 
-// and (max-height: 600px)
+and (max-width: 360px) 
 and (-webkit-min-device-pixel-ratio: 2){
     header{
-        background: blue;
         // area for name written in triangles
         #canvas{
             #main{
@@ -224,14 +159,12 @@ and (-webkit-min-device-pixel-ratio: 2){
         }
     }    
 }
-/*landscape - iPhone 5*/
+// landscape mode
 @media screen
-and (min-width: 320px) 
-and (max-width: 568px) 
 and (orientation: landscape)
+and (max-width: 640px) 
 and (-webkit-min-device-pixel-ratio: 2){
     header{
-        background: violet;
         // area for name written in triangles
         #canvas{
             #main{
@@ -260,17 +193,15 @@ and (-webkit-min-device-pixel-ratio: 2){
     }    
 }
 
-/*portrait -  iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+// *********************************************************************************
+
+// larger phones - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
+// portrait mode
 @media screen
 and (orientation: portrait) 
-// and (min-width: 375px)
-and (min-width: 360px)
-and (max-width: 736px) 
-// and (min-height: 601px) 
-// and (max-height: 1743px) 
+and (min-width: 361px) 
 and (-webkit-min-device-pixel-ratio: 2){
     header{
-        background: red;
         // area for name written in triangles
         #canvas{
             #main{
@@ -299,17 +230,12 @@ and (-webkit-min-device-pixel-ratio: 2){
         }
     }    
 }
-
-/*landscape - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+// landscape mode
 @media screen 
 and (orientation: landscape) 
-and (min-width: 375px) 
-and (max-width: 736px) 
-and (min-height: 321px) 
-// and (max-height: 555px)
+and (min-width: 667px) 
 and (-webkit-min-device-pixel-ratio: 2){
     header{
-        background: green;
         // area for name written in triangles
         #canvas{
             #main{
@@ -338,16 +264,15 @@ and (-webkit-min-device-pixel-ratio: 2){
     }    
 }
 
+// *********************************************************************************
 
-
-/*portrait - iPad*/
+// smaller tablet sizes - Nexus 7, iPad mini, iPad
+// portrait mode
 @media only screen 
-and (min-width: 768px)
-and (max-width: 1024px) 
 and (orientation: portrait)
+and (min-width: 600px)
 and (-webkit-min-device-pixel-ratio: 2){
     header{
-        background: lime;
         height: 7%;
         // area for name written in triangles
         #canvas{
@@ -378,14 +303,12 @@ and (-webkit-min-device-pixel-ratio: 2){
         }
     }
 }
-/*landscape - iPad*/
+// landscape mode
 @media only screen 
-and (min-width: 768px) 
-and (max-width: 1024px) 
-and (orientation: landscape) 
+and (orientation: landscape)
+and (min-width: 960px) 
 and (-webkit-min-device-pixel-ratio: 2){
     header{
-        background: yellow;
         // area for name written in triangles
         #canvas{
             #main{
@@ -412,4 +335,73 @@ and (-webkit-min-device-pixel-ratio: 2){
             }
         }
     }
+}
+
+// *********************************************************************************
+
+// large tablet sizes - iPad pro
+// portrait mode
+@media screen 
+and (orientation: portrait)
+and (min-width: 1024px){
+    header{
+        // area for name written in triangles
+        #canvas{
+            #main{
+                rect{
+                }
+                .name{
+                }
+
+            }
+            #inner_triangles{
+                rect{
+                }
+                line{
+                }
+            }
+        }
+        // navigation bar
+        ul {
+            li {
+                &:hover {
+                }
+                span {
+                }
+            }
+        }
+    }    
+}
+
+// landscape
+@media screen
+and (orientation: landscape)
+and (min-width: 1366px){
+    header{
+        // area for name written in triangles
+        #canvas{
+            #main{
+                rect{
+                }
+                .name{
+                }
+
+            }
+            #inner_triangles{
+                rect{
+                }
+                line{
+                }
+            }
+        }
+        // navigation bar
+        ul {
+            li {
+                &:hover {
+                }
+                span {
+                }
+            }
+        }
+    }     
 }
