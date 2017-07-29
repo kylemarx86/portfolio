@@ -587,6 +587,102 @@ footer {
       footer .control_panel .btn_container .arcade_btn {
         margin: 0;
         transform: scale(0.75); } }
+@media screen and (orientation: portrait) and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  footer {
+    height: 125px; }
+    footer .control_panel .btn_container {
+      height: 125px;
+      width: 125px; }
+      footer .control_panel .btn_container .arcade_btn {
+        height: 125px;
+        width: 125px;
+        margin: 0; }
+        footer .control_panel .btn_container .arcade_btn.red {
+          background-color: red;
+          box-shadow: inset 0 3.90625px 0 #ff1a1a, inset 0 -3.90625px 0 #e60000, inset 0 0 0 3.90625px #f00000, inset 0 0 0 10.41667px red, inset 0 0 0 12.5px #990000, inset 0 0 0 13.58696px black, inset 0 0 0 16.66667px rgba(255, 153, 153, 0.7), inset 0 0 0 22.72727px red, inset 0 50px 16.66667px #e60000, inset 0 0 12.5px 20.83333px #cc0000, 0 6.25px 0 rgba(0, 0, 0, 0.3); }
+          footer .control_panel .btn_container .arcade_btn.red:after {
+            content: '';
+            position: absolute;
+            bottom: 6.25px;
+            left: 12.5px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            border: 8.33333px solid rgba(0, 0, 0, 0.3);
+            border-width: 0 0 8.33333px;
+            border-radius: 50%;
+            -webkit-transition-duration: 200ms;
+            transition-duration: 200ms; }
+          footer .control_panel .btn_container .arcade_btn.red:active, footer .control_panel .btn_container .arcade_btn.red.is-pushed {
+            box-shadow: inset 0 3.90625px 0 #ff1a1a, inset 0 -3.90625px 0 #e60000, inset 0 0 0 3.90625px #f00000, inset 0 0 0 10.41667px red, inset 0 0 0 12.5px #990000, inset 0 0 0 14.70588px #330000, inset 0 0 0 16.66667px rgba(255, 153, 153, 0.2), inset 0 0 0 22.72727px #f00000, inset 0 50px 16.66667px #d60000, inset 0 0 12.5px 20.83333px #b30000, 0 6.25px 0 rgba(0, 0, 0, 0.3);
+            background-color: #f50000; }
+            footer .control_panel .btn_container .arcade_btn.red:active:after, footer .control_panel .btn_container .arcade_btn.red.is-pushed:after {
+              bottom: 14.58333px;
+              border-width: 0; }
+        footer .control_panel .btn_container .arcade_btn.blue {
+          background-color: blue;
+          box-shadow: inset 0 3.90625px 0 #1a1aff, inset 0 -3.90625px 0 #0000e6, inset 0 0 0 3.90625px #0000f0, inset 0 0 0 10.41667px blue, inset 0 0 0 12.5px #000099, inset 0 0 0 13.58696px black, inset 0 0 0 16.66667px rgba(153, 153, 255, 0.7), inset 0 0 0 22.72727px blue, inset 0 50px 16.66667px #0000e6, inset 0 0 12.5px 20.83333px #0000cc, 0 6.25px 0 rgba(0, 0, 0, 0.3); }
+          footer .control_panel .btn_container .arcade_btn.blue:after {
+            content: '';
+            position: absolute;
+            bottom: 6.25px;
+            left: 12.5px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            border: 8.33333px solid rgba(0, 0, 0, 0.3);
+            border-width: 0 0 8.33333px;
+            border-radius: 50%;
+            -webkit-transition-duration: 200ms;
+            transition-duration: 200ms; }
+          footer .control_panel .btn_container .arcade_btn.blue:active, footer .control_panel .btn_container .arcade_btn.blue.is-pushed {
+            box-shadow: inset 0 3.90625px 0 #1a1aff, inset 0 -3.90625px 0 #0000e6, inset 0 0 0 3.90625px #0000f0, inset 0 0 0 10.41667px blue, inset 0 0 0 12.5px #000099, inset 0 0 0 14.70588px #000033, inset 0 0 0 16.66667px rgba(153, 153, 255, 0.2), inset 0 0 0 22.72727px #0000f0, inset 0 50px 16.66667px #0000d6, inset 0 0 12.5px 20.83333px #0000b3, 0 6.25px 0 rgba(0, 0, 0, 0.3);
+            background-color: #0000f5; }
+            footer .control_panel .btn_container .arcade_btn.blue:active:after, footer .control_panel .btn_container .arcade_btn.blue.is-pushed:after {
+              bottom: 14.58333px;
+              border-width: 0; }
+    footer .control_panel .label_container {
+      font-size: 2em; }
+    footer .links form {
+      display: inline-block; }
+      footer .links form .btn_area .btn_container {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%); }
+        footer .links form .btn_area .btn_container .arcade_btn {
+          width: 75px;
+          height: 75px;
+          margin: 0.5em; }
+          footer .links form .btn_area .btn_container .arcade_btn.small {
+            background-color: white;
+            background-size: 75% 75%;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: inset 0 2.34375px 0 white, inset 0 -2.34375px 0 #f2f2f2, inset 0 0 0 2.34375px #f7f7f7, inset 0 0 0 6.25px white, inset 0 0 0 7.5px #cccccc, inset 0 0 0 8.15217px gray, inset 0 0 0 10px rgba(255, 255, 255, 0.7), inset 0 0 0 13.63636px white, inset 0 0 7.5px 12.5px #e6e6e6, 0 3.75px 0 rgba(0, 0, 0, 0.3); }
+            footer .links form .btn_area .btn_container .arcade_btn.small:after {
+              content: '';
+              position: absolute;
+              bottom: 3.75px;
+              left: 7.5px;
+              display: block;
+              width: 60px;
+              height: 60px;
+              border: 5px solid rgba(0, 0, 0, 0.3);
+              border-width: 0 0 5px;
+              border-radius: 50%;
+              -webkit-transition-duration: 200ms;
+              transition-duration: 200ms; }
+            footer .links form .btn_area .btn_container .arcade_btn.small:active.small, footer .links form .btn_area .btn_container .arcade_btn.small.is-pushed.small {
+              box-shadow: inset 0 2.34375px 0 white, inset 0 -2.34375px 0 #f2f2f2, inset 0 0 0 2.34375px #f7f7f7, inset 0 0 0 6.25px white, inset 0 0 0 7.5px #cccccc, inset 0 0 0 8.82353px #999999, inset 0 0 0 10px rgba(255, 255, 255, 0.2), inset 0 0 0 13.63636px #f7f7f7, inset 0 0 7.5px 12.5px #d9d9d9, 0 3.75px 0 rgba(0, 0, 0, 0.3);
+              background-color: #fafafa; }
+            footer .links form .btn_area .btn_container .arcade_btn.small:active:after, footer .links form .btn_area .btn_container .arcade_btn.small.is-pushed:after {
+              bottom: 8.75px;
+              border-width: 0; }
+      footer .links form br {
+        display: inline; }
+      footer .links form .label {
+        display: inline-block; } }
 button.link_btn, .link_btn > input {
   color: #101010;
   margin: 0 10px;

@@ -725,13 +725,99 @@ and (-webkit-min-device-pixel-ratio: 2){
 // portrait mode
 @media screen 
 and (orientation: portrait)
-and (min-width: 1024px){
+and (min-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2){
+  $btn_size: 125px;
+  $sm_btn_size: 75px;
+  footer {
+    height: $btn_size;
+    .control_panel {
+      .btn_container {
+        height: $btn_size;
+        width: $btn_size;
+        .arcade_btn {
+          height: $btn_size;
+          width: $btn_size;
+          margin: 0;
+          &.red {
+            @include lg_button(red, $btn_size);
+          }
+          &.blue {
+            @include lg_button(blue, $btn_size);
+          }
+          &:after {
+          }
+          &:active,
+          &.is-pushed {
+            &.red {
+            } 
+            &.blue {
+            }
+            &:after {
+            }
+          }
+        }
+      }
+      .label_container {
+        font-size: 2em;
+        .label {
+          &.red {
+          }
+          &.blue {
+          }
+          span {
+          }
+        }
+      }
+    }
+    .links{
+      form{
+        display: inline-block;
+        .btn_area{
+          .btn_container{
+            // display: inline-block;
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            .arcade_btn {
+              width: $sm_btn_size;  // 75 px
+              height: $sm_btn_size;  // 75 px
+              margin: 0.5em;
+              &.small{
+                @include sm_button($sm_btn_size);
+                &.github{
+                }
+                &.linkedin{
+                }
+              }
+            } // end arcade_btn
+          } // end btn_container
+        } // end btn_area
+        br{
+          display: inline;
+        }
+        .label {
+          display: inline-block;
+          span {
+          }
+        }
+      }
+      .label_container {
+        .label {
+          span {
+          }
+        }
+      }
+    } // end links
+  }  
 }
 
 // landscape
 @media screen
 and (orientation: landscape)
-and (min-width: 1366px){
+and (min-width: 1366px)
+and (-webkit-min-device-pixel-ratio: 2){
  
 }
 
