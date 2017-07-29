@@ -8,8 +8,7 @@ header {
   box-shadow: 1px 1px 2px 1px black;
   /*area for name written in triangles*/ }
   header #canvas {
-    height: 60px;
-    width: 225px; }
+    height: 100%; }
     header #canvas #main {
       border: 1px solid black; }
       header #canvas #main rect {
@@ -63,15 +62,25 @@ header {
   header ul {
     width: 50%;
     font-size: .75em; } }
+@media screen and (orientation: portrait) and (max-width: 360px) and (-webkit-min-device-pixel-ratio: 2) {
+  header {
+    height: 7.5%; }
+    header ul {
+      display: none; } }
 @media screen and (orientation: portrait) and (min-width: 361px) and (-webkit-min-device-pixel-ratio: 2) {
   header ul {
     width: 70%; } }
 @media only screen and (orientation: portrait) and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
   header {
-    height: 7%; }
+    height: 8%; }
     header ul {
-      width: 60%;
-      font-size: 1.5em; } }
+      width: 70%;
+      font-size: 1em; }
+      header ul li {
+        font-size: 1.25em; } }
+@media screen and (orientation: portrait) and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  header ul li {
+    font-size: 1.75em; } }
 footer {
   position: fixed;
   display: block;

@@ -255,7 +255,7 @@ function draw_triangles(){
   draw_poly(6,67);
 
   //scale the name drawn
-  $('#main').attr('transform', "scale(0.125)");
+//   $('#main').attr('transform', "scale(0.125)");
 }
 
 //draw a single triangle
