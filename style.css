@@ -1177,8 +1177,6 @@ button.link_btn, .link_btn > input {
         top: 0; }
 
 /*specific media queries*/
-/*portrait - iPad Pro*/
-/*landscape - iPad Pro*/
 /*portrait - iPad*/
 @media screen and (width: 980px) and (height: 1306px) {
   .technologies .tech_info {
@@ -1292,6 +1290,75 @@ button.link_btn, .link_btn > input {
   .technologies .tech_info {
     height: initial;
     width: 35%; } }
+@media screen and (orientation: portrait) and (max-width: 360px) and (-webkit-min-device-pixel-ratio: 2) {
+  .technologies {
+    position: relative;
+    top: 1%; }
+    .technologies .circle-container {
+      position: relative;
+      width: 12em;
+      height: 12em;
+      padding: 0;
+      border-radius: 50%;
+      list-style: none;
+      position: absolute;
+      top: 6%;
+      left: 50%;
+      transform: translateX(-50%); }
+      .technologies .circle-container .tech {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        margin: -25px; }
+        .technologies .circle-container .tech:nth-of-type(1) {
+          transform: rotate(0deg) translate(6em) rotate(0deg);
+          -webkit-transform: rotate(0deg) translate(6em) rotate(0deg); }
+        .technologies .circle-container .tech:nth-of-type(2) {
+          transform: rotate(40deg) translate(6em) rotate(-40deg);
+          -webkit-transform: rotate(40deg) translate(6em) rotate(-40deg); }
+        .technologies .circle-container .tech:nth-of-type(3) {
+          transform: rotate(80deg) translate(6em) rotate(-80deg);
+          -webkit-transform: rotate(80deg) translate(6em) rotate(-80deg); }
+        .technologies .circle-container .tech:nth-of-type(4) {
+          transform: rotate(120deg) translate(6em) rotate(-120deg);
+          -webkit-transform: rotate(120deg) translate(6em) rotate(-120deg); }
+        .technologies .circle-container .tech:nth-of-type(5) {
+          transform: rotate(160deg) translate(6em) rotate(-160deg);
+          -webkit-transform: rotate(160deg) translate(6em) rotate(-160deg); }
+        .technologies .circle-container .tech:nth-of-type(6) {
+          transform: rotate(200deg) translate(6em) rotate(-200deg);
+          -webkit-transform: rotate(200deg) translate(6em) rotate(-200deg); }
+        .technologies .circle-container .tech:nth-of-type(7) {
+          transform: rotate(240deg) translate(6em) rotate(-240deg);
+          -webkit-transform: rotate(240deg) translate(6em) rotate(-240deg); }
+        .technologies .circle-container .tech:nth-of-type(8) {
+          transform: rotate(280deg) translate(6em) rotate(-280deg);
+          -webkit-transform: rotate(280deg) translate(6em) rotate(-280deg); }
+        .technologies .circle-container .tech:nth-of-type(9) {
+          transform: rotate(320deg) translate(6em) rotate(-320deg);
+          -webkit-transform: rotate(320deg) translate(6em) rotate(-320deg); }
+      .technologies .circle-container .tech.selected {
+        -webkit-transform: translateX(200%) scale(1.25) !important;
+        transform: translateX(200%) scale(1.25) !important; }
+    .technologies .tech_info {
+      height: initial;
+      width: 90%;
+      position: absolute;
+      bottom: 1%;
+      left: 50%;
+      transform: translateX(-50%); }
+      .technologies .tech_info .name {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0; }
+      .technologies .tech_info .apps {
+        margin-bottom: 0; }
+        .technologies .tech_info .apps li span {
+          font-size: 1em;
+          line-height: 1; } }
 .contact form {
   display: inline-block;
   width: 50%;
