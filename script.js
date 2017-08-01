@@ -300,19 +300,9 @@ function apply_event_handlers(){
     $('.show_more_toggle').click(toggle_extra_tech_info);
     // for contact page
     $('button[name="submit"]').click(send_form);
+    // potentially for all pages
     $(window).resize(resize_screen_components);
 }
-
-// method to toggle the display of the applications related to the selected technology on tech page
-// intended for use on small screens where there is not enough room to show tech wheel and apps side by side
-function toggle_extra_tech_info(){
-    $('.tech_info').toggleClass('extra_info_shown');
-    $('.tech_info').one('webkitTransitionEnd transitionEnd', function(e){
-        $('.show_more_toggle').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
-    });
-}
-
-
 
 // load previous page from page_arr
 function get_prev_screen(){
@@ -578,7 +568,6 @@ function load_tech_info() {
     update_tech_info();
 }
 
-
 //rename this function
 function toggle_selected_tech(tech){
     $('.tech').click(function(){
@@ -612,6 +601,16 @@ function toggle_selected_tech(tech){
         });
     });
 }
+
+// method to toggle the display of the applications related to the selected technology on tech page
+// intended for use on small screens where there is not enough room to show tech wheel and apps side by side
+function toggle_extra_tech_info(){
+    $('.tech_info').toggleClass('extra_info_shown');
+    $('.tech_info').one('webkitTransitionEnd transitionEnd', function(e){
+        $('.show_more_toggle').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
+    });
+}
+
 /**
  * function to resize elements within the tech page (possibly others) on the resizing of the screen
  */

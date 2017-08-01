@@ -119,10 +119,12 @@
       background-color: #353535;
       border: 2px solid darkorange;
       transition: 0.5s;
-
+      
+      &.extra_info_shown{
+        transition: 1s;
+      }
       .show_more_toggle{
         display: none;
-        // position: relative;
         &.visible{
           display: inline-block;
         }
@@ -130,8 +132,6 @@
       .name{
         display: inline-block;
         position: relative;
-        // position: absolute;
-        // top: 0;
         left: 50%;
         transform: translateX(-50%);
         pointer-events: none; // allows for clicking of show_more_toggle when available
@@ -150,15 +150,13 @@
             font-size: 1.25em;
             line-height: 1.5;
           }
-          
           button{
             float: right;
             position: relative;
             right: 5px;
             margin-bottom: 5px;
           }
-        } // end li elements
-
+        }
         li:not(:last-child)::after {
           position: absolute;
           content: '';
@@ -440,22 +438,16 @@ and (-webkit-min-device-pixel-ratio: 2){
       }
     }
     .tech_info{
-      // height: initial;
-      // height: 75%;
       height: 100%;
       width: 90%;
       position: absolute;
-      // bottom: -20%;
-      // bottom: -35%;
       top: 35%;
       left: 50%;
       transform: translate(-50%, 50%);
       &.extra_info_shown{
-        transition: 1s;
         transform: translate(-50%, -35%);
       }
       .show_more_toggle{
-        // display: inline-block;
         height: 15%;
         width: 100%;
         left: 0;

@@ -1143,6 +1143,8 @@ button.link_btn, .link_btn > input {
     background-color: #353535;
     border: 2px solid darkorange;
     transition: 0.5s; }
+    .technologies .tech_info.extra_info_shown {
+      transition: 1s; }
     .technologies .tech_info .show_more_toggle {
       display: none; }
       .technologies .tech_info .show_more_toggle.visible {
@@ -1359,7 +1361,6 @@ button.link_btn, .link_btn > input {
       left: 50%;
       transform: translate(-50%, 50%); }
       .technologies .tech_info.extra_info_shown {
-        transition: 1s;
         transform: translate(-50%, -35%); }
       .technologies .tech_info .show_more_toggle {
         height: 15%;
