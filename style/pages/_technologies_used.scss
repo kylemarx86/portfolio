@@ -105,7 +105,6 @@
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         
-        
         &:hover,
         &:active {
           filter: grayscale(0);
@@ -147,7 +146,7 @@
             right: 5px;
             margin-bottom: 5px;
           }
-        }
+        } // end li elements
 
         li:not(:last-child)::after {
           position: absolute;
@@ -159,10 +158,10 @@
           border-bottom: 2px solid white;
           box-shadow: 0 1px #202020;
           top: 0;
+          pointer-events: none; // allows for clicking through of after elements
         }
 
-
-      }
+      } // end apps
     }
 }
 

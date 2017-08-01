@@ -1174,7 +1174,8 @@ button.link_btn, .link_btn > input {
         transform: translateX(-50%);
         border-bottom: 2px solid white;
         box-shadow: 0 1px #202020;
-        top: 0; }
+        top: 0;
+        pointer-events: none; }
 
 /*specific media queries*/
 /*portrait - iPad*/
