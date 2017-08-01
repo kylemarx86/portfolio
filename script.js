@@ -110,6 +110,7 @@ $(document).ready(function () {
     curr_page = 0;
     rot_array = [];
     draw_triangles();
+    resize_screen_components();
     apply_event_handlers();
     load_apps_info();
     load_tech_info();
@@ -295,10 +296,23 @@ function apply_event_handlers(){
     // for apps page
     $('.prev_button').click(get_prev_app);
     $('.next_button').click(get_next_app);
+    // for tech page
+    $('.show_more_toggle').click(toggle_extra_tech_info);
     // for contact page
     $('button[name="submit"]').click(send_form);
     $(window).resize(resize_screen_components);
 }
+
+// method to toggle the display of the applications related to the selected technology on tech page
+// intended for use on small screens where there is not enough room to show tech wheel and apps side by side
+function toggle_extra_tech_info(){
+    $('.tech_info').toggleClass('extra_info_shown');
+    $('.tech_info').one('webkitTransitionEnd transitionEnd', function(e){
+        $('.show_more_toggle').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
+    });
+}
+
+
 
 // load previous page from page_arr
 function get_prev_screen(){
@@ -603,6 +617,13 @@ function toggle_selected_tech(tech){
  */
 function resize_screen_components(){
     // resizing of technologies
+
+    // attempt at toggling visibility of show more info button on tech page
+    var $temp_width = 360;
+    if($(window).width() <= $temp_width){
+        $('.show_more_toggle').toggleClass('visible');
+    }
+
     var elt_count = $('.circle-container li.tech').length;
     var circle_radius = $('.circle-container').outerWidth() / 2;
 

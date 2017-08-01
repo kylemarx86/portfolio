@@ -118,12 +118,21 @@
       width: 20%;
       background-color: #353535;
       border: 2px solid darkorange;
+      transition: 0.5s;
 
+      .show_more_toggle{
+        display: none;
+        // position: relative;
+        &.visible{
+          display: inline-block;
+        }
+      }
       .name{
         display: inline-block;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
+        pointer-events: none; // allows for clicking of show_more_toggle when available
       }
       .apps{
         padding: 0 5px;
@@ -403,12 +412,13 @@ and (-webkit-min-device-pixel-ratio: 2){
   .technologies{
     position: relative;
     top: 1%;
+    display: inline-block;
     .circle-container {
       @include on-circle($item-count: 9, $circle-diam: 12em, $item-size: 50px);
       position: absolute;
-      top: 6%;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       .tech{
         &.selected{
           -webkit-transform: translateX(200%) scale(1.25) !important;
@@ -421,24 +431,41 @@ and (-webkit-min-device-pixel-ratio: 2){
         &.deselected{
         }
       }
-      img { 
-        
+      img {
         &:hover,
         &:active {
         }
       }
     }
     .tech_info{
-      height: initial;
+      // height: initial;
+      // height: 75%;
+      height: 100%;
       width: 90%;
       position: absolute;
-      bottom: 1%;
+      // bottom: -20%;
+      // bottom: -35%;
+      top: 35%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, 50%);
+      &.extra_info_shown{
+        transition: 1s;
+        transform: translate(-50%, -35%);
+      }
+      .show_more_toggle{
+        // display: inline-block;
+        height: 15%;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        position: absolute;
+        &.visible{
+          display: inline-block;
+        }
+      }
       .name{
         font-size: 1em;
         font-weight: bold;
-        margin: 0;
       }
       .apps{
         margin-bottom: 0;
