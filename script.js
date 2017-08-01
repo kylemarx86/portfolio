@@ -618,11 +618,16 @@ function toggle_extra_tech_info(){
 function resize_screen_components(){
     // resizing of technologies
 
-    // attempt at toggling visibility of show more info button on tech page
-    // var $temp_width = 360;
+    // toggle visibility of show more info button on tech page when screen is at designated sizes
     var $temp_width = 414;
     if($(window).width() <= $temp_width){
-        $('.show_more_toggle').toggleClass('visible');
+        if(!$('.show_more_toggle').hasClass('visible')){
+            $('.show_more_toggle').toggleClass('visible');
+        }
+    }else{
+        if($('.show_more_toggle').hasClass('visible')){
+            $('.show_more_toggle').toggleClass('visible');
+        }
     }
 
     var elt_count = $('.circle-container li.tech').length;
