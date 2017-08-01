@@ -1366,12 +1366,14 @@ button.link_btn, .link_btn > input {
         width: 100%;
         left: 0;
         text-align: center;
-        position: absolute; }
+        position: relative; }
         .technologies .tech_info .show_more_toggle.visible {
           display: inline-block; }
       .technologies .tech_info .name {
         font-size: 1em;
-        font-weight: bold; }
+        font-weight: bold;
+        position: absolute;
+        top: 0; }
       .technologies .tech_info .apps {
         margin-bottom: 0; }
         .technologies .tech_info .apps li span {
