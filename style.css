@@ -1526,5 +1526,14 @@ button:focus {
     .main_screen .screen .page .title h2 {
       margin-top: 5px;
       font-size: 0.75em; } }
+@media screen and (orientation: portrait) and (min-width: 361px) and (-webkit-min-device-pixel-ratio: 2) {
+  .main_screen {
+    top: 10%;
+    height: 75%; }
+    .main_screen .screen .page .title span {
+      height: 1em;
+      vertical-align: -4px; }
+    .main_screen .screen .page .title h2 {
+      font-size: 0.8em; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -341,7 +341,7 @@ and (-webkit-min-device-pixel-ratio: 2){
                 }
             }
         }
-    }    
+    } 
 }
 // landscape mode
 @media screen
@@ -353,12 +353,41 @@ and (-webkit-min-device-pixel-ratio: 2){
 
 // *********************************************************************************
 
-// larger phones - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
+// larger phones - iPhone 6, iPhone 6 Plus, Nexus 6P, Nexus 5X
 // portrait mode
 @media screen
 and (orientation: portrait) 
 and (min-width: 361px) 
 and (-webkit-min-device-pixel-ratio: 2){
+    .main_screen{
+        top: 10%;
+        height: 75%;
+        .screen{
+            .hidden{
+            }
+            .shrunk{
+            }
+            .grown{
+            }
+            .page{
+                // area for title in content
+                .title{
+                    span{
+                        height: 1em;
+                        vertical-align: -4px;
+                    }
+                    h2{
+                        // margin-top: 5px;
+                        font-size: 0.8em;
+                    }
+                }
+                // area for content in page
+                .content{
+
+                }
+            }
+        }
+    }
 }
 // landscape mode
 @media screen 
