@@ -1,14 +1,13 @@
-// aspect ratio for apps pics
-// $aspect_ratio: 960 / 475 * 100%;
-$aspect_ratio: 475 / 960 * 100%;
 $carousel_vert_offset: 10%;
+$initial_img_width: 960px;
+$initial_img_height: 475px;
 // area above the app carousel
 .apps_carousel_top{
     position: absolute;
     width: 100%;
     height: $carousel_vert_offset;      //10%
     background-color: #202020;
-    box-shadow: 1px 1px 3px 1px #000000;
+    box-shadow: 0 1px 3px 1px #000000;
     z-index: 3;
     top: 0;
 
@@ -31,17 +30,15 @@ $carousel_vert_offset: 10%;
     position: relative;
     background-color: #151515;
     width: 100%;
-    height: 80%;
+    height: $initial_img_height;
     box-shadow: 0 10px 10px -10px black inset, 0 -10px 10px -10px black inset;
     top: $carousel_vert_offset;
-
 
     .apps_carousel{
         position: relative;
         display: inline-block;
         height: 100%;
         width: 100%;
-        // overflow: hidden;
 
         .cover{
             position: absolute;
@@ -55,20 +52,17 @@ $carousel_vert_offset: 10%;
         .image_container{
             position: absolute;
             display: inline-block;
-            width: auto;
-            height: 100%;
             left: 10%;
 
             img{
                 position: absolute;
                 display: inline-block;
-                width: auto;
-                height: 100%;
+                width: $initial_img_width;
+                height: $initial_img_height;
                 
                 top: 0;
                 left: 0;
                 visibility: hidden;
-                // z-index: 1;
                 &.spacer{
                     position: relative;
                     opacity: 0;
@@ -79,28 +73,18 @@ $carousel_vert_offset: 10%;
             }
             &.gray{
                 left: 10%;
+                width: 2 * $initial_img_width;
                 position: absolute;
-                transform: translateX(100%);
+                transform: translateX(50%);
                 z-index: 1;
+
                 background: #101010;
-                // opacity: 0.7;
-                // old
-                // background: -webkit-linear-gradient(left, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Safari 5.1 to 6.0 */
-                // background: -o-linear-gradient(right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Opera 11.1 to 12.0 */
-                // background: -moz-linear-gradient(right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* For Firefox 3.6 to 15 */
-                // background: linear-gradient(to right, rgba(16,16,16,0.2), rgba(16,16,16,1) 30%); /* Standard syntax */
-                // new
-                background: -webkit-linear-gradient(left, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Safari 5.1 to 6.0 */
-                background: -o-linear-gradient(right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Opera 11.1 to 12.0 */
-                background: -moz-linear-gradient(right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* For Firefox 3.6 to 15 */
-                background: linear-gradient(to right, rgba(21,21,21,0.2), rgba(21,21,21,1) ); /* Standard syntax */
-            }
-            &.cover{
-                left: 10%;
-                position: absolute;
-                transform: translateX(200%);
-                z-index: 1;
-                background: #151515;
+                background: -webkit-linear-gradient(left, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50% ); /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(right, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50%); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(right, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50%); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(to right, rgba(21,21,21,0.2) 0%, rgba(21,21,21,1) 50%); /* Standard syntax */
+                .spacer{
+                }
             }
         }
 
@@ -127,13 +111,11 @@ $carousel_vert_offset: 10%;
             
             &.prev_button {
                 left: 0;
-                // z-index: 4;
                 -webkit-transform: skewX(-5deg) translateX(-50%);
                 transform: skewX(-5deg) translateX(-50%);
             }
             &.next_button {
                 right: 0;
-                // z-index: 4;
                 -webkit-transform: skewX(-5deg) translateX(50%);
                 transform: skewX(-5deg) translateX(50%);
             }
@@ -195,35 +177,43 @@ $carousel_vert_offset: 10%;
 }
 
 .apps_carousel_bottom{
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 10%;
+    height: Calc(100% - #{$carousel_vert_offset} - #{$initial_img_height});
     background-color: #202020;
-    box-shadow: 1px 1px 3px 1px #000000;
+    box-shadow: 0 -1px 3px 1px #000000;
     z-index: 3;
-    bottom: 0;
+    top: 10%;
 }
 
 
-/*specific media queries*/
-/*portrait - iPad Pro*/
-@media screen and (orientation: portrait) and (width: 1024px) and (height: 1366px){
 
-}
-/*landscape - iPad Pro*/
-@media screen and (width: 1366px) and (height: 1024px) {
 
-}
+// device specific media queries
+
+// /*portrait - iPad Pro*/
+// @media screen 
+// and (max-width: 1024px)
+// and (max-height: 1366px)
+// and (orientation: portrait){
+// }
+
+// /*landscape - iPad Pro*/
+// @media screen 
+// and (width: 1366px) 
+// and (height: 1024px) {
+// }
+
 /*portrait - iPad*/
-@media screen and (width: 980px) and (height: 1306px) {
-
-}
-/*landscape - iPad*/
-@media screen and (width: 1306px) and (height: 980px) {
-
-}
-/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
+@media only screen 
+and (min-width: 768px)
+and (max-width: 1024px) 
+and (orientation: portrait)
+and (-webkit-min-device-pixel-ratio: 2){
+    // $carousel_vert_offset: 10%;
+    // $initial_img_width: 960px;
+    // $initial_img_height: 475px;
+    $img_reduction_factor: .75;
     // area above the app carousel
     .apps_carousel_top{
         .link_btn_container{
@@ -233,95 +223,206 @@ $carousel_vert_offset: 10%;
     }
     // the main area of the app carousel
     .apps_carousel_main{
-        height: 50%;
-        
+        height: $initial_img_height * $img_reduction_factor;
         .apps_carousel{
-
-            #image_container{
-
+            .cover{
+            }
+            .image_container{
                 img{
-
+                    height: $initial_img_height * $img_reduction_factor;
+                    width: $initial_img_width * $img_reduction_factor;
+                    &.spacer{
+                    }
+                    &.visible{
+                    }
+                }
+                &.gray{
+                    width: 2 * $initial_img_width * $img_reduction_factor;
+                    .spacer{
+                    }
                 }
             }
-
             // styling of carousel buttons
             .skewed{
-                width: 9%;
-            
                 &.prev_button {
-     
                 }
                 &.next_button {
-                    
                 }
                 // hover transitions
                 &:hover{
-           
                 }
                 > .glyphicon {
-           
                 }
             }
 
             // number bar
             .number_bar{
-
                 .nav_number{
-                    
                     &.active_nav_number{
-                  
                     }
                 }
             }
-
         }
+    } // end apps_carousel_main
+    .apps_carousel_bottom{
+        height: 10%;
     }
 }
-/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (max-height: 555px){
+/*landscape - iPad*/
+@media only screen 
+and (min-width: 768px) 
+and (max-width: 1024px) 
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 2){
+    $carousel_vert_offset: 10%;
+    $img_reduction_factor: .75;
+    // area above the app carousel
+    .apps_carousel_top{
+        .link_btn_container{
+            form{
+            }
+        }
+    }
+
     // the main area of the app carousel
     .apps_carousel_main{
-        
+        height: $initial_img_height * $img_reduction_factor;
         .apps_carousel{
-            width: 70%;
-            #image_container{
-
+            .cover{
+            }
+            .image_container{
+                // height: $initial_img_height * $img_reduction_factor;
+                // width: $initial_img_width * $img_reduction_factor;
                 img{
-
+                    height: $initial_img_height * $img_reduction_factor;
+                    width: $initial_img_width * $img_reduction_factor;
+                    &.spacer{
+                    }
+                    &.visible{
+                    }
+                }
+                &.gray{
+                    width: 2 * $initial_img_width * $img_reduction_factor;
+                    .spacer{
+                    }
                 }
             }
-
             // styling of carousel buttons
             .skewed{
-                width: 9%;
-            
                 &.prev_button {
-     
                 }
                 &.next_button {
-                    
                 }
                 // hover transitions
                 &:hover{
-           
                 }
                 > .glyphicon {
-           
                 }
             }
 
             // number bar
             .number_bar{
-                height: 20%;
-
                 .nav_number{
-
                     &.active_nav_number{
-                  
                     }
                 }
             }
-
         }
     }
+
+    .apps_carousel_bottom{
+        height: Calc(100% - #{$carousel_vert_offset} - #{$initial_img_height * $img_reduction_factor});
+    }  
 }
+
+/*portrait -  iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen
+and (orientation: portrait) 
+and (max-width: 736px) 
+and (min-width: 320px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    
+}
+/*landscape - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media screen 
+and (max-width: 736px) 
+// and (min-height: 351px) 
+and (max-height: 555px)
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 2){
+    $carousel_vert_offset: 10%;
+    $img_reduction_factor: .55;
+    // area above the app carousel
+    .apps_carousel_top{
+        .link_btn_container{
+            form{
+            }
+        }
+    }
+
+    // the main area of the app carousel
+    .apps_carousel_main{
+        height: $initial_img_height * $img_reduction_factor;
+        .apps_carousel{
+            .cover{
+            }
+            .image_container{
+                // height: $initial_img_height * $img_reduction_factor;
+                // width: $initial_img_width * $img_reduction_factor;
+                img{
+                    height: $initial_img_height * $img_reduction_factor;
+                    width: $initial_img_width * $img_reduction_factor;
+                    &.spacer{
+                    }
+                    &.visible{
+                    }
+                }
+                &.gray{
+                    width: 2 * $initial_img_width * $img_reduction_factor;
+                    .spacer{
+                    }
+                }
+            }
+            // styling of carousel buttons
+            .skewed{
+                &.prev_button {
+                }
+                &.next_button {
+                }
+                // hover transitions
+                &:hover{
+                }
+                > .glyphicon {
+                }
+            }
+
+            // number bar
+            .number_bar{
+                .nav_number{
+                    &.active_nav_number{
+                    }
+                }
+            }
+        }
+    }
+    .apps_carousel_bottom{
+        height: Calc(100% - #{$carousel_vert_offset} - #{$initial_img_height * $img_reduction_factor});
+    }    
+}
+
+// /*portrait -  iPhone 5*/
+// @media screen 
+// and (orientation: portrait) 
+// and (max-width: 980px) 
+// and (max-height: 600px)
+// and (-webkit-min-device-pixel-ratio: 2){
+    
+// }
+// /*landscape - iPhone 5*/
+// @media screen
+// and (max-width: 980px) 
+// and (max-height: 350px)
+// and (orientation: landscape)
+// and (-webkit-min-device-pixel-ratio: 2){
+    
+// }

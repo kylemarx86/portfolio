@@ -255,7 +255,7 @@ function draw_triangles(){
   draw_poly(6,67);
 
   //scale the name drawn
-  $('#main').attr('transform', "scale(0.125)");
+//   $('#main').attr('transform', "scale(0.125)");
 }
 
 //draw a single triangle
@@ -602,6 +602,7 @@ function toggle_selected_tech(tech){
  * function to resize elements within the tech page (possibly others) on the resizing of the screen
  */
 function resize_screen_components(){
+    // resizing of technologies
     var elt_count = $('.circle-container li.tech').length;
     var circle_radius = $('.circle-container').outerWidth() / 2;
 
@@ -635,30 +636,6 @@ function whichTransitionEvent(){
     }
   }
 }
-
-/**
- * Function from David Walsh: http://davidwalsh.name/css-animation-callback
- * 
- */
-function whichAnimationEvent(){
-  var t,
-      el = document.createElement("fakeelement");
-
-  var transitions = {
-    "animation"      : "animationend",
-    "OAnimation"     : "oAnimationEnd",
-    "MozAnimation"   : "animationend",
-    "WebkitAnimation": "webkitAnimationEnd"
-  }
-
-  for (t in transitions){
-    if (el.style[t] !== undefined){
-      return transitions[t];
-    }
-  }
-}
-
-
 
 /**
  * 
@@ -741,6 +718,8 @@ function send_form(){
     //disable send button until a response is received
     $('.send').off('click');
 
+
+
     $.ajax({
         dataType:'json',
         url: 'mailer/mail_handler.php',
@@ -759,10 +738,16 @@ function send_form(){
             if(response.success){
                 $('.mail_response p').text(response.message);
             }else{
-                $('.mail_response p').text('Message could not be sent.');
+                console.log('success function');
+                console.log(response.message);
+                for(var i = 0; i < response.message.length; i++){
+                    $('.mail_response p').text(response.message[i]);
+                }
             }
         },
         error: function(response){
+            console.log('error function');
+            console.log(response);
             $('.mail_response p').text('Message could not be sent due to server error');
             //change text of send button
             $('button[name="submit"]').text('Send Mail');

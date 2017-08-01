@@ -69,19 +69,18 @@
         font-family: Calibri;
         -webkit-transition-duration: 0.75s;
         transition-duration: 0.75s;
-        
 
         &.selected{
-            -webkit-transition-duration: 0.25s;
-            transition-duration: 0.25s;
-            -webkit-transition-delay: 0.5s;
-            transition-delay: 0.5s;
-            background-color: yellow;
-            -webkit-transform: translateX(250%) scale(1.25) !important;
-            transform: translateX(250%) scale(1.25) !important;
-            img{
-                filter: grayscale(0);
-            }
+          -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+          -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+          background-color: yellow;
+          -webkit-transform: translateX(250%) scale(1.25) !important;
+          transform: translateX(250%) scale(1.25) !important;
+          img{
+              filter: grayscale(0);
+          }
         }
         &:not(.selected){
             -webkit-transition-duration: 0.25s;
@@ -105,7 +104,6 @@
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        
         
         &:hover,
         &:active {
@@ -148,7 +146,7 @@
             right: 5px;
             margin-bottom: 5px;
           }
-        }
+        } // end li elements
 
         li:not(:last-child)::after {
           position: absolute;
@@ -160,24 +158,16 @@
           border-bottom: 2px solid white;
           box-shadow: 0 1px #202020;
           top: 0;
+          pointer-events: none; // allows for clicking through of after elements
         }
 
-
-      }
+      } // end apps
     }
 }
 
 
 
 /*specific media queries*/
-/*portrait - iPad Pro*/
-@media screen and (orientation: portrait) and (width: 1024px) and (height: 1366px){
-
-}
-/*landscape - iPad Pro*/
-@media screen and (width: 1366px) and (height: 1024px) {
-
-}
 /*portrait - iPad*/
 @media screen and (width: 980px) and (height: 1306px) {
   
@@ -236,55 +226,39 @@
 }
 /*landscape - iPad*/
 @media screen and (width: 1306px) and (height: 980px) {
-
   .technologies{
-    
-      .circle-container {
-
-        .tech{
-
-          &.selected{
-
-              img{
-              }
-          }
-          &:not(.selected){
-
-          }
-          &.deselected{
-
-          }
+    .circle-container {
+      .tech{
+        &.selected{
+            img{
+            }
         }
-        
-        img { 
-          
-          &:hover,
-          &:active {
-          }
+        &:not(.selected){
+        }
+        &.deselected{
         }
       }
-
-      .tech_info{
-        .name{
+      img { 
         
-        }
-        .apps{
-          li{
-
-            span{
-   
-            }
-            
-            button{
-
-            }
-          }
-
-          li:not(:last-child)::after {
-
-          }
+        &:hover,
+        &:active {
         }
       }
+    }
+    .tech_info{
+      .name{
+      }
+      .apps{
+        li{
+          span{
+          }
+          button{
+          }
+        }
+        li:not(:last-child)::after {
+        }
+      }
+    }
   }
 }
 /*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
@@ -411,3 +385,367 @@
 }
 
 
+
+
+// *********************************************************************************
+// *********************************************************************************
+
+
+// revised media queries
+// device specific media queries
+
+// smaller phones - iPhone 5, galaxy s5
+// portrait mode
+@media screen 
+and (orientation: portrait) 
+and (max-width: 360px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  .technologies{
+    position: relative;
+    top: 1%;
+    .circle-container {
+      @include on-circle($item-count: 9, $circle-diam: 12em, $item-size: 50px);
+      position: absolute;
+      top: 6%;
+      left: 50%;
+      transform: translateX(-50%);
+      .tech{
+        &.selected{
+          -webkit-transform: translateX(200%) scale(1.25) !important;
+          transform: translateX(200%) scale(1.25) !important;
+          img{
+          }
+        }
+        &:not(.selected){
+        }
+        &.deselected{
+        }
+      }
+      img { 
+        
+        &:hover,
+        &:active {
+        }
+      }
+    }
+    .tech_info{
+      height: initial;
+      width: 90%;
+      position: absolute;
+      bottom: 1%;
+      left: 50%;
+      transform: translateX(-50%);
+      .name{
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0;
+      }
+      .apps{
+        margin-bottom: 0;
+        li{
+          span{
+            font-size: 1em;
+            line-height: 1;
+          }
+          button{
+          }
+        }
+        li:not(:last-child)::after {
+        }
+      }
+    }
+  }
+}
+// landscape mode
+@media screen
+and (orientation: landscape)
+and (max-width: 640px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  .technologies{
+    .circle-container {
+      .tech{
+        &.selected{
+            img{
+            }
+        }
+        &:not(.selected){
+        }
+        &.deselected{
+        }
+      }
+      img { 
+        
+        &:hover,
+        &:active {
+        }
+      }
+    }
+    .tech_info{
+      .name{
+      }
+      .apps{
+        li{
+          span{
+          }
+          button{
+          }
+        }
+        li:not(:last-child)::after {
+        }
+      }
+    }
+  }
+}
+
+// *********************************************************************************
+
+// larger phones - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
+// portrait mode
+@media screen
+and (orientation: portrait) 
+and (min-width: 361px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  .technologies{
+    .circle-container {
+      .tech{
+        &.selected{
+            img{
+            }
+        }
+        &:not(.selected){
+        }
+        &.deselected{
+        }
+      }
+      img { 
+        
+        &:hover,
+        &:active {
+        }
+      }
+    }
+    .tech_info{
+      .name{
+      }
+      .apps{
+        li{
+          span{
+          }
+          button{
+          }
+        }
+        li:not(:last-child)::after {
+        }
+      }
+    }
+  }
+}
+// landscape mode
+@media screen 
+and (orientation: landscape) 
+and (min-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  .technologies{
+    .circle-container {
+      .tech{
+        &.selected{
+            img{
+            }
+        }
+        &:not(.selected){
+        }
+        &.deselected{
+        }
+      }
+      img { 
+        
+        &:hover,
+        &:active {
+        }
+      }
+    }
+    .tech_info{
+      .name{
+      }
+      .apps{
+        li{
+          span{
+          }
+          button{
+          }
+        }
+        li:not(:last-child)::after {
+        }
+      }
+    }
+  }
+}
+
+// *********************************************************************************
+
+// smaller tablet sizes - Nexus 7, iPad mini, iPad
+// portrait mode
+@media only screen 
+and (orientation: portrait)
+and (min-width: 600px)
+and (-webkit-min-device-pixel-ratio: 2){
+  .technologies{
+    .circle-container {
+      .tech{
+        &.selected{
+            img{
+            }
+        }
+        &:not(.selected){
+        }
+        &.deselected{
+        }
+      }
+      img { 
+        
+        &:hover,
+        &:active {
+        }
+      }
+    }
+    .tech_info{
+      .name{
+      }
+      .apps{
+        li{
+          span{
+          }
+          button{
+          }
+        }
+        li:not(:last-child)::after {
+        }
+      }
+    }
+  }
+}
+// landscape mode
+@media only screen 
+and (orientation: landscape)
+and (min-width: 960px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  .technologies{
+    .circle-container {
+      .tech{
+        &.selected{
+            img{
+            }
+        }
+        &:not(.selected){
+        }
+        &.deselected{
+        }
+      }
+      img { 
+        
+        &:hover,
+        &:active {
+        }
+      }
+    }
+    .tech_info{
+      .name{
+      }
+      .apps{
+        li{
+          span{
+          }
+          button{
+          }
+        }
+        li:not(:last-child)::after {
+        }
+      }
+    }
+  }
+}
+
+// *********************************************************************************
+
+// large tablet sizes - iPad pro
+// portrait mode
+@media screen 
+and (orientation: portrait)
+and (min-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2){
+  .technologies{
+    .circle-container {
+      .tech{
+        &.selected{
+            img{
+            }
+        }
+        &:not(.selected){
+        }
+        &.deselected{
+        }
+      }
+      img { 
+        
+        &:hover,
+        &:active {
+        }
+      }
+    }
+    .tech_info{
+      .name{
+      }
+      .apps{
+        li{
+          span{
+          }
+          button{
+          }
+        }
+        li:not(:last-child)::after {
+        }
+      }
+    }
+  }
+}
+
+// landscape
+@media screen
+and (orientation: landscape)
+and (min-width: 1366px)
+and (-webkit-min-device-pixel-ratio: 2){
+  .technologies{
+    .circle-container {
+      .tech{
+        &.selected{
+            img{
+            }
+        }
+        &:not(.selected){
+        }
+        &.deselected{
+        }
+      }
+      img { 
+        
+        &:hover,
+        &:active {
+        }
+      }
+    }
+    .tech_info{
+      .name{
+      }
+      .apps{
+        li{
+          span{
+          }
+          button{
+          }
+        }
+        li:not(:last-child)::after {
+        }
+      }
+    }
+  }
+}
