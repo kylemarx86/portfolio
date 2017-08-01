@@ -1181,7 +1181,6 @@ button.link_btn, .link_btn > input {
         height: 100%;
         transform: translateX(-50%);
         border-bottom: 2px solid white;
-        box-shadow: 0 1px #202020;
         top: 0;
         pointer-events: none; }
 
