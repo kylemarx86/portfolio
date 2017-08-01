@@ -112,22 +112,3 @@
     75%  {left: 75%}
     100% {left: 100%}
 }
-
-//animations for tech page
-//animates the movement of the selected tech back into the circle as the selected tech becomes deselected
-@-webkit-keyframes tech-deselect{
-  from{
-    -webkit-transform: translateX(250%) scale(1.25);
-  }
-  to{
-    -webkit-transform: translate(12.5em);
-  }
-}
-@keyframes tech-deselect{
-  from{
-    transform: translateX(250%) scale(1.25);
-  }
-  to{
-    transform: translate(12.5em);
-  }
-}

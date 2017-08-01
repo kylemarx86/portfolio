@@ -832,16 +832,6 @@ button.link_btn, .link_btn > input {
     left: 75%; }
   100% {
     left: 100%; } }
-@-webkit-keyframes tech-deselect {
-  from {
-    -webkit-transform: translateX(250%) scale(1.25); }
-  to {
-    -webkit-transform: translate(12.5em); } }
-@keyframes tech-deselect {
-  from {
-    transform: translateX(250%) scale(1.25); }
-  to {
-    transform: translate(12.5em); } }
 /*styling for about*/
 .about p {
   color: white;
@@ -1097,6 +1087,16 @@ button.link_btn, .link_btn > input {
       .technologies .circle-container .tech:nth-of-type(9) {
         transform: rotate(320deg) translate(12.5em) rotate(-320deg);
         -webkit-transform: rotate(320deg) translate(12.5em) rotate(-320deg); }
+@-webkit-keyframes tech-deselect {
+  from {
+    -webkit-transform: translateX(250%) scale(1.25); }
+  to {
+    -webkit-transform: translate(12.5em); } }
+@keyframes tech-deselect {
+  from {
+    transform: translateX(250%) scale(1.25); }
+  to {
+    transform: translate(12.5em); } }
     .technologies .circle-container .tech {
       border-radius: 10%;
       background-color: white;
@@ -1185,120 +1185,6 @@ button.link_btn, .link_btn > input {
         top: 0;
         pointer-events: none; }
 
-/*specific media queries*/
-/*portrait - iPad*/
-@media screen and (width: 980px) and (height: 1306px) {
-  .technologies .tech_info {
-    height: initial;
-    width: 30%;
-    margin-left: 10%; } }
-/*landscape - iPad*/
-/*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
-  Nexus 5X looks messed up*/
-@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
-  .technologies .circle-container {
-    position: relative;
-    width: 30em;
-    height: 30em;
-    padding: 0;
-    border-radius: 50%;
-    list-style: none;
-    position: absolute;
-    top: 6%;
-    left: 50%;
-    transform: translateX(-50%); }
-    .technologies .circle-container .tech {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 120px;
-      height: 120px;
-      margin: -60px; }
-      .technologies .circle-container .tech:nth-of-type(1) {
-        transform: rotate(0deg) translate(15em) rotate(0deg);
-        -webkit-transform: rotate(0deg) translate(15em) rotate(0deg); }
-      .technologies .circle-container .tech:nth-of-type(2) {
-        transform: rotate(40deg) translate(15em) rotate(-40deg);
-        -webkit-transform: rotate(40deg) translate(15em) rotate(-40deg); }
-      .technologies .circle-container .tech:nth-of-type(3) {
-        transform: rotate(80deg) translate(15em) rotate(-80deg);
-        -webkit-transform: rotate(80deg) translate(15em) rotate(-80deg); }
-      .technologies .circle-container .tech:nth-of-type(4) {
-        transform: rotate(120deg) translate(15em) rotate(-120deg);
-        -webkit-transform: rotate(120deg) translate(15em) rotate(-120deg); }
-      .technologies .circle-container .tech:nth-of-type(5) {
-        transform: rotate(160deg) translate(15em) rotate(-160deg);
-        -webkit-transform: rotate(160deg) translate(15em) rotate(-160deg); }
-      .technologies .circle-container .tech:nth-of-type(6) {
-        transform: rotate(200deg) translate(15em) rotate(-200deg);
-        -webkit-transform: rotate(200deg) translate(15em) rotate(-200deg); }
-      .technologies .circle-container .tech:nth-of-type(7) {
-        transform: rotate(240deg) translate(15em) rotate(-240deg);
-        -webkit-transform: rotate(240deg) translate(15em) rotate(-240deg); }
-      .technologies .circle-container .tech:nth-of-type(8) {
-        transform: rotate(280deg) translate(15em) rotate(-280deg);
-        -webkit-transform: rotate(280deg) translate(15em) rotate(-280deg); }
-      .technologies .circle-container .tech:nth-of-type(9) {
-        transform: rotate(320deg) translate(15em) rotate(-320deg);
-        -webkit-transform: rotate(320deg) translate(15em) rotate(-320deg); }
-  .technologies .tech_info {
-    height: initial;
-    width: 75%;
-    position: absolute;
-    bottom: 1.5%;
-    left: 50%;
-    transform: translateX(-50%); }
-    .technologies .tech_info .apps li span {
-      font-size: 2em;
-      line-height: 2; } }
-/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (width: 980px) and (max-height: 555px) {
-  .technologies .circle-container {
-    position: relative;
-    width: 17.5em;
-    height: 17.5em;
-    padding: 0;
-    border-radius: 50%;
-    list-style: none; }
-    .technologies .circle-container .tech {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 75px;
-      height: 75px;
-      margin: -37.5px; }
-      .technologies .circle-container .tech:nth-of-type(1) {
-        transform: rotate(0deg) translate(8.75em) rotate(0deg);
-        -webkit-transform: rotate(0deg) translate(8.75em) rotate(0deg); }
-      .technologies .circle-container .tech:nth-of-type(2) {
-        transform: rotate(40deg) translate(8.75em) rotate(-40deg);
-        -webkit-transform: rotate(40deg) translate(8.75em) rotate(-40deg); }
-      .technologies .circle-container .tech:nth-of-type(3) {
-        transform: rotate(80deg) translate(8.75em) rotate(-80deg);
-        -webkit-transform: rotate(80deg) translate(8.75em) rotate(-80deg); }
-      .technologies .circle-container .tech:nth-of-type(4) {
-        transform: rotate(120deg) translate(8.75em) rotate(-120deg);
-        -webkit-transform: rotate(120deg) translate(8.75em) rotate(-120deg); }
-      .technologies .circle-container .tech:nth-of-type(5) {
-        transform: rotate(160deg) translate(8.75em) rotate(-160deg);
-        -webkit-transform: rotate(160deg) translate(8.75em) rotate(-160deg); }
-      .technologies .circle-container .tech:nth-of-type(6) {
-        transform: rotate(200deg) translate(8.75em) rotate(-200deg);
-        -webkit-transform: rotate(200deg) translate(8.75em) rotate(-200deg); }
-      .technologies .circle-container .tech:nth-of-type(7) {
-        transform: rotate(240deg) translate(8.75em) rotate(-240deg);
-        -webkit-transform: rotate(240deg) translate(8.75em) rotate(-240deg); }
-      .technologies .circle-container .tech:nth-of-type(8) {
-        transform: rotate(280deg) translate(8.75em) rotate(-280deg);
-        -webkit-transform: rotate(280deg) translate(8.75em) rotate(-280deg); }
-      .technologies .circle-container .tech:nth-of-type(9) {
-        transform: rotate(320deg) translate(8.75em) rotate(-320deg);
-        -webkit-transform: rotate(320deg) translate(8.75em) rotate(-320deg); }
-  .technologies .tech_info {
-    height: initial;
-    width: 35%; } }
 @media screen and (orientation: portrait) and (max-width: 360px) and (-webkit-min-device-pixel-ratio: 2) {
   .technologies {
     position: relative;
@@ -1350,9 +1236,107 @@ button.link_btn, .link_btn > input {
         .technologies .circle-container .tech:nth-of-type(9) {
           transform: rotate(320deg) translate(6em) rotate(-320deg);
           -webkit-transform: rotate(320deg) translate(6em) rotate(-320deg); }
+  @-webkit-keyframes tech-deselect {
+    from {
+      -webkit-transform: translateX(200%) scale(1.25); }
+    to {
+      -webkit-transform: translate(6em); } }
+  @keyframes tech-deselect {
+    from {
+      transform: translateX(200%) scale(1.25); }
+    to {
+      transform: translate(6em); } }
       .technologies .circle-container .tech.selected {
         -webkit-transform: translateX(200%) scale(1.25) !important;
         transform: translateX(200%) scale(1.25) !important; }
+    .technologies .tech_info {
+      height: 100%;
+      width: 90%;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, 50%); }
+      .technologies .tech_info.extra_info_shown {
+        transform: translate(-50%, -35%); }
+      .technologies .tech_info .show_more_toggle {
+        height: 15%;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        position: relative; }
+        .technologies .tech_info .show_more_toggle.visible {
+          display: inline-block; }
+      .technologies .tech_info .name {
+        font-size: 1em;
+        font-weight: bold;
+        position: absolute;
+        top: 0; }
+      .technologies .tech_info .apps {
+        margin-bottom: 0; }
+        .technologies .tech_info .apps li span {
+          font-size: 1em;
+          line-height: 1; } }
+@media screen and (orientation: portrait) and (min-width: 361px) and (-webkit-min-device-pixel-ratio: 2) {
+  .technologies {
+    position: relative;
+    top: 1%;
+    display: inline-block; }
+    .technologies .circle-container {
+      position: relative;
+      width: 12em;
+      height: 12em;
+      padding: 0;
+      border-radius: 50%;
+      list-style: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .technologies .circle-container .tech {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        margin: -25px; }
+        .technologies .circle-container .tech:nth-of-type(1) {
+          transform: rotate(0deg) translate(6em) rotate(0deg);
+          -webkit-transform: rotate(0deg) translate(6em) rotate(0deg); }
+        .technologies .circle-container .tech:nth-of-type(2) {
+          transform: rotate(40deg) translate(6em) rotate(-40deg);
+          -webkit-transform: rotate(40deg) translate(6em) rotate(-40deg); }
+        .technologies .circle-container .tech:nth-of-type(3) {
+          transform: rotate(80deg) translate(6em) rotate(-80deg);
+          -webkit-transform: rotate(80deg) translate(6em) rotate(-80deg); }
+        .technologies .circle-container .tech:nth-of-type(4) {
+          transform: rotate(120deg) translate(6em) rotate(-120deg);
+          -webkit-transform: rotate(120deg) translate(6em) rotate(-120deg); }
+        .technologies .circle-container .tech:nth-of-type(5) {
+          transform: rotate(160deg) translate(6em) rotate(-160deg);
+          -webkit-transform: rotate(160deg) translate(6em) rotate(-160deg); }
+        .technologies .circle-container .tech:nth-of-type(6) {
+          transform: rotate(200deg) translate(6em) rotate(-200deg);
+          -webkit-transform: rotate(200deg) translate(6em) rotate(-200deg); }
+        .technologies .circle-container .tech:nth-of-type(7) {
+          transform: rotate(240deg) translate(6em) rotate(-240deg);
+          -webkit-transform: rotate(240deg) translate(6em) rotate(-240deg); }
+        .technologies .circle-container .tech:nth-of-type(8) {
+          transform: rotate(280deg) translate(6em) rotate(-280deg);
+          -webkit-transform: rotate(280deg) translate(6em) rotate(-280deg); }
+        .technologies .circle-container .tech:nth-of-type(9) {
+          transform: rotate(320deg) translate(6em) rotate(-320deg);
+          -webkit-transform: rotate(320deg) translate(6em) rotate(-320deg); }
+  @-webkit-keyframes tech-deselect {
+    from {
+      -webkit-transform: translateX(250%) scale(1.25); }
+    to {
+      -webkit-transform: translate(6em); } }
+  @keyframes tech-deselect {
+    from {
+      transform: translateX(250%) scale(1.25); }
+    to {
+      transform: translate(6em); } }
     .technologies .tech_info {
       height: 100%;
       width: 90%;

@@ -577,7 +577,8 @@ function toggle_selected_tech(tech){
         // determine which way to spin (cw or ccw) and by how much by first determining which is the closer path.
             // this can be done by seeing if the clicked element is under or over the halfway mark of the number of elements
         var new_rot = loc_index <= elt_count / 2 ? -1 * loc_index * 360 / elt_count : (elt_count - loc_index) * 360 / elt_count;
-        $('.tech.selected').removeClass('selected').addClass('deselected');
+        // $('.tech.selected').removeClass('selected').addClass('deselected');
+        $('.tech.selected').addClass('deselected').removeClass('selected');
         $('.deselected').one('webkitAnimationEnd animationEnd', function(e){
             $('.tech.deselected').removeClass('deselected');
             var circle_radius = $('.circle-container').outerWidth() / 2;
@@ -618,7 +619,8 @@ function resize_screen_components(){
     // resizing of technologies
 
     // attempt at toggling visibility of show more info button on tech page
-    var $temp_width = 360;
+    // var $temp_width = 360;
+    var $temp_width = 414;
     if($(window).width() <= $temp_width){
         $('.show_more_toggle').toggleClass('visible');
     }
