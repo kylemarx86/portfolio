@@ -377,13 +377,11 @@ and (-webkit-min-device-pixel-ratio: 2){
                         vertical-align: -4px;
                     }
                     h2{
-                        // margin-top: 5px;
                         font-size: 0.8em;
                     }
                 }
                 // area for content in page
                 .content{
-
                 }
             }
         }
@@ -405,6 +403,33 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: portrait)
 and (min-width: 600px)
 and (-webkit-min-device-pixel-ratio: 2){
+    .main_screen{
+        top: 10%;
+        height: 75%;
+        .screen{
+            .hidden{
+            }
+            .shrunk{
+            }
+            .grown{
+            }
+            .page{
+                // area for title in content
+                .title{
+                    span{
+                        height: 2.5em;
+                        vertical-align: middle;
+                    }
+                    h2{
+                        font-size: 2em;
+                    }
+                }
+                // area for content in page
+                .content{
+                }
+            }
+        }
+    }
 }
 // landscape mode
 @media only screen 

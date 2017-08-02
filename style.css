@@ -1518,5 +1518,14 @@ button:focus {
       vertical-align: -4px; }
     .main_screen .screen .page .title h2 {
       font-size: 0.8em; } }
+@media only screen and (orientation: portrait) and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+  .main_screen {
+    top: 10%;
+    height: 75%; }
+    .main_screen .screen .page .title span {
+      height: 2.5em;
+      vertical-align: middle; }
+    .main_screen .screen .page .title h2 {
+      font-size: 2em; } }
 
 /*# sourceMappingURL=style.css.map */
