@@ -619,8 +619,9 @@ function resize_screen_components(){
     // resizing of technologies
 
     // toggle visibility of show more info button on tech page when screen is at designated sizes
-    var $temp_width = 414;
-    if($(window).width() <= $temp_width){
+    var $temp_width = 768;  // iPad width
+    // if($(window).width() <= $temp_width && window.orientation === 0){
+    if(window.matchMedia(`(max-width: ${$temp_width}px) and (-webkit-min-device-pixel-ratio: 2)`).matches){
         if(!$('.show_more_toggle').hasClass('visible')){
             $('.show_more_toggle').toggleClass('visible');
         }
