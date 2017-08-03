@@ -110,6 +110,7 @@ $(document).ready(function () {
     curr_page = 0;
     rot_array = [];
     draw_triangles();
+    resize_screen_components();
     apply_event_handlers();
     load_apps_info();
     load_tech_info();
@@ -295,8 +296,11 @@ function apply_event_handlers(){
     // for apps page
     $('.prev_button').click(get_prev_app);
     $('.next_button').click(get_next_app);
+    // for tech page
+    $('.show_more_toggle').click(toggle_extra_tech_info);
     // for contact page
     $('button[name="submit"]').click(send_form);
+    // potentially for all pages
     $(window).resize(resize_screen_components);
 }
 
@@ -564,7 +568,6 @@ function load_tech_info() {
     update_tech_info();
 }
 
-
 //rename this function
 function toggle_selected_tech(tech){
     $('.tech').click(function(){
@@ -574,7 +577,8 @@ function toggle_selected_tech(tech){
         // determine which way to spin (cw or ccw) and by how much by first determining which is the closer path.
             // this can be done by seeing if the clicked element is under or over the halfway mark of the number of elements
         var new_rot = loc_index <= elt_count / 2 ? -1 * loc_index * 360 / elt_count : (elt_count - loc_index) * 360 / elt_count;
-        $('.tech.selected').removeClass('selected').addClass('deselected');
+        // $('.tech.selected').removeClass('selected').addClass('deselected');
+        $('.tech.selected').addClass('deselected').removeClass('selected');
         $('.deselected').one('webkitAnimationEnd animationEnd', function(e){
             $('.tech.deselected').removeClass('deselected');
             var circle_radius = $('.circle-container').outerWidth() / 2;
@@ -598,11 +602,35 @@ function toggle_selected_tech(tech){
         });
     });
 }
+
+// method to toggle the display of the applications related to the selected technology on tech page
+// intended for use on small screens where there is not enough room to show tech wheel and apps side by side
+function toggle_extra_tech_info(){
+    $('.tech_info').toggleClass('extra_info_shown');
+    $('.tech_info').one('webkitTransitionEnd transitionEnd', function(e){
+        $('.show_more_toggle').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
+    });
+}
+
 /**
  * function to resize elements within the tech page (possibly others) on the resizing of the screen
  */
 function resize_screen_components(){
     // resizing of technologies
+
+    // toggle visibility of show more info button on tech page when screen is at designated sizes
+    var $temp_width = 768;  // iPad width
+    // if($(window).width() <= $temp_width && window.orientation === 0){
+    if(window.matchMedia(`(max-width: ${$temp_width}px) and (-webkit-min-device-pixel-ratio: 2)`).matches){
+        if(!$('.show_more_toggle').hasClass('visible')){
+            $('.show_more_toggle').toggleClass('visible');
+        }
+    }else{
+        if($('.show_more_toggle').hasClass('visible')){
+            $('.show_more_toggle').toggleClass('visible');
+        }
+    }
+
     var elt_count = $('.circle-container li.tech').length;
     var circle_radius = $('.circle-container').outerWidth() / 2;
 
