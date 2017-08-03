@@ -7,7 +7,7 @@
 /// @param {Length} $circle-diam - Diameter of circle items rest on
 /// @param {Length} $item-size - Single item size
 /// @param {Length} $animation-shift - Distance the animation will have to start returning from
-@mixin on-circle($item-count, $circle-diam, $item-size, $animation-shift: 250%) {
+@mixin on-circle($circle-diam, $item-size, $animation-shift: 250%, $item-count: 9) {
   position: relative;
   width:  $circle-diam;
   height: $circle-diam;
@@ -65,7 +65,7 @@
     flex-wrap: wrap;
 
     .circle-container {
-      @include on-circle($item-count: 9, $circle-diam: 25em, $item-size: 100px); 
+      @include on-circle($circle-diam: 25em, $item-size: 100px); 
       // margin: 5em auto 0;    //original margins
       margin: 0;
       border: dotted 5px orange;
@@ -204,7 +204,7 @@ and (-webkit-min-device-pixel-ratio: 2){
     top: 1%;
     display: inline-block;
     .circle-container {
-      @include on-circle($item-count: 9, $circle-diam: 12em, $item-size: 50px, $animation-shift: 200%);
+      @include on-circle($circle-diam: 12em, $item-size: 50px, $animation-shift: 200%);
       position: absolute;
       top: 50%;
       left: 50%;
@@ -323,7 +323,7 @@ and (-webkit-min-device-pixel-ratio: 2){
     top: 1%;
     display: inline-block;
     .circle-container {
-      @include on-circle($item-count: 9, $circle-diam: 12em, $item-size: 50px);
+      @include on-circle($circle-diam: 12em, $item-size: 50px);
       position: absolute;
       top: 50%;
       left: 50%;
@@ -437,7 +437,7 @@ and (min-width: 600px)
 and (-webkit-min-device-pixel-ratio: 2){
   .technologies{
     .circle-container {
-      @include on-circle($item-count: 9, $circle-diam: 25em, $item-size: 100px);
+      @include on-circle($circle-diam: 25em, $item-size: 100px);
       .tech{
         &.selected{
             img{
