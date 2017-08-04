@@ -389,14 +389,92 @@ and (-webkit-min-device-pixel-ratio: 2){
         }
       }
     } // end links
-  }    
+  }  
 }
 // landscape mode
 @media screen
 and (orientation: landscape)
 and (max-width: 640px) 
 and (-webkit-min-device-pixel-ratio: 2){
- 
+  $btn_size: 50px;
+  $sm_btn_size: 25px;
+  footer {
+    height: $btn_size;
+    .control_panel {
+      .btn_container {
+        height: $btn_size;
+        width: $btn_size;
+        .arcade_btn {
+          margin: 0;
+          transform: scale(0.75);
+          width: $btn_size;
+          height: $btn_size;
+          &.red {
+            @include lg_button(red, $btn_size);
+          }
+          &.blue {
+            @include lg_button(blue, $btn_size);
+          }
+        }
+      }
+      .label_container {
+        margin: 0 8px;
+        width: 3em;
+        font-size: 0.75em;
+        .label {
+          &.red {
+          }
+          &.blue {
+          }
+          span {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+    .links{
+      form{
+        // display: -webkit-flex;
+        // -webkit-flex-direction: column;
+        // display: flex;
+        // flex-direction: column;
+        .btn_area{
+          .btn_container{
+            position: relative;
+            left: unset;
+            -webkit-transform: unset;
+            transform: unset;
+            .arcade_btn {
+              width: $sm_btn_size;  // 25 px
+              height: $sm_btn_size;  // 25 px
+              margin: 0.5em;
+              &.small{
+                @include sm_button($sm_btn_size);
+                &.github{
+                }
+                &.linkedin{
+                }
+              }
+            }
+          }
+        }
+        br{
+           display: none;       
+        }
+        .label {
+          display: none;
+          span {
+          }
+        }
+      }
+      .label_container {
+        .label {
+          span {
+          }
+        }
+      }
+    } // end links
+  }
 }
 
 // *********************************************************************************
@@ -820,4 +898,3 @@ and (min-width: 1366px)
 and (-webkit-min-device-pixel-ratio: 2){
  
 }
-
