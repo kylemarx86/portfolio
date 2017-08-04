@@ -193,7 +193,7 @@ and (-webkit-min-device-pixel-ratio: 2){
                 }
             }
         }
-    }       
+    }   
 }
 
 // *********************************************************************************
@@ -239,6 +239,7 @@ and (orientation: landscape)
 and (min-width: 667px) 
 and (-webkit-min-device-pixel-ratio: 2){
     header{
+        height: 7.5%;
         // area for name written in triangles
         #canvas{
             #main{
@@ -257,6 +258,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         }
         // navigation bar
         ul {
+            display: none;
             li {
                 &:hover {
                 }
@@ -264,7 +266,7 @@ and (-webkit-min-device-pixel-ratio: 2){
                 }
             }
         }
-    }    
+    } 
 }
 
 // *********************************************************************************

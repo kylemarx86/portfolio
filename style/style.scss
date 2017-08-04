@@ -337,7 +337,6 @@ and (-webkit-min-device-pixel-ratio: 2){
                 }
                 // area for content in page
                 .content{
-
                 }
             }
         }
@@ -349,7 +348,6 @@ and (orientation: landscape)
 and (max-width: 640px) 
 and (-webkit-min-device-pixel-ratio: 2){
     .main_screen{
-        // top: 12%;
         height: 72%;
         .screen{
             .hidden{
@@ -372,7 +370,6 @@ and (-webkit-min-device-pixel-ratio: 2){
                 }
                 // area for content in page
                 .content{
-
                 }
             }
         }
@@ -420,7 +417,34 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: landscape) 
 and (min-width: 667px) 
 and (-webkit-min-device-pixel-ratio: 2){
-  
+    .main_screen{
+        height: 71%;
+        top: 9%;
+        .screen{
+            .hidden{
+            }
+            .shrunk{
+            }
+            .grown{
+            }
+            .page{
+                // area for title in content
+                .title{
+                    span{
+                        height: 1em;
+                        vertical-align: -5px;
+                    }
+                    h2{
+                        margin-top: 5px;
+                        font-size: 0.75em;
+                    }
+                }
+                // area for content in page
+                .content{
+                }
+            }
+        }
+    }
 }
 
 // *********************************************************************************
