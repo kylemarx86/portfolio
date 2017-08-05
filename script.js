@@ -52,15 +52,16 @@ var apps_array = [
     }, {
         name: 'Learn Poker',
         description: {
-            tech_used: ['HTML', 'JavaScript', 'jQuery', 'RequireJS', 'Node.js'],
+            tech_used: ['HTML', 'JavaScript', 'jQuery', 'RequireJS', 'Node.js', 'CSS', 'Sass'],
             details: [
                 'Educational application intended to help users learn to identify poker hands and their relative strength',
                 'Uses an object oriented model to create cards and identify hands',
-                'Utilizes RequireJS to maintain orderly file structure'
+                'Utilizes RequireJS to maintain orderly file structure',
+                'Makes use of Sass to organize styling in organized portions'
             ]
         },
         picture_source: 'apps/images/learn_poker-wide.png',
-        live_address: 'http://dev.kylemarx86.com/learn_poker/',
+        live_address: 'http://poker.kylemarx86.com:3000/',
         github_address: 'https://github.com/kylemarx86/learn_poker'
     }
 ];
@@ -98,7 +99,7 @@ var tech_array = [
     }, {
         name: 'Sass',
         image_src: 'technologies/images/sass.png',
-        apps: []
+        apps: ['Learn Poker']
     }, {
         name: 'Bootstrap',
         image_src: 'technologies/images/bootstrap.png',
