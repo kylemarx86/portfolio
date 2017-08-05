@@ -119,187 +119,6 @@ button:focus {
 // }
 
 
-// redone media queries
-// device specific media queries
-
-// /*portrait - iPad Pro*/
-// @media screen 
-// and (max-width: 1024px)
-// and (max-height: 1366px)
-// and (orientation: portrait){
-// }
-
-// /*landscape - iPad Pro*/
-// @media screen 
-// and (width: 1366px) 
-// and (height: 1024px) {
-// }
-
-// /*portrait - iPad*/
-// @media only screen 
-// and (min-width: 768px)
-// and (max-width: 1024px) 
-// and (orientation: portrait)
-// and (-webkit-min-device-pixel-ratio: 2){
-//     .main_screen{
-//         height: 80%;
-//         top: 9%;
-//         .screen{
-//             .hidden{
-//             }
-//             .shrunk{
-//             }
-//             .grown{
-//             }
-//             .page{
-//                 // area for title in content
-//                 .title{
-//                     span{
-//                     }
-//                     h2{
-//                     }
-//                 }
-//                 // area for content in page
-//                 .content{
-//                 }
-//             }
-//         }
-//     } 
-// }
-// /*landscape - iPad*/
-// @media only screen 
-// and (min-width: 768px) 
-// and (max-width: 1024px) 
-// and (orientation: landscape) 
-// and (-webkit-min-device-pixel-ratio: 2){
-//     .main_screen{
-//         .screen{
-//             .hidden{
-//             }
-//             .shrunk{
-//             }
-//             .grown{
-//             }
-//             .page{
-//                 // area for title in content
-//                 .title{
-//                     span{
-//                     }
-//                     h2{
-//                     }
-//                 }
-//                 // area for content in page
-//                 .content{
-//                 }
-//             }
-//         }
-//     } 
-// }
-
-// /*portrait -  iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-// // @media screen
-// // and (orientation: portrait) 
-// // and (max-width: 736px) 
-// // and (min-width: 320px) 
-// // and (max-height: 1743px) 
-// // and (-webkit-min-device-pixel-ratio: 2){
-// @media screen
-// and (-webkit-min-device-pixel-ratio: 2) 
-// and (max-width: 736px) 
-// and (min-width: 320px) 
-// and (max-height: 1743px)    //prob not necessary
-// and (orientation: portrait){
-//     .main_screen{
-//         .screen{
-//             width: 96%;
-//             .hidden{
-//             }
-//             .shrunk{
-//             }
-//             .grown{
-//             }
-//             .page{
-//                 // area for title in content
-//                 .title{
-//                     height: 10%;
-//                     span{
-//                         height: 1em;
-//                     }
-//                     h2{
-//                         font-size: 1em;
-//                     }
-//                 }
-//                 // area for content in page
-//                 .content{
-//                 }
-//             }
-//         }
-//     } 
-// }
-
-// /*landscape - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-// @media screen 
-// and (orientation: landscape) 
-// // and (orientation: portrait) 
-// and (max-width: 736px) 
-// and (min-width: 320px) 
-// // and (max-width: 736px) 
-// // // and (min-height: 351px) 
-// // and (max-height: 555px)
-// and (-webkit-min-device-pixel-ratio: 2){
-//     .main_screen{
-//         top: 12%;
-//         height: 69%;
-//         background: blue;
-//         .screen{
-//             .hidden{
-//             }
-//             .shrunk{
-//             }
-//             .grown{
-//             }
-//             .page{
-//                 // area for title in content
-//                 .title{
-//                     span{
-//                         height: 2em;
-//                     }
-//                     h2{
-//                         margin-top: 5px;
-//                         font-size: 24px;
-//                     }
-//                 }
-//                 // area for content in page
-//                 .content{
-
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// /*portrait -  iPhone 5*/
-// @media screen 
-// and (orientation: portrait) 
-// and (max-width: 980px) 
-// and (max-height: 600px)
-// and (-webkit-min-device-pixel-ratio: 2){
-      
-// }
-// /*landscape - iPhone 5*/
-// @media screen
-// and (max-width: 980px) 
-// and (max-height: 350px)
-// and (orientation: landscape)
-// and (-webkit-min-device-pixel-ratio: 2){
-    
-// }
-
-
-
-
-
-
 // *********************************************************************************
 // *********************************************************************************
 
@@ -488,6 +307,36 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: landscape)
 and (min-width: 960px) 
 and (-webkit-min-device-pixel-ratio: 2){
+    .main_screen{
+        $footer_ht: 100px;
+        $header_ht: 7.5%; 
+        top: $header_ht + 1%;
+        height: Calc(98% - #{$footer_ht} - #{$header_ht});
+        .screen{
+            .hidden{
+            }
+            .shrunk{
+            }
+            .grown{
+            }
+            .page{
+                // area for title in content
+                .title{
+                    top: 3%;
+                    span{
+                        height: 2.5em;
+                        vertical-align: middle;
+                    }
+                    h2{
+                        font-size: 2em;
+                    }
+                }
+                // area for content in page
+                .content{
+                }
+            }
+        }
+    }
 }
 
 // *********************************************************************************
@@ -498,6 +347,7 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: portrait)
 and (min-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 2){
+
 }
 
 // landscape
