@@ -255,8 +255,6 @@ footer {
         span {
           font-family: 'Varela Round', sans-serif;
           font-size: 1.75em;
-          // -webkit-text-stroke: 1px black;
-          // text-shadow: 1px 1px 0 black;
           text-shadow: 
             1px 1px 0 #000, 
             -1px 1px 0 #000, 
@@ -389,14 +387,88 @@ and (-webkit-min-device-pixel-ratio: 2){
         }
       }
     } // end links
-  }    
+  }  
 }
 // landscape mode
 @media screen
 and (orientation: landscape)
 and (max-width: 640px) 
 and (-webkit-min-device-pixel-ratio: 2){
- 
+  $btn_size: 50px;
+  $sm_btn_size: 25px;
+  footer {
+    height: $btn_size;
+    .control_panel {
+      .btn_container {
+        height: $btn_size;
+        width: $btn_size;
+        .arcade_btn {
+          margin: 0;
+          transform: scale(0.75);
+          width: $btn_size;
+          height: $btn_size;
+          &.red {
+            @include lg_button(red, $btn_size);
+          }
+          &.blue {
+            @include lg_button(blue, $btn_size);
+          }
+        }
+      }
+      .label_container {
+        margin: 0 8px;
+        width: 3em;
+        font-size: 0.75em;
+        .label {
+          &.red {
+          }
+          &.blue {
+          }
+          span {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+    .links{
+      form{
+        .btn_area{
+          .btn_container{
+            position: relative;
+            left: unset;
+            -webkit-transform: unset;
+            transform: unset;
+            .arcade_btn {
+              width: $sm_btn_size;  // 25 px
+              height: $sm_btn_size;  // 25 px
+              margin: 0.5em;
+              &.small{
+                @include sm_button($sm_btn_size);
+                &.github{
+                }
+                &.linkedin{
+                }
+              }
+            }
+          }
+        }
+        br{
+           display: none;       
+        }
+        .label {
+          display: none;
+          span {
+          }
+        }
+      }
+      .label_container {
+        .label {
+          span {
+          }
+        }
+      }
+    } // end links
+  }
 }
 
 // *********************************************************************************
@@ -492,39 +564,38 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: landscape) 
 and (min-width: 667px) 
 and (-webkit-min-device-pixel-ratio: 2){
+  $btn_size: 70px;
+  $sm_btn_size: 50px;
   footer {
-    height: 100px;
+    height: $btn_size;
     .control_panel {
       .btn_container {
-        height: 100px;
-        width: 100px;
+        height: $btn_size;
+        width: $btn_size;
         .arcade_btn {
-            margin: 0;
-            transform: scale(0.75);
-            &.red {
-            }
-            &.blue {
-            }
-          &:after {
+          margin: 0;
+          transform: scale(0.75);
+          width: $btn_size;
+          height: $btn_size;
+          &.red {
+            @include lg_button(red, $btn_size);
           }
-          &:active,
-          &.is-pushed {
-            &.red {
-            } 
-            &.blue {
-            }
-            &:after {
-            }
+          &.blue {
+            @include lg_button(blue, $btn_size);
           }
         }
       }
       .label_container {
+        margin: 0 8px;
+        width: 3em;
+        font-size: 0.75em;
         .label {
           &.red {
           }
           &.blue {
           }
           span {
+            font-size: 1.5em;
           }
         }
       }
@@ -533,19 +604,29 @@ and (-webkit-min-device-pixel-ratio: 2){
       form{
         .btn_area{
           .btn_container{
+            position: relative;
+            left: unset;
+            -webkit-transform: unset;
+            transform: unset;
             .arcade_btn {
-                &.small{
-                  &.github{
-                  }
-                  &.linkedin{
-                  }
+              width: $sm_btn_size;  // 25 px
+              height: $sm_btn_size;  // 25 px
+              margin: 0.5em;
+              &.small{
+                @include sm_button($sm_btn_size);
+                &.github{
                 }
+                &.linkedin{
+                }
+              }
             }
           }
         }
         br{
+           display: none;       
         }
         .label {
+          display: none;
           span {
           }
         }
@@ -557,7 +638,74 @@ and (-webkit-min-device-pixel-ratio: 2){
         }
       }
     } // end links
-  }  
+  }
+
+  // footer {
+  //   height: 100px;
+  //   .control_panel {
+  //     .btn_container {
+  //       height: 100px;
+  //       width: 100px;
+  //       .arcade_btn {
+  //           margin: 0;
+  //           transform: scale(0.75);
+  //           &.red {
+  //           }
+  //           &.blue {
+  //           }
+  //         &:after {
+  //         }
+  //         &:active,
+  //         &.is-pushed {
+  //           &.red {
+  //           } 
+  //           &.blue {
+  //           }
+  //           &:after {
+  //           }
+  //         }
+  //       }
+  //     }
+  //     .label_container {
+  //       .label {
+  //         &.red {
+  //         }
+  //         &.blue {
+  //         }
+  //         span {
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .links{
+  //     form{
+  //       .btn_area{
+  //         .btn_container{
+  //           .arcade_btn {
+  //               &.small{
+  //                 &.github{
+  //                 }
+  //                 &.linkedin{
+  //                 }
+  //               }
+  //           }
+  //         }
+  //       }
+  //       br{
+  //       }
+  //       .label {
+  //         span {
+  //         }
+  //       }
+  //     }
+  //     .label_container {
+  //       .label {
+  //         span {
+  //         }
+  //       }
+  //     }
+  //   } // end links
+  // }  
 }
 
 // *********************************************************************************
@@ -649,35 +797,26 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: landscape)
 and (min-width: 960px) 
 and (-webkit-min-device-pixel-ratio: 2){
-  $button_dim: 100px;
+  $btn_size: 100px;
   footer {
-    // background: green;   // for testing only
-    height: $button_dim;
+    height: $btn_size;
     .control_panel {
       .btn_container {
-        height: $button_dim;
-        width: $button_dim;
+        height: $btn_size;
+        width: $btn_size;
         .arcade_btn {
-            margin: 0;
-            transform: scale(0.75);
-            &.red {
-            }
-            &.blue {
-            }
-          &:after {
+          width: $btn_size;
+          height: $btn_size;
+          &.red {
+            @include lg_button(red, $btn_size);
           }
-          &:active,
-          &.is-pushed {
-            &.red {
-            } 
-            &.blue {
-            }
-            &:after {
-            }
+          &.blue {
+            @include lg_button(blue, $btn_size);
           }
         }
       }
       .label_container {
+        font-size: 1.5em;
         .label {
           &.red {
           }
@@ -813,11 +952,10 @@ and (-webkit-min-device-pixel-ratio: 2){
   }  
 }
 
-// landscape
+// landscape mode
 @media screen
 and (orientation: landscape)
 and (min-width: 1366px)
 and (-webkit-min-device-pixel-ratio: 2){
  
 }
-
