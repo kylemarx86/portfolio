@@ -947,5 +947,69 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: landscape)
 and (min-width: 1366px)
 and (-webkit-min-device-pixel-ratio: 2){
- 
+  // $btn_size: 100px;
+  footer {
+    // height: $btn_size;
+    .control_panel {
+      .btn_container {
+        // height: $btn_size;
+        // width: $btn_size;
+        .arcade_btn {
+          // width: $btn_size;
+          // height: $btn_size;
+          &.red {
+            // @include lg_button(red, $btn_size);
+          }
+          &.blue {
+            // @include lg_button(blue, $btn_size);
+          }
+        }
+      }
+      .label_container {
+        // font-size: 1.5em;
+        .label {
+          &.red {
+          }
+          &.blue {
+          }
+          span {
+          }
+        }
+      }
+    }
+    .links{
+      form{
+        .btn_area{
+          .btn_container{
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            .arcade_btn {
+                &.small{
+                  &.github{
+                  }
+                  &.linkedin{
+                  }
+                }
+            }
+          }
+        }
+        br{
+          display: inline;
+        }
+        .label {
+          display: inline-block;
+          margin-bottom: 5px;
+          span {
+          }
+        }
+      }
+      .label_container {
+        .label {
+          span {
+          }
+        }
+      }
+    } // end links
+  } 
 }

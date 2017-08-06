@@ -89,6 +89,9 @@ header {
 @media screen and (orientation: portrait) and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   header ul li {
     font-size: 1.75em; } }
+@media screen and (orientation: landscape) and (min-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  header ul li {
+    font-size: 1.5em; } }
 footer {
   position: fixed;
   display: block;
@@ -927,6 +930,16 @@ footer {
       footer .links form .label {
         display: inline-block;
         margin-bottom: 5px; } }
+@media screen and (orientation: landscape) and (min-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  footer .links form .btn_area .btn_container {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  footer .links form br {
+    display: inline; }
+  footer .links form .label {
+    display: inline-block;
+    margin-bottom: 5px; } }
 button.link_btn, .link_btn > input {
   color: #101010;
   margin: 0 10px;
@@ -1889,5 +1902,10 @@ button:focus {
       height: 3em; }
     .main_screen .screen .page .title h2 {
       font-size: 2.5em; } }
+@media screen and (orientation: landscape) and (min-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  .main_screen .screen .page .title span {
+    height: 3.75em; }
+  .main_screen .screen .page .title h2 {
+    font-size: 3em; } }
 
 /*# sourceMappingURL=style.css.map */

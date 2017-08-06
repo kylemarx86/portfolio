@@ -379,6 +379,29 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: landscape)
 and (min-width: 1366px)
 and (-webkit-min-device-pixel-ratio: 2){
- 
+    .main_screen{
+        .screen{
+            .hidden{
+            }
+            .shrunk{
+            }
+            .grown{
+            }
+            .page{
+                // area for title in content
+                .title{
+                    span{
+                        height: 3.75em;
+                    }
+                    h2{
+                        font-size: 3em;
+                    }
+                }
+                // area for content in page
+                .content{
+                }
+            }
+        }
+    } 
 }
 
