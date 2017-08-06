@@ -867,7 +867,7 @@ and (orientation: portrait)
 and (min-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 2){
   $btn_size: 125px;
-  $sm_btn_size: 75px;
+  $sm_btn_size: 70px;
   footer {
     height: $btn_size;
     .control_panel {
@@ -883,17 +883,6 @@ and (-webkit-min-device-pixel-ratio: 2){
           }
           &.blue {
             @include lg_button(blue, $btn_size);
-          }
-          &:after {
-          }
-          &:active,
-          &.is-pushed {
-            &.red {
-            } 
-            &.blue {
-            }
-            &:after {
-            }
           }
         }
       }
@@ -938,6 +927,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         }
         .label {
           display: inline-block;
+          margin-bottom: 5px;
           span {
           }
         }
