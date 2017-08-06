@@ -347,14 +347,61 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: portrait)
 and (min-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 2){
-
+    .main_screen{
+        height: 79%;
+        .screen{
+            .hidden{
+            }
+            .shrunk{
+            }
+            .grown{
+            }
+            .page{
+                // area for title in content
+                .title{
+                    span{
+                        height: 3em;
+                    }
+                    h2{
+                        font-size: 2.5em;
+                    }
+                }
+                // area for content in page
+                .content{
+                }
+            }
+        }
+    }
 }
 
-// landscape
+// landscape mode
 @media screen
 and (orientation: landscape)
 and (min-width: 1366px)
 and (-webkit-min-device-pixel-ratio: 2){
- 
+    .main_screen{
+        .screen{
+            .hidden{
+            }
+            .shrunk{
+            }
+            .grown{
+            }
+            .page{
+                // area for title in content
+                .title{
+                    span{
+                        height: 3.75em;
+                    }
+                    h2{
+                        font-size: 3em;
+                    }
+                }
+                // area for content in page
+                .content{
+                }
+            }
+        }
+    } 
 }
 
