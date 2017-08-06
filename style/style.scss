@@ -218,11 +218,12 @@ and (-webkit-min-device-pixel-ratio: 2){
                 // area for title in content
                 .title{
                     span{
-                        height: 1em;
-                        vertical-align: -4px;
+                        height: 1.25em;
+                        vertical-align: middle;
+                        width: 5%;
                     }
                     h2{
-                        font-size: 0.8em;
+                        font-size: 1em;
                     }
                 }
                 // area for content in page

@@ -1918,10 +1918,11 @@ button:focus {
     top: 10%;
     height: 75%; }
     .main_screen .screen .page .title span {
-      height: 1em;
-      vertical-align: -4px; }
+      height: 1.25em;
+      vertical-align: middle;
+      width: 5%; }
     .main_screen .screen .page .title h2 {
-      font-size: 0.8em; } }
+      font-size: 1em; } }
 @media screen and (orientation: landscape) and (min-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
   .main_screen {
     height: 71%;
