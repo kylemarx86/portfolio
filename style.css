@@ -77,7 +77,9 @@ header {
     width: 70%; } }
 @media screen and (orientation: landscape) and (min-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
   header {
-    height: 7.5%; } }
+    height: 7.5%; }
+    header ul li {
+      font-size: 0.75em; } }
 @media only screen and (orientation: portrait) and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
   header {
     height: 8%; }
