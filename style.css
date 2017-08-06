@@ -57,21 +57,49 @@ header {
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         text-align: center; }
+  header .sidenav_control {
+    display: none;
+    position: absolute;
+    color: white;
+    top: 50%;
+    right: 2%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10%;
+    background-color: #333333; }
+    header .sidenav_control .glyphicon {
+      font-size: 2em;
+      top: 0;
+      vertical-align: middle; }
 
 @media (max-width: 640px) {
   header ul {
-    width: 50%;
-    font-size: .75em; } }
+    display: none; }
+  header .sidenav_control {
+    display: inline-block; } }
 @media screen and (orientation: portrait) and (max-width: 360px) and (-webkit-min-device-pixel-ratio: 2) {
   header {
     height: 7.5%; }
     header ul {
-      display: none; } }
+      display: none; }
+    header .sidenav_control {
+      padding: 2px; }
+      header .sidenav_control .glyphicon {
+        font-size: 1.5em; } }
 @media screen and (orientation: landscape) and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
   header {
     height: 7.5%; }
     header ul {
-      display: none; } }
+      display: none; }
+    header .sidenav_control {
+      right: 1%;
+      padding: 2px;
+      -webkit-transform: translateY(-50%) scale(0.65);
+      transform: translateY(-50%) scale(0.65); }
+      header .sidenav_control .glyphicon {
+        font-size: 1.5em; } }
 @media screen and (orientation: portrait) and (min-width: 361px) and (-webkit-min-device-pixel-ratio: 2) {
   header ul {
     width: 70%; } }
@@ -963,6 +991,50 @@ button.link_btn, .link_btn > input {
     font-size: 1.25em; } }
 /*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
 /*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+#sidenav {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  left: 0; }
+  #sidenav .menu {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: -100%;
+    transition: all 0.5s ease-in;
+    background-color: #5d5757;
+    box-sizing: border-box;
+    font-family: Damion; }
+    #sidenav .menu h1, #sidenav .menu h2 {
+      text-shadow: 2px 2px 1px #252525; }
+    #sidenav .menu h1 {
+      font-size: 3em;
+      text-align: center; }
+    #sidenav .menu h2 {
+      margin-left: 5%; }
+  #sidenav.menu_open {
+    display: inline-block;
+    visibility: visible; }
+    #sidenav.menu_open .menu {
+      left: 0;
+      border-right: 3px solid #383333;
+      box-shadow: 2px 2px 15px 0 black; }
+    #sidenav.menu_open .background {
+      display: inline-block; }
+  #sidenav .background {
+    height: 100%;
+    width: 100%;
+    background-color: #111111;
+    opacity: 0.75;
+    z-index: 9;
+    display: none;
+    top: 0;
+    position: absolute; }
+
 /*modal styling*/
 .modal-open {
   overflow: hidden; }

@@ -73,7 +73,6 @@ header{
         right: 0;
         height: 100%;
         width: 65%;
-
         li {
             position: relative;
             float: left;
@@ -99,19 +98,42 @@ header{
                 text-align: center;
             }
         }
+    } // end navigation bar
+    .sidenav_control{
+        display: none;
+        position: absolute;
+        color: white;
+        top: 50%;
+        right: 2%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        border: 2px solid white;
+        padding: 5px;
+        border-radius: 10%;
+        background-color: #333333;        
+        .glyphicon{
+            font-size: 2em;
+            top: 0;
+            vertical-align: middle;
+        }
     }
 }
 
+// consider for removal
+// replace with a showing fo sidenav control
 @media (max-width: 640px){
     header {
         ul {
-            width: 50%;
-            font-size: .75em;
+            display: none;
             li{
                 span{
                 }
             }
-            
+        }
+        .sidenav_control{
+            display: inline-block;
+            .glyphicon{
+            }
         }
     }
 }
@@ -139,7 +161,6 @@ and (-webkit-min-device-pixel-ratio: 2){
                 }
                 .name{
                 }
-
             }
             #inner_triangles{
                 rect{
@@ -156,6 +177,12 @@ and (-webkit-min-device-pixel-ratio: 2){
                 }
                 span {
                 }
+            }
+        }
+        .sidenav_control{
+            padding: 2px;
+            .glyphicon{
+                font-size: 1.5em;
             }
         }
     }    
@@ -191,6 +218,15 @@ and (-webkit-min-device-pixel-ratio: 2){
                 }
                 span {
                 }
+            }
+        }
+        .sidenav_control{
+            right: 1%;
+            padding: 2px;
+            -webkit-transform: translateY(-50%) scale(0.65);
+            transform: translateY(-50%) scale(0.65);
+            .glyphicon{
+                font-size: 1.5em;
             }
         }
     }   
