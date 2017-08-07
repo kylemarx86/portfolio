@@ -18,16 +18,21 @@
         // background-image: url('../resources/dark-leather.png');
         box-sizing: border-box;
         font-family: Damion;
-        h1, h2{
+        h1{
             text-shadow: 2px 2px 1px #252525;
         }
-        h1{
-            font-size: 3em;
-            text-align: center;
+        ul{
+            li{
+                
+            }
         }
-        h2{
-            margin-left: 5%;
-        }
+        // h1{
+        //     font-size: 3em;
+        //     text-align: center;
+        // }
+        // h2{
+        //     margin-left: 5%;
+        // }
     }
     &.menu_open{
         display: inline-block;
