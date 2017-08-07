@@ -294,6 +294,20 @@ function apply_event_handlers(){
     $('#next').click(get_next_screen);
     $('.page_link').click(jump_to_screen($(this)));
 
+    $('.sidenav_control').click(function(e){
+        e.stopPropagation();
+        console.log('sidenav to open');
+        $('#sidenav').toggleClass('menu_open');
+    });
+    $('#sidenav .menu').click(function(e){
+        e.stopPropagation();
+        console.log('stop propagation');
+    });
+    $('#sidenav .background, #sidenav li').click(function(){
+        $('#sidenav').removeClass('menu_open');
+        console.log('sidenav to close');
+    });
+
     // for apps page
     $('.prev_button').click(get_prev_app);
     $('.next_button').click(get_next_app);
@@ -318,8 +332,12 @@ function get_next_screen(){
   update_page(new_page);
 }
 function jump_to_screen(screen){
-    $('.page_link').click(function(){
-        var new_page = $('ul .page_link').index(this);
+    $('header .page_link').click(function(){
+        var new_page = $('header ul .page_link').index(this);
+        update_page(new_page);
+    });
+    $('#sidenav .page_link').click(function(){
+        var new_page = $('#sidenav ul .page_link').index(this);
         update_page(new_page);
     });
 }
