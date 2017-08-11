@@ -52,15 +52,16 @@ var apps_array = [
     }, {
         name: 'Learn Poker',
         description: {
-            tech_used: ['HTML', 'JavaScript', 'jQuery', 'RequireJS', 'Node.js'],
+            tech_used: ['HTML', 'JavaScript', 'jQuery', 'RequireJS', 'Node.js', 'CSS', 'Sass'],
             details: [
                 'Educational application intended to help users learn to identify poker hands and their relative strength',
                 'Uses an object oriented model to create cards and identify hands',
-                'Utilizes RequireJS to maintain orderly file structure'
+                'Utilizes RequireJS to maintain orderly file structure',
+                'Makes use of Sass to organize styling in organized portions'
             ]
         },
         picture_source: 'apps/images/learn_poker-wide.png',
-        live_address: 'http://dev.kylemarx86.com/learn_poker/',
+        live_address: 'http://poker.kylemarx86.com:3000/',
         github_address: 'https://github.com/kylemarx86/learn_poker'
     }
 ];
@@ -98,7 +99,7 @@ var tech_array = [
     }, {
         name: 'Sass',
         image_src: 'technologies/images/sass.png',
-        apps: []
+        apps: ['Learn Poker']
     }, {
         name: 'Bootstrap',
         image_src: 'technologies/images/bootstrap.png',
@@ -110,6 +111,7 @@ $(document).ready(function () {
     curr_page = 0;
     rot_array = [];
     draw_triangles();
+    resize_screen_components();
     apply_event_handlers();
     load_apps_info();
     load_tech_info();
@@ -255,7 +257,7 @@ function draw_triangles(){
   draw_poly(6,67);
 
   //scale the name drawn
-  $('#main').attr('transform', "scale(0.125)");
+//   $('#main').attr('transform', "scale(0.125)");
 }
 
 //draw a single triangle
@@ -292,11 +294,28 @@ function apply_event_handlers(){
     $('#next').click(get_next_screen);
     $('.page_link').click(jump_to_screen($(this)));
 
+    $('.sidenav_control').click(function(e){
+        e.stopPropagation();
+        console.log('sidenav to open');
+        $('#sidenav').toggleClass('menu_open');
+    });
+    $('#sidenav .menu').click(function(e){
+        e.stopPropagation();
+        console.log('stop propagation');
+    });
+    $('#sidenav .background, #sidenav li').click(function(){
+        $('#sidenav').removeClass('menu_open');
+        console.log('sidenav to close');
+    });
+
     // for apps page
     $('.prev_button').click(get_prev_app);
     $('.next_button').click(get_next_app);
+    // for tech page
+    $('.show_more_toggle').click(toggle_extra_tech_info);
     // for contact page
     $('button[name="submit"]').click(send_form);
+    // potentially for all pages
     $(window).resize(resize_screen_components);
 }
 
@@ -313,8 +332,12 @@ function get_next_screen(){
   update_page(new_page);
 }
 function jump_to_screen(screen){
-    $('.page_link').click(function(){
-        var new_page = $('ul .page_link').index(this);
+    $('header .page_link').click(function(){
+        var new_page = $('header ul .page_link').index(this);
+        update_page(new_page);
+    });
+    $('#sidenav .page_link').click(function(){
+        var new_page = $('#sidenav ul .page_link').index(this);
         update_page(new_page);
     });
 }
@@ -564,7 +587,6 @@ function load_tech_info() {
     update_tech_info();
 }
 
-
 //rename this function
 function toggle_selected_tech(tech){
     $('.tech').click(function(){
@@ -574,7 +596,8 @@ function toggle_selected_tech(tech){
         // determine which way to spin (cw or ccw) and by how much by first determining which is the closer path.
             // this can be done by seeing if the clicked element is under or over the halfway mark of the number of elements
         var new_rot = loc_index <= elt_count / 2 ? -1 * loc_index * 360 / elt_count : (elt_count - loc_index) * 360 / elt_count;
-        $('.tech.selected').removeClass('selected').addClass('deselected');
+        // $('.tech.selected').removeClass('selected').addClass('deselected');
+        $('.tech.selected').addClass('deselected').removeClass('selected');
         $('.deselected').one('webkitAnimationEnd animationEnd', function(e){
             $('.tech.deselected').removeClass('deselected');
             var circle_radius = $('.circle-container').outerWidth() / 2;
@@ -598,10 +621,35 @@ function toggle_selected_tech(tech){
         });
     });
 }
+
+// method to toggle the display of the applications related to the selected technology on tech page
+// intended for use on small screens where there is not enough room to show tech wheel and apps side by side
+function toggle_extra_tech_info(){
+    $('.tech_info').toggleClass('extra_info_shown');
+    $('.tech_info').one('webkitTransitionEnd transitionEnd', function(e){
+        $('.show_more_toggle').toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
+    });
+}
+
 /**
  * function to resize elements within the tech page (possibly others) on the resizing of the screen
  */
 function resize_screen_components(){
+    // resizing of technologies
+
+    // toggle visibility of show more info button on tech page when screen is at designated sizes
+    var $temp_width = 768;  // iPad width
+    // if($(window).width() <= $temp_width && window.orientation === 0){
+    if(window.matchMedia(`(max-width: ${$temp_width}px) and (-webkit-min-device-pixel-ratio: 2)`).matches){
+        if(!$('.show_more_toggle').hasClass('visible')){
+            $('.show_more_toggle').toggleClass('visible');
+        }
+    }else{
+        if($('.show_more_toggle').hasClass('visible')){
+            $('.show_more_toggle').toggleClass('visible');
+        }
+    }
+
     var elt_count = $('.circle-container li.tech').length;
     var circle_radius = $('.circle-container').outerWidth() / 2;
 
@@ -635,30 +683,6 @@ function whichTransitionEvent(){
     }
   }
 }
-
-/**
- * Function from David Walsh: http://davidwalsh.name/css-animation-callback
- * 
- */
-function whichAnimationEvent(){
-  var t,
-      el = document.createElement("fakeelement");
-
-  var transitions = {
-    "animation"      : "animationend",
-    "OAnimation"     : "oAnimationEnd",
-    "MozAnimation"   : "animationend",
-    "WebkitAnimation": "webkitAnimationEnd"
-  }
-
-  for (t in transitions){
-    if (el.style[t] !== undefined){
-      return transitions[t];
-    }
-  }
-}
-
-
 
 /**
  * 
@@ -741,6 +765,8 @@ function send_form(){
     //disable send button until a response is received
     $('.send').off('click');
 
+
+
     $.ajax({
         dataType:'json',
         url: 'mailer/mail_handler.php',
@@ -759,10 +785,16 @@ function send_form(){
             if(response.success){
                 $('.mail_response p').text(response.message);
             }else{
-                $('.mail_response p').text('Message could not be sent.');
+                console.log('success function');
+                console.log(response.message);
+                for(var i = 0; i < response.message.length; i++){
+                    $('.mail_response p').text(response.message[i]);
+                }
             }
         },
         error: function(response){
+            console.log('error function');
+            console.log(response);
             $('.mail_response p').text('Message could not be sent due to server error');
             //change text of send button
             $('button[name="submit"]').text('Send Mail');

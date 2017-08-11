@@ -49,12 +49,12 @@ $btn_size_sm: 0.5 * $btn_size_lg;
       border-width: 0;
     }
   }
-}
+} // end lg_button mixin
 
 @mixin sm_button($btn-size){
   $base-color: white;
   background-color: $base-color;
-  background-size: 40px 40px;
+  background-size: 75% 75%;
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 
@@ -84,7 +84,6 @@ $btn_size_sm: 0.5 * $btn_size_lg;
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
   }
-
   &:active,
   &.is-pushed {
     &.small{
@@ -107,7 +106,7 @@ $btn_size_sm: 0.5 * $btn_size_lg;
       border-width: 0;
     }
   }
-} // end of small button mixin
+} // end of sm_button mixin
 
 footer {
   position: fixed;
@@ -184,13 +183,16 @@ footer {
           font-family: 'Varela Round', sans-serif;
           font-size: 2em;
           color: white;
-          -webkit-text-stroke: 1px black;
-          text-shadow: 1px 1px 0 #000;
+          text-shadow: 
+            1px 1px 0 #000, 
+            -1px 1px 0 #000, 
+            1px -1px 0 #000, 
+            -1px -1px 0 #000;
         }
       }
     }
-  } //end of control panel
-  .links{
+  } //end control panel
+  .links {
     position: absolute;
     display: inline-block;
     top: 0;
@@ -201,6 +203,31 @@ footer {
       display: inline-block;
       box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      
+      .label {
+        position: relative;
+        display: inline-block;
+        padding: 3px 10px;
+        border: 3px solid;
+        border-radius: 10px;
+        border-color: white;
+        top: 5px;
+        background-color: grey;
+      
+        span {
+          font-family: 'Varela Round', sans-serif;
+          font-size: 1.75em;
+          text-shadow: 
+            1px 1px 0 #000, 
+            -1px 1px 0 #000, 
+            1px -1px 0 #000, 
+            -1px -1px 0 #000;
+          color: white;
+        }
+      }
+      br{
+
+      }
       .btn_area{
         position: relative;
 
@@ -237,163 +264,33 @@ footer {
           }
         }
       }
-      br{
 
-      }
-      .label {
-        position: relative;
-        display: inline-block;
-        padding: 3px 10px;
-        border: 3px solid;
-        border-radius: 10px;
-        border-color: white;
-        top: 5px;
-        background-color: grey;
-      
-        span {
-          font-family: 'Varela Round', sans-serif;
-          font-size: 1.75em;
-          -webkit-text-stroke: 1px black;
-          text-shadow: 1px 1px 0 black;
-          color: white;
-        }
-      }
-    }   // end of .form styling
-    .label_container {
-      position: relative;
-      display: inline-block;
-
-      .label {
-        position: absolute;
-        padding: 3px 10px;
-        border: 3px solid;
-        border-radius: 10px;
-        border-color: white;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        background-color: grey;
-        
-        span {
-          font-family: 'Varela Round', sans-serif;
-          font-size: 1.5em;
-          -webkit-text-stroke: 1px black;
-          text-shadow: 1px 1px 0 black;
-          color: white;
-        }
-      }
-    }
-  }   // end of links styling
-}   // end of footer
+    }   // end form styling
+  }   // end links styling
+}   // end footer
 
 
 // standard media queries
 
-/*specific media queries*/
-/*portrait - iPad Pro*/
-@media screen and (orientation: portrait) and (width: 1024px) and (height: 1366px){
 
-}
-/*landscape - iPad Pro*/
-@media screen and (width: 1366px) and (height: 1024px) {
+// *********************************************************************************
+// *********************************************************************************
 
-}
-/*portrait - iPad*/
-@media screen and (width: 980px) and (height: 1306px) {
+
+// revised media queries
+// device specific media queries
+
+// smaller phones - iPhone 5, galaxy s5
+// portrait mode
+@media screen 
+and (orientation: portrait) 
+and (max-width: 360px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  $btn_size: $btn_size_lg * 0.8;  // 80px
+  $sm_btn_size: $btn_size_lg * 0.25;   // 25px;
   footer {
-
-    .control_panel {
-
-      .btn_container {
-        
-        .arcade_btn {
-          
-          &.red {
-
-          }
-          &.blue {
-
-          }
-        }
-      }
-
-      .label_container {
-
-        .label {
-          
-          &.red {
-
-          }
-          &.blue {
-
-          }
-          span {
-            
-          }
-        }
-      }
-    }
-    .links{
-
-      form{
-
-        .btn_area{
-
-          .btn_container{
-
-            .arcade_btn {
-
-              &.small{
-                            
-                &.github{
-
-                }
-                &.linkedin{
-
-                }
-              }
-            }
-          }
-        }
-        br{
-
-        }
-        .label {
-        
-          span {
-
-          }
-        }
-      }
-      .label_container {
-
-        .label {
-          
-          span {
-
-          }
-        }
-      }
-    }
-  }
-}
-/*landscape - iPad*/
-@media screen and (width: 1306px) and (height: 980px) {
-
-}
-
-
-
-/*portrait -  iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-// @media screen and (width: 980px) and (max-height: 1743px){
-@media screen and (width: 980px) and (min-height: 556px) and (max-height: 1743px) {
-  footer {
-    $btn_size: $btn_size_lg * 2;  //200px
     height: $btn_size;
-
     .control_panel {
-
       .btn_container {
         height: $btn_size;
         width: $btn_size;
@@ -410,177 +307,550 @@ footer {
           }
         }
       }
-
       .label_container {
         margin: 0;
+        width: 3em;
+        font-size: 0.75em;
         .label {
-          
           &.red {
-
           }
           &.blue {
-
           }
           span {
-            font-size: 3em;
+            font-size: 1.5em;
           }
         }
       }
     }
     .links{
-
       form{
         display: -webkit-flex;
         -webkit-flex-direction: column;
         display: flex;
         flex-direction: column;
+        .label {
+          display: none;
+          span {
+          }
+        }
+        br{
+           display: none;       
+        }
         .btn_area{
-
           .btn_container{
             position: relative;
             left: unset;
             -webkit-transform: unset;
             transform: unset;
             .arcade_btn {
-              width: $btn_size_sm * 1.5;
-              height: $btn_size_sm * 1.5;
+              width: $sm_btn_size;  // 25 px
+              height: $sm_btn_size;  // 25 px
+              margin: 0.5em;
               &.small{
-                @include sm_button($btn_size_sm * 1.5);
+                @include sm_button($sm_btn_size);
                 &.github{
-
                 }
                 &.linkedin{
-
                 }
               }
             }
           }
-        }
-        br{
-           display: none;       
-        }
-        .label {
-          display: none;
-          span {
-
-          }
-        }
-
-      }
-      .label_container {
-
-        .label {
-          
-          span {
-
-          }
-        }
-      }
-    }
-  }
+        } // end btn_area
+      } // end form
+    } // end links
+  }  
 }
-
-/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-// @media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px){
-@media screen and (width: 980px) and (max-height: 555px){
-// @media screen and (width: 980px) and (min-height: 550px) and (max-height: 555px){
-   footer {
-    height: 100px;
-
+// landscape mode
+@media screen
+and (orientation: landscape)
+and (max-width: 640px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  $btn_size: 50px;
+  $sm_btn_size: 25px;
+  footer {
+    height: $btn_size;
     .control_panel {
-
       .btn_container {
-        height: 100px;
-        width: 100px;
+        height: $btn_size;
+        width: $btn_size;
         .arcade_btn {
-            margin: 0;
-            transform: scale(0.75);
-            &.red {
-
-            }
-            &.blue {
-
-            }
-
-          &:after {
-
-          }
-
-          &:active,
-          &.is-pushed {
-
-            &.red {
-
-            } 
-            &.blue {
-
-            }
-            &:after {
-
-            }
-          }
-        }
-      }
-
-      .label_container {
-
-        .label {
-          
+          margin: 0;
+          transform: scale(0.75);
+          width: $btn_size;
+          height: $btn_size;
           &.red {
-
+            @include lg_button(red, $btn_size);
           }
           &.blue {
-
+            @include lg_button(blue, $btn_size);
+          }
+        }
+      }
+      .label_container {
+        margin: 0 8px;
+        width: 3em;
+        font-size: 0.75em;
+        .label {
+          &.red {
+          }
+          &.blue {
           }
           span {
-
+            font-size: 1.5em;
           }
         }
       }
     }
     .links{
-
       form{
-
-        .btn_area{
-
-          .btn_container{
-
-            .arcade_btn {
-
-                &.small{
-                              
-                    &.github{
-
-                    }
-                    &.linkedin{
-
-                    }
-                }
-            }
+        .label {
+          display: none;
+          span {
           }
         }
         br{
-          
+           display: none;       
         }
-        .label {
-        
-          span {
+        .btn_area{
+          .btn_container{
+            position: relative;
+            left: unset;
+            -webkit-transform: unset;
+            transform: unset;
+            .arcade_btn {
+              width: $sm_btn_size;  // 25 px
+              height: $sm_btn_size;  // 25 px
+              margin: 0.5em;
+              &.small{
+                @include sm_button($sm_btn_size);
+                &.github{
+                }
+                &.linkedin{
+                }
+              }
+            }
+          }
+        } // end btn_area
+      } // end form
+    } // end links
+  }
+}
 
+// *********************************************************************************
+
+// larger phones - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
+// portrait mode
+@media screen
+and (orientation: portrait) 
+and (min-width: 361px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  $btn_size: $btn_size_lg * 0.8;  // 80px
+  $sm_btn_size: $btn_size_lg * 0.25;   // 25px;
+  footer {
+    height: $btn_size;
+    .control_panel {
+      .btn_container {
+        height: $btn_size;
+        width: $btn_size;
+        .arcade_btn {
+          margin: 0;
+          transform: scale(0.75);
+          width: $btn_size;
+          height: $btn_size;
+          &.red {
+            @include lg_button(red, $btn_size);
+          }
+          &.blue {
+            @include lg_button(blue, $btn_size);
           }
         }
-
-
       }
       .label_container {
-
+        margin: 0;
+        width: 3em;
+        font-size: 1em;
         .label {
-          
+          &.red {
+          }
+          &.blue {
+          }
           span {
-
+            font-size: 1.5em;
           }
         }
       }
     }
+    .links{
+      form{
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        .label {
+          display: none;
+          span {
+          }
+        }
+        br{
+          display: none;       
+        }
+        .btn_area{
+          .btn_container{
+            position: relative;
+            left: unset;
+            -webkit-transform: unset;
+            transform: unset;
+            .arcade_btn {
+              width: $sm_btn_size;  // 25 px
+              height: $sm_btn_size;  // 25 px
+              margin: 0.5em;
+              &.small{
+                @include sm_button($sm_btn_size);
+                &.github{
+                }
+                &.linkedin{
+                }
+              }
+            }
+          }
+        } // end btn_area
+      } // end form
+    } // end links
   }
+}
+// landscape mode
+@media screen 
+and (orientation: landscape) 
+and (min-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  $btn_size: 70px;
+  $sm_btn_size: 50px;
+  footer {
+    height: $btn_size;
+    .control_panel {
+      .btn_container {
+        height: $btn_size;
+        width: $btn_size;
+        .arcade_btn {
+          margin: 0;
+          transform: scale(0.75);
+          width: $btn_size;
+          height: $btn_size;
+          &.red {
+            @include lg_button(red, $btn_size);
+          }
+          &.blue {
+            @include lg_button(blue, $btn_size);
+          }
+        }
+      }
+      .label_container {
+        margin: 0 8px;
+        width: 3em;
+        font-size: 0.75em;
+        .label {
+          &.red {
+          }
+          &.blue {
+          }
+          span {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+    .links{
+      form{
+        .label {
+          display: none;
+          span {
+          }
+        }
+        br{
+           display: none;       
+        }
+        .btn_area{
+          .btn_container{
+            position: relative;
+            left: unset;
+            -webkit-transform: unset;
+            transform: unset;
+            .arcade_btn {
+              width: $sm_btn_size;  // 25 px
+              height: $sm_btn_size;  // 25 px
+              margin: 0.5em;
+              &.small{
+                @include sm_button($sm_btn_size);
+                &.github{
+                }
+                &.linkedin{
+                }
+              }
+            }
+          }
+        } // end btn_area
+      } // end form
+    } // end links
+  }
+}
+
+// *********************************************************************************
+
+// smaller tablet sizes - Nexus 7, iPad mini, iPad
+// portrait mode
+@media only screen 
+and (orientation: portrait)
+and (min-width: 600px)
+and (-webkit-min-device-pixel-ratio: 2){
+  $btn_size: $btn_size_lg;  // 100px
+  $sm_btn_size: $btn_size_lg * 0.35;   // 35px;
+  footer {
+    height: $btn_size;
+    .control_panel {
+      .btn_container {
+        height: $btn_size;
+        width: $btn_size;
+        .arcade_btn {
+          height: $btn_size;
+          width: $btn_size;
+          margin: 0;
+          &.red {
+            @include lg_button(red, $btn_size);
+          }
+          &.blue {
+            @include lg_button(blue, $btn_size);
+          }
+        }
+      }
+      .label_container {
+        .label {
+          &.red {
+          }
+          &.blue {
+          }
+          span {
+          }
+        }
+      }
+    }
+    .links{
+      form{
+        .label {
+          span {
+          }
+        }
+        br {
+        }
+        .btn_area{
+          .btn_container{
+            .arcade_btn {
+              width: $sm_btn_size;  // 25 px
+              height: $sm_btn_size;  // 25 px
+              margin: 0.5em;
+              &.small{
+                @include sm_button($sm_btn_size);
+                &.github{
+                }
+                &.linkedin{
+                }
+              }
+            }
+          }
+        } // end btn_area
+      } // end form
+    } // end links
+  }
+}
+// landscape mode
+@media only screen 
+and (orientation: landscape)
+and (min-width: 960px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  $btn_size: 100px;
+  footer {
+    height: $btn_size;
+    .control_panel {
+      .btn_container {
+        height: $btn_size;
+        width: $btn_size;
+        .arcade_btn {
+          width: $btn_size;
+          height: $btn_size;
+          &.red {
+            @include lg_button(red, $btn_size);
+          }
+          &.blue {
+            @include lg_button(blue, $btn_size);
+          }
+        }
+      }
+      .label_container {
+        font-size: 1.5em;
+        .label {
+          &.red {
+          }
+          &.blue {
+          }
+          span {
+          }
+        }
+      }
+    }
+    .links{
+      form{
+        .label {
+          span {
+          }
+        }
+        br{
+        }
+        .btn_area{
+          .btn_container{
+            .arcade_btn {
+                &.small{
+                  &.github{
+                  }
+                  &.linkedin{
+                  }
+                }
+            }
+          }
+        } // end btn_area
+      } // end form
+    } // end links
+  }
+}
+
+// *********************************************************************************
+
+// large tablet sizes - iPad pro
+// portrait mode
+@media screen 
+and (orientation: portrait)
+and (min-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2){
+  $btn_size: 125px;
+  $sm_btn_size: 70px;
+  footer {
+    height: $btn_size;
+    .control_panel {
+      .btn_container {
+        height: $btn_size;
+        width: $btn_size;
+        .arcade_btn {
+          height: $btn_size;
+          width: $btn_size;
+          margin: 0;
+          &.red {
+            @include lg_button(red, $btn_size);
+          }
+          &.blue {
+            @include lg_button(blue, $btn_size);
+          }
+        }
+      }
+      .label_container {
+        font-size: 2em;
+        .label {
+          &.red {
+          }
+          &.blue {
+          }
+          span {
+          }
+        }
+      }
+    }
+    .links{
+      form{
+        display: inline-block;
+        .label {
+          display: inline-block;
+          margin-bottom: 5px;
+          span {
+          }
+        }
+        br{
+          display: inline;
+        }
+        .btn_area{
+          .btn_container{
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            .arcade_btn {
+              width: $sm_btn_size;  // 75 px
+              height: $sm_btn_size;  // 75 px
+              margin: 0.5em;
+              &.small{
+                @include sm_button($sm_btn_size);
+                &.github{
+                }
+                &.linkedin{
+                }
+              }
+            }
+          }
+        } // end btn_area
+      } // end form
+    } // end links
+  }  
+}
+
+// landscape mode
+@media screen
+and (orientation: landscape)
+and (min-width: 1366px)
+and (-webkit-min-device-pixel-ratio: 2){
+  footer {
+    .control_panel {
+      .btn_container {
+        .arcade_btn {
+          &.red {
+          }
+          &.blue {
+          }
+        }
+      }
+      .label_container {
+        .label {
+          &.red {
+          }
+          &.blue {
+          }
+          span {
+          }
+        }
+      }
+    }
+    .links{
+      form{
+        .label {
+          display: inline-block;
+          margin-bottom: 5px;
+          span {
+          }
+        }
+        br{
+          display: inline;
+        }
+        .btn_area{
+          .btn_container{
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            .arcade_btn {
+                &.small{
+                  &.github{
+                  }
+                  &.linkedin{
+                  }
+                }
+            }
+          }
+        } // end btn_area
+      } // end form 
+    } // end links
+  } 
 }

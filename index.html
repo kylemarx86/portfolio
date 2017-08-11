@@ -4,13 +4,7 @@
     <title>Kyle Marx - Portfolio</title>
     <!--<meta http-equiv="Cache-control" content="public">-->
     <!--font resources-->
-    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
@@ -20,17 +14,27 @@
     <link rel="shortcut icon" href="favicons/favicon.ico">
     <meta name="msapplication-config" content="favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--<meta name="viewport" content="initial-scale=1, user-scalable=no">-->
+
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <script src="script.js"></script>
-
 </head>
 <body>
     <header>
-        <svg id='canvas'>
+        <svg id='canvas' viewBox="0 0 1800 473">
             <defs>
                 <pattern id='inner_triangles' width='50px' height='86px' patternUnits='userSpaceOnUse'>
-                    <rect  width='50px' height='86px' /> -->
+                    <rect  width='50px' height='86px' />
                     <line x1="0" y1="0" x2="50" y2="0"  />
                     <line x1="0" y1="0" x2="50" y2="86" />
                     <line x1="50" y1="0" x2="0" y2="86" />
@@ -42,16 +46,17 @@
                 <rect width='1800px' height='473px' fill='url(#inner_triangles)'/>
             </g>
         </svg>
-        <ul>
+        <ul class='navigation_bar'>
             <li class='page_link'><span>About Me</span></li>
             <li class='page_link'><span>Selected Applications</span></li>
             <li class='page_link'><span>Technologies Used</span></li>
             <li class='page_link'><span>Contact Me</span></li>
         </ul>
+        <div class='sidenav_control'>
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+        </div>
     </header>
     
-
-
     <div class='main_screen background'>
         <div class='screen'>
             <!--about page-->
@@ -63,7 +68,7 @@
                 <div class='content grown'>
                     <p>My name is Kyle Marx, and I am a web developer. I am a graduate from Cal State Fullerton with a degree in Mathematics. I have been in the education business for years, and I am now switching over to this new field. My interests include music, reading, board games, sports (especially baseball and soccer), and trivia. This is a portfolio dedicated to highlighting some of my applications and technological skills.</p>
                 </div>
-            </div>
+            </div>  <!-- end about page-->
             <!--apps page-->
             <div class='page apps hidden'>
                 <div class='title'>
@@ -98,16 +103,16 @@
                             <div class='image_container gray'>
                                 <img class='spacer' src='apps/images/iBet-wide.png'>
                             </div>
-                            <div class='image_container cover'>
+                            <!-- <div class='image_container cover'>
                                 <img class='spacer' src='apps/images/iBet-wide.png'>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
                     <div class='apps_carousel_bottom'>
                     </div>
                 </div>
-            </div>
+            </div>  <!-- end apps page -->
             <!--technologies page-->
             <div class='page technologies_used hidden'>
                 <div class='title'>
@@ -118,12 +123,13 @@
                     <div class='technologies'>
                         <ul class='circle-container'></ul>
                         <div class='tech_info'>
+                            <span class='show_more_toggle glyphicon glyphicon-chevron-up'></span>
                             <h2 class='name'></h2>
                             <ul class='apps'></ul>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- end technologies page -->
             <!--contact page-->
             <div class='page contact hidden'>
                 <div class='title'>
@@ -158,11 +164,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- end contact page -->
             <!-- end of pages -->
         </div>
-    </div>
-    <!-- end of main screen -->
+    </div><!-- end of main screen -->
+
     <footer>
         <div class='control_panel'>
             <div class='label_container'>
@@ -208,6 +214,18 @@
         </div>
     </footer>
 
+     <div id='sidenav' class='sidenav'>
+        <div class='menu'>
+            <h1>Sections</h1>
+            <ul class=''>
+                <li class='page_link'><span>About Me</span></li>
+                <li class='page_link'><span>Selected Applications</span></li>
+                <li class='page_link'><span>Technologies Used</span></li>
+                <li class='page_link'><span>Contact Me</span></li>
+            </ul>
+         </div>
+        <div class='background'></div>
+    </div> 
     <!-- Modal -->
     <div class="modal fade" id="description_modal" role="dialog">
         <div class="modal-dialog">
