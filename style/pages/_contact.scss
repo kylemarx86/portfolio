@@ -3,15 +3,23 @@
     form{
         display: inline-block;
         width: 50%;
-        margin-left: 5px;
+        // margin-left: 5px;
+        
+        box-sizing: border-box;
+        padding: 5px;
+        color: red;
 
-        table{
+        .row{
+            display: inline-block;
             width: 100%;
-            td{
-                color: red;
+            margin: 5px 0;
+            box-sizing: border-box;
 
-                .field{
-                    position: relative;
+            .field{
+                float: left;
+
+
+                position: relative;
                     cursor: help;
                     color: white;
 
@@ -32,14 +40,21 @@
                         visibility: visible;
                     }
                 }
-                
+                input, textarea{
+                    // float: right;
+                    // width: 60%;
+                    // border-width: 2px;
+                }
                 input, textarea{
                     color: black;
-                    margin: 5px;
+                    // margin: 5px;
                     padding: 1px;
                     border-radius: 5px;
                     box-shadow: 1px 1px 3px 1px #000000;
-                    width: 100%;
+                    // width: 100%;
+                    float: right;
+                    width: 60%;
+                    border-width: 2px;
 
                     &:focus{
                         outline-width: 1px;
@@ -50,7 +65,53 @@
                     resize: none;
                 }
             }
-        }
+
+        // table{
+        //     width: 100%;
+        //     td{
+        //         color: red;
+
+        //         .field{
+        //             position: relative;
+        //             cursor: help;
+        //             color: white;
+
+        //             .tooltip{
+        //                 position: absolute;
+        //                 left: 10px;
+        //                 visibility: hidden;
+        //                 text-align: center;
+        //                 border: 1px solid black;
+        //                 border-radius: 5px;
+        //                 padding: 5px;
+        //                 opacity: 1;
+        //                 background: silver;
+        //                 color: black;
+        //                 white-space: nowrap;
+        //             }
+        //             &:hover .tooltip{
+        //                 visibility: visible;
+        //             }
+        //         }
+                
+        //         input, textarea{
+        //             color: black;
+        //             margin: 5px;
+        //             padding: 1px;
+        //             border-radius: 5px;
+        //             box-shadow: 1px 1px 3px 1px #000000;
+        //             width: 100%;
+
+        //             &:focus{
+        //                 outline-width: 1px;
+        //                 outline-color: red;
+        //             }
+        //         }
+        //         textarea{
+        //             resize: none;
+        //         }
+        //     }
+        // }
     }
     // mail response container
     .mail_response_container{
@@ -77,4 +138,83 @@
             }
         }
     }
+}
+
+// *********************************************************************************
+// *********************************************************************************
+
+
+
+// revised media queries
+// device specific media queries
+
+// smaller phones - iPhone 5, galaxy s5
+// portrait mode
+@media screen 
+and (orientation: portrait) 
+and (max-width: 360px) 
+and (-webkit-min-device-pixel-ratio: 2){
+       
+}
+// landscape mode
+@media screen
+and (orientation: landscape)
+and (max-width: 640px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    
+}
+
+// *********************************************************************************
+
+// larger phones - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
+// portrait mode
+@media screen
+and (orientation: portrait) 
+and (min-width: 361px) 
+and (-webkit-min-device-pixel-ratio: 2){
+        
+}
+// landscape mode
+@media screen 
+and (orientation: landscape) 
+and (min-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    
+}
+
+// *********************************************************************************
+
+// smaller tablet sizes - Nexus 7, iPad mini, iPad
+// portrait mode
+@media only screen 
+and (orientation: portrait)
+and (min-width: 600px)
+and (-webkit-min-device-pixel-ratio: 2){
+    
+}
+// landscape mode
+@media only screen 
+and (orientation: landscape)
+and (min-width: 960px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    
+}
+
+// *********************************************************************************
+
+// large tablet sizes - iPad pro
+// portrait mode
+@media screen 
+and (orientation: portrait)
+and (min-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2){
+     
+}
+
+// landscape mode
+@media screen
+and (orientation: landscape)
+and (min-width: 1366px)
+and (-webkit-min-device-pixel-ratio: 2){
+
 }
