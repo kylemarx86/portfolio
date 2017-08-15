@@ -783,7 +783,7 @@ function send_form(){
             //enable send button again
             $('button[name="submit"]').click(send_form);
             if(response.success){
-                $('.mail_response p').text(response.message);
+                $('.mail_response span').text(response.message);
             }else{
                 console.log('success function');
                 console.log(response.message);
