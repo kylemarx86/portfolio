@@ -784,18 +784,16 @@ function send_form(){
             $('button[name="submit"]').click(send_form);
             if(response.success){
                 $('.mail_response span').text(response.message);
+                
             }else{
-                console.log('success function');
-                console.log(response.message);
+                $('.mail_response span').empty();
                 for(var i = 0; i < response.message.length; i++){
-                    $('.mail_response p').text(response.message[i]);
+                    $('.mail_response span').append(response.message[i]);
                 }
             }
         },
         error: function(response){
-            console.log('error function');
-            console.log(response);
-            $('.mail_response p').text('Message could not be sent due to server error');
+            $('.mail_response span').text('Message could not be sent due to server error');
             //change text of send button
             $('button[name="submit"]').text('Send Mail');
             //enable send button again
