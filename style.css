@@ -1841,7 +1841,8 @@ button.link_btn, .link_btn > input {
         display: inline-block;
         text-align: center;
         padding: 0 15px;
-        transform: skew(-10deg); }
+        background-color: transparent;
+        z-index: 0; }
         .contact .mail_response_container .wrapper .mail_response span::after {
           content: '';
           display: inline-block;
@@ -1851,7 +1852,8 @@ button.link_btn, .link_btn > input {
           right: -10px;
           top: 0;
           bottom: 0;
-          z-index: -1; }
+          z-index: -1;
+          transform: skew(-10deg); }
 .contact .form_container {
   position: relative;
   display: inline-block;
@@ -1868,8 +1870,8 @@ button.link_btn, .link_btn > input {
       margin: 5px 0;
       box-sizing: border-box; }
       .contact .form_container form .row .field {
-        float: left;
         position: relative;
+        float: left;
         cursor: help;
         color: white; }
         .contact .form_container form .row .field .tooltip {
