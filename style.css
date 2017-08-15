@@ -1808,68 +1808,97 @@ button.link_btn, .link_btn > input {
       .technologies .tech_info .apps li span {
         font-size: 2.5em;
         line-height: 1; } }
-.contact form {
+.contact .mail_response_container {
+  position: absolute;
   display: inline-block;
   width: 50%;
-  box-sizing: border-box;
-  padding: 5px;
-  color: red; }
-  .contact form .row {
+  right: 0; }
+  .contact .mail_response_container .wrapper {
+    position: absolute;
+    display: inline-block;
+    transform: translateX(-50%);
+    left: 50%; }
+    .contact .mail_response_container .wrapper .mail_response {
+      position: relative;
+      display: inline-block;
+      background-color: transparent;
+      padding: 0 15px;
+      color: black;
+      box-shadow: 1px 1px 3px 1px black; }
+      .contact .mail_response_container .wrapper .mail_response::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        background-color: black;
+        left: -10px;
+        right: -10px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        transform: skew(-10deg); }
+      .contact .mail_response_container .wrapper .mail_response span {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        padding: 0 15px;
+        transform: skew(-10deg); }
+        .contact .mail_response_container .wrapper .mail_response span::after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          background-color: silver;
+          left: -10px;
+          right: -10px;
+          top: 0;
+          bottom: 0;
+          z-index: -1; }
+.contact .form_container {
+  position: relative;
+  display: inline-block;
+  width: 50%; }
+  .contact .form_container form {
     display: inline-block;
     width: 100%;
-    margin: 5px 0;
-    box-sizing: border-box; }
-    .contact form .row .field {
-      float: left;
-      position: relative;
-      cursor: help;
-      color: white; }
-      .contact form .row .field .tooltip {
-        position: absolute;
-        left: 10px;
-        visibility: hidden;
-        text-align: center;
-        border: 1px solid black;
-        border-radius: 5px;
-        padding: 5px;
-        opacity: 1;
-        background: silver;
+    box-sizing: border-box;
+    padding: 5px;
+    color: red; }
+    .contact .form_container form .row {
+      display: inline-block;
+      width: 100%;
+      margin: 5px 0;
+      box-sizing: border-box; }
+      .contact .form_container form .row .field {
+        float: left;
+        position: relative;
+        cursor: help;
+        color: white; }
+        .contact .form_container form .row .field .tooltip {
+          position: absolute;
+          left: 10px;
+          visibility: hidden;
+          text-align: center;
+          border: 1px solid black;
+          border-radius: 5px;
+          padding: 5px;
+          opacity: 1;
+          background: silver;
+          color: black;
+          white-space: nowrap; }
+        .contact .form_container form .row .field:hover .tooltip {
+          visibility: visible; }
+      .contact .form_container form .row input, .contact .form_container form .row textarea {
         color: black;
-        white-space: nowrap; }
-      .contact form .row .field:hover .tooltip {
-        visibility: visible; }
-    .contact form .row input, .contact form .row textarea {
-      color: black;
-      padding: 1px;
-      border-radius: 5px;
-      box-shadow: 1px 1px 3px 1px #000000;
-      float: right;
-      width: 60%;
-      border-width: 2px; }
-      .contact form .row input:focus, .contact form .row textarea:focus {
-        outline-width: 1px;
-        outline-color: red; }
-    .contact form .row textarea {
-      resize: none; }
-.contact .mail_response_container {
-  vertical-align: top;
-  display: inline-block;
-  width: 30%;
-  padding: 0 15px;
-  background-color: black;
-  box-sizing: border-box;
-  box-shadow: 1px 1px 3px 1px #000000;
-  transform: translateX(50%) skewX(-10deg); }
-  .contact .mail_response_container .mail_response {
-    width: 100%;
-    height: 100%;
-    background-color: silver;
-    padding: 0 5px; }
-    .contact .mail_response_container .mail_response p {
-      -webkit-transform: skewX(10deg);
-      transform: skewX(10deg);
-      color: black;
-      padding: 0 5px; }
+        padding: 1px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px 1px #000000;
+        float: right;
+        width: 60%;
+        border-width: 2px; }
+        .contact .form_container form .row input:focus, .contact .form_container form .row textarea:focus {
+          outline-width: 1px;
+          outline-color: red; }
+      .contact .form_container form .row textarea {
+        resize: none; }
 
 html, body {
   height: 100%; }
