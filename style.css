@@ -1901,7 +1901,26 @@ button.link_btn, .link_btn > input {
           outline-color: red; }
       .contact .form_container form .row textarea {
         resize: none; }
+      .contact .form_container form .row button.send {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) skewX(-10deg);
+        margin: 10px 0; }
 
+@media screen and (orientation: portrait) and (max-width: 360px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container {
+    position: relative;
+    display: block;
+    width: 100%; }
+    .contact .mail_response_container .wrapper {
+      position: relative;
+      width: 80%; }
+      .contact .mail_response_container .wrapper .mail_response span {
+        font-size: 0.75em; }
+  .contact .form_container {
+    width: 100%; }
+    .contact .form_container form .row {
+      font-size: 0.75em; } }
 html, body {
   height: 100%; }
 
