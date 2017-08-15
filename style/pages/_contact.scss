@@ -1,17 +1,86 @@
 .contact {
-    // styling for contact form
-    form{
+    // mail response container
+    .mail_response_container{
+        position: absolute;
         display: inline-block;
         width: 50%;
-        margin-left: 5px;
+        right: 0;
 
-        table{
+        .wrapper{
+            position: absolute;
+            display: inline-block;
+            transform: translateX(-50%);
+            left: 50%;
+            
+            .mail_response{
+                position: relative;
+                display: inline-block;
+                background-color: transparent;
+                padding: 0 15px;
+                color: black;
+                box-shadow: 1px 1px 3px 1px black;
+
+                &::after{
+                    content: '';
+                    position: absolute;
+                    display: inline-block;
+                    background-color: black;
+                    left: -15px;
+                    right: -15px;
+                    top: 0;
+                    bottom: 0;
+                    z-index: -1;
+                    transform: skew(-10deg);
+                }
+
+                span{
+                    position: relative;
+                    display: inline-block;
+                    text-align: center;
+                    padding: 0 15px;
+                    background-color: transparent;
+                    z-index: 0;
+                    
+                    &::after{
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        background-color: silver;
+                        left: -10px;
+                        right: -10px;
+                        top: 0;
+                        bottom: 0;
+                        z-index: -1;
+                        transform: skew(-10deg);
+                    }
+                }
+            }
+        }
+    }
+
+    // styling for contact form
+    .form_container{
+        position: relative;
+        display: inline-block;
+        width: 50%;
+        
+        form{
+            display: inline-block;
             width: 100%;
-            td{
-                color: red;
+            box-sizing: border-box;
+            padding: 5px;
+            color: red;
+
+            .row{
+                display: inline-block;
+                width: 100%;
+                margin: 5px 0;
+                box-sizing: border-box;
 
                 .field{
                     position: relative;
+                    float: left;
+
                     cursor: help;
                     color: white;
 
@@ -32,14 +101,21 @@
                         visibility: visible;
                     }
                 }
-                
+                input, textarea{
+                    // float: right;
+                    // width: 60%;
+                    // border-width: 2px;
+                }
                 input, textarea{
                     color: black;
-                    margin: 5px;
+                    // margin: 5px;
                     padding: 1px;
                     border-radius: 5px;
                     box-shadow: 1px 1px 3px 1px #000000;
-                    width: 100%;
+                    // width: 100%;
+                    float: right;
+                    width: 60%;
+                    border-width: 2px;
 
                     &:focus{
                         outline-width: 1px;
@@ -50,31 +126,88 @@
                     resize: none;
                 }
             }
+
+            
         }
     }
-    // mail response container
-    .mail_response_container{
-        vertical-align: top;
-        display: inline-block;
-        width: 30%;
-        padding: 0 15px;
-        background-color: black;
-        box-sizing: border-box;
-        box-shadow: 1px 1px 3px 1px #000000;
-        transform: translateX(50%) skewX(-10deg);
+   
+}
 
-        .mail_response{
-            width: 100%;
-            height: 100%;
-            background-color: silver;
-            padding: 0 5px;
+// *********************************************************************************
+// *********************************************************************************
 
-            p{
-                -webkit-transform: skewX(10deg);
-                transform: skewX(10deg);
-                color: black;
-                padding: 0 5px;
-            }
-        }
-    }
+
+
+// revised media queries
+// device specific media queries
+
+// smaller phones - iPhone 5, galaxy s5
+// portrait mode
+@media screen 
+and (orientation: portrait) 
+and (max-width: 360px) 
+and (-webkit-min-device-pixel-ratio: 2){
+       
+}
+// landscape mode
+@media screen
+and (orientation: landscape)
+and (max-width: 640px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    
+}
+
+// *********************************************************************************
+
+// larger phones - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
+// portrait mode
+@media screen
+and (orientation: portrait) 
+and (min-width: 361px) 
+and (-webkit-min-device-pixel-ratio: 2){
+        
+}
+// landscape mode
+@media screen 
+and (orientation: landscape) 
+and (min-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    
+}
+
+// *********************************************************************************
+
+// smaller tablet sizes - Nexus 7, iPad mini, iPad
+// portrait mode
+@media only screen 
+and (orientation: portrait)
+and (min-width: 600px)
+and (-webkit-min-device-pixel-ratio: 2){
+    
+}
+// landscape mode
+@media only screen 
+and (orientation: landscape)
+and (min-width: 960px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    
+}
+
+// *********************************************************************************
+
+// large tablet sizes - iPad pro
+// portrait mode
+@media screen 
+and (orientation: portrait)
+and (min-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2){
+     
+}
+
+// landscape mode
+@media screen
+and (orientation: landscape)
+and (min-width: 1366px)
+and (-webkit-min-device-pixel-ratio: 2){
+
 }
