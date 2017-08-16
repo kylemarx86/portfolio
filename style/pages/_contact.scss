@@ -74,6 +74,7 @@
             color: red;
 
             .row{
+                position: relative;
                 display: inline-block;
                 width: 100%;
                 margin: 5px 0;
@@ -129,7 +130,9 @@
                 button.send{
                     position: absolute;
                     left: 50%;
-                    transform: translateX(-50%) skewX(-10deg);
+                    // transform: translateX(-50%) skewX(-10deg);
+                    top: 50%;
+                    transform: translate(-50%,-50%) skewX(-10deg);
                     margin: 10px 0;
                 }
             } // end row
@@ -256,7 +259,7 @@ and (-webkit-min-device-pixel-ratio: 2){
                 
             } // end form
         } // end form container
-    } // end contact    
+    } // end contact
 }
 
 // *********************************************************************************
@@ -323,7 +326,52 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: landscape) 
 and (min-width: 667px) 
 and (-webkit-min-device-pixel-ratio: 2){
-    
+    .contact {
+        // mail response container
+        .mail_response_container{
+            width: 40%;
+            .wrapper{
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        font-size: 0.75em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
+        
+        // styling for contact form
+        .form_container{
+            width: 60%;
+            form{
+                .row{
+                    font-size: 0.75em;
+                    // margin: 4px 0;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                    }
+                    input, textarea{
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                        height: 7em;
+                    }
+                    button.send{
+                        margin: 0;
+                    }
+                } // end row
+            } // end form
+        } // end form container
+    } // end contact
 }
 
 // *********************************************************************************

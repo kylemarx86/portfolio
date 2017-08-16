@@ -1866,6 +1866,7 @@ button.link_btn, .link_btn > input {
     padding: 5px;
     color: red; }
     .contact .form_container form .row {
+      position: relative;
       display: inline-block;
       width: 100%;
       margin: 5px 0;
@@ -1907,7 +1908,8 @@ button.link_btn, .link_btn > input {
       .contact .form_container form .row button.send {
         position: absolute;
         left: 50%;
-        transform: translateX(-50%) skewX(-10deg);
+        top: 50%;
+        transform: translate(-50%, -50%) skewX(-10deg);
         margin: 10px 0; }
 
 @media screen and (orientation: portrait) and (max-width: 360px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -1952,6 +1954,19 @@ button.link_btn, .link_btn > input {
     width: 100%; }
     .contact .form_container form .row textarea {
       height: 7em; } }
+@media screen and (orientation: landscape) and (min-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container {
+    width: 40%; }
+    .contact .mail_response_container .wrapper .mail_response span {
+      font-size: 0.75em; }
+  .contact .form_container {
+    width: 60%; }
+    .contact .form_container form .row {
+      font-size: 0.75em; }
+      .contact .form_container form .row textarea {
+        height: 7em; }
+      .contact .form_container form .row button.send {
+        margin: 0; } }
 @media only screen and (orientation: portrait) and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
   .contact .mail_response_container {
     position: absolute;
