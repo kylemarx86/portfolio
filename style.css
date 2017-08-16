@@ -1941,6 +1941,8 @@ button.link_btn, .link_btn > input {
     .contact .form_container form .row {
       font-size: 0.75em;
       margin: 4px 0; }
+      .contact .form_container form .row input, .contact .form_container form .row textarea {
+        width: 70%; }
       .contact .form_container form .row textarea {
         height: 5em; }
       .contact .form_container form .row button.send {
@@ -1967,6 +1969,8 @@ button.link_btn, .link_btn > input {
     width: 60%; }
     .contact .form_container form .row {
       font-size: 0.75em; }
+      .contact .form_container form .row input, .contact .form_container form .row textarea {
+        width: 70%; }
       .contact .form_container form .row textarea {
         height: 7em; }
       .contact .form_container form .row button.send {
