@@ -2038,12 +2038,16 @@ button:focus {
   .main_screen {
     top: 12%;
     height: 69%; }
-    .main_screen .screen .page .title span {
-      height: 1em;
-      vertical-align: -5px; }
-    .main_screen .screen .page .title h2 {
-      margin-top: 5px;
-      font-size: 0.75em; } }
+    .main_screen .screen {
+      width: 96%; }
+      .main_screen .screen .page .title {
+        height: 9%; }
+        .main_screen .screen .page .title span {
+          height: 1em;
+          vertical-align: -5px; }
+        .main_screen .screen .page .title h2 {
+          margin-top: 5px;
+          font-size: 0.75em; } }
 @media screen and (orientation: landscape) and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
   .main_screen {
     height: 72%; }
