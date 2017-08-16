@@ -193,8 +193,10 @@ and (-webkit-min-device-pixel-ratio: 2){
                         }
                     }
                     textarea{
+                        height: 5em;    // for when i remove the rows from the html textarea element
                     }
                     button.send{
+                        margin: 7px 0;
                     }
                 } // end row
                 
@@ -207,7 +209,48 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: landscape)
 and (max-width: 640px) 
 and (-webkit-min-device-pixel-ratio: 2){
-    
+    .contact {
+        // mail response container
+        .mail_response_container{
+            .wrapper{
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        font-size: 0.75em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
+        
+        // styling for contact form
+        .form_container{
+            form{
+                .row{
+                    font-size: 0.75em;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                    }
+                    input, textarea{
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                    }
+                    button.send{
+                    }
+                } // end row
+                
+            } // end form
+        } // end form container
+    } // end contact    
 }
 
 // *********************************************************************************

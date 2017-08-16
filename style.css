@@ -1921,7 +1921,16 @@ button.link_btn, .link_btn > input {
   .contact .form_container {
     width: 100%; }
     .contact .form_container form .row {
-      font-size: 0.75em; } }
+      font-size: 0.75em; }
+      .contact .form_container form .row textarea {
+        height: 5em; }
+      .contact .form_container form .row button.send {
+        margin: 7px 0; } }
+@media screen and (orientation: landscape) and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container .wrapper .mail_response span {
+    font-size: 0.75em; }
+  .contact .form_container form .row {
+    font-size: 0.75em; } }
 @media screen and (orientation: portrait) and (min-width: 361px) and (-webkit-min-device-pixel-ratio: 2) {
   .contact .mail_response_container {
     position: relative;
