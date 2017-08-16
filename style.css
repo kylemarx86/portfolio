@@ -1925,6 +1925,8 @@ button.link_btn, .link_btn > input {
     width: 100%; }
     .contact .form_container form .row {
       font-size: 0.75em; }
+      .contact .form_container form .row input, .contact .form_container form .row textarea {
+        width: 70%; }
       .contact .form_container form .row textarea {
         height: 7em; }
       .contact .form_container form .row button.send {
@@ -1952,6 +1954,8 @@ button.link_btn, .link_btn > input {
       position: relative; }
   .contact .form_container {
     width: 100%; }
+    .contact .form_container form .row input, .contact .form_container form .row textarea {
+      width: 65%; }
     .contact .form_container form .row textarea {
       height: 7em; } }
 @media screen and (orientation: landscape) and (min-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {

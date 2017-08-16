@@ -105,11 +105,6 @@
                     }
                 }
                 input, textarea{
-                    // float: right;
-                    // width: 60%;
-                    // border-width: 2px;
-                }
-                input, textarea{
                     color: black;
                     padding: 1px;
                     border-radius: 5px;
@@ -130,7 +125,6 @@
                 button.send{
                     position: absolute;
                     left: 50%;
-                    // transform: translateX(-50%) skewX(-10deg);
                     top: 50%;
                     transform: translate(-50%,-50%) skewX(-10deg);
                     margin: 10px 0;
@@ -165,7 +159,6 @@ and (-webkit-min-device-pixel-ratio: 2){
 
             .wrapper{
                 position: relative;
-                // width: 80%;
                 .mail_response{
                     &::after{
                     }
@@ -191,8 +184,7 @@ and (-webkit-min-device-pixel-ratio: 2){
                         }
                     }
                     input, textarea{
-                    }
-                    input, textarea{
+                        width: 70%;
                         &:focus{
                         }
                     }
@@ -244,8 +236,6 @@ and (-webkit-min-device-pixel-ratio: 2){
                         }
                     }
                     input, textarea{
-                    }
-                    input, textarea{
                         &:focus{
                         }
                     }
@@ -279,7 +269,6 @@ and (-webkit-min-device-pixel-ratio: 2){
 
             .wrapper{
                 position: relative;
-                // width: 80%;
                 .mail_response{
                     &::after{
                     }
@@ -305,8 +294,7 @@ and (-webkit-min-device-pixel-ratio: 2){
                         }
                     }
                     input, textarea{
-                    }
-                    input, textarea{
+                        width: 65%;
                         &:focus{
                         }
                     }
@@ -355,8 +343,6 @@ and (-webkit-min-device-pixel-ratio: 2){
                         }
                         &:hover .tooltip{
                         }
-                    }
-                    input, textarea{
                     }
                     input, textarea{
                         &:focus{
@@ -420,8 +406,6 @@ and (-webkit-min-device-pixel-ratio: 2){
                         }
                     }
                     input, textarea{
-                    }
-                    input, textarea{
                         &:focus{
                         }
                     }
@@ -477,8 +461,6 @@ and (-webkit-min-device-pixel-ratio: 2){
                         }
                         &:hover .tooltip{
                         }
-                    }
-                    input, textarea{
                     }
                     input, textarea{
                         &:focus{
