@@ -124,6 +124,7 @@
                 }
                 textarea{
                     resize: none;
+                    height: 10em;
                 }
                 button.send{
                     position: absolute;
@@ -193,7 +194,7 @@ and (-webkit-min-device-pixel-ratio: 2){
                         }
                     }
                     textarea{
-                        height: 5em;    // for when i remove the rows from the html textarea element
+                        height: 7em;
                     }
                     button.send{
                         margin: 7px 0;
@@ -255,7 +256,7 @@ and (-webkit-min-device-pixel-ratio: 2){
 
 // *********************************************************************************
 
-// larger phones - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
+// larger phones - iPhone 6, iPhone 6 Plus, Nexus 6P, Nexus 5X
 // portrait mode
 @media screen
 and (orientation: portrait) 
@@ -302,6 +303,7 @@ and (-webkit-min-device-pixel-ratio: 2){
                         }
                     }
                     textarea{
+                        height: 7em;
                     }
                     button.send{
                     }
@@ -357,7 +359,6 @@ and (-webkit-min-device-pixel-ratio: 2){
             width: 50%;
             form{
                 .row{
-                    // font-size: 0.75em;
                     font-size: 1.25em;
                     .field{
                         .tooltip{

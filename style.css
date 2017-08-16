@@ -1902,7 +1902,8 @@ button.link_btn, .link_btn > input {
           outline-width: 1px;
           outline-color: red; }
       .contact .form_container form .row textarea {
-        resize: none; }
+        resize: none;
+        height: 10em; }
       .contact .form_container form .row button.send {
         position: absolute;
         left: 50%;
@@ -1923,7 +1924,7 @@ button.link_btn, .link_btn > input {
     .contact .form_container form .row {
       font-size: 0.75em; }
       .contact .form_container form .row textarea {
-        height: 5em; }
+        height: 7em; }
       .contact .form_container form .row button.send {
         margin: 7px 0; } }
 @media screen and (orientation: landscape) and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -1939,7 +1940,9 @@ button.link_btn, .link_btn > input {
     .contact .mail_response_container .wrapper {
       position: relative; }
   .contact .form_container {
-    width: 100%; } }
+    width: 100%; }
+    .contact .form_container form .row textarea {
+      height: 7em; } }
 @media only screen and (orientation: portrait) and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
   .contact .mail_response_container {
     position: absolute;
