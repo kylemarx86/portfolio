@@ -216,7 +216,55 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: portrait) 
 and (min-width: 361px) 
 and (-webkit-min-device-pixel-ratio: 2){
+    .contact {
+        // mail response container
+        .mail_response_container{
+            position: relative;
+            display: block;
+            width: 100%;
+
+            .wrapper{
+                position: relative;
+                width: 80%;
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        // font-size: 0.75em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
         
+        // styling for contact form
+        .form_container{
+            width: 100%;
+            form{
+                .row{
+                    // font-size: 0.75em;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                    }
+                    input, textarea{
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                    }
+                    button.send{
+                    }
+                } // end row
+                
+            } // end form
+        } // end form container
+    } // end contact        
 }
 // landscape mode
 @media screen 

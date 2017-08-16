@@ -1921,6 +1921,16 @@ button.link_btn, .link_btn > input {
     width: 100%; }
     .contact .form_container form .row {
       font-size: 0.75em; } }
+@media screen and (orientation: portrait) and (min-width: 361px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container {
+    position: relative;
+    display: block;
+    width: 100%; }
+    .contact .mail_response_container .wrapper {
+      position: relative;
+      width: 80%; }
+  .contact .form_container {
+    width: 100%; } }
 html, body {
   height: 100%; }
 
