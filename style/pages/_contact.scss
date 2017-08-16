@@ -130,7 +130,6 @@
                     margin: 10px 0;
                 }
             } // end row
-
         } // end form
     } // end form container
    
@@ -375,7 +374,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         .mail_response_container{
             position: absolute;
             display: inline-block;
-            width: 50%;
+            width: 40%;
             right: 0;
             .wrapper{
                 position: absolute;
@@ -387,7 +386,7 @@ and (-webkit-min-device-pixel-ratio: 2){
                     &::after{
                     }
                     span{
-                        font-size: 1.25em;
+                        // font-size: 1.25em;
                         &::after{
                         }
                     }
@@ -397,10 +396,10 @@ and (-webkit-min-device-pixel-ratio: 2){
         
         // styling for contact form
         .form_container{
-            width: 50%;
+            width: 60%;
             form{
                 .row{
-                    font-size: 1.25em;
+                    // font-size: 1.25em;
                     .field{
                         .tooltip{
                         }
@@ -414,6 +413,7 @@ and (-webkit-min-device-pixel-ratio: 2){
                     textarea{
                     }
                     button.send{
+                        margin: 20px 0;
                     }
                 } // end row
                 

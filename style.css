@@ -1979,7 +1979,7 @@ button.link_btn, .link_btn > input {
   .contact .mail_response_container {
     position: absolute;
     display: inline-block;
-    width: 50%;
+    width: 40%;
     right: 0; }
     .contact .mail_response_container .wrapper {
       position: absolute;
@@ -1987,12 +1987,10 @@ button.link_btn, .link_btn > input {
       left: 50%;
       transform: translateX(-50%);
       width: 70%; }
-      .contact .mail_response_container .wrapper .mail_response span {
-        font-size: 1.25em; }
   .contact .form_container {
-    width: 50%; }
-    .contact .form_container form .row {
-      font-size: 1.25em; } }
+    width: 60%; }
+    .contact .form_container form .row button.send {
+      margin: 20px 0; } }
 @media screen and (orientation: portrait) and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   .contact .mail_response_container .wrapper .mail_response span {
     font-size: 1.75em; }
