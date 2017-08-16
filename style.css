@@ -1824,8 +1824,7 @@ button.link_btn, .link_btn > input {
       display: inline-block;
       background-color: transparent;
       padding: 0 15px;
-      color: black;
-      box-shadow: 1px 1px 3px 1px black; }
+      color: black; }
       .contact .mail_response_container .wrapper .mail_response::after {
         content: '';
         position: absolute;
@@ -1836,7 +1835,8 @@ button.link_btn, .link_btn > input {
         top: 0;
         bottom: 0;
         z-index: -1;
-        transform: skew(-10deg); }
+        transform: skew(-10deg);
+        box-shadow: 1px 1px 3px 1px black; }
       .contact .mail_response_container .wrapper .mail_response span {
         position: relative;
         display: inline-block;
