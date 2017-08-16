@@ -1816,8 +1816,9 @@ button.link_btn, .link_btn > input {
   .contact .mail_response_container .wrapper {
     position: absolute;
     display: inline-block;
+    left: 50%;
     transform: translateX(-50%);
-    left: 50%; }
+    max-width: 80%; }
     .contact .mail_response_container .wrapper .mail_response {
       position: relative;
       display: inline-block;
@@ -1914,8 +1915,7 @@ button.link_btn, .link_btn > input {
     display: block;
     width: 100%; }
     .contact .mail_response_container .wrapper {
-      position: relative;
-      width: 80%; }
+      position: relative; }
       .contact .mail_response_container .wrapper .mail_response span {
         font-size: 0.75em; }
   .contact .form_container {
@@ -1928,10 +1928,34 @@ button.link_btn, .link_btn > input {
     display: block;
     width: 100%; }
     .contact .mail_response_container .wrapper {
-      position: relative;
-      width: 80%; }
+      position: relative; }
   .contact .form_container {
     width: 100%; } }
+@media only screen and (orientation: portrait) and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container {
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    right: 0; }
+    .contact .mail_response_container .wrapper {
+      position: absolute;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%; }
+      .contact .mail_response_container .wrapper .mail_response span {
+        font-size: 1.25em; }
+  .contact .form_container {
+    width: 50%; }
+    .contact .form_container form .row {
+      font-size: 1.25em; } }
+@media screen and (orientation: portrait) and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container .wrapper .mail_response span {
+    font-size: 1.75em; }
+  .contact .form_container form .row {
+    font-size: 1.75em; }
+    .contact .form_container form .row button.send {
+      font-size: 1em; } }
 html, body {
   height: 100%; }
 
