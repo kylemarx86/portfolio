@@ -1873,7 +1873,8 @@ button.link_btn, .link_btn > input {
         position: relative;
         float: left;
         cursor: help;
-        color: white; }
+        color: white;
+        padding: 3px 0; }
         .contact .form_container form .row .field .tooltip {
           position: absolute;
           left: 10px;
