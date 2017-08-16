@@ -213,6 +213,7 @@ and (-webkit-min-device-pixel-ratio: 2){
     .contact {
         // mail response container
         .mail_response_container{
+            width: 40%;
             .wrapper{
                 .mail_response{
                     &::after{
@@ -228,9 +229,11 @@ and (-webkit-min-device-pixel-ratio: 2){
         
         // styling for contact form
         .form_container{
+            width: 60%;
             form{
                 .row{
                     font-size: 0.75em;
+                    margin: 4px 0;
                     .field{
                         .tooltip{
                         }
@@ -244,8 +247,10 @@ and (-webkit-min-device-pixel-ratio: 2){
                         }
                     }
                     textarea{
+                        height: 5em;
                     }
                     button.send{
+                        margin: 0;
                     }
                 } // end row
                 
