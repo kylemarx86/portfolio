@@ -35,76 +35,83 @@ button.link_btn, .link_btn > input {
     }
 }
 
+// *********************************************************************************
+// *********************************************************************************
 
-// redone media queries
+
+// revised media queries
 // device specific media queries
 
-// /*portrait - iPad Pro*/
-// @media screen 
-// and (max-width: 1024px)
-// and (max-height: 1366px)
-// and (orientation: portrait){
-// }
+// smaller phones - iPhone 5, galaxy s5
+// portrait mode
+@media screen 
+and (orientation: portrait) 
+and (max-width: 360px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    
+}
+// landscape mode
+@media screen
+and (orientation: landscape)
+and (max-width: 640px) 
+and (-webkit-min-device-pixel-ratio: 2){
+ 
+}
 
-// /*landscape - iPad Pro*/
-// @media screen 
-// and (width: 1366px) 
-// and (height: 1024px) {
-// }
+// *********************************************************************************
 
-/*portrait - iPad*/
+// larger phones - iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X
+// portrait mode
+@media screen
+and (orientation: portrait) 
+and (min-width: 361px) 
+and (-webkit-min-device-pixel-ratio: 2){
+
+}
+// landscape mode
+@media screen 
+and (orientation: landscape) 
+and (min-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2){
+  
+}
+
+// *********************************************************************************
+
+// smaller tablet sizes - Nexus 7, iPad mini, iPad
+// portrait mode
 @media only screen 
-and (min-width: 768px)
-and (max-width: 1024px) 
 and (orientation: portrait)
+and (min-width: 600px)
 and (-webkit-min-device-pixel-ratio: 2){
     button.link_btn, .link_btn > input {
-        font-size: 1.75em;
+        font-size: 1.25em;
     }
 }
-/*landscape - iPad*/
+// landscape mode
 @media only screen 
-and (min-width: 768px) 
-and (max-width: 1024px) 
-and (orientation: landscape) 
+and (orientation: landscape)
+and (min-width: 960px) 
 and (-webkit-min-device-pixel-ratio: 2){
     button.link_btn, .link_btn > input {
         font-size: 1.25em;
     }
 }
 
-/*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen
-and (orientation: portrait) 
-and (max-width: 736px) 
-// and (min-height: 601px) 
-and (max-height: 1743px) 
-and (-webkit-min-device-pixel-ratio: 2){
+// *********************************************************************************
 
-}
-/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+// large tablet sizes - iPad pro
+// portrait mode
 @media screen 
-and (orientation: landscape) 
-and (max-width: 736px) 
-// and (min-height: 351px) 
-and (max-height: 555px)
+and (orientation: portrait)
+and (min-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 2){
 
 }
-
-// /*portrait -  iPhone 5*/
-// @media screen 
-// and (orientation: portrait) 
-// and (max-width: 980px) 
-// and (max-height: 600px)
-// and (-webkit-min-device-pixel-ratio: 2){
-      
-// }
-// /*landscape - iPhone 5*/
-// @media screen
-// and (max-width: 980px) 
-// and (max-height: 350px)
-// and (orientation: landscape)
-// and (-webkit-min-device-pixel-ratio: 2){
-    
-// }
+// landscape mode
+@media screen
+and (orientation: landscape)
+and (min-width: 1366px)
+and (-webkit-min-device-pixel-ratio: 2){
+ 
+}

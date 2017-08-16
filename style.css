@@ -985,16 +985,12 @@ button.link_btn, .link_btn > input {
     color: dimgray;
     box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000; }
 
-/*portrait - iPad*/
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  button.link_btn, .link_btn > input {
-    font-size: 1.75em; } }
-/*landscape - iPad*/
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (orientation: portrait) and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
   button.link_btn, .link_btn > input {
     font-size: 1.25em; } }
-/*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media only screen and (orientation: landscape) and (min-width: 960px) and (-webkit-min-device-pixel-ratio: 2) {
+  button.link_btn, .link_btn > input {
+    font-size: 1.25em; } }
 #sidenav {
   height: 100%;
   width: 100%;
@@ -1806,8 +1802,8 @@ button.link_btn, .link_btn > input {
     .technologies .tech_info .apps {
       margin-bottom: 0; }
       .technologies .tech_info .apps li span {
-        font-size: 2.5em;
-        line-height: 1; } }
+        font-size: 1.5em;
+        line-height: 1.5; } }
 .contact .mail_response_container {
   position: absolute;
   display: inline-block;
