@@ -1195,21 +1195,18 @@ button.link_btn, .link_btn > input {
 /*styling for about*/
 .about p {
   color: white;
-  margin: 10px; }
+  margin: 10px;
+  font-size: 1em; }
 
-/*portrait - iPad*/
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (orientation: portrait) and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
   .about p {
     font-size: 1.75em; } }
-/*landscape - iPad*/
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (orientation: landscape) and (min-width: 960px) and (-webkit-min-device-pixel-ratio: 2) {
   .about p {
     font-size: 1.5em; } }
-/*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-@media screen and (orientation: portrait) and (max-width: 736px) and (max-height: 1743px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (orientation: landscape) and (min-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
   .about p {
-    font-size: 1em; } }
-/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+    font-size: 2em; } }
 .apps_carousel_top {
   position: absolute;
   width: 100%;
@@ -2001,6 +1998,12 @@ button.link_btn, .link_btn > input {
     font-size: 1.75em; }
     .contact .form_container form .row button.send {
       font-size: 1em; } }
+@media screen and (orientation: landscape) and (min-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container .wrapper .mail_response span {
+    font-size: 2em; }
+  .contact .form_container form .row {
+    font-size: 2em;
+    margin: 10px 0; } }
 html, body {
   height: 100%; }
 

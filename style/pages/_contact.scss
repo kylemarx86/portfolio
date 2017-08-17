@@ -529,5 +529,49 @@ and (-webkit-min-device-pixel-ratio: 2){
 and (orientation: landscape)
 and (min-width: 1366px)
 and (-webkit-min-device-pixel-ratio: 2){
-
+    .contact {
+        // mail response container
+        .mail_response_container{
+            // width: 40%;
+            .wrapper{
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        font-size: 2em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
+        
+        // styling for contact form
+        .form_container{
+            // width: 60%;
+            form{
+                .row{
+                    font-size: 2em;
+                    margin: 10px 0;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                        // width: 70%;
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                        // height: 7em;
+                    }
+                    button.send{
+                        // margin: 20px 0;
+                    }
+                } // end row
+            } // end form
+        } // end form container
+    } // end contact    
 }
