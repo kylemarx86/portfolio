@@ -312,6 +312,7 @@ and (-webkit-min-device-pixel-ratio: 2){
         top: $header_ht + 1%;
         height: Calc(98% - #{$footer_ht} - #{$header_ht});
         .screen{
+            width: 98%;
             .hidden{
             }
             .shrunk{
