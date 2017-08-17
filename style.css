@@ -1198,7 +1198,6 @@ button.link_btn, .link_btn > input {
   margin: 10px;
   font-size: 1em; }
 
-/*landscape - iPad*/
 @media only screen and (orientation: portrait) and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
   .about p {
     font-size: 1.75em; } }
