@@ -2001,6 +2001,12 @@ button.link_btn, .link_btn > input {
     font-size: 1.75em; }
     .contact .form_container form .row button.send {
       font-size: 1em; } }
+@media screen and (orientation: landscape) and (min-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container .wrapper .mail_response span {
+    font-size: 2em; }
+  .contact .form_container form .row {
+    font-size: 2em;
+    margin: 10px 0; } }
 html, body {
   height: 100%; }
 
