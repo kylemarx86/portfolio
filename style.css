@@ -985,16 +985,12 @@ button.link_btn, .link_btn > input {
     color: dimgray;
     box-shadow: -3px -3px 2px 1px #af6b00 inset, 1px 1px 1px 1px #000000; }
 
-/*portrait - iPad*/
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  button.link_btn, .link_btn > input {
-    font-size: 1.75em; } }
-/*landscape - iPad*/
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (orientation: portrait) and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
   button.link_btn, .link_btn > input {
     font-size: 1.25em; } }
-/*portrait - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
-/*landscape - iPhone 5, iPhone 6, iPhone 6 Plus, Galaxy S5, Nexus 6P, Nexus 5X*/
+@media only screen and (orientation: landscape) and (min-width: 960px) and (-webkit-min-device-pixel-ratio: 2) {
+  button.link_btn, .link_btn > input {
+    font-size: 1.25em; } }
 #sidenav {
   height: 100%;
   width: 100%;
@@ -1806,8 +1802,8 @@ button.link_btn, .link_btn > input {
     .technologies .tech_info .apps {
       margin-bottom: 0; }
       .technologies .tech_info .apps li span {
-        font-size: 2.5em;
-        line-height: 1; } }
+        font-size: 1.5em;
+        line-height: 1.5; } }
 .contact .mail_response_container {
   position: absolute;
   display: inline-block;
@@ -1816,15 +1812,15 @@ button.link_btn, .link_btn > input {
   .contact .mail_response_container .wrapper {
     position: absolute;
     display: inline-block;
+    left: 50%;
     transform: translateX(-50%);
-    left: 50%; }
+    max-width: 80%; }
     .contact .mail_response_container .wrapper .mail_response {
       position: relative;
       display: inline-block;
       background-color: transparent;
       padding: 0 15px;
-      color: black;
-      box-shadow: 1px 1px 3px 1px black; }
+      color: black; }
       .contact .mail_response_container .wrapper .mail_response::after {
         content: '';
         position: absolute;
@@ -1835,7 +1831,8 @@ button.link_btn, .link_btn > input {
         top: 0;
         bottom: 0;
         z-index: -1;
-        transform: skew(-10deg); }
+        transform: skew(-10deg);
+        box-shadow: 1px 1px 3px 1px black; }
       .contact .mail_response_container .wrapper .mail_response span {
         position: relative;
         display: inline-block;
@@ -1865,6 +1862,7 @@ button.link_btn, .link_btn > input {
     padding: 5px;
     color: red; }
     .contact .form_container form .row {
+      position: relative;
       display: inline-block;
       width: 100%;
       margin: 5px 0;
@@ -1873,7 +1871,8 @@ button.link_btn, .link_btn > input {
         position: relative;
         float: left;
         cursor: help;
-        color: white; }
+        color: white;
+        padding: 3px 0; }
         .contact .form_container form .row .field .tooltip {
           position: absolute;
           left: 10px;
@@ -1900,8 +1899,108 @@ button.link_btn, .link_btn > input {
           outline-width: 1px;
           outline-color: red; }
       .contact .form_container form .row textarea {
-        resize: none; }
+        resize: none;
+        height: 10em; }
+      .contact .form_container form .row button.send {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) skewX(-10deg);
+        margin: 10px 0; }
 
+@media screen and (orientation: portrait) and (max-width: 360px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container {
+    position: relative;
+    display: block;
+    width: 100%; }
+    .contact .mail_response_container .wrapper {
+      position: relative; }
+      .contact .mail_response_container .wrapper .mail_response span {
+        font-size: 0.75em; }
+  .contact .form_container {
+    width: 100%; }
+    .contact .form_container form .row {
+      font-size: 0.75em; }
+      .contact .form_container form .row input, .contact .form_container form .row textarea {
+        width: 70%; }
+      .contact .form_container form .row textarea {
+        height: 7em; }
+      .contact .form_container form .row button.send {
+        margin: 7px 0; } }
+@media screen and (orientation: landscape) and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container {
+    width: 40%; }
+    .contact .mail_response_container .wrapper .mail_response span {
+      font-size: 0.75em; }
+  .contact .form_container {
+    width: 60%; }
+    .contact .form_container form .row {
+      font-size: 0.75em;
+      margin: 4px 0; }
+      .contact .form_container form .row input, .contact .form_container form .row textarea {
+        width: 70%; }
+      .contact .form_container form .row textarea {
+        height: 5em; }
+      .contact .form_container form .row button.send {
+        margin: 0; } }
+@media screen and (orientation: portrait) and (min-width: 361px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container {
+    position: relative;
+    display: block;
+    width: 100%; }
+    .contact .mail_response_container .wrapper {
+      position: relative; }
+  .contact .form_container {
+    width: 100%; }
+    .contact .form_container form .row input, .contact .form_container form .row textarea {
+      width: 65%; }
+    .contact .form_container form .row textarea {
+      height: 7em; } }
+@media screen and (orientation: landscape) and (min-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container {
+    width: 40%; }
+    .contact .mail_response_container .wrapper .mail_response span {
+      font-size: 0.75em; }
+  .contact .form_container {
+    width: 60%; }
+    .contact .form_container form .row {
+      font-size: 0.75em; }
+      .contact .form_container form .row input, .contact .form_container form .row textarea {
+        width: 70%; }
+      .contact .form_container form .row textarea {
+        height: 7em; }
+      .contact .form_container form .row button.send {
+        margin: 0; } }
+@media only screen and (orientation: portrait) and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container {
+    position: absolute;
+    display: inline-block;
+    width: 40%;
+    right: 0; }
+    .contact .mail_response_container .wrapper {
+      position: absolute;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%; }
+  .contact .form_container {
+    width: 60%; }
+    .contact .form_container form .row button.send {
+      margin: 20px 0; } }
+@media only screen and (orientation: landscape) and (min-width: 960px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container .wrapper .mail_response span {
+    font-size: 1.5em; }
+  .contact .form_container form .row {
+    font-size: 1.5em; }
+    .contact .form_container form .row button.send {
+      margin: 20px 0; } }
+@media screen and (orientation: portrait) and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  .contact .mail_response_container .wrapper .mail_response span {
+    font-size: 1.75em; }
+  .contact .form_container form .row {
+    font-size: 1.75em; }
+    .contact .form_container form .row button.send {
+      font-size: 1em; } }
 html, body {
   height: 100%; }
 
@@ -1984,12 +2083,16 @@ button:focus {
   .main_screen {
     top: 12%;
     height: 69%; }
-    .main_screen .screen .page .title span {
-      height: 1em;
-      vertical-align: -5px; }
-    .main_screen .screen .page .title h2 {
-      margin-top: 5px;
-      font-size: 0.75em; } }
+    .main_screen .screen {
+      width: 96%; }
+      .main_screen .screen .page .title {
+        height: 9%; }
+        .main_screen .screen .page .title span {
+          height: 1em;
+          vertical-align: -5px; }
+        .main_screen .screen .page .title h2 {
+          margin-top: 5px;
+          font-size: 0.75em; } }
 @media screen and (orientation: landscape) and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
   .main_screen {
     height: 72%; }
@@ -2032,13 +2135,15 @@ button:focus {
   .main_screen {
     top: 8.5%;
     height: Calc(98% - 100px - 7.5%); }
-    .main_screen .screen .page .title {
-      top: 3%; }
-      .main_screen .screen .page .title span {
-        height: 2.5em;
-        vertical-align: middle; }
-      .main_screen .screen .page .title h2 {
-        font-size: 2em; } }
+    .main_screen .screen {
+      width: 98%; }
+      .main_screen .screen .page .title {
+        top: 3%; }
+        .main_screen .screen .page .title span {
+          height: 2.5em;
+          vertical-align: middle; }
+        .main_screen .screen .page .title h2 {
+          font-size: 2em; } }
 @media screen and (orientation: portrait) and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   .main_screen {
     height: 79%; }

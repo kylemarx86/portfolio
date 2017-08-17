@@ -63,18 +63,24 @@ if(!empty($name)
     $message_start = 'Please enter a';
     $output['success'] = false;
     $output['message'][] = 'Message could not be sent.</br>';
+    $errors = [];
     if(empty($name)){
-        $output['message'][] = $message_start.' name.</br>';
+        $errors[] = $message_start.' name.';
     }
     if(empty($email)){
-        $output['message'][] = $message_start.'n email address.</br>';   // 'n' for start of an
+        $errors[] = $message_start.'n email address.';   // 'n' for start of an
     }
     if(empty($subject)){
-        $output['message'][] = $message_start.' subject.</br>';
+        $errors[] = $message_start.' subject.';
     }
     if(empty($body)){
-        $output['message'][] = $message_start.' message.</br>';
+        $errors[] = $message_start.' message.';
     }
+    if(count($errors) > 1){
+        $errors = [];
+        $errors[] = 'More than one of the required fields is empty.';
+    }
+    $output['message'][] = $errors[0];
 }
 
 
