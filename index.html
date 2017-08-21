@@ -137,32 +137,37 @@
                     <h2>Contact Me</h2>
                 </div>    
                 <div class='content shrunk hidden'>
-                    <form>
-                        <table>
-                            <tr>
-                                <td><span class='field'>Name<span class='tooltip'>Required field</span></span>*</td>
-                                <td><input name="name" placeholder="name" required></td>
-                            </tr>
-                            <tr>
-                                <td><span class='field'>Email address<span class='tooltip'>Required field</span></span>*</td>
-                                <td><input name="email" placeholder="email address" required></td>
-                            </tr>
-                            <tr>
-                                <td><span class='field'>Subject<span class='tooltip'>Required field</span></span>*</td>
-                                <td><input name="subject" placeholder="subject" required></td>
-                            </tr>
-                            <tr>
-                                <td><span class='field'>Message<span class='tooltip'>Required field</span></span>*</td>
-                                <td><textarea name="body" placeholder="message" maxlength="750" rows="5" required></textarea></td>
-                            </tr>
-                        </table>
-                        <button type="button" name="submit" value="submit" class='link_btn send'>Send Mail</button>
-                    </form>
                     <div class='mail_response_container'>
-                        <div class='mail_response'>
-                            <p>I am local to the Orange County area of California. Feel free to contatct me about my applications or skills.</p>
+                        <div class='wrapper'>
+                            <div class='mail_response'>
+                                <span>I am local to the Orange County area of California. Feel free to contatct me about my applications or skills.</span>
+                            </div>
                         </div>
                     </div>
+                    <div class='form_container'>
+                        <form>
+                            <div class='row'>
+                                <span class='field'>Name<span class='tooltip'>Required field</span></span>*
+                                <input name="name" placeholder="name" required>
+                            </div>
+                            <div class='row'>
+                                <span class='field'>Email address<span class='tooltip'>Required field</span></span>*
+                                <input name="email" placeholder="email address" required>
+                            </div>
+                            <div class='row'>
+                                <span class='field'>Subject<span class='tooltip'>Required field</span></span>*
+                                <input name="subject" placeholder="subject" required>
+                            </div>
+                            <div class='row'>
+                                <span class='field'>Message<span class='tooltip'>Required field</span></span>*
+                                <textarea name="body" placeholder="message" maxlength="750" required></textarea>
+                            </div>
+                            <div class='row'>
+                                <button type="button" name="submit" value="submit" class='link_btn send'>Send Mail</button>
+                            </div>
+                        </form>
+                    </div>
+                    
                 </div>
             </div> <!-- end contact page -->
             <!-- end of pages -->

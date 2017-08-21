@@ -1,19 +1,91 @@
 .contact {
-    // styling for contact form
-    form{
+    // mail response container
+    .mail_response_container{
+        position: absolute;
         display: inline-block;
         width: 50%;
-        margin-left: 5px;
+        right: 0;
 
-        table{
+        .wrapper{
+            position: absolute;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            // width: auto;
+            max-width: 80%;
+            
+            .mail_response{
+                position: relative;
+                display: inline-block;
+                background-color: transparent;
+                padding: 0 15px;
+                color: black;
+
+                &::after{
+                    content: '';
+                    position: absolute;
+                    display: inline-block;
+                    background-color: black;
+                    left: -15px;
+                    right: -15px;
+                    top: 0;
+                    bottom: 0;
+                    z-index: -1;
+                    transform: skew(-10deg);
+                    box-shadow: 1px 1px 3px 1px black;
+                }
+
+                span{
+                    position: relative;
+                    display: inline-block;
+                    text-align: center;
+                    padding: 0 15px;
+                    background-color: transparent;
+                    z-index: 0;
+                    
+                    &::after{
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        background-color: silver;
+                        left: -10px;
+                        right: -10px;
+                        top: 0;
+                        bottom: 0;
+                        z-index: -1;
+                        transform: skew(-10deg);
+                    }
+                }
+            }
+        }
+    }
+
+    // styling for contact form
+    .form_container{
+        position: relative;
+        display: inline-block;
+        width: 50%;
+        
+        form{
+            display: inline-block;
             width: 100%;
-            td{
-                color: red;
+            box-sizing: border-box;
+            padding: 5px;
+            color: red;
+
+            .row{
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                margin: 5px 0;
+                box-sizing: border-box;
 
                 .field{
                     position: relative;
+                    float: left;
                     cursor: help;
                     color: white;
+                    padding: 3px 0;
 
                     .tooltip{
                         position: absolute;
@@ -32,14 +104,14 @@
                         visibility: visible;
                     }
                 }
-                
                 input, textarea{
                     color: black;
-                    margin: 5px;
                     padding: 1px;
                     border-radius: 5px;
                     box-shadow: 1px 1px 3px 1px #000000;
-                    width: 100%;
+                    float: right;
+                    width: 60%;
+                    border-width: 2px;
 
                     &:focus{
                         outline-width: 1px;
@@ -48,33 +120,458 @@
                 }
                 textarea{
                     resize: none;
+                    height: 10em;
                 }
-            }
-        }
-    }
-    // mail response container
-    .mail_response_container{
-        vertical-align: top;
-        display: inline-block;
-        width: 30%;
-        padding: 0 15px;
-        background-color: black;
-        box-sizing: border-box;
-        box-shadow: 1px 1px 3px 1px #000000;
-        transform: translateX(50%) skewX(-10deg);
+                button.send{
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%) skewX(-10deg);
+                    margin: 10px 0;
+                }
+            } // end row
+        } // end form
+    } // end form container
+   
+}
 
-        .mail_response{
+// *********************************************************************************
+// *********************************************************************************
+
+
+
+// revised media queries
+// device specific media queries
+
+// smaller phones - iPhone 5, galaxy s5
+// portrait mode
+@media screen 
+and (orientation: portrait) 
+and (max-width: 360px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    .contact {
+        // mail response container
+        .mail_response_container{
+            position: relative;
+            display: block;
             width: 100%;
-            height: 100%;
-            background-color: silver;
-            padding: 0 5px;
 
-            p{
-                -webkit-transform: skewX(10deg);
-                transform: skewX(10deg);
-                color: black;
-                padding: 0 5px;
-            }
-        }
-    }
+            .wrapper{
+                position: relative;
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        font-size: 0.75em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
+        
+        // styling for contact form
+        .form_container{
+            width: 100%;
+            form{
+                .row{
+                    font-size: 0.75em;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                        width: 70%;
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                        height: 7em;
+                    }
+                    button.send{
+                        margin: 7px 0;
+                    }
+                } // end row
+                
+            } // end form
+        } // end form container
+    } // end contact
+}
+// landscape mode
+@media screen
+and (orientation: landscape)
+and (max-width: 640px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    .contact {
+        // mail response container
+        .mail_response_container{
+            width: 40%;
+            .wrapper{
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        font-size: 0.75em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
+        
+        // styling for contact form
+        .form_container{
+            width: 60%;
+            form{
+                .row{
+                    font-size: 0.75em;
+                    margin: 4px 0;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                        width: 70%;
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                        height: 5em;
+                    }
+                    button.send{
+                        margin: 0;
+                    }
+                } // end row
+                
+            } // end form
+        } // end form container
+    } // end contact
+}
+
+// *********************************************************************************
+
+// larger phones - iPhone 6, iPhone 6 Plus, Nexus 6P, Nexus 5X
+// portrait mode
+@media screen
+and (orientation: portrait) 
+and (min-width: 361px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    .contact {
+        // mail response container
+        .mail_response_container{
+            position: relative;
+            display: block;
+            width: 100%;
+
+            .wrapper{
+                position: relative;
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        // font-size: 0.75em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
+        
+        // styling for contact form
+        .form_container{
+            width: 100%;
+            form{
+                .row{
+                    // font-size: 0.75em;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                        width: 65%;
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                        height: 7em;
+                    }
+                    button.send{
+                    }
+                } // end row
+                
+            } // end form
+        } // end form container
+    } // end contact        
+}
+// landscape mode
+@media screen 
+and (orientation: landscape) 
+and (min-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    .contact {
+        // mail response container
+        .mail_response_container{
+            width: 40%;
+            .wrapper{
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        font-size: 0.75em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
+        
+        // styling for contact form
+        .form_container{
+            width: 60%;
+            form{
+                .row{
+                    font-size: 0.75em;
+                    // margin: 4px 0;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                        width: 70%;
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                        height: 7em;
+                    }
+                    button.send{
+                        margin: 0;
+                    }
+                } // end row
+            } // end form
+        } // end form container
+    } // end contact
+}
+
+// *********************************************************************************
+
+// smaller tablet sizes - Nexus 7, iPad mini, iPad
+// portrait mode
+@media only screen 
+and (orientation: portrait)
+and (min-width: 600px)
+and (-webkit-min-device-pixel-ratio: 2){
+    .contact {
+        // mail response container
+        .mail_response_container{
+            position: absolute;
+            display: inline-block;
+            width: 40%;
+            right: 0;
+            .wrapper{
+                position: absolute;
+                display: inline-block;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 70%;
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        // font-size: 1.25em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
+        
+        // styling for contact form
+        .form_container{
+            width: 60%;
+            form{
+                .row{
+                    // font-size: 1.25em;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                    }
+                    button.send{
+                        margin: 20px 0;
+                    }
+                } // end row
+                
+            } // end form
+        } // end form container
+    } // end contact   
+}
+// landscape mode
+@media only screen 
+and (orientation: landscape)
+and (min-width: 960px) 
+and (-webkit-min-device-pixel-ratio: 2){
+    .contact {
+        // mail response container
+        .mail_response_container{
+            // width: 40%;
+            .wrapper{
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        font-size: 1.5em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
+        
+        // styling for contact form
+        .form_container{
+            // width: 60%;
+            form{
+                .row{
+                    font-size: 1.5em;
+                    // margin: 4px 0;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                        // width: 70%;
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                        // height: 7em;
+                    }
+                    button.send{
+                        margin: 20px 0;
+                    }
+                } // end row
+            } // end form
+        } // end form container
+    } // end contact    
+}
+
+// *********************************************************************************
+
+// large tablet sizes - iPad pro
+// portrait mode
+@media screen 
+and (orientation: portrait)
+and (min-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2){
+    .contact {
+        // mail response container
+        .mail_response_container{
+            .wrapper{
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        font-size: 1.75em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
+        
+        // styling for contact form
+        .form_container{
+            form{
+                .row{
+                    font-size: 1.75em;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                    }
+                    button.send{
+                        font-size: 1em;
+                    }
+                } // end row
+                
+            } // end form
+        } // end form container
+    } // end contact     
+}
+
+// landscape mode
+@media screen
+and (orientation: landscape)
+and (min-width: 1366px)
+and (-webkit-min-device-pixel-ratio: 2){
+    .contact {
+        // mail response container
+        .mail_response_container{
+            // width: 40%;
+            .wrapper{
+                .mail_response{
+                    &::after{
+                    }
+                    span{
+                        font-size: 2em;
+                        &::after{
+                        }
+                    }
+                }
+            } // end wrappper
+        } // end mail response container
+        
+        // styling for contact form
+        .form_container{
+            // width: 60%;
+            form{
+                .row{
+                    font-size: 2em;
+                    margin: 10px 0;
+                    .field{
+                        .tooltip{
+                        }
+                        &:hover .tooltip{
+                        }
+                    }
+                    input, textarea{
+                        // width: 70%;
+                        &:focus{
+                        }
+                    }
+                    textarea{
+                        // height: 7em;
+                    }
+                    button.send{
+                        // margin: 20px 0;
+                    }
+                } // end row
+            } // end form
+        } // end form container
+    } // end contact    
 }

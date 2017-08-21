@@ -36,21 +36,53 @@ $mail->isHTML(true);                                  // Set email format to HTM
 // construct message
 $name = $_POST['name'];
 $email = $_POST['email'];
+$subject = $_POST['subject'];
 $body = $_POST['body'];
 $message = "<p>name: $name</p><p>email: $email</p>$body";
-
-$mail->Subject = $_POST['subject'];         // set message subject
-$mail->Body = $message;                 // set message body
-$mail->AltBody = strip_tags($message);      // set alternate text for non-html clients
-
 $output = [];
-if(!$mail->send()) {
-    $output['success'] = false;
-    $output['message'][] = 'Message could not be sent.';
-    $output['message'][] = 'Mailer Error: ' . $mail->ErrorInfo;
+
+if(!empty($name)
+    && !empty($email)
+    && !empty($subject)
+    && !empty($body)) {
+    
+    $mail->Subject = $subject;         // set message subject
+    $mail->Body = $message;                 // set message body
+    $mail->AltBody = strip_tags($message);      // set alternate text for non-html clients
+
+    
+    if(!$mail->send()) {
+        $output['success'] = false;
+        $output['message'][] = 'Message could not be sent.';
+        $output['message'][] = 'Mailer Error: ' . $mail->ErrorInfo;
+    } else {
+        $output['success'] = true;
+        $output['message'] = 'Your message has been sent. Thank you for contacting me.';
+    }
 } else {
-    $output['success'] = true;
-    $output['message'] = 'Message has been sent.';
+    $message_start = 'Please enter a';
+    $output['success'] = false;
+    $output['message'][] = 'Message could not be sent.</br>';
+    $errors = [];
+    if(empty($name)){
+        $errors[] = $message_start.' name.';
+    }
+    if(empty($email)){
+        $errors[] = $message_start.'n email address.';   // 'n' for start of an
+    }
+    if(empty($subject)){
+        $errors[] = $message_start.' subject.';
+    }
+    if(empty($body)){
+        $errors[] = $message_start.' message.';
+    }
+    if(count($errors) > 1){
+        $errors = [];
+        $errors[] = 'More than one of the required fields is empty.';
+    }
+    $output['message'][] = $errors[0];
 }
+
+
 print json_encode($output);
 ?>
